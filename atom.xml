@@ -3,11 +3,11 @@
   <title>Hexo+Github博客搭建记录</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://yangpengsky.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://yangpengsky.github.io/"/>
   <updated>2023-05-12T05:56:44.207Z</updated>
-  <id>http://example.com/</id>
+  <id>http://yangpengsky.github.io/</id>
   
   <author>
     <name>yangpeng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>draft文章</title>
-    <link href="http://example.com/2023/05/12/draft-wen-zhang/"/>
-    <id>http://example.com/2023/05/12/draft-wen-zhang/</id>
+    <link href="http://yangpengsky.github.io/2023/05/12/draft-wen-zhang/"/>
+    <id>http://yangpengsky.github.io/2023/05/12/draft-wen-zhang/</id>
     <published>2023-05-12T03:29:01.000Z</published>
     <updated>2023-05-12T05:56:44.207Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>post文章</title>
-    <link href="http://example.com/2023/05/12/post-wen-zhang/"/>
-    <id>http://example.com/2023/05/12/post-wen-zhang/</id>
+    <link href="http://yangpengsky.github.io/2023/05/12/post-wen-zhang/"/>
+    <id>http://yangpengsky.github.io/2023/05/12/post-wen-zhang/</id>
     <published>2023-05-12T03:24:29.000Z</published>
     <updated>2023-05-12T03:24:29.589Z</updated>
     
@@ -52,8 +52,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2023/05/12/hello-world/"/>
-    <id>http://example.com/2023/05/12/hello-world/</id>
+    <link href="http://yangpengsky.github.io/2023/05/12/hello-world/"/>
+    <id>http://yangpengsky.github.io/2023/05/12/hello-world/</id>
     <published>2023-05-12T03:19:42.372Z</published>
     <updated>2023-05-12T03:19:42.372Z</updated>
     
