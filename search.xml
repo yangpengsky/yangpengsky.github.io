@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>draft文章</title>
+      <link href="/2023/05/12/draft-wen-zhang/"/>
+      <url>/2023/05/12/draft-wen-zhang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="表达提交方式get和post的区别"><a href="#表达提交方式get和post的区别" class="headerlink" title="表达提交方式get和post的区别"></a>表达提交方式get和post的区别</h2><ul><li><blockquote><p>post更安全（不会作为url的一部分，不会被缓存、保存在服务器日志、以及浏览器浏览记录中）</p><p>&#x3D;&#x3D;&gt;get：会将提交的信息显示在地址栏上,把参数包含在URL中<br>&#x3D;&#x3D;&gt;post：不会将提交的信息显示在地址栏,通过request body传递参数</p><p>post发送的数据更大（get有url长度限制）</p><p>&#x3D;&#x3D;&gt;get：显示在地址栏，而地址栏的信息数据量是有限的，所以不可以提交大数据</p><p>&#x3D;&#x3D;&gt;post：可以提交大体积的数据</p><p>post能发送更多的数据类型（get只能发送ASCII字符）</p><p>post比get慢</p><p>post用于修改和写入数据，get一般用于搜索排序和筛选之类的操作（淘宝，支付宝的搜索查询都是get提交），目的是资源的获取，读取数据</p></blockquote></li></ul><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ul><li><blockquote><p>浏览器端的弱语言</p><p>事件驱动函数的编程方式</p><p>JavaScript（简称“JS”） 是一种<strong>具有函数优先的轻量级，解释型或即时编译型的编程语言</strong>。JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p><p>【主要功能】</p><ol><li>嵌入动态文本于HTML页面。 </li><li>对浏览器事件做出响应。 </li><li>读写HTML元素。 </li><li>在数据被提交到服务器之前验证数据。 </li><li>检测访客的浏览器信息。控制cookies，包括创建和修改等。 </li><li>基于Node.js技术进行服务器端编程。</li></ol><p>【语言组成】</p><p>ECMAScript，描述了该语言的语法和基本对象。<br>文档对象模型（DOM），描述处理网页内容的方法和接口。<br>浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。</p><p>【执行过程】</p><p>自上而下，逐行解释执行</p><p>本质</p><p>首页、绘制倒立的DOM树</p><p>然后、查找指定的节点</p><p>最后、改变节点的属性或者内容</p></blockquote></li></ul><h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><ul><li><blockquote><p>脚本语言又被称为扩建的语言，或者动态语言，是一种编程语言</p><p>用来控制软件应用程序，脚本通常以文本（如ASCII）保存，只在被调用时进行解释或编译。</p></blockquote></li></ul><h2 id="querySelector-与-getElementById-方法的区别"><a href="#querySelector-与-getElementById-方法的区别" class="headerlink" title="querySelector 与 getElementById 方法的区别"></a>querySelector 与 getElementById 方法的区别</h2><ul><li><blockquote><p>getElement(s)Byid获取的是动态集合，querySelector 获取的是静态集合</p><p>querySelectorAll 方法接收的参数是一个 CSS 选择符。getElementsBy 系列接收的参数只能是单一的 className、tagName 和 name；</p><p>浏览器兼容不同</p><p>querySelector 属于 W3C 中的 Selectors API 规范 ，而 getElementsBy 系列属于 W3C 的 DOM 规范</p></blockquote></li></ul><h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a>let和var的区别</h2><ul><li><blockquote><p><code>var/function</code>有变量提升，而<code>let/const/class/import</code>都不存在这个机制</p><p><code>var</code>允许重复声明，而<code>let</code>不允许重复声明</p><ol><li>let没有变量提升（但是在词法解析阶段也能得知某个变量是否是私有变量）</li><li>let不允许在相同的作用域下重复声明</li><li>let解决了JS中的暂时性死区问题</li><li>let创建的全局变量没有给window设置对应的属性</li><li>let会产生块级作用域</li></ol></blockquote></li></ul><h2 id="session和cookie的区别"><a href="#session和cookie的区别" class="headerlink" title="session和cookie的区别"></a>session和cookie的区别</h2><ul><li><blockquote><ol><li>cookie数据存放在客户的浏览器上，session数据放在服务器上</li><li>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗,如果主要考虑到安全应当使用session</li><li>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，如果主要考虑到减轻服务器性能方面，应当使用cookie</li><li>单个cookie在客户端的限制是3K，就是说一个站点在客户端存放的cookie不能3K。</li><li>将登陆信息等重要信息存放为session,其他信息如果需要保留，可以放在cookie中</li></ol></blockquote></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>post文章</title>
+      <link href="/2023/05/12/post-wen-zhang/"/>
+      <url>/2023/05/12/post-wen-zhang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/05/12/hello-world/"/>
+      <url>/2023/05/12/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

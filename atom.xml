@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo+Github博客搭建记录</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-05-12T05:56:44.207Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>yangpeng</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>draft文章</title>
+    <link href="http://example.com/2023/05/12/draft-wen-zhang/"/>
+    <id>http://example.com/2023/05/12/draft-wen-zhang/</id>
+    <published>2023-05-12T03:29:01.000Z</published>
+    <updated>2023-05-12T05:56:44.207Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;表达提交方式get和post的区别&quot;&gt;&lt;a href=&quot;#表达提交方式get和post的区别&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>post文章</title>
+    <link href="http://example.com/2023/05/12/post-wen-zhang/"/>
+    <id>http://example.com/2023/05/12/post-wen-zhang/</id>
+    <published>2023-05-12T03:24:29.000Z</published>
+    <updated>2023-05-12T03:24:29.589Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/05/12/hello-world/"/>
+    <id>http://example.com/2023/05/12/hello-world/</id>
+    <published>2023-05-12T03:19:42.372Z</published>
+    <updated>2023-05-12T03:19:42.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
