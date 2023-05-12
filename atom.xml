@@ -6,7 +6,7 @@
   <link href="http://yangpengsky.github.io/atom.xml" rel="self"/>
   
   <link href="http://yangpengsky.github.io/"/>
-  <updated>2023-05-12T05:56:44.207Z</updated>
+  <updated>2023-05-12T08:53:09.385Z</updated>
   <id>http://yangpengsky.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yangpengsky.github.io/2023/05/12/draft-wen-zhang/"/>
     <id>http://yangpengsky.github.io/2023/05/12/draft-wen-zhang/</id>
     <published>2023-05-12T03:29:01.000Z</published>
-    <updated>2023-05-12T05:56:44.207Z</updated>
+    <updated>2023-05-12T08:53:09.385Z</updated>
     
     
       
@@ -34,6 +34,8 @@
     
     
     
+    
+    <category term="JavaScript" scheme="http://yangpengsky.github.io/tags/JavaScript/"/>
     
   </entry>
   
