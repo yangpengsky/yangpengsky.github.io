@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>如何在hexo博客中插入图片</title>
+      <link href="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/"/>
+      <url>/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JVM快速入门"><a href="#JVM快速入门" class="headerlink" title="JVM快速入门"></a>JVM快速入门</h1><h2 id="JVM的位置"><a href="#JVM的位置" class="headerlink" title="JVM的位置"></a>JVM的位置</h2><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025152810359.png" alt="image-20221025152810359"></p><h2 id="JVM是运行在操作系统之上的，他与硬件没有直接的交互"><a href="#JVM是运行在操作系统之上的，他与硬件没有直接的交互" class="headerlink" title="JVM是运行在操作系统之上的，他与硬件没有直接的交互"></a>JVM是运行在操作系统之上的，他与硬件没有直接的交互</h2><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025154252860.png" alt="image-20221025154252860"></p><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025154332262.png" alt="image-20221025154332262"></p><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025154431545.png" alt="image-20221025154431545"></p><h2 id="1-类加载器"><a href="#1-类加载器" class="headerlink" title="1.类加载器"></a>1.类加载器</h2><p>作用：加载class文件</p><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025162747959.png" alt="image-20221025162747959"></p><h2 id="2-双亲委派机制"><a href="#2-双亲委派机制" class="headerlink" title="2.双亲委派机制"></a>2.双亲委派机制</h2><p><img src="/2023/05/13/ru-he-zai-hexo-bo-ke-zhong-cha-ru-tu-pian/image-20221025163814993.png" alt="image-20221025163814993"></p><p>当父类加载器在接收到类加载请求后，发现自己也无法加载这个类（这个情况通常是因为这个类的Class文件在父类的加载路径中不存在）这时父类会把这个信息反馈给子类，并向下委派子类加载器来加载这个类，直到这个请求被成功加载，但是一直到自定义加载器都没有找到，JVM就会抛出ClassNotFund异常。</p><p>首先，<strong>通过委派的方式，可以避免类的重复加载</strong>，当父加载器已经加载过某一个类时，子加载器就不会再重新加载这个类。</p><p>另外，<strong>通过双亲委派的方式，还保证了安全性</strong>。因为Bootstrap ClassLoader在加载的时候，只会加载JAVA_HOME中的jar包里面的类，如java.lang.Integer，那么这个类是不会被随意替换的，除非有人跑到你的机器上， 破坏你的JDK。</p><p>那么，就可以避免有人自定义一个有破坏功能的java.lang.Integer被加载。这样可以有效的防止核心Java API被篡改。</p><p><strong>向上委托查找，向下委托加载</strong> app(应用程序加载器)–&gt; exc（扩展类加载器）–&gt;Boot（启动类加载器）</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>draft文章</title>
       <link href="/2023/05/12/draft-wen-zhang/"/>
       <url>/2023/05/12/draft-wen-zhang/</url>
