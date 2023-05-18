@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>1985-10-26T08:15:00.000Z</updated>
+  <updated>2023-05-18T09:04:43.744Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,23 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>picgo-gitee搭建个人图床</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/18/picgo-gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/18/picgo-gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/</id>
+    <published>2023-05-18T09:01:03.000Z</published>
+    <updated>2023-05-18T09:04:43.744Z</updated>
+    
+    
+    <summary type="html">描述</summary>
+    
+    
+    
+    <category term="git" scheme="http://ypbhbc.gitee.io/categories/git/"/>
+    
+    
+    <category term="gitee" scheme="http://ypbhbc.gitee.io/tags/gitee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx的安装</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/18/nginx%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/18/nginx%E7%9A%84%E5%AE%89%E8%A3%85/</id>
+    <published>2023-05-18T08:59:46.000Z</published>
+    <updated>2023-05-18T09:04:00.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装Nginx&quot;&gt;&lt;a href=&quot;#安装Nginx&quot; class=&quot;headerlink&quot; title=&quot;安装Nginx&quot;&gt;&lt;/a&gt;安装Nginx&lt;/h2&gt;&lt;h3 id=&quot;下载软件包&quot;&gt;&lt;a href=&quot;#下载软件包&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="nginx" scheme="http://ypbhbc.gitee.io/categories/nginx/"/>
+    
+    
+    <category term="nginx" scheme="http://ypbhbc.gitee.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git常用命令</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/18/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/18/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2023-05-18T08:59:19.000Z</published>
+    <updated>2023-05-18T09:02:35.999Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;仓库&quot;&gt;&lt;a href=&quot;#仓库&quot; class=&quot;headerlink&quot; title=&quot;仓库&quot;&gt;&lt;/a&gt;仓库&lt;/h3&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;#</summary>
+        
+      
+    
+    
+    
+    <category term="git" scheme="http://ypbhbc.gitee.io/categories/git/"/>
+    
+    
+    <category term="git" scheme="http://ypbhbc.gitee.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="http://ypbhbc.gitee.io/2023/05/18/hello-world/"/>
     <id>http://ypbhbc.gitee.io/2023/05/18/hello-world/</id>
     <published>2023-05-18T08:33:02.730Z</published>
-    <updated>1985-10-26T08:15:00.000Z</updated>
+    <updated>2023-05-18T09:03:16.709Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
+    <summary type="html">这里填写摘要。也可以把摘要这一段删去，在文章中想要截断的地方加入&lt;!--more--&gt;，这样在首页就只显示开头到截断的内容，而不会显示全文</summary>
     
     
     
+    <category term="分类" scheme="http://ypbhbc.gitee.io/categories/%E5%88%86%E7%B1%BB/"/>
+    
+    <category term="子分类" scheme="http://ypbhbc.gitee.io/categories/%E5%88%86%E7%B1%BB/%E5%AD%90%E5%88%86%E7%B1%BB/"/>
+    
+    
+    <category term="标签1" scheme="http://ypbhbc.gitee.io/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+    <category term="标签2" scheme="http://ypbhbc.gitee.io/tags/%E6%A0%87%E7%AD%BE2/"/>
     
   </entry>
   
