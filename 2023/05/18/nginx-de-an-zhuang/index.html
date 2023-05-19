@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="picgo-gitee搭建个人图床, 技术博客分享">
-    <meta name="description" content="前言在搭建个人博客时，其中markdown语法作为编写博客的主要语言。但由于本地编写时加入的图片只能在本地显示，为了是博客上传的GitHub或者gitee上托管运行依然能够正常显示图片。这里我们需要用到图床。图床（Image Hosting">
+    <meta name="keywords" content="nginx的安装, 技术博客分享">
+    <meta name="description" content="安装Nginx下载软件包wget wget http://nginx.org/download/nginx-1.18.0.tar.gz
+
+安装依赖yum -y install gcc pcre-devel zlib-devel openss">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>picgo-gitee搭建个人图床 | 技术博客分享</title>
+    <title>nginx的安装 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -52,8 +54,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -442,12 +444,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pica.zhimg.com/80/v2-4dc929a46e9fb56c13911592af0be9dc_1440w.jpg?source=1940ef5c')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">picgo-gitee搭建个人图床</h1>
+                    <h1 class="description center-align post-title">nginx的安装</h1>
                 </div>
             </div>
         </div>
@@ -471,8 +473,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/gitee/">
-                                <span class="chip bg-color">gitee</span>
+                            <a href="/tags/nginx/">
+                                <span class="chip bg-color">nginx</span>
                             </a>
                         
                     </div>
@@ -483,8 +485,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git/" class="post-category">
-                                git
+                            <a href="/categories/nginx/" class="post-category">
+                                nginx
                             </a>
                         
                     </div>
@@ -510,14 +512,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    454
+                    598
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -537,47 +539,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在搭建个人博客时，其中markdown语法作为编写博客的主要语言。但由于本地编写时加入的图片只能在本地显示，为了是博客上传的GitHub或者gitee上托管运行依然能够正常显示图片。这里我们需要用到图床。图床（Image Hosting Service）是一种在线服务，用于存储和托管图片。它允许用户将自己的图片上传到互联网上，并获取图片的链接，以便在网页、博客或论坛等地方分享或嵌入图片。图床的解决方案也非常多，网上比较多的解决方案除了免费图床（不稳定）以外就是采用对象存储（OSS）在或者搭建自己的云服务器图床（这个我会在宁外一篇博客讲诉）。我这里采用的是Gitee搭建自己的图床。好处是免费，国内服务器，无需科学上网 环境。</p>
-<h2 id="gitee上创建存放博客的仓库"><a href="#gitee上创建存放博客的仓库" class="headerlink" title="gitee上创建存放博客的仓库"></a>gitee上创建存放博客的仓库</h2><h3 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517152517240.png"/>
+                <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> <span class="token function">wget</span> http://nginx.org/download/nginx-1.18.0.tar.gz
+</code></pre>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel
+</code></pre>
+<h3 id="安装Nginx-1"><a href="#安装Nginx-1" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#解压</span>
+<span class="token function">tar</span> -zxvf nginx-1.18.0.tar.gz
 
-<img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517152835914.png"/>
-
-<img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517153030763.png"/>
-
-<p>注意：一定的开源，不然后面图片上传成功了，但是却使用不了</p>
-<h3 id="私人令牌申请"><a href="#私人令牌申请" class="headerlink" title="私人令牌申请"></a>私人令牌申请</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517153418459.png"/>
-
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171702911.png" alt="image-20230517170252529"></p>
-<h2 id="安装picgo"><a href="#安装picgo" class="headerlink" title="安装picgo"></a>安装picgo</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0">https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0</a></p>
-<p>1.下载如下包</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171645977.png" alt="image-20230517164524066"></p>
-<p>2.默认安装即可</p>
-<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305180934165.png"/>
-
-<h3 id="上传环境配置"><a href="#上传环境配置" class="headerlink" title="上传环境配置"></a>上传环境配置</h3><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171700432.png" alt="image-20230517170036028"></p>
+<span class="token comment" spellcheck="true">#进入NG目录</span>
+<span class="token function">cd</span> ./nginx-1.18.0
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#配置</span>
+./configure --prefix<span class="token operator">=</span>/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+</code></pre>
+<p>这条命令是用于配置 Nginx 编译选项的命令，通过指定不同的选项来启用或禁用特定的模块和功能。下面是对每个选项的解读：</p>
 <ul>
-<li><p>repo:用户名/仓库名，或者 gitee.com:后面的部分</p>
-</li>
-<li><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171728434.png" alt="image-20230517172849525"></p>
-</li>
-<li><p>branch:分支,写master即可</p>
-</li>
-<li><p>token:私人令牌生成的密钥</p>
-</li>
-<li><p>path:图片上传到 Gitee 存储的位置,可以写 / 代表在根目录存储,也可以在仓库创建文件夹,这里写文件夹的名字</p>
-</li>
+<li><code>--prefix=/usr/local/nginx</code>：指定 Nginx 安装的目录前缀为 <code>/usr/local/nginx</code>。这意味着编译完成后，Nginx 将安装在该路径下。</li>
+<li><code>--with-http_stub_status_module</code>：启用了 HTTP Stub Status 模块。该模块提供了一个简单的状态页面，可以查看 Nginx 的基本运行状态，如当前活动的连接数、请求处理统计等。</li>
+<li><code>--with-http_ssl_module</code>：启用了 HTTP SSL 模块。该模块提供了对 HTTPS 协议的支持，使 Nginx 能够处理安全的加密连接，并支持 SSL/TLS 协议。</li>
 </ul>
-<h3 id="测试上传"><a href="#测试上传" class="headerlink" title="测试上传"></a>测试上传</h3><p>设置gitee上传</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171710151.png" alt="image-20230517170958999"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171711396.png" alt="image-20230517171059996"></p>
-<h2 id="Typora中使用"><a href="#Typora中使用" class="headerlink" title="Typora中使用"></a>Typora中使用</h2><h3 id="在picgo中查看上传图片"><a href="#在picgo中查看上传图片" class="headerlink" title="在picgo中查看上传图片"></a>在picgo中查看上传图片</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171723155.png"/>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#编译</span>
+<span class="token function">make</span>
+<span class="token comment" spellcheck="true">#安装</span>
+<span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
+<h2 id="Nginx命令"><a href="#Nginx命令" class="headerlink" title="Nginx命令"></a>Nginx命令</h2><h3 id="启动-amp-停止"><a href="#启动-amp-停止" class="headerlink" title="启动&amp;停止"></a>启动&amp;停止</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#启动</span>
+/usr/local/nginx/sbin/nginx
 
-<h3 id="图片的使用"><a href="#图片的使用" class="headerlink" title="图片的使用"></a>图片的使用</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>使用Markdown方式</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171714096.png" alt="image-20230517171437064"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171720318.png" alt="image-20230517172049470"></p>
-<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>使用HTML方式</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171723155.png" alt="image-20230517172326123"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171721032.png" alt="image-20230517172134582"></p>
+<span class="token comment" spellcheck="true">#重新加载配置</span>
+/usr/local/nginx/sbin/nginx -s reload
+
+<span class="token comment" spellcheck="true">#停止</span>
+/usr/local/nginx/sbin/nginx -s stop
+</code></pre>
+<h3 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h3><ul>
+<li>以特定目录下的配置文件启动：nginx -c /特定目录/nginx.conf</li>
+<li>重新加载配置：nginx -s reload 执行这个命令后，master进程会等待worker进程处理完当前请求，然后根据最新配置重新创建新的worker进程，完成Nginx配置的热更新。</li>
+<li>立即停止服务：nginx -s stop</li>
+<li>从容停止服务：nginx -s quit 执行该命令后，Nginx在完成当前工作任务后再停止。</li>
+<li>检查配置文件是否正确：nginx -t</li>
+<li>检查特定目录的配置文件是否正确：nginx -t -c /特定目录/nginx.conf</li>
+</ul>
+<h2 id="配置systemd方式管理NG"><a href="#配置systemd方式管理NG" class="headerlink" title="配置systemd方式管理NG"></a>配置systemd方式管理NG</h2><pre class=" language-bash"><code class="language-bash">vim /etc/systemd/system/nginx.service
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+Description<span class="token operator">=</span>The Nginx HTTP Server
+After<span class="token operator">=</span>network.target remote-fs.target nss-lookup.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+Type<span class="token operator">=</span>forking
+PIDFile<span class="token operator">=</span>/usr/local/nginx/logs/nginx.pid
+ExecStart<span class="token operator">=</span>/usr/local/nginx/sbin/nginx
+ExecReload<span class="token operator">=</span>/usr/local/nginx/sbin/nginx -s reload
+ExecStop<span class="token operator">=</span>/usr/local/nginx/sbin/nginx -s stop
+PrivateTmp<span class="token operator">=</span>true
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+WantedBy<span class="token operator">=</span>multi-user.target
+</code></pre>
+<h3 id="启动-amp-停止-1"><a href="#启动-amp-停止-1" class="headerlink" title="启动&amp;停止"></a>启动&amp;停止</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class=" language-shell"><code class="language-shell">systemctl start nginx.service　#（启动nginx服务）
+systemctl stop nginx.service　#（停止nginx服务）
+systemctl enable nginx.service #（设置开机自启动）
+systemctl disable nginx.service #（停止开机自启动）
+systemctl status nginx.service #（查看服务当前状态）
+systemctl restart nginx.service　#（重新启动服务）
+systemctl list-units --type=service #（查看所有已启动的服务）
+</code></pre>
 
                 
             </div>
@@ -604,7 +631,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/18/picgo-gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">http://ypbhbc.gitee.io/2023/05/18/picgo-gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/">http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -642,8 +669,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/gitee/">
-                                    <span class="chip bg-color">gitee</span>
+                                <a href="/tags/nginx/">
+                                    <span class="chip bg-color">nginx</span>
                                 </a>
                             
                         </div>
@@ -989,12 +1016,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/18/picgo-gitee%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
+                <a href="/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/">
                     <div class="card-image">
                         
                         <img src="https://pica.zhimg.com/80/v2-4dc929a46e9fb56c13911592af0be9dc_1440w.jpg?source=1940ef5c" class="responsive-img" alt="picgo-gitee搭建个人图床">
@@ -1009,9 +1035,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1024,7 +1050,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1043,13 +1068,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/18/nginx%E7%9A%84%E5%AE%89%E8%A3%85/">
+                <a href="/2023/05/18/git-chang-yong-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="nginx的安装">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Git常用命令">
                         
-                        <span class="card-title">nginx的安装</span>
+                        <span class="card-title">Git常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1066,8 +1091,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/nginx/" class="post-category">
-                                    nginx
+                            <a href="/categories/git/" class="post-category">
+                                    git
                                 </a>
                             
                             
@@ -1077,8 +1102,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -1203,6 +1228,60 @@
 
 
     <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
     
 
     <div class="container row center-align"
