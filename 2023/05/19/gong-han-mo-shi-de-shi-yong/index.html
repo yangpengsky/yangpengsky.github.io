@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="nginx的安装, 技术博客分享">
-    <meta name="description" content="安装Nginx下载软件包wget wget http://nginx.org/download/nginx-1.18.0.tar.gz
-
-安装依赖yum -y install gcc pcre-devel zlib-devel openss">
+    <meta name="keywords" content="工厂模式的使用, 技术博客分享">
+    <meta name="description" content="工厂模式的定义​        工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>nginx的安装 | 技术博客分享</title>
+    <title>工厂模式的使用 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -381,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">nginx的安装</h1>
+                    <h1 class="description center-align post-title">工厂模式的使用</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +408,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/nginx/">
-                                <span class="chip bg-color">nginx</span>
+                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                                <span class="chip bg-color">设计模式</span>
                             </a>
                         
                     </div>
@@ -422,8 +420,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/nginx/" class="post-category">
-                                nginx
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                设计模式
+                            </a>
+                        
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                工厂模式
                             </a>
                         
                     </div>
@@ -435,21 +437,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-18
+                    2023-05-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-18
+                    2023-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    598
+                    580
                 </div>
                 
 
@@ -476,72 +478,69 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> <span class="token function">wget</span> http://nginx.org/download/nginx-1.18.0.tar.gz
-</code></pre>
-<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel
-</code></pre>
-<h3 id="安装Nginx-1"><a href="#安装Nginx-1" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#解压</span>
-<span class="token function">tar</span> -zxvf nginx-1.18.0.tar.gz
+                <h2 id="工厂模式的定义"><a href="#工厂模式的定义" class="headerlink" title="工厂模式的定义"></a>工厂模式的定义</h2><p>​        工厂模式（Factory Pattern）是 Java 中最常用的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&spm=1001.2101.3001.7020">设计模式</a>之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。<br>在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
+<p>​        工厂顾名思义就是创建产品，根据产品是具体产品还是具体工厂可分为简单工厂模式和工厂方法模式，根据工厂的抽象程度可分为<strong>工厂方法模式</strong>和<strong>抽象工厂模式</strong>。该模式用于封装和管理对象的创建，是一种创建型模式。本文从一个具体的例子逐步深入分析，来体会三种工厂模式的应用场景和利弊。</p>
+<p>​        通过工厂模式，将创建产品实例的权利移交工厂，我们不再通过new来创建我们所需的对象，而是通过工厂来获取我们需要的产品。降低了产品使用者与使用者之间的耦合关系</p>
+<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305191447001.png"/>
 
-<span class="token comment" spellcheck="true">#进入NG目录</span>
-<span class="token function">cd</span> ./nginx-1.18.0
+<p>下面我们使用手机生产来讲解该模式：</p>
+<p>Phone类：手机标准规范类(AbstractProduct)</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Phone</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#配置</span>
-./configure --prefix<span class="token operator">=</span>/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+<p>MiPhone类：制造小米手机（Product1）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MiPhone</span> <span class="token keyword">implements</span> <span class="token class-name">Phone</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">MiPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// TODO Auto-generated method stub</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"make xiaomi phone!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>这条命令是用于配置 Nginx 编译选项的命令，通过指定不同的选项来启用或禁用特定的模块和功能。下面是对每个选项的解读：</p>
-<ul>
-<li><code>--prefix=/usr/local/nginx</code>：指定 Nginx 安装的目录前缀为 <code>/usr/local/nginx</code>。这意味着编译完成后，Nginx 将安装在该路径下。</li>
-<li><code>--with-http_stub_status_module</code>：启用了 HTTP Stub Status 模块。该模块提供了一个简单的状态页面，可以查看 Nginx 的基本运行状态，如当前活动的连接数、请求处理统计等。</li>
-<li><code>--with-http_ssl_module</code>：启用了 HTTP SSL 模块。该模块提供了对 HTTPS 协议的支持，使 Nginx 能够处理安全的加密连接，并支持 SSL/TLS 协议。</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#编译</span>
-<span class="token function">make</span>
-<span class="token comment" spellcheck="true">#安装</span>
-<span class="token function">make</span> <span class="token function">install</span>
+<p>IPhone类：制造苹果手机（Product2）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IPhone</span> <span class="token keyword">implements</span> <span class="token class-name">Phone</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">IPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// TODO Auto-generated method stub</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"make iphone!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="Nginx命令"><a href="#Nginx命令" class="headerlink" title="Nginx命令"></a>Nginx命令</h2><h3 id="启动-amp-停止"><a href="#启动-amp-停止" class="headerlink" title="启动&amp;停止"></a>启动&amp;停止</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#启动</span>
-/usr/local/nginx/sbin/nginx
+<p>PhoneFactory类：手机代工厂（Factory）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PhoneFactory</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Phone <span class="token function">makePhone</span><span class="token punctuation">(</span>String phoneType<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>phoneType<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"MiPhone"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MiPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>phoneType<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">"iPhone"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">IPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>演示</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> arg<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+       PhoneFactory factory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PhoneFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       Phone miPhone <span class="token operator">=</span> factory<span class="token punctuation">.</span><span class="token function">makePhone</span><span class="token punctuation">(</span><span class="token string">"MiPhone"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// make xiaomi phone!</span>
+       IPhone iPhone <span class="token operator">=</span> <span class="token punctuation">(</span>IPhone<span class="token punctuation">)</span>factory<span class="token punctuation">.</span><span class="token function">makePhone</span><span class="token punctuation">(</span><span class="token string">"iPhone"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// make iphone!</span>
+   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">#重新加载配置</span>
-/usr/local/nginx/sbin/nginx -s reload
+</code></pre>
+<h2 id="工厂方法模式-Factory-Method"><a href="#工厂方法模式-Factory-Method" class="headerlink" title="工厂方法模式(Factory Method)"></a>工厂方法模式(Factory Method)</h2><p>和简单工厂模式中工厂负责生产所有产品相比，工厂方法模式将生成具体产品的任务分发给具体的产品工厂，其UML<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%B1%BB%E5%9B%BE&spm=1001.2101.3001.7020">类图</a>如下</p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305191448577.png"/>
 
-<span class="token comment" spellcheck="true">#停止</span>
-/usr/local/nginx/sbin/nginx -s stop
-</code></pre>
-<h3 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h3><ul>
-<li>以特定目录下的配置文件启动：nginx -c /特定目录/nginx.conf</li>
-<li>重新加载配置：nginx -s reload 执行这个命令后，master进程会等待worker进程处理完当前请求，然后根据最新配置重新创建新的worker进程，完成Nginx配置的热更新。</li>
-<li>立即停止服务：nginx -s stop</li>
-<li>从容停止服务：nginx -s quit 执行该命令后，Nginx在完成当前工作任务后再停止。</li>
-<li>检查配置文件是否正确：nginx -t</li>
-<li>检查特定目录的配置文件是否正确：nginx -t -c /特定目录/nginx.conf</li>
-</ul>
-<h2 id="配置systemd方式管理NG"><a href="#配置systemd方式管理NG" class="headerlink" title="配置systemd方式管理NG"></a>配置systemd方式管理NG</h2><pre class=" language-bash"><code class="language-bash">vim /etc/systemd/system/nginx.service
-</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
-Description<span class="token operator">=</span>The Nginx HTTP Server
-After<span class="token operator">=</span>network.target remote-fs.target nss-lookup.target
 
-<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
-Type<span class="token operator">=</span>forking
-PIDFile<span class="token operator">=</span>/usr/local/nginx/logs/nginx.pid
-ExecStart<span class="token operator">=</span>/usr/local/nginx/sbin/nginx
-ExecReload<span class="token operator">=</span>/usr/local/nginx/sbin/nginx -s reload
-ExecStop<span class="token operator">=</span>/usr/local/nginx/sbin/nginx -s stop
-PrivateTmp<span class="token operator">=</span>true
 
-<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
-WantedBy<span class="token operator">=</span>multi-user.target
-</code></pre>
-<h3 id="启动-amp-停止-1"><a href="#启动-amp-停止-1" class="headerlink" title="启动&amp;停止"></a>启动&amp;停止</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class=" language-shell"><code class="language-shell">systemctl start nginx.service　#（启动nginx服务）
-systemctl stop nginx.service　#（停止nginx服务）
-systemctl enable nginx.service #（设置开机自启动）
-systemctl disable nginx.service #（停止开机自启动）
-systemctl status nginx.service #（查看服务当前状态）
-systemctl restart nginx.service　#（重新启动服务）
-systemctl list-units --type=service #（查看所有已启动的服务）
-</code></pre>
 
                 
             </div>
@@ -568,7 +567,7 @@ systemctl list-units --type=service #（查看所有已启动的服务）
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/">http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/">http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,8 +605,8 @@ systemctl list-units --type=service #（查看所有已启动的服务）
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/nginx/">
-                                    <span class="chip bg-color">nginx</span>
+                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                                    <span class="chip bg-color">设计模式</span>
                                 </a>
                             
                         </div>
@@ -953,49 +952,52 @@ systemctl list-units --type=service #（查看所有已启动的服务）
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/">
+                <a href="/2023/05/19/gong-han-mo-shi-de-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://www.ypsky.xyz/myblog/images/2023/05/202305181514109.webp" class="responsive-img" alt="typora-vue-theme主题介绍">
                         
-                        <span class="card-title">typora-vue-theme主题介绍</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="工厂模式的使用">
+                        
+                        <span class="card-title">工厂模式的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    工厂模式
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -1009,19 +1011,18 @@ systemctl list-units --type=service #（查看所有已启动的服务）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/18/git-chang-yong-ming-ling/">
+                <a href="/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/">
                     <div class="card-image">
                         
+                        <img src="https://pica.zhimg.com/80/v2-4dc929a46e9fb56c13911592af0be9dc_1440w.jpg?source=1940ef5c" class="responsive-img" alt="picgo-gitee搭建个人图床">
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Git常用命令">
-                        
-                        <span class="card-title">Git常用命令</span>
+                        <span class="card-title">picgo-gitee搭建个人图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            描述
                         
                     </div>
                     <div class="publish-info">
@@ -1043,8 +1044,8 @@ systemctl list-units --type=service #（查看所有已启动的服务）
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/gitee/">
+                        <span class="chip bg-color">gitee</span>
                     </a>
                     
                 </div>
