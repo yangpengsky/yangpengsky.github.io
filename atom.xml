@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-19T06:54:08.877Z</updated>
+  <updated>2023-05-19T07:11:58.519Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/</id>
     <published>2023-05-19T06:49:57.000Z</published>
-    <updated>2023-05-19T06:54:08.877Z</updated>
+    <updated>2023-05-19T07:11:58.519Z</updated>
     
     
       
@@ -40,6 +40,8 @@
     
     
     <category term="设计模式" scheme="http://ypbhbc.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
   </entry>
   
