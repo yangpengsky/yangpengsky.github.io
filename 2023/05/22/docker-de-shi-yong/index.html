@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="docker的使用, 技术博客分享">
-    <meta name="description" content="docker安装1.卸载旧版本sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-     ">
+    <meta name="description" content="前言Docker是一个开源的容器化平台，用于构建、部署和运行应用程序。它提供了一种轻量级、可移植且自包含的容器化技术，使应用程序在不同的环境中具有一致的运行方式。
+特点和功能
+容器化：Docker利用容器化技术，将应用程序及其依赖项打包到一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -450,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    692
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -477,7 +476,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="1-卸载旧版本"><a href="#1-卸载旧版本" class="headerlink" title="1.卸载旧版本"></a>1.卸载旧版本</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum remove docker \
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Docker是一个开源的容器化平台，用于构建、部署和运行应用程序。它提供了一种轻量级、可移植且自包含的容器化技术，使应用程序在不同的环境中具有一致的运行方式。</p>
+<h2 id="特点和功能"><a href="#特点和功能" class="headerlink" title="特点和功能"></a>特点和功能</h2><ol>
+<li>容器化：Docker利用容器化技术，将应用程序及其依赖项打包到一个独立的容器中。每个容器都是一个隔离的运行环境，具有自己的文件系统、网络和进程空间。容器化使得应用程序可以在不同的环境中快速部署和运行，而不受底层操作系统和硬件的限制。</li>
+<li>轻量级和快速启动：Docker容器相对于传统的虚拟机更加轻量级，因为它们共享宿主机的操作系统内核。这使得容器的启动和停止过程非常快速，几乎可以在秒级完成。</li>
+<li>可移植性：Docker容器可以在不同的环境中运行，包括开发、测试和生产环境。容器提供了一个一致的运行时环境，确保应用程序在不同的平台和操作系统上具有相同的行为。</li>
+<li>高度可扩展：Docker容器可以很容易地进行水平扩展，通过创建和部署多个容器实例来处理高负载和大规模的应用程序。Docker还提供了一些工具和功能来管理容器集群，如Docker Swarm和Kubernetes。</li>
+<li>镜像管理：Docker使用镜像来构建容器。镜像是一个只读的文件，包含了运行应用程序所需的所有文件和依赖项。Docker提供了一个集中的镜像仓库（Docker Hub）和本地镜像仓库，使镜像的创建、共享和管理变得简单。</li>
+<li>开放和生态系统：Docker是一个开放的平台，有一个庞大的社区支持。它提供了丰富的工具、API和插件生态系统，使开发人员可以根据自己的需求扩展和定制Docker。</li>
+</ol>
+<p>Docker的出现极大地改变了应用程序的交付和部署方式。它简化了应用程序的打包、分发和管理过程，提高了开发和运维的效率，同时提供了更高的可移植性和可扩展性。</p>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="1-卸载旧版本"><a href="#1-卸载旧版本" class="headerlink" title="1.卸载旧版本"></a>1.卸载旧版本</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum remove docker \
                   docker-client \
                   docker-client-latest \
                   docker-common \
@@ -980,18 +989,17 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/22/docker-de-shi-yong/">
+                <a href="/2023/05/22/redis-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="docker的使用">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="redis使用">
                         
-                        <span class="card-title">docker的使用</span>
+                        <span class="card-title">redis使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1001,9 +1009,9 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1016,12 +1024,15 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/docker/">
                         <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
                 </div>
@@ -1269,7 +1280,7 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.4k</span>
+                        class="white-color">7.4k</span>
             
             
             
