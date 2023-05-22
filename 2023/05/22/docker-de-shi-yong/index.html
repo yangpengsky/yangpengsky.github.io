@@ -450,7 +450,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    698
+                    692
                 </div>
                 
 
@@ -544,28 +544,28 @@ EOF
 <span class="token function">sudo</span> systemctl restart docker
 </code></pre>
 <h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><p>1.要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
-<pre><code>docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=&lt;your_password&gt; redis
+<pre class=" language-bash"><code class="language-bash">docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> redis
 </code></pre>
 <p>2.部署MySQL</p>
-<pre><code>docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=&lt;your_password&gt; -d mysql
+<pre class=" language-bash"><code class="language-bash">docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> -d mysql
 </code></pre>
 <p>3.部署minio</p>
-<pre><code>docker search minio
+<pre class=" language-bash"><code class="language-bash">docker search minio
 
 docker pull minio/minio
 
 docker run  -p 9000:9000 -p 9090:9090 --name minio \
- -d --restart=always \
- -e MINIO_ACCESS_KEY=admin \
- -e MINIO_SECRET_KEY=2022@minio \
+ -d --restart<span class="token operator">=</span>always \
+ -e MINIO_ACCESS_KEY<span class="token operator">=</span>admin \
+ -e MINIO_SECRET_KEY<span class="token operator">=</span>2022@minio \
  -v /usr/dockersys/minio/data:/data \
  -v /usr/dockersys/minio/config:/root/.minio \
-  minio/minio server /data  --console-address &quot;:9000&quot; --address &quot;:9090&quot;
+  minio/minio server /data  --console-address <span class="token string">":9000"</span> --address <span class="token string">":9090"</span>
 </code></pre>
-<pre><code>-d    是后台运行
+<pre class=" language-bash"><code class="language-bash">-d    是后台运行
 --name    指定容器名字
 -p    指定端口，新的指定两个，后面一个是后台运行需要的
--v    挂载本地文件，后面上传的数据会在`/usr/dockersys/minio/data`看到
+-v    挂载本地文件，后面上传的数据会在<span class="token variable"><span class="token variable">`</span>/usr/dockersys/minio/data<span class="token variable">`</span></span>看到
 -e MINIO_ACCESS_KEY    管理界面的登录名
 -e MINIO_SECRET_KEY    管理界面的登录密码
 </code></pre>
