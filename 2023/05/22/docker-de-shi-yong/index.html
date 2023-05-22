@@ -450,7 +450,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    526
+                    560
                 </div>
                 
 
@@ -534,6 +534,15 @@ yum -y <span class="token function">install</span> docker-ce-18.03.1.ce
 <li><code>docker-compose up</code>：使用Docker Compose启动应用程序。</li>
 <li><code>docker-compose down</code>：使用Docker Compose停止并删除应用程序的容器。</li>
 </ul>
+<h2 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/docker
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;</span>-<span class="token string">'EOF'</span>
+<span class="token punctuation">{</span>
+  <span class="token string">"registry-mirrors"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token string">"https://3b6vt78q.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+EOF
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart docker
+</code></pre>
 <h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><ol>
 <li><p>要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
 <pre><code>docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=&lt;your_password&gt; redis
