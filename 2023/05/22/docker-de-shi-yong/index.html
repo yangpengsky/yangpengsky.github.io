@@ -450,14 +450,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    560
+                    698
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -543,16 +543,32 @@ EOF
 <span class="token function">sudo</span> systemctl daemon-reload
 <span class="token function">sudo</span> systemctl restart docker
 </code></pre>
-<h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><ol>
-<li><p>要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
+<h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><p>1.要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
 <pre><code>docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=&lt;your_password&gt; redis
 </code></pre>
-</li>
-<li><p>部署MySQL</p>
+<p>2.部署MySQL</p>
 <pre><code>docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=&lt;your_password&gt; -d mysql
 </code></pre>
-</li>
-</ol>
+<p>3.部署minio</p>
+<pre><code>docker search minio
+
+docker pull minio/minio
+
+docker run  -p 9000:9000 -p 9090:9090 --name minio \
+ -d --restart=always \
+ -e MINIO_ACCESS_KEY=admin \
+ -e MINIO_SECRET_KEY=2022@minio \
+ -v /usr/dockersys/minio/data:/data \
+ -v /usr/dockersys/minio/config:/root/.minio \
+  minio/minio server /data  --console-address &quot;:9000&quot; --address &quot;:9090&quot;
+</code></pre>
+<pre><code>-d    是后台运行
+--name    指定容器名字
+-p    指定端口，新的指定两个，后面一个是后台运行需要的
+-v    挂载本地文件，后面上传的数据会在`/usr/dockersys/minio/data`看到
+-e MINIO_ACCESS_KEY    管理界面的登录名
+-e MINIO_SECRET_KEY    管理界面的登录密码
+</code></pre>
 
                 
             </div>
@@ -1253,7 +1269,7 @@ EOF
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.2k</span>
+                        class="white-color">5.4k</span>
             
             
             
