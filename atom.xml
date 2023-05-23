@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-22T07:12:34.820Z</updated>
+  <updated>2023-05-23T02:36:49.824Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java统一结果返回和异常处理</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/</id>
+    <published>2023-05-23T02:23:11.000Z</published>
+    <updated>2023-05-23T02:36:49.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>redis使用</title>
@@ -89,9 +116,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
     <category term="chatGPT" scheme="http://ypbhbc.gitee.io/tags/chatGPT/"/>
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
   </entry>
   
@@ -149,9 +176,9 @@
     <category term="工厂模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     
     
-    <category term="设计模式" scheme="http://ypbhbc.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
     <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="设计模式" scheme="http://ypbhbc.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

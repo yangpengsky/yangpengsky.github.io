@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="docker的使用, 技术博客分享">
-    <meta name="description" content="前言Docker是一个开源的容器化平台，用于构建、部署和运行应用程序。它提供了一种轻量级、可移植且自包含的容器化技术，使应用程序在不同的环境中具有一致的运行方式。
-特点和功能
-容器化：Docker利用容器化技术，将应用程序及其依赖项打包到一">
+    <meta name="keywords" content="Java统一结果返回和异常处理, 技术博客分享">
+    <meta name="description" content="前言在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。
+统一结果返回指的是将方法的执行结果封装">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>docker的使用 | 技术博客分享</title>
+    <title>Java统一结果返回和异常处理 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -381,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">docker的使用</h1>
+                    <h1 class="description center-align post-title">Java统一结果返回和异常处理</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -422,8 +421,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/docker/" class="post-category">
-                                docker
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
+                            </a>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -435,28 +438,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-05-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-05-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    875
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    3 分
                 </div>
                 
 
@@ -476,107 +479,163 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Docker是一个开源的容器化平台，用于构建、部署和运行应用程序。它提供了一种轻量级、可移植且自包含的容器化技术，使应用程序在不同的环境中具有一致的运行方式。</p>
-<h2 id="特点和功能"><a href="#特点和功能" class="headerlink" title="特点和功能"></a>特点和功能</h2><ol>
-<li>容器化：Docker利用容器化技术，将应用程序及其依赖项打包到一个独立的容器中。每个容器都是一个隔离的运行环境，具有自己的文件系统、网络和进程空间。容器化使得应用程序可以在不同的环境中快速部署和运行，而不受底层操作系统和硬件的限制。</li>
-<li>轻量级和快速启动：Docker容器相对于传统的虚拟机更加轻量级，因为它们共享宿主机的操作系统内核。这使得容器的启动和停止过程非常快速，几乎可以在秒级完成。</li>
-<li>可移植性：Docker容器可以在不同的环境中运行，包括开发、测试和生产环境。容器提供了一个一致的运行时环境，确保应用程序在不同的平台和操作系统上具有相同的行为。</li>
-<li>高度可扩展：Docker容器可以很容易地进行水平扩展，通过创建和部署多个容器实例来处理高负载和大规模的应用程序。Docker还提供了一些工具和功能来管理容器集群，如Docker Swarm和Kubernetes。</li>
-<li>镜像管理：Docker使用镜像来构建容器。镜像是一个只读的文件，包含了运行应用程序所需的所有文件和依赖项。Docker提供了一个集中的镜像仓库（Docker Hub）和本地镜像仓库，使镜像的创建、共享和管理变得简单。</li>
-<li>开放和生态系统：Docker是一个开放的平台，有一个庞大的社区支持。它提供了丰富的工具、API和插件生态系统，使开发人员可以根据自己的需求扩展和定制Docker。</li>
-</ol>
-<p>Docker的出现极大地改变了应用程序的交付和部署方式。它简化了应用程序的打包、分发和管理过程，提高了开发和运维的效率，同时提供了更高的可移植性和可扩展性。</p>
-<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><h3 id="1-卸载旧版本"><a href="#1-卸载旧版本" class="headerlink" title="1.卸载旧版本"></a>1.卸载旧版本</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。</p>
+<p>统一结果返回指的是将方法的执行结果封装在一个统一的数据结构中进行返回。通常使用一个包含两个字段的类，一个表示执行结果的状态（如成功、失败、异常等），另一个表示返回的数据或错误信息。这样可以减少方法返回值的种类，提高代码的可读性和可维护性。</p>
+<p>异常处理是指通过捕获和处理异常，避免程序在运行过程中出现崩溃或不可预料的错误。Java中的异常处理机制使用了try-catch语句块。在try块中放置可能引发异常的代码，而在catch块中捕获并处理异常。通过使用catch块，可以在发生异常时采取相应的措施，如记录日志、返回错误信息或进行其他处理操作。</p>
+<h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><p>以SpringBoot项目为例，导入包</p>
+<pre class=" language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.18.20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="2-安装所需要的包"><a href="#2-安装所需要的包" class="headerlink" title="2.安装所需要的包"></a>2.安装所需要的包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> -y yum-utils
+<p>创建统一信息返回类</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@ToString</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Result</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//    返回码</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//    返回提示</span>
+    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//    返回数据</span>
+    <span class="token keyword">private</span> T data<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Result</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//    成功</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"成功"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//失败</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Result <span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="3-设置镜像仓库"><a href="#3-设置镜像仓库" class="headerlink" title="3.设置镜像仓库"></a>3.设置镜像仓库</h3><pre class=" language-bash"><code class="language-bash">
-yum-config-manager --add-repo http://download.docker.com/linux/centos/docker-ce.repo（中央仓库）
- 
-yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo（阿里仓库）
-</code></pre>
-<h3 id="4-选择docker版本并安装"><a href="#4-选择docker版本并安装" class="headerlink" title="4.选择docker版本并安装"></a>4.选择docker版本并安装</h3><pre class=" language-bash"><code class="language-bash">yum list docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
-</code></pre>
-<h3 id="5-选择一个版本并安装："><a href="#5-选择一个版本并安装：" class="headerlink" title="5.选择一个版本并安装："></a>5.选择一个版本并安装：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># yum install docker-ce-版本号</span>
-yum -y <span class="token function">install</span> docker-ce-18.03.1.ce
-</code></pre>
-<h3 id="6-查看安装成功"><a href="#6-查看安装成功" class="headerlink" title="6.查看安装成功"></a>6.查看安装成功</h3><pre class=" language-bash"><code class="language-bash">docker info
-</code></pre>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230522103710528.png" alt="image-20230522103710528"></p>
-<h2 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h2><h3 id="1-镜像相关命令："><a href="#1-镜像相关命令：" class="headerlink" title="1.镜像相关命令："></a>1.镜像相关命令：</h3><ul>
-<li><p>docker images：列出本地的镜像列表。</p>
-</li>
-<li><p>docker pull <image_name>：从Docker镜像仓库中拉取镜像。</p>
-</li>
-<li><p>docker build -t <image_name> <dockerfile_path>`：根据Dockerfile构建镜像。</p>
-</li>
-<li><p>docker push <image_name>：将镜像推送到Docker镜像仓库。</p>
-</li>
-</ul>
-<h3 id="2-容器相关命令："><a href="#2-容器相关命令：" class="headerlink" title="2.容器相关命令："></a>2.容器相关命令：</h3><ul>
-<li><code>docker run &lt;image_name&gt;</code>：创建并运行一个基于镜像的容器。</li>
-<li><code>docker ps</code>：列出当前正在运行的容器列表。</li>
-<li><code>docker stop &lt;container_id/container_name&gt;</code>：停止一个容器的运行。</li>
-<li><code>docker start &lt;container_id/container_name&gt;</code>：启动一个已停止的容器。</li>
-<li><code>docker restart &lt;container_id/container_name&gt;</code>：重启一个容器。</li>
-<li><code>docker rm &lt;container_id/container_name&gt;</code>：删除一个容器。</li>
-<li><code>docker exec -it &lt;container_id/container_name&gt; &lt;command&gt;</code>：在运行的容器中执行命令。</li>
-</ul>
-<h3 id="3-网络相关命令："><a href="#3-网络相关命令：" class="headerlink" title="3.网络相关命令："></a>3.网络相关命令：</h3><ul>
-<li><code>docker network ls</code>：列出所有的网络。</li>
-<li><code>docker network create &lt;network_name&gt;</code>：创建一个自定义网络。</li>
-<li><code>docker network connect &lt;network_name&gt; &lt;container_id/container_name&gt;</code>：将容器连接到指定的网络。</li>
-<li><code>docker network disconnect &lt;network_name&gt; &lt;container_id/container_name&gt;</code>：从指定的网络中断开容器连接。</li>
-</ul>
-<h3 id="4-日志和信息相关命令："><a href="#4-日志和信息相关命令：" class="headerlink" title="4.日志和信息相关命令："></a>4.日志和信息相关命令：</h3><ul>
-<li><code>docker logs &lt;container_id/container_name&gt;</code>：查看容器的日志。</li>
-<li><code>docker inspect &lt;container_id/container_name&gt;</code>：获取容器的详细信息。</li>
-</ul>
-<h3 id="5-其他常用命令："><a href="#5-其他常用命令：" class="headerlink" title="5.其他常用命令："></a>5.其他常用命令：</h3><ul>
-<li><code>docker-compose up</code>：使用Docker Compose启动应用程序。</li>
-<li><code>docker-compose down</code>：使用Docker Compose停止并删除应用程序的容器。</li>
-</ul>
-<h2 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/docker
-<span class="token function">sudo</span> <span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;</span>-<span class="token string">'EOF'</span>
-<span class="token punctuation">{</span>
-  <span class="token string">"registry-mirrors"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token string">"https://3b6vt78q.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
+<p>创建全局统一异常处理类</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token annotation punctuation">@RestControllerAdvice</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span>Exception<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">exceptionHandler</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//这里先判断拦截到的Exception是不是我们自定义的异常类型</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">AppException</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            AppException appException <span class="token operator">=</span> <span class="token punctuation">(</span>AppException<span class="token punctuation">)</span> e<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>appException<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appException<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//如果拦截的异常不是我们自定义的异常(例如：数据库主键冲突)</span>
+        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
 <span class="token punctuation">}</span>
-EOF
-<span class="token function">sudo</span> systemctl daemon-reload
-<span class="token function">sudo</span> systemctl restart docker
 </code></pre>
-<h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><p>1.要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
-<pre class=" language-bash"><code class="language-bash">docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> redis
-</code></pre>
-<p>2.部署MySQL</p>
-<pre class=" language-bash"><code class="language-bash">docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> -d mysql
-</code></pre>
-<p>3.部署minio</p>
-<pre class=" language-bash"><code class="language-bash">docker search minio
+<p>创建一个枚举类型</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token comment" spellcheck="true">//这个枚举类中定义的都是跟业务有关的异常</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> AppExceptionCodeMsg <span class="token punctuation">{</span>
 
-docker pull minio/minio
+    <span class="token function">INVALID_CODE</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token string">"验证码无效"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">USERNAME_NOT_EXISTS</span><span class="token punctuation">(</span><span class="token number">10001</span><span class="token punctuation">,</span><span class="token string">"用户名不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">USER_CREDIT_NOT_ENOUTH</span><span class="token punctuation">(</span><span class="token number">10002</span><span class="token punctuation">,</span><span class="token string">"用户积分不足"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">FAIL</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"失败"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">ERROR</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"服务器异常"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">UNAUTHORIZED</span><span class="token punctuation">(</span><span class="token number">401</span><span class="token punctuation">,</span> <span class="token string">"未认证（签名错误）"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">FORBIDDEN</span><span class="token punctuation">(</span><span class="token number">403</span><span class="token punctuation">,</span> <span class="token string">"禁止访问"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">NOT_FOUND</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token string">"接口不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">AUTH_ERROR</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token string">"鉴权登陆失败，请重新登录！"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">;</span>
 
-docker run  -p 9000:9000 -p 9090:9090 --name minio \
- -d --restart<span class="token operator">=</span>always \
- -e MINIO_ACCESS_KEY<span class="token operator">=</span>admin \
- -e MINIO_SECRET_KEY<span class="token operator">=</span>2022@minio \
- -v /usr/dockersys/minio/data:/data \
- -v /usr/dockersys/minio/config:/root/.minio \
-  minio/minio server /data  --console-address <span class="token string">":9000"</span> --address <span class="token string">":9090"</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> code <span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String msg <span class="token punctuation">;</span>
+
+    <span class="token function">AppExceptionCodeMsg</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
 </code></pre>
-<pre class=" language-bash"><code class="language-bash">-d    是后台运行
---name    指定容器名字
--p    指定端口，新的指定两个，后面一个是后台运行需要的
--v    挂载本地文件，后面上传的数据会在<span class="token variable"><span class="token variable">`</span>/usr/dockersys/minio/data<span class="token variable">`</span></span>看到
--e MINIO_ACCESS_KEY    管理界面的登录名
--e MINIO_SECRET_KEY    管理界面的登录密码
+<p>创建自定义的异常类</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppException</span> <span class="token keyword">extends</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span>String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>创建一个controller,进行测试</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/file"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/demo"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">demo1</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"succ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"err"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//抛业务相关的异常</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USERNAME_NOT_EXISTS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"errcode"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>INVALID_CODE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//检查用户积分是否足够，如果不够，就抛出异常</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"notenough"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USER_CREDIT_NOT_ENOUTH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"default"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                 
@@ -604,7 +663,7 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/">http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -642,8 +701,8 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -989,9 +1048,64 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java统一结果返回和异常处理">
+                        
+                        <span class="card-title">Java统一结果返回和异常处理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/05/22/redis-shi-yong/">
                     <div class="card-image">
@@ -1009,9 +1123,9 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1033,59 +1147,6 @@ docker run  -p 9000:9000 -p 9090:9090 --name minio \
                     
                     <a href="/tags/redis/">
                         <span class="chip bg-color">redis</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/21/docker-bu-shu-chatgpt/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="docker部署chatGPT">
-                        
-                        <span class="card-title">docker部署chatGPT</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/chatGPT/">
-                        <span class="chip bg-color">chatGPT</span>
-                    </a>
-                    
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
