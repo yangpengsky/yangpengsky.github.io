@@ -5,9 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="nginx的安装, 技术博客分享">
-    <meta name="description" content="安装Nginx下载软件包wget wget http://nginx.org/download/nginx-1.18.0.tar.gz
-
-安装依赖yum -y install gcc pcre-devel zlib-devel openss">
+    <meta name="description" content="前言Nginx（发音为”engine X”）是一个高性能的开源Web服务器和反向代理服务器。它最初由俄罗斯的工程师Igor Sysoev开发，第一个公开发布是在2004年。Nginx因其出色的性能、稳定性和高度可扩展性而广受欢迎
+特点与功能">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -442,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-18
+                    2023-05-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    598
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -476,7 +475,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> <span class="token function">wget</span> http://nginx.org/download/nginx-1.18.0.tar.gz
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Nginx（发音为”engine X”）是一个高性能的开源Web服务器和反向代理服务器。它最初由俄罗斯的工程师Igor Sysoev开发，第一个公开发布是在2004年。Nginx因其出色的性能、稳定性和高度可扩展性而广受欢迎</p>
+<h2 id="特点与功能"><a href="#特点与功能" class="headerlink" title="特点与功能"></a>特点与功能</h2><ol>
+<li>高性能：Nginx采用异步、事件驱动的架构，能够处理大量并发连接而不会消耗过多的系统资源。</li>
+<li>反向代理：Nginx可以作为反向代理服务器，将客户端的请求转发到后端的多个服务器上，实现负载均衡和高可用性。</li>
+<li>静态文件服务：Nginx能够高效地提供静态文件服务，如图片、CSS和JavaScript文件，减轻后端服务器的负载。</li>
+<li>动态内容处理：Nginx可以与后端应用服务器集成，如PHP、Java等，以处理动态内容请求。</li>
+<li>缓存加速：Nginx支持缓存机制，能够将经常请求的内容缓存到内存中，提高响应速度。</li>
+<li>URL重写和重定向：Nginx提供了强大的URL重写和重定向功能，可以对URL进行灵活的处理和转发。</li>
+<li>SSL/TLS支持：Nginx能够处理HTTPS连接，支持SSL/TLS协议，保护数据的安全性。</li>
+<li>可扩展性：Nginx的设计模块化，支持丰富的第三方模块和插件，可以根据需求进行定制和扩展。</li>
+</ol>
+<p>由于其卓越的性能和可靠性，Nginx被广泛用于大型互联网公司、高流量网站、应用程序部署和负载均衡等场景。它是一个轻量级、灵活且可靠的服务器软件，成为现代Web架构中不可或缺的一部分。</p>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="下载软件包"><a href="#下载软件包" class="headerlink" title="下载软件包"></a>下载软件包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> <span class="token function">wget</span> http://nginx.org/download/nginx-1.18.0.tar.gz
 </code></pre>
 <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> gcc pcre-devel zlib-devel openssl openssl-devel
 </code></pre>
@@ -1239,7 +1250,7 @@ systemctl list-units --type=service #（查看所有已启动的服务）
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.4k</span>
+                        class="white-color">7.8k</span>
             
             
             
