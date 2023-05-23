@@ -5,11 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="批量下载网页图片, 技术博客分享">
-    <meta name="description" content="requests函数库的使用1.发送GET请求:import requests
-# 使用requests发送一个get请求
-response = requests.get(url)
-# 打印相应信心
-print(response.text)">
+    <meta name="description" content="前言requests是一个流行的Python第三方库，用于简化HTTP请求的发送和处理。它提供了一组简洁而强大的API，使得发送HTTP请求和处理响应变得简单和直观。
+功能与特点
+简洁而直观的API：requests库的API设计简单而直观">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -456,21 +454,21 @@ print(response.text)">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-20
+                    2023-05-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    569
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -490,7 +488,19 @@ print(response.text)">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="requests函数库的使用"><a href="#requests函数库的使用" class="headerlink" title="requests函数库的使用"></a>requests函数库的使用</h2><h3 id="1-发送GET请求"><a href="#1-发送GET请求" class="headerlink" title="1.发送GET请求:"></a>1.发送GET请求:</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>requests</code>是一个流行的Python第三方库，用于简化HTTP请求的发送和处理。它提供了一组简洁而强大的API，使得发送HTTP请求和处理响应变得简单和直观。</p>
+<h2 id="功能与特点"><a href="#功能与特点" class="headerlink" title="功能与特点"></a>功能与特点</h2><ol>
+<li>简洁而直观的API：<code>requests</code>库的API设计简单而直观，易于使用和理解。它提供了一组类似于HTTP方法（如GET、POST、PUT、DELETE）的函数，使得发送不同类型的请求变得简单明了。</li>
+<li>支持常见的HTTP操作：<code>requests</code>库支持发送各种类型的HTTP请求，包括GET、POST、PUT、DELETE等。您可以轻松地指定URL、请求头、查询参数、请求体和其他相关信息。</li>
+<li>自动化的会话管理：<code>requests</code>库提供了会话（Session）对象，使得在多个请求之间共享会话状态和Cookie变得容易。这对于模拟登录、保持会话状态和处理带有身份验证的请求非常有用。</li>
+<li>内置的身份验证支持：<code>requests</code>库支持各种身份验证机制，包括基本身份验证（Basic Authentication）、摘要身份验证（Digest Authentication）和OAuth等。您可以轻松地提供身份验证凭据以进行请求。</li>
+<li>强大的响应处理功能：<code>requests</code>库提供了丰富的功能来处理HTTP响应。您可以访问响应的状态码、头部信息和内容。它还提供了方便的方法来处理JSON响应、文件下载和流式响应等。</li>
+<li>自动化的重定向处理：<code>requests</code>库自动处理HTTP重定向，并提供了配置选项来控制重定向的行为。您可以选择允许或禁止重定向，并设置最大重定向次数。</li>
+<li>文件上传和下载支持：<code>requests</code>库支持文件上传和下载操作。您可以轻松地发送文件作为请求体或下载文件到本地文件系统。</li>
+<li>可定制的请求和会话配置：<code>requests</code>库提供了一系列配置选项，使您能够自定义请求和会话的行为。您可以设置超时时间、代理、SSL验证、连接池大小等。</li>
+</ol>
+<p>总之，<code>requests</code>库的特点在于其简单易用的API设计、丰富的功能和灵活性。它成为了Python开发人员发送和处理HTTP请求的首选工具之一，并在Web开发、数据爬取和API交互等场景中广泛应用。</p>
+<h2 id="requests函数库的使用"><a href="#requests函数库的使用" class="headerlink" title="requests函数库的使用"></a>requests函数库的使用</h2><h3 id="1-发送GET请求"><a href="#1-发送GET请求" class="headerlink" title="1.发送GET请求:"></a>1.发送GET请求:</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token comment" spellcheck="true"># 使用requests发送一个get请求</span>
 response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 打印相应信心</span>
@@ -1303,7 +1313,7 @@ directory <span class="token operator">=</span> <span class="token string">"C:\\
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">9.6k</span>
+                        class="white-color">10.2k</span>
             
             
             
