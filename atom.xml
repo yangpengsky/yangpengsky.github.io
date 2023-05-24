@@ -37,9 +37,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
@@ -135,7 +135,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/</id>
     <published>2023-05-22T02:24:08.000Z</published>
-    <updated>2023-05-22T07:18:03.201Z</updated>
+    <updated>2023-05-24T02:21:28.123Z</updated>
     
     
       
@@ -247,7 +247,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
     <id>http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/</id>
     <published>2023-05-18T09:01:03.000Z</published>
-    <updated>2023-05-21T02:11:32.547Z</updated>
+    <updated>2023-05-24T02:22:57.089Z</updated>
     
     
     <summary type="html">图床（Image Hosting Service）是一种在线服务，用于存储和托管图片。它允许用户将自己的图片上传到互联网上，并获取图片的链接，以便在网页、博客或论坛等地方分享或嵌入图片。图床的解决方案也非常多，网上比较多的解决方案除了免费图床（不稳定）以外就是采用对象存储（OSS）在或者搭建自己的云服务器图床</summary>
@@ -256,6 +256,8 @@
     
     <category term="git" scheme="http://ypbhbc.gitee.io/categories/git/"/>
     
+    
+    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
     <category term="gitee" scheme="http://ypbhbc.gitee.io/tags/gitee/"/>
     
