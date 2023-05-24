@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-23T07:27:47.956Z</updated>
+  <updated>2023-05-24T02:18:21.531Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker+minio+picgo搭建图床</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
+    <published>2023-05-24T01:52:46.000Z</published>
+    <updated>2023-05-24T02:18:21.531Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon</summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
+    
+  </entry>
   
   <entry>
     <title>Java图片上传和预览</title>

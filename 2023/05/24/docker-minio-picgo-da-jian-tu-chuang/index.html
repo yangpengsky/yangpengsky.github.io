@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="picgo-gitee搭建个人图床, 技术博客分享">
-    <meta name="description" content="前言在搭建个人博客时，其中markdown语法作为编写博客的主要语言。但由于本地编写时加入的图片只能在本地显示，为了是博客上传的GitHub或者gitee上托管运行依然能够正常显示图片。这里我们需要用到图床。图床（Image Hosting">
+    <meta name="keywords" content="docker+minio+picgo搭建图床, 技术博客分享">
+    <meta name="description" content="前言MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon S3（Simple Storage Service）API，可以用于存储和检索大规模的非结构化数据，例如图像">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>picgo-gitee搭建个人图床 | 技术博客分享</title>
+    <title>docker+minio+picgo搭建图床 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pica.zhimg.com/80/v2-4dc929a46e9fb56c13911592af0be9dc_1440w.jpg?source=1940ef5c')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">picgo-gitee搭建个人图床</h1>
+                    <h1 class="description center-align post-title">docker+minio+picgo搭建图床</h1>
                 </div>
             </div>
         </div>
@@ -408,8 +408,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/gitee/">
-                                <span class="chip bg-color">gitee</span>
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                            <a href="/tags/minio/">
+                                <span class="chip bg-color">minio</span>
+                            </a>
+                        
+                            <a href="/tags/picgo/">
+                                <span class="chip bg-color">picgo</span>
                             </a>
                         
                     </div>
@@ -420,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git/" class="post-category">
-                                git
+                            <a href="/categories/docker/" class="post-category">
+                                docker
                             </a>
                         
                     </div>
@@ -433,28 +441,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-18
+                    2023-05-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-21
+                    2023-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    454
+                    920
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -474,47 +482,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在搭建个人博客时，其中markdown语法作为编写博客的主要语言。但由于本地编写时加入的图片只能在本地显示，为了是博客上传的GitHub或者gitee上托管运行依然能够正常显示图片。这里我们需要用到图床。图床（Image Hosting Service）是一种在线服务，用于存储和托管图片。它允许用户将自己的图片上传到互联网上，并获取图片的链接，以便在网页、博客或论坛等地方分享或嵌入图片。图床的解决方案也非常多，网上比较多的解决方案除了免费图床（不稳定）以外就是采用对象存储（OSS）在或者搭建自己的云服务器图床（这个我会在宁外一篇博客讲诉）。我这里采用的是Gitee搭建自己的图床。好处是免费，国内服务器，无需科学上网 环境。</p>
-<h2 id="gitee上创建存放博客的仓库"><a href="#gitee上创建存放博客的仓库" class="headerlink" title="gitee上创建存放博客的仓库"></a>gitee上创建存放博客的仓库</h2><h3 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517152517240.png"/>
-
-<img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517152835914.png"/>
-
-<img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517153030763.png"/>
-
-<p>注意：一定的开源，不然后面图片上传成功了，但是却使用不了</p>
-<h3 id="私人令牌申请"><a href="#私人令牌申请" class="headerlink" title="私人令牌申请"></a>私人令牌申请</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230517153418459.png"/>
-
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171702911.png" alt="image-20230517170252529"></p>
-<h2 id="安装picgo"><a href="#安装picgo" class="headerlink" title="安装picgo"></a>安装picgo</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0">https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0</a></p>
-<p>1.下载如下包</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171645977.png" alt="image-20230517164524066"></p>
-<p>2.默认安装即可</p>
-<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305180934165.png"/>
-
-<h3 id="上传环境配置"><a href="#上传环境配置" class="headerlink" title="上传环境配置"></a>上传环境配置</h3><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171700432.png" alt="image-20230517170036028"></p>
-<ul>
-<li><p>repo:用户名/仓库名，或者 gitee.com:后面的部分</p>
-</li>
-<li><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171728434.png" alt="image-20230517172849525"></p>
-</li>
-<li><p>branch:分支,写master即可</p>
-</li>
-<li><p>token:私人令牌生成的密钥</p>
-</li>
-<li><p>path:图片上传到 Gitee 存储的位置,可以写 / 代表在根目录存储,也可以在仓库创建文件夹,这里写文件夹的名字</p>
-</li>
-</ul>
-<h3 id="测试上传"><a href="#测试上传" class="headerlink" title="测试上传"></a>测试上传</h3><p>设置gitee上传</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171710151.png" alt="image-20230517170958999"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171711396.png" alt="image-20230517171059996"></p>
-<h2 id="Typora中使用"><a href="#Typora中使用" class="headerlink" title="Typora中使用"></a>Typora中使用</h2><h3 id="在picgo中查看上传图片"><a href="#在picgo中查看上传图片" class="headerlink" title="在picgo中查看上传图片"></a>在picgo中查看上传图片</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171723155.png"/>
-
-<h3 id="图片的使用"><a href="#图片的使用" class="headerlink" title="图片的使用"></a>图片的使用</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>使用Markdown方式</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171714096.png" alt="image-20230517171437064"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171720318.png" alt="image-20230517172049470"></p>
-<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>使用HTML方式</p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171723155.png" alt="image-20230517172326123"></p>
-<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305171721032.png" alt="image-20230517172134582"></p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon S3（Simple Storage Service）API，可以用于存储和检索大规模的非结构化数据，例如图像、视频、日志文件、备份等。</p>
+<h2 id="功能与特点"><a href="#功能与特点" class="headerlink" title="功能与特点"></a>功能与特点</h2><p>MinIO的设计目标是提供高度可扩展、易于部署和管理的对象存储解决方案。它具有以下特点：</p>
+<ol>
+<li>高性能：MinIO使用并发、多线程和分布式架构，以实现高性能的对象存储服务。它支持水平扩展，可以根据需求添加更多的节点和存储容量。</li>
+<li>可靠性：MinIO提供数据冗余和错误检测机制，以确保数据的安全性和可靠性。它支持数据备份、故障转移和容错处理，可以保护数据免受硬件故障或数据中心故障的影响。</li>
+<li>兼容性：MinIO兼容Amazon S3 API，这意味着您可以使用现有的S3工具和应用程序与MinIO进行集成。它还支持其他一些常用的对象存储接口和协议，如NFS、HDFS、Azure Blob Storage等。</li>
+<li>简单易用：MinIO具有简单的部署和配置过程，可以在几分钟内设置一个可用的对象存储服务器。它提供直观的Web管理界面和命令行工具，使您能够轻松管理和监控存储服务。</li>
+<li>开源：MinIO是开源软件，基于Apache License 2.0开源许可证发布。这意味着您可以自由地使用、修改和分发MinIO的源代码。</li>
+</ol>
+<p>总之，MinIO是一个开源的、高性能的对象存储服务器，具有可靠性、兼容性和易用性的特点，适用于构建私有云存储和分布式存储解决方案。</p>
+<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="1-docker部署minio"><a href="#1-docker部署minio" class="headerlink" title="1.docker部署minio"></a>1.docker部署minio</h3><pre class=" language-bash"><code class="language-bash">docker run -p 9000:9000 -p 9090:9090 --name minio \
+-d --restart<span class="token operator">=</span>always \
+-e MINIO_ACCESS_KEY<span class="token operator">=</span>admin \
+-e MINIO_SECRET_KEY<span class="token operator">=</span>2022@minio \
+-v /usr/dockersys/minio/data:/data \
+-v /usr/dockersys/minio/config:/root/.minio \
+minio/minio server /data --console-address <span class="token string">":9000"</span> --address <span class="token string">":9090"</span>
+</code></pre>
+<p>这个命令将以后台模式（-d）运行MinIO容器，并将容器的9000端口映射到主机的9000端口，以及将容器的9090端口映射到主机的9090端口。容器的名称设置为minio（–name minio），并配置了容器的自动重启（–restart=always）。</p>
+<p>还通过环境变量（-e）设置了MinIO的访问密钥（MINIO_ACCESS_KEY）和秘钥（MINIO_SECRET_KEY）。</p>
+<p>使用了两个数据卷（-v）来映射主机上的目录到容器内部，一个用于存储MinIO的数据（/usr/dockersys/minio/data:/data），另一个用于存储MinIO的配置文件（/usr/dockersys/minio/config:/root/.minio）。</p>
+<p><code>minio/minio server /data</code>命令中的<code>server</code>参数指定以单机模式运行MinIO服务器，而<code>/data</code>参数指定MinIO服务器的存储目录为<code>/data</code>。</p>
+<p>最后，指定了MinIO服务器的参数，包括控制台地址（–console-address “:9000”）和监听地址（–address “:9090”）。</p>
+<p>运行此命令后，MinIO容器将在后台启动，并可以通过浏览器访问控制台地址（<a href="http://localhost:9000）来管理和访问MinIO对象存储。/">http://localhost:9000）来管理和访问MinIO对象存储。</a></p>
+<h3 id="2-登录minio后操作"><a href="#2-登录minio后操作" class="headerlink" title="2.登录minio后操作"></a>2.登录minio后操作</h3><p>输入账号密码，进入管理界面，点击左边的Buckets，右面新建一个Bucket：</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241004810.png" alt="image-20230524100441475"></p>
+<p>点击刚刚创建好的Buckets，进入配置，点击最下面Access Rules：</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241005308.png" alt="image-20230524100512399"></p>
+<p>然后添加一条规则：设置一个名字，然后更改权限位readwrite。</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241007077.png" alt="image-20230524100700052"></p>
+<p>着返回buckets的主页，点击access policy下的private：</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241007419.png" alt="image-20230524100756716"></p>
+<p>接下来配置access key，点击左边菜单栏的Access Keys，新建一个key：</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241008284.png" alt="image-20230524100848626"></p>
+<h3 id="3-picgo中配置"><a href="#3-picgo中配置" class="headerlink" title="3.picgo中配置"></a>3.picgo中配置</h3><p>安装插件</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241011113.png" alt="image-20230524101114417"></p>
+<p>配置环境</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305241015901.png" alt="image-20230524101531828"></p>
+<p>图片上传</p>
+<p><img src="http://192.168.109.102:9090/blog/myblog/images/2023/05/202305241016645.png" alt="image-20230524101623158"></p>
+<p><img src="http://192.168.109.102:9090/blog/myblog/images/2023/05/202305241017200.png" alt="image-20230524101705234"></p>
 
                 
             </div>
@@ -541,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/">http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/">http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +587,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/gitee/">
-                                    <span class="chip bg-color">gitee</span>
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
+                                </a>
+                            
+                                <a href="/tags/minio/">
+                                    <span class="chip bg-color">minio</span>
+                                </a>
+                            
+                                <a href="/tags/picgo/">
+                                    <span class="chip bg-color">picgo</span>
                                 </a>
                             
                         </div>
@@ -926,17 +942,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/19/gong-han-mo-shi-de-shi-yong/">
+                <a href="/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="工厂模式的使用">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="docker+minio+picgo搭建图床">
                         
-                        <span class="card-title">工厂模式的使用</span>
+                        <span class="card-title">docker+minio+picgo搭建图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -946,34 +963,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
-                                </a>
-                            
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    工厂模式
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/minio/">
+                        <span class="chip bg-color">minio</span>
+                    </a>
+                    
+                    <a href="/tags/picgo/">
+                        <span class="chip bg-color">picgo</span>
                     </a>
                     
                 </div>
@@ -987,30 +1005,35 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/">
+                <a href="/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/">
                     <div class="card-image">
                         
-                        <img src="https://www.ypsky.xyz/myblog/images/2023/05/202305181514109.webp" class="responsive-img" alt="typora-vue-theme主题介绍">
                         
-                        <span class="card-title">typora-vue-theme主题介绍</span>
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java图片上传和预览">
+                        
+                        <span class="card-title">Java图片上传和预览</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1020,12 +1043,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
