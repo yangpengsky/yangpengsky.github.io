@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-24T02:18:21.531Z</updated>
+  <updated>2023-05-24T06:57:12.175Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>minio+springboot图片的上传下载</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/</id>
+    <published>2023-05-24T06:03:21.000Z</published>
+    <updated>2023-05-24T06:57:12.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前面已经在虚拟机中搭建了minio文件存储服务器。现在我们就通过springboot向文件服务器中上传和下载图片&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker+minio+picgo搭建图床</title>
     <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
     <published>2023-05-24T01:52:46.000Z</published>
-    <updated>2023-05-24T02:18:21.531Z</updated>
+    <updated>2023-05-24T02:30:36.716Z</updated>
     
     
       
