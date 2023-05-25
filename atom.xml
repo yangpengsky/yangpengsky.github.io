@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-24T06:57:12.175Z</updated>
+  <updated>2023-05-25T05:47:21.427Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单例模式的使用</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/</id>
+    <published>2023-05-25T03:50:07.000Z</published>
+    <updated>2023-05-25T05:47:21.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="单例模式" scheme="http://ypbhbc.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>minio+springboot图片的上传下载</title>
@@ -250,7 +277,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/</id>
     <published>2023-05-19T06:49:57.000Z</published>
-    <updated>2023-05-25T03:41:50.017Z</updated>
+    <updated>2023-05-25T03:51:06.012Z</updated>
     
     
       
@@ -265,12 +292,10 @@
     
     <category term="设计模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="工厂模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
     
     <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
-    <category term="设计模式" scheme="http://ypbhbc.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="工厂模式" scheme="http://ypbhbc.gitee.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

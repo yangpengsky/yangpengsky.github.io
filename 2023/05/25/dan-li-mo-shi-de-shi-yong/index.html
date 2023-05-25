@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java统一结果返回和异常处理, 技术博客分享">
-    <meta name="description" content="前言在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。
-统一结果返回指的是将方法的执行结果封装">
+    <meta name="keywords" content="单例模式的使用, 技术博客分享">
+    <meta name="description" content="前言单例模式是一种创建型设计模式，旨在确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
+在单例模式中，类的构造函数被私有化，使得外部无法直接通过构造函数创建实例。而是通过类内部的静态方法或静态属性来获取类的唯一实例。当第一次获取实">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java统一结果返回和异常处理 | 技术博客分享</title>
+    <title>单例模式的使用 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -380,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java统一结果返回和异常处理</h1>
+                    <h1 class="description center-align post-title">单例模式的使用</h1>
                 </div>
             </div>
         </div>
@@ -413,8 +413,8 @@
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                                <span class="chip bg-color">单例模式</span>
                             </a>
                         
                     </div>
@@ -425,12 +425,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
-                            </a>
-                        
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                设计模式
                             </a>
                         
                     </div>
@@ -442,28 +438,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    875
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    8 分
                 </div>
                 
 
@@ -483,164 +479,189 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。</p>
-<p>统一结果返回指的是将方法的执行结果封装在一个统一的数据结构中进行返回。通常使用一个包含两个字段的类，一个表示执行结果的状态（如成功、失败、异常等），另一个表示返回的数据或错误信息。这样可以减少方法返回值的种类，提高代码的可读性和可维护性。</p>
-<p>异常处理是指通过捕获和处理异常，避免程序在运行过程中出现崩溃或不可预料的错误。Java中的异常处理机制使用了try-catch语句块。在try块中放置可能引发异常的代码，而在catch块中捕获并处理异常。通过使用catch块，可以在发生异常时采取相应的措施，如记录日志、返回错误信息或进行其他处理操作。</p>
-<h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><p>以SpringBoot项目为例，导入包</p>
-<pre class=" language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.18.20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>创建统一信息返回类</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@Data</span>
-<span class="token annotation punctuation">@ToString</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Result</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//    返回码</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//    返回提示</span>
-    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//    返回数据</span>
-    <span class="token keyword">private</span> T data<span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token function">Result</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>单例模式是一种创建型设计模式，旨在确保一个类只有一个实例，并提供一个全局访问点来访问该实例。</p>
+<p>在单例模式中，类的构造函数被私有化，使得外部无法直接通过构造函数创建实例。而是通过类内部的静态方法或静态属性来获取类的唯一实例。当第一次获取实例时，单例模式会创建一个新的实例，并将其保存起来，以后每次获取实例时都返回同一个实例。</p>
+<p>优点：</p>
+<ol>
+<li>全局唯一性：单例模式确保一个类只有一个实例，这对于需要共享状态或资源的情况非常有用，避免了多个实例之间的冲突和资源浪费。</li>
+<li>全局访问点：单例模式提供一个全局访问点，使得其他类可以方便地访问实例，简化了对象之间的通信和调用。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>隐藏依赖关系：单例模式可能会引入紧耦合的依赖关系，因为它隐藏了实例的创建和管理过程。这会使得代码难以测试和维护，增加了代码的复杂性。</li>
+<li>破坏单一职责原则：单例模式往往会承担过多的责任，既要负责自身的职责，又要负责管理实例的创建和共享。这会导致类的职责不够清晰，增加了代码的复杂性和维护成本。</li>
+<li>难以扩展：由于单例模式的实例是全局唯一的，因此扩展应用程序以支持多个实例可能会很困难。修改单例类的实现可能会对代码的其他部分产生意想不到的影响。</li>
+</ol>
+<p>单例模式的使用应慎重，只有在确实需要全局唯一实例且共享状态或资源时才适合使用。在设计和使用单例模式时，需要注意避免上述的缺点，并权衡好使用单例模式所带来的利弊。</p>
+<h3 id="饿汉式1"><a href="#饿汉式1" class="headerlink" title="饿汉式1"></a>饿汉式1</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//在类内部实例化一个实例</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//私有的构造函数,外部无法访问</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//    成功</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"成功"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//失败</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Result <span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<p>创建全局统一异常处理类</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@RestControllerAdvice</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span>Exception<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">exceptionHandler</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//这里先判断拦截到的Exception是不是我们自定义的异常类型</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">AppException</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            AppException appException <span class="token operator">=</span> <span class="token punctuation">(</span>AppException<span class="token punctuation">)</span> e<span class="token punctuation">;</span>
-            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>appException<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appException<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">//如果拦截的异常不是我们自定义的异常(例如：数据库主键冲突)</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-</code></pre>
-<p>创建一个枚举类型</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token comment" spellcheck="true">//这个枚举类中定义的都是跟业务有关的异常</span>
-<span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> AppExceptionCodeMsg <span class="token punctuation">{</span>
-
-    <span class="token function">INVALID_CODE</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token string">"验证码无效"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">USERNAME_NOT_EXISTS</span><span class="token punctuation">(</span><span class="token number">10001</span><span class="token punctuation">,</span><span class="token string">"用户名不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">USER_CREDIT_NOT_ENOUTH</span><span class="token punctuation">(</span><span class="token number">10002</span><span class="token punctuation">,</span><span class="token string">"用户积分不足"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">FAIL</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"失败"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">ERROR</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"服务器异常"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">UNAUTHORIZED</span><span class="token punctuation">(</span><span class="token number">401</span><span class="token punctuation">,</span> <span class="token string">"未认证（签名错误）"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">FORBIDDEN</span><span class="token punctuation">(</span><span class="token number">403</span><span class="token punctuation">,</span> <span class="token string">"禁止访问"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">NOT_FOUND</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token string">"接口不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">AUTH_ERROR</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token string">"鉴权登陆失败，请重新登录！"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">int</span> code <span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String msg <span class="token punctuation">;</span>
-
-    <span class="token function">AppExceptionCodeMsg</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-</code></pre>
-<p>创建自定义的异常类</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppException</span> <span class="token keyword">extends</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span>String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//对外提供获取实例的静态方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>创建一个controller,进行测试</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@RestController</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/file"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<p>这是个比较形象的比喻。对于一个饿汉来说，他希望他想要用到这个实例的时候就能够立即拿到，而不需要任何等待时间。所以，通过static的静态初始化方式，在该类第一次被加载的时候，就有一个SimpleSingleton的实例被创建出来了。这样就保证在第一次想要使用该对象时，他已经被初始化好了。同时，由于该实例在类被加载的时候就创建出来了，所以也避免了线程安全问题</p>
+<h3 id="饿汉式2"><a href="#饿汉式2" class="headerlink" title="饿汉式2"></a>饿汉式2</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton2</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//在类内部定义</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton2 instance<span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//实例化该实例</span>
+        instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/demo"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">demo1</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"succ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"err"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//抛业务相关的异常</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USERNAME_NOT_EXISTS<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"errcode"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>INVALID_CODE<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment" spellcheck="true">//检查用户积分是否足够，如果不够，就抛出异常</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"notenough"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USER_CREDIT_NOT_ENOUTH<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"default"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//私有的构造函数,外部无法访问</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//对外提供获取实例的静态方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton2 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<p>饿汉式单例，在类被加载的时候对象就会实例化。这也许会造成不必要的消耗，因为有可能这个实例根本就不会被用到。而且，如果这个类被多次加载的话也会造成多次实例化。其实解决这个问题的方式有很多，下面提供两种解决方式，第一种是使用静态内部类的形式。第二种是使用懒汉式。</p>
+<h3 id="懒汉式-存在现在不安全"><a href="#懒汉式-存在现在不安全" class="headerlink" title="懒汉式(存在现在不安全)"></a>懒汉式(存在现在不安全)</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//定义实例</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton instance<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//私有构造方法</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//对外提供获取实例的静态方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//在对象被使用的时候才实例化</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>上面这种单例叫做懒汉式单例。懒汉，就是不会提前把实例创建出来，将类对自己的实例化延迟到第一次被引用的时候。getInstance方法的作用是希望该对象在第一次被使用的时候被new出来。有没有发现，其实这种懒汉式单例其实还存在一个问题，那就是线程安全问题。在多线程情况下，有可能两个线程同时进入if语句中，这样，在两个线程都从if中退出的时候就创建了两个不一样的对象。</p>
+<h3 id="线程安全的懒汉式"><a href="#线程安全的懒汉式" class="headerlink" title="线程安全的懒汉式"></a>线程安全的懒汉式</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SynchronizedSingleton</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//定义实例</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> SynchronizedSingleton instance<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//私有构造方法</span>
+    <span class="token keyword">private</span> <span class="token function">SynchronizedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//对外提供获取实例的静态方法,对该方法加锁</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> SynchronizedSingleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//在对象被使用的时候才实例化</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SynchronizedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><p>针对上面存在的问题，相信对并发编程了解的同学都知道如何解决。其实上面的代码存在的问题主要是锁的范围太大了。只要缩小锁的范围就可以了。那么如何缩小锁的范围呢？相比于同步方法，同步代码块的加锁范围更小。可以改造成：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//code 7</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton singleton<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>上面的代码看上去好像是没有任何问题。实现了惰性初始化，解决了同步问题，还减小了锁的范围，提高了效率。但是，该代码还存在隐患。隐患的原因主要和<a target="_blank" rel="noopener" href="http://www.hollischuang.com/archives/1003">Java内存模型（JMM</a>）有关。考虑下面的事件序列：</p>
+<p>有关。考虑下面的事件序列：</p>
+<p>线程A发现变量没有被初始化, 然后它获取锁并开始变量的初始化。</p>
+<p>由于某些编程语言的语义，编译器生成的代码允许在线程A执行完变量的初始化之前，更新变量并将其指向部分初始化的对象。</p>
+<p>线程B发现共享变量已经被初始化，并返回变量。由于线程B确信变量已被初始化，它没有获取锁。如果在A完成初始化之前共享变量对B可见（这是由于A没有完成初始化或者因为一些初始化的值还没有穿过B使用的内存(缓存一致性)），程序很可能会崩溃。</p>
+<p>（上面的例子不太能理解的同学，请恶补JAVA内存模型相关知识）</p>
+<h3 id="优化使用volatile"><a href="#优化使用volatile" class="headerlink" title="优化使用volatile"></a>优化使用<code>volatile</code></h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//code 8</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">VolatileSingleton</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">volatile</span> VolatileSingleton singleton<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">VolatileSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> VolatileSingleton <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>VolatileSingleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VolatileSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>上面这种双重校验锁的方式用的比较广泛，他解决了前面提到的所有问题。</strong>但是，即使是这种看上去完美无缺的方式也可能存在问题，那就是遇到序列化的时候。详细内容后文介绍。</p>
+<pre><code>class FinalWrapper&lt;T&gt; &#123;
+    public final T value;
+
+    public FinalWrapper(T value) &#123;
+        this.value = value;
+    &#125;
+&#125;
+
+public class FinalSingleton &#123;
+    private FinalWrapper&lt;FinalSingleton&gt; helperWrapper = null;
+
+    public FinalSingleton getHelper() &#123;
+        FinalWrapper&lt;FinalSingleton&gt; wrapper = helperWrapper;
+
+        if (wrapper == null) &#123;
+            synchronized (this) &#123;
+                if (helperWrapper == null) &#123;
+                    helperWrapper = new FinalWrapper&lt;FinalSingleton&gt;(new FinalSingleton());
+                &#125;
+                wrapper = helperWrapper;
+            &#125;
+        &#125;
+        return wrapper.value;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="枚举式"><a href="#枚举式" class="headerlink" title="枚举式"></a>枚举式</h3><pre><code>// code 10
+public enum  Singleton &#123;
+
+    INSTANCE;
+    Singleton() &#123;
+    &#125;
+&#125;
+</code></pre>
+<p>这种方式是Effective Java作者Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象（下面会介绍），可谓是很坚强的壁垒啊，在深度分析Java的枚举类型—-枚举的线程安全性及序列化问题中有详细介绍枚举的线程安全问题和序列化问题，不过，个人认为由于1.5中才加入enum特性，用这种方式写不免让人感觉生疏，在实际工作中，我也很少看见有人这么写过，但是不代表他不好。</p>
+<h3 id="单例与序列化"><a href="#单例与序列化" class="headerlink" title="单例与序列化"></a>单例与序列化</h3><p>在单例与序列化的那些事儿一文中，Hollis就分析过单例和序列化之前的关系——序列化可以破坏单例。要想防止序列化对单例的破坏，只要在Singleton类中定义readResolve就可以解决该问题：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>hollis<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
+ * Created by hollis on 16/2/5.
+ * 使用双重校验锁方式实现单例
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> Singleton singleton<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token function">Singleton</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton <span class="token function">getSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singleton<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> Object <span class="token function">readResolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>转载至<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26645151/article/details/124552755">https://blog.csdn.net/qq_26645151/article/details/124552755</a></p>
 
                 
             </div>
@@ -667,7 +688,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/">http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -709,8 +730,8 @@
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                                    <span class="chip bg-color">单例模式</span>
                                 </a>
                             
                         </div>
@@ -1056,17 +1077,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/">
+                <a href="/2023/05/25/dan-li-mo-shi-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java图片上传和预览">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="单例模式的使用">
                         
-                        <span class="card-title">Java图片上传和预览</span>
+                        <span class="card-title">单例模式的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1076,9 +1098,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">单例模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="minio+springboot图片的上传下载">
+                        
+                        <span class="card-title">minio+springboot图片的上传下载</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1106,57 +1182,8 @@
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/22/redis-shi-yong/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="redis使用">
-                        
-                        <span class="card-title">redis使用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
-                    </a>
-                    
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/minio/">
+                        <span class="chip bg-color">minio</span>
                     </a>
                     
                 </div>
