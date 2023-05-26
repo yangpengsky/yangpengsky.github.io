@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="redis使用, 技术博客分享">
-    <meta name="description" content="前言Redis（Remote Dictionary Server）是一个开源的内存数据存储系统，也被称为数据结构服务器。它提供了一个高性能的键值存储解决方案，并支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。
-特点和功能
-内存存">
+    <meta name="keywords" content="centos安装python3, 技术博客分享">
+    <meta name="description" content="前言Python是一种高级编程语言，它具有简洁、易读的语法，被广泛用于软件开发、数据分析、人工智能和科学计算等领域。Python由荷兰程序员Guido van Rossum于1991年创建，它的设计目标是提供一种简单直观的编程方式。
+特点
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>redis使用 | 技术博客分享</title>
+    <title>centos安装python3 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -381,12 +381,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">redis使用</h1>
+                    <h1 class="description center-align post-title">centos安装python3</h1>
                 </div>
             </div>
         </div>
@@ -410,12 +410,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
-                            </a>
-                        
-                            <a href="/tags/redis/">
-                                <span class="chip bg-color">redis</span>
+                            <a href="/tags/centos/">
+                                <span class="chip bg-color">centos</span>
                             </a>
                         
                     </div>
@@ -426,8 +422,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/docker/" class="post-category">
-                                docker
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                            <a href="/categories/Python/Liunx/" class="post-category">
+                                Liunx
                             </a>
                         
                     </div>
@@ -439,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-05-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-05-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    609
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -480,80 +480,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Redis（Remote Dictionary Server）是一个开源的内存数据存储系统，也被称为数据结构服务器。它提供了一个高性能的键值存储解决方案，并支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。</p>
-<h2 id="特点和功能"><a href="#特点和功能" class="headerlink" title="特点和功能"></a>特点和功能</h2><ol>
-<li>内存存储：Redis的主要特点是将数据存储在内存中，这使得它能够实现快速读写操作。它也支持将数据持久化到磁盘，以防止数据丢失。</li>
-<li>高性能：由于数据存储在内存中，并使用了高效的数据结构和算法，Redis提供了快速的读写性能。它还支持并发操作，并具有高吞吐量。</li>
-<li>数据结构丰富：Redis支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。这使得开发人员能够使用适当的数据结构来解决不同类型的问题。</li>
-<li>发布/订阅：Redis支持发布/订阅模式，允许多个客户端订阅指定的频道并接收消息。这使得它非常适合构建实时消息系统和事件驱动的应用程序。</li>
-<li>数据持久化：Redis提供了两种持久化方式：RDB（Redis Database）和AOF（Append-Only File）。RDB使用快照方式将数据保存到磁盘，AOF则记录每个写操作的日志。</li>
-<li>分布式缓存：由于其高性能和可扩展性，Redis广泛用作分布式缓存系统。它可以通过设置过期时间和淘汰策略来管理缓存数据。</li>
-<li>原子操作：Redis支持原子操作，即对数据的读写操作是原子性的。这使得它适用于需要保证数据一致性和并发控制的应用场景。</li>
-<li>多语言支持：Redis支持多种编程语言，如Java、Python、Node.js等，提供了丰富的客户端库和API，便于开发人员使用。</li>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Python是一种高级编程语言，它具有简洁、易读的语法，被广泛用于软件开发、数据分析、人工智能和科学计算等领域。Python由荷兰程序员Guido van Rossum于1991年创建，它的设计目标是提供一种简单直观的编程方式。</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>简洁易读：Python使用简洁的语法和缩进风格，使得代码易于理解和阅读，从而提高开发效率。</li>
+<li>可移植性：Python可以在多个平台上运行，包括Windows、Mac和各种Linux发行版，这使得开发的应用程序具有较高的可移植性。</li>
+<li>强大的标准库：Python拥有丰富的标准库，提供了大量的内置模块和函数，可以实现各种任务，如文件操作、网络编程、图形界面开发等。</li>
+<li>第三方库生态系统：Python拥有庞大的第三方库生态系统，例如NumPy、Pandas、Matplotlib和TensorFlow等，这些库为数据分析、科学计算和机器学习等领域提供了强大的功能支持。</li>
+<li>面向对象：Python支持面向对象编程，可以使用类和对象来组织和管理代码，提高代码的复用性和可维护性。</li>
+<li>动态类型：Python是一种动态类型语言，变量的类型在运行时确定，这使得编写和调试代码更加灵活和快速。</li>
 </ol>
-<p>Redis在许多场景中被广泛应用，如缓存系统、会话存储、实时排行榜、消息队列、分布式锁等。它的简单性、高性能和丰富的功能使得它成为了一个流行的数据存储解决方案。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>以下是一些常用的Redis命令：</p>
-<ol>
-<li>数据操作：</li>
-</ol>
-<ul>
-<li><code>SET key value</code>：设置指定键的值。</li>
-<li><code>GET key</code>：获取指定键的值。</li>
-<li><code>DEL key</code>：删除指定的键。</li>
-<li><code>EXISTS key</code>：检查键是否存在。</li>
-<li><code>KEYS pattern</code>：查找符合指定模式的键。</li>
-<li><code>TTL key</code>：获取键的生存时间。</li>
-</ul>
-<ol>
-<li>列表操作：</li>
-</ol>
-<ul>
-<li><code>LPUSH key value1 value2</code>：将一个或多个值插入到列表的左侧。</li>
-<li><code>RPUSH key value1 value2</code>：将一个或多个值插入到列表的右侧。</li>
-<li><code>LPOP key</code>：移除并返回列表左侧的元素。</li>
-<li><code>RPOP key</code>：移除并返回列表右侧的元素。</li>
-<li><code>LLEN key</code>：获取列表的长度。</li>
-</ul>
-<ol>
-<li>哈希操作：</li>
-</ol>
-<ul>
-<li><code>HSET key field value</code>：设置哈希中指定字段的值。</li>
-<li><code>HGET key field</code>：获取哈希中指定字段的值。</li>
-<li><code>HDEL key field1 field2</code>：删除哈希中的一个或多个字段。</li>
-<li><code>HGETALL key</code>：获取哈希中所有字段和值的列表。</li>
-</ul>
-<ol>
-<li>集合操作：</li>
-</ol>
-<ul>
-<li><code>SADD key member1 member2</code>：向集合添加一个或多个成员。</li>
-<li><code>SMEMBERS key</code>：获取集合中的所有成员。</li>
-<li><code>SREM key member1 member2</code>：从集合中移除一个或多个成员。</li>
-</ul>
-<ol>
-<li>有序集合操作：</li>
-</ol>
-<ul>
-<li><code>ZADD key score1 member1 score2 member2</code>：向有序集合添加一个或多个成员。</li>
-<li><code>ZRANGE key start stop</code>：按照索引范围获取有序集合的成员。</li>
-</ul>
-<p>这些只是Redis的一些常见命令示例。Redis还有很多其他强大的功能和命令，如事务、发布/订阅、过期时间设置等。</p>
-<h2 id="redis-conf配置文件解读"><a href="#redis-conf配置文件解读" class="headerlink" title="redis.conf配置文件解读"></a>redis.conf配置文件解读</h2><p>Redis的配置文件 <code>redis.conf</code> 包含了许多配置选项，用于控制Redis服务器的行为。下面是一些常见配置选项的解读：</p>
-<ol>
-<li><code>bind</code>：指定Redis服务器绑定的IP地址。默认为127.0.0.1，表示只允许本地访问。如果要允许远程访问，可以将其设置为0.0.0.0。</li>
-<li><code>port</code>：指定Redis服务器监听的端口号。默认为6379。</li>
-<li><code>requirepass</code>：设置Redis服务器的密码。如果启用了密码验证，客户端连接到服务器时需要提供密码才能进行操作。</li>
-<li><code>maxclients</code>：指定允许同时连接到Redis服务器的最大客户端数量。</li>
-<li><code>timeout</code>：指定客户端连接的超时时间，单位为秒。如果客户端在指定时间内没有发送任何请求，服务器将关闭连接。</li>
-<li><code>logfile</code>：指定日志文件的路径。可以将Redis的日志记录到指定的文件中，方便进行故障排查和日志分析。</li>
-<li><code>databases</code>：指定Redis服务器支持的数据库数量。默认为16个数据库，可以通过选择不同的数据库索引进行数据存储。</li>
-<li><code>snapshotting</code>：配置RDB持久化和AOF持久化选项，包括<code>save</code>、<code>stop-writes-on-bgsave-error</code>、<code>rdbcompression</code>、<code>appendonly</code>等。</li>
-<li><code>maxmemory</code>：设置Redis服务器使用的最大内存限制。可以根据需要进行配置，达到限制时可以使用淘汰策略来回收内存。</li>
-<li><code>replication</code>：配置Redis服务器的主从复制，包括<code>slaveof</code>、<code>masterauth</code>、<code>replica-serve-stale-data</code>等选项。</li>
-<li><code>security</code>：配置与安全相关的选项，如<code>protected-mode</code>、<code>rename-command</code>、<code>rename-config</code>等。</li>
-</ol>
-<p>这些只是Redis配置文件中的一部分选项，还有许多其他选项用于调整Redis服务器的行为和性能。你可以查阅Redis官方文档以获取更详细的配置选项和说明。</p>
+<p>Python的优点之一是它的学习曲线相对较低，适合初学者入门。同时，它也是一种功能强大的编程语言，被许多专业开发人员广泛应用于各种领域。</p>
+<h2 id="liunx安装过程"><a href="#liunx安装过程" class="headerlink" title="liunx安装过程"></a>liunx安装过程</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>官方地址：<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262029981.png" alt="image-20230526202957438"></p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262031334.png" alt="image-20230526203124495"></p>
+<p>用ftp工具上传至服务器</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262237070.png" alt="image-20230526223718420"></p>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><p>前提：不要使用root用户安装，否则后面pip安装会出问题。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
+<span class="token function">tar</span> -zxvf Python-3.9.16.tgz -C /opt/module/
+
+<span class="token comment" spellcheck="true"># 配置python3需要先安装gcc</span>
+yum <span class="token function">install</span> -y gcc
+
+<span class="token comment" spellcheck="true">#安装所需的包 否则编译会出错</span>
+yum -y <span class="token function">install</span> ncurses-devel libuuid-devel zlib zlib-devel sqlite-devel readline-devel tkinter tcl-devel tk-devel lzma gdbm-devel xz-devel libffi-devel
+
+<span class="token comment" spellcheck="true"># 进入Python-3.9.16安装目录</span>
+<span class="token function">cd</span> /opt/module/Python-3.9.16
+
+<span class="token comment" spellcheck="true"># 配置安装环境</span>
+./configure --prefix<span class="token operator">=</span>/opt/module/python3.9
+
+<span class="token comment" spellcheck="true">#编译</span>
+<span class="token function">make</span>
+<span class="token comment" spellcheck="true">#安装</span>
+<span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262250645.png" alt="image-20230526225017399"></p>
+<p>查看原来的软连接</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262159891.png" alt="image-20230526215946316"></p>
+<p>默认的python路径为/usr/bin/python，python3的路径为/usr/local/python3.9/bin/python3</p>
+<p>跟换python软连接</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262253149.png" alt="image-20230526225356206"></p>
+<p>创建pip软连接</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305262256198.png" alt="image-20230526225629792"></p>
 
                 
             </div>
@@ -580,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/22/redis-shi-yong/">http://ypbhbc.gitee.io/2023/05/22/redis-shi-yong/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/">http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,12 +588,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
-                                </a>
-                            
-                                <a href="/tags/redis/">
-                                    <span class="chip bg-color">redis</span>
+                                <a href="/tags/centos/">
+                                    <span class="chip bg-color">centos</span>
                                 </a>
                             
                         </div>
@@ -969,17 +935,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">
+                <a href="/2023/05/26/centos-an-zhuang-python3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java统一结果返回和异常处理">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="centos安装python3">
                         
-                        <span class="card-title">Java统一结果返回和异常处理</span>
+                        <span class="card-title">centos安装python3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -989,34 +956,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/Python/Liunx/" class="post-category">
+                                    Liunx
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
                     </a>
                     
                 </div>
@@ -1030,13 +994,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/22/docker-de-shi-yong/">
+                <a href="/2023/05/25/dan-li-mo-shi-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="docker的使用">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="单例模式的使用">
                         
-                        <span class="card-title">docker的使用</span>
+                        <span class="card-title">单例模式的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1047,14 +1011,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
                                 </a>
                             
                             
@@ -1064,8 +1028,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">单例模式</span>
                     </a>
                     
                 </div>
