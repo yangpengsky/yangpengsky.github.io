@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>window安装docker desktop</title>
+      <link href="/2023/05/27/window-an-zhuang-docker-desktop/"/>
+      <url>/2023/05/27/window-an-zhuang-docker-desktop/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> window </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>centos安装python3</title>
       <link href="/2023/05/26/centos-an-zhuang-python3/"/>
       <url>/2023/05/26/centos-an-zhuang-python3/</url>
@@ -105,9 +132,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> minio </tag>
+            
+            <tag> docker </tag>
             
             <tag> picgo </tag>
             
@@ -244,9 +271,9 @@
       
         <tags>
             
-            <tag> chatGPT </tag>
-            
             <tag> docker </tag>
+            
+            <tag> chatGPT </tag>
             
         </tags>
       
