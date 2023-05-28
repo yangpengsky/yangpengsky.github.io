@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="window安装docker desktop, 技术博客分享">
-    <meta name="description" content="">
+    <meta name="description" content="前言Docker Desktop 是一个用于在个人计算机上创建和管理 Docker 容器的应用程序。它为开发者和系统管理员提供了一个简单易用的界面，用于构建、运行和调试容器化的应用程序。
+Docker 是一种开源的容器化平台，可以将应用程序">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,8 +53,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -444,21 +445,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-27
+                    2023-05-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    537
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -478,7 +479,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Docker Desktop 是一个用于在个人计算机上创建和管理 Docker 容器的应用程序。它为开发者和系统管理员提供了一个简单易用的界面，用于构建、运行和调试容器化的应用程序。</p>
+<p>Docker 是一种开源的容器化平台，可以将应用程序和其依赖的软件打包到一个称为容器的独立单元中。容器可以在不同的计算机上运行，并且具有一致性和可移植性。Docker Desktop 提供了一个方便的方式来安装和管理 Docker 引擎（Docker Engine）以及相关的工具和服务。</p>
+<p>使用 Docker Desktop，您可以通过简单的图形界面或命令行工具来创建和管理容器。它还提供了一个本地的容器注册表，可以用来存储和共享容器镜像。Docker Desktop 还包含了一些实用的工具，如容器编排工具 Docker Compose，用于管理多个容器的应用程序。</p>
+<p>无论您是开发者还是系统管理员，Docker Desktop 都可以帮助您更轻松地构建、测试和部署容器化的应用程序。它支持在 Windows、macOS 和 Linux 等操作系统上运行，并提供了一致的用户体验和功能。</p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><p>检查下面功能是否开启</p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305280958676.png" />
+
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305281000533.png" />
+
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>网址：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305280938886.png" />
+
+<p>因为docker desktop默认安装的路径是在“C:\Program Files\Docker” ，docker desktop在使用过程中会不断增大，所以最好就是安装目录和存储目录软连接到其他数据盘。</p>
+<pre class=" language-bash"><code class="language-bash">创建这两个文件夹
+C:\Program Files\Docker
+C:\Users\37656\AppData\Local\Docker
+</code></pre>
+<p>建立软连接(cmd命令行)</p>
+<p>需要管理员身份打开</p>
+<pre class=" language-bash"><code class="language-bash">mklink /j “C:\Program Files\Docker” “D:\Program Files\Docker”
+mklink /j “C:\Users\37656\AppData\Local\Docker” “D:\Program Data\Docker”
+</code></pre>
+<p>然后安装软件即可</p>
+<h2 id="检查安装结果"><a href="#检查安装结果" class="headerlink" title="检查安装结果"></a>检查安装结果</h2><p>安装完毕后C盘中应该如图1、2所示，两个路径下的Docker文件夹成功建立了软连接</p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305281004638.png" />
+
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305281005156.png" />
+
+<h2 id="设置镜像下载的源"><a href="#设置镜像下载的源" class="headerlink" title="设置镜像下载的源"></a>设置镜像下载的源</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305281008615.png" />
+
+<pre class=" language-json"><code class="language-json"> <span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://hub-mirror.c.163.com/"</span>
+  <span class="token punctuation">]</span>
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -1186,7 +1221,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">18.3k</span>
+                        class="white-color">18.9k</span>
             
             
             
