@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java统一结果返回和异常处理, 技术博客分享">
-    <meta name="description" content="前言在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。
-统一结果返回指的是将方法的执行结果封装">
+    <meta name="keywords" content="腾讯云服务器+nginx+ssl证书, 技术博客分享">
+    <meta name="description" content="前言SSL代表”Secure Sockets Layer”，是一种网络安全协议，用于在网络通信中保护数据的安全性和完整性。它建立在传输层协议（如TCP）之上，为客户端和服务器之间的通信提供加密和认证机制。
+SSL的主要目的是确保通过互联网传">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java统一结果返回和异常处理 | 技术博客分享</title>
+    <title>腾讯云服务器+nginx+ssl证书 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -380,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java统一结果返回和异常处理</h1>
+                    <h1 class="description center-align post-title">腾讯云服务器+nginx+ssl证书</h1>
                 </div>
             </div>
         </div>
@@ -409,12 +409,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/nginx/">
+                                <span class="chip bg-color">nginx</span>
                             </a>
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">云服务器</span>
+                            </a>
+                        
+                            <a href="/tags/ssl%E8%AF%81%E4%B9%A6/">
+                                <span class="chip bg-color">ssl证书</span>
                             </a>
                         
                     </div>
@@ -425,12 +429,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
-                            </a>
-                        
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -442,28 +442,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    875
+                    466
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -483,164 +483,69 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Java中，可以使用统一结果返回和异常处理的模式来处理方法的执行结果和异常情况。这种模式的目的是在代码中统一处理和管理方法的返回结果，以及捕获和处理可能发生的异常，使代码更加清晰、可读和可维护。</p>
-<p>统一结果返回指的是将方法的执行结果封装在一个统一的数据结构中进行返回。通常使用一个包含两个字段的类，一个表示执行结果的状态（如成功、失败、异常等），另一个表示返回的数据或错误信息。这样可以减少方法返回值的种类，提高代码的可读性和可维护性。</p>
-<p>异常处理是指通过捕获和处理异常，避免程序在运行过程中出现崩溃或不可预料的错误。Java中的异常处理机制使用了try-catch语句块。在try块中放置可能引发异常的代码，而在catch块中捕获并处理异常。通过使用catch块，可以在发生异常时采取相应的措施，如记录日志、返回错误信息或进行其他处理操作。</p>
-<h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><p>以SpringBoot项目为例，导入包</p>
-<pre class=" language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.18.20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
-<p>创建统一信息返回类</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@Data</span>
-<span class="token annotation punctuation">@ToString</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Result</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//    返回码</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//    返回提示</span>
-    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//    返回数据</span>
-    <span class="token keyword">private</span> T data<span class="token punctuation">;</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SSL代表”Secure Sockets Layer”，是一种网络安全协议，用于在网络通信中保护数据的安全性和完整性。它建立在传输层协议（如TCP）之上，为客户端和服务器之间的通信提供加密和认证机制。</p>
+<p>SSL的主要目的是确保通过互联网传输的敏感数据（如个人信息、信用卡号码、登录凭证等）在传输过程中不会被未经授权的第三方窃听、篡改或伪装。它通过使用加密技术来保护数据的机密性，并使用数字证书来验证服务器的身份。</p>
+<p>SSL协议通过两个主要步骤来实现安全通信：</p>
+<ol>
+<li>握手阶段（Handshake）：客户端和服务器之间进行一系列的交互，协商加密算法、生成临时会话密钥，并验证服务器的身份。</li>
+<li>数据传输阶段：在握手成功后，客户端和服务器使用协商的加密算法和密钥来加密和解密数据，确保数据的保密性和完整性。</li>
+</ol>
+<p>SSL在安全通信中起着重要的作用，并被广泛应用于保护网站、电子商务、在线银行、电子邮件等领域。它的后继协议是TLS（Transport Layer Security），TLS在功能和目标上与SSL类似，并逐渐取代了SSL成为更安全的标准协议。</p>
+<h2 id="登录腾讯云下载证书"><a href="#登录腾讯云下载证书" class="headerlink" title="登录腾讯云下载证书"></a>登录腾讯云下载证书</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291518184.png"/>
 
-    <span class="token keyword">private</span> <span class="token function">Result</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291526069.png" />
 
-    <span class="token comment" spellcheck="true">//    成功</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"成功"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291528283.png" alt="image-20230529152833143"></p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291529737.png" />
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">success</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> T data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> msg<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291612966.png" />
 
-    <span class="token comment" spellcheck="true">//失败</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<h2 id="nginx配置ssl证书"><a href="#nginx配置ssl证书" class="headerlink" title="nginx配置ssl证书"></a>nginx配置ssl证书</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291613653.png" />
 
+<p>1.上传证书</p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291617319.png" />
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Result <span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Result result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Result</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<p>2.修改nginx配置文件</p>
+<p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291620249.png" alt="image-20230529162009554"></p>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291627509.png"/>
+
+<pre class=" language-json"><code class="language-json"> server <span class="token punctuation">{</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span> 
+        server_name  ypsky.top<span class="token punctuation">;</span>
+        rewrite ^(.*<span class="token punctuation">)</span>$ https<span class="token operator">:</span>//$host$<span class="token number">1</span> permanent<span class="token punctuation">;</span> 
+        #charset koi8-r<span class="token punctuation">;</span>
+
+        #access_log  logs/host.access.log  main<span class="token punctuation">;</span>
+
+        location / <span class="token punctuation">{</span>
+            root   html<span class="token punctuation">;</span>
+            index  index.html index.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<p>创建全局统一异常处理类</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@RestControllerAdvice</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span>Exception<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> Result <span class="token function">exceptionHandler</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//这里先判断拦截到的Exception是不是我们自定义的异常类型</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">AppException</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            AppException appException <span class="token operator">=</span> <span class="token punctuation">(</span>AppException<span class="token punctuation">)</span> e<span class="token punctuation">;</span>
-            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>appException<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> appException<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">//如果拦截的异常不是我们自定义的异常(例如：数据库主键冲突)</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> AppExceptionCodeMsg<span class="token punctuation">.</span>ERROR<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291628028.png" />
 
-<span class="token punctuation">}</span>
+<pre class=" language-json"><code class="language-json">  server <span class="token punctuation">{</span>
+        listen       <span class="token number">443</span> ssl<span class="token punctuation">;</span>
+        server_name  ypsky.top<span class="token punctuation">;</span>
+
+        ssl_certificate      /usr/local/nginx/cret/ypsky.xyz_bundle.crt<span class="token punctuation">;</span>
+        ssl_certificate_key  /usr/local/nginx/cret/ypsky.xyz.key<span class="token punctuation">;</span>
+
+        ssl_session_cache    shared<span class="token operator">:</span>SSL<span class="token operator">:</span>1m<span class="token punctuation">;</span>
+        ssl_session_timeout  5m<span class="token punctuation">;</span>
+
+        ssl_ciphers  HIGH<span class="token operator">:</span>!aNULL<span class="token operator">:</span>!MD5<span class="token punctuation">;</span>
+        ssl_prefer_server_ciphers  on<span class="token punctuation">;</span>
+
+        location / <span class="token punctuation">{</span>
+            root   html<span class="token punctuation">;</span>
+            index  index.html index.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 </code></pre>
-<p>创建一个枚举类型</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token comment" spellcheck="true">//这个枚举类中定义的都是跟业务有关的异常</span>
-<span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> AppExceptionCodeMsg <span class="token punctuation">{</span>
-
-    <span class="token function">INVALID_CODE</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token string">"验证码无效"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">USERNAME_NOT_EXISTS</span><span class="token punctuation">(</span><span class="token number">10001</span><span class="token punctuation">,</span><span class="token string">"用户名不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">USER_CREDIT_NOT_ENOUTH</span><span class="token punctuation">(</span><span class="token number">10002</span><span class="token punctuation">,</span><span class="token string">"用户积分不足"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">FAIL</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"失败"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">ERROR</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"服务器异常"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">UNAUTHORIZED</span><span class="token punctuation">(</span><span class="token number">401</span><span class="token punctuation">,</span> <span class="token string">"未认证（签名错误）"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">FORBIDDEN</span><span class="token punctuation">(</span><span class="token number">403</span><span class="token punctuation">,</span> <span class="token string">"禁止访问"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">NOT_FOUND</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token string">"接口不存在"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">AUTH_ERROR</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token string">"鉴权登陆失败，请重新登录！"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">;</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">int</span> code <span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String msg <span class="token punctuation">;</span>
-
-    <span class="token function">AppExceptionCodeMsg</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-</code></pre>
-<p>创建自定义的异常类</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppException</span> <span class="token keyword">extends</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span>String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token function">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg appExceptionCodeMsg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> appExceptionCodeMsg<span class="token punctuation">.</span><span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>创建一个controller,进行测试</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token annotation punctuation">@RestController</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/file"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"zhangsan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/demo"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">demo1</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"ok"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"succ"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"err"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//抛业务相关的异常</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USERNAME_NOT_EXISTS<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"errcode"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>INVALID_CODE<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment" spellcheck="true">//检查用户积分是否足够，如果不够，就抛出异常</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"notenough"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>USER_CREDIT_NOT_ENOUTH<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"default"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<p>3.重启服务</p>
+<h2 id="网址访问"><a href="#网址访问" class="headerlink" title="网址访问"></a>网址访问</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291630926.png" />
 
                 
             </div>
@@ -667,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/">http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -705,12 +610,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/nginx/">
+                                    <span class="chip bg-color">nginx</span>
                                 </a>
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">云服务器</span>
+                                </a>
+                            
+                                <a href="/tags/ssl%E8%AF%81%E4%B9%A6/">
+                                    <span class="chip bg-color">ssl证书</span>
                                 </a>
                             
                         </div>
@@ -1056,17 +965,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/">
+                <a href="/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java图片上传和预览">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="腾讯云服务器+nginx+ssl证书">
                         
-                        <span class="card-title">Java图片上传和预览</span>
+                        <span class="card-title">腾讯云服务器+nginx+ssl证书</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1076,34 +986,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/nginx/">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">云服务器</span>
+                    </a>
+                    
+                    <a href="/tags/ssl%E8%AF%81%E4%B9%A6/">
+                        <span class="chip bg-color">ssl证书</span>
                     </a>
                     
                 </div>
@@ -1117,13 +1028,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/22/redis-shi-yong/">
+                <a href="/2023/05/27/window-an-zhuang-docker-desktop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="redis使用">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="window安装docker desktop">
                         
-                        <span class="card-title">redis使用</span>
+                        <span class="card-title">window安装docker desktop</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1134,7 +1045,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-27
                             </span>
                         <span class="publish-author">
                             
@@ -1155,8 +1066,8 @@
                         <span class="chip bg-color">docker</span>
                     </a>
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/window/">
+                        <span class="chip bg-color">window</span>
                     </a>
                     
                 </div>

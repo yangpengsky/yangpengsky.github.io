@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-28T02:11:59.045Z</updated>
+  <updated>2023-05-29T08:31:46.881Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>腾讯云服务器+nginx+ssl证书</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</id>
+    <published>2023-05-29T06:12:25.000Z</published>
+    <updated>2023-05-29T08:31:46.881Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;SSL代表”Secure Sockets</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="nginx" scheme="http://ypbhbc.gitee.io/tags/nginx/"/>
+    
+    <category term="云服务器" scheme="http://ypbhbc.gitee.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    <category term="ssl证书" scheme="http://ypbhbc.gitee.io/tags/ssl%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>window安装docker desktop</title>
@@ -150,9 +179,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     

@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>腾讯云服务器+nginx+ssl证书</title>
+      <link href="/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/"/>
+      <url>/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SSL代表”Secure Sockets Layer”，是一种网络安全协议，用于在网络通信中保护数据的安全性和完整性。它建立在传输层协议（如TCP）之上，为客户端和服务器之间的通信提供加密和认证机制。</p><p>SSL的主要目的是确保通过互联网传输的敏感数据（如个人信息、信用卡号码、登录凭证等）在传输过程中不会被未经授权的第三方窃听、篡改或伪装。它通过使用加密技术来保护数据的机密性，并使用数字证书来验证服务器的身份。</p><p>SSL协议通过两个主要步骤来实现安全通信：</p><ol><li>握手阶段（Handshake）：客户端和服务器之间进行一系列的交互，协商加密算法、生成临时会话密钥，并验证服务器的身份。</li><li>数据传输阶段：在握手成功后，客户端和服务器使用协商的加密算法和密钥来加密和解密数据，确保数据的保密性和完整性。</li></ol><p>SSL在安全通信中起着重要的作用，并被广泛应用于保护网站、电子商务、在线银行、电子邮件等领域。它的后继协议是TLS（Transport Layer Security），TLS在功能和目标上与SSL类似，并逐渐取代了SSL成为更安全的标准协议。</p><h2 id="登录腾讯云下载证书"><a href="#登录腾讯云下载证书" class="headerlink" title="登录腾讯云下载证书"></a>登录腾讯云下载证书</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291518184.png"/><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291526069.png" /><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291528283.png" alt="image-20230529152833143"></p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291529737.png" /><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291612966.png" /><h2 id="nginx配置ssl证书"><a href="#nginx配置ssl证书" class="headerlink" title="nginx配置ssl证书"></a>nginx配置ssl证书</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291613653.png" /><p>1.上传证书</p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291617319.png" /><p>2.修改nginx配置文件</p><p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291620249.png" alt="image-20230529162009554"></p><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291627509.png"/><pre class=" language-json"><code class="language-json"> server <span class="token punctuation">{</span>        listen       <span class="token number">80</span><span class="token punctuation">;</span>         server_name  ypsky.top<span class="token punctuation">;</span>        rewrite ^(.*<span class="token punctuation">)</span>$ https<span class="token operator">:</span>//$host$<span class="token number">1</span> permanent<span class="token punctuation">;</span>         #charset koi8-r<span class="token punctuation">;</span>        #access_log  logs/host.access.log  main<span class="token punctuation">;</span>        location / <span class="token punctuation">{</span>            root   html<span class="token punctuation">;</span>            index  index.html index.htm<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span></code></pre><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291628028.png" /><pre class=" language-json"><code class="language-json">  server <span class="token punctuation">{</span>        listen       <span class="token number">443</span> ssl<span class="token punctuation">;</span>        server_name  ypsky.top<span class="token punctuation">;</span>        ssl_certificate      /usr/local/nginx/cret/ypsky.xyz_bundle.crt<span class="token punctuation">;</span>        ssl_certificate_key  /usr/local/nginx/cret/ypsky.xyz.key<span class="token punctuation">;</span>        ssl_session_cache    shared<span class="token operator">:</span>SSL<span class="token operator">:</span>1m<span class="token punctuation">;</span>        ssl_session_timeout  5m<span class="token punctuation">;</span>        ssl_ciphers  HIGH<span class="token operator">:</span>!aNULL<span class="token operator">:</span>!MD5<span class="token punctuation">;</span>        ssl_prefer_server_ciphers  on<span class="token punctuation">;</span>        location / <span class="token punctuation">{</span>            root   html<span class="token punctuation">;</span>            index  index.html index.htm<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span></code></pre><p>3.重启服务</p><h2 id="网址访问"><a href="#网址访问" class="headerlink" title="网址访问"></a>网址访问</h2><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305291630926.png" />]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> 云服务器 </tag>
+            
+            <tag> ssl证书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>window安装docker desktop</title>
       <link href="/2023/05/27/window-an-zhuang-docker-desktop/"/>
       <url>/2023/05/27/window-an-zhuang-docker-desktop/</url>
@@ -132,9 +161,9 @@
       
         <tags>
             
-            <tag> minio </tag>
-            
             <tag> docker </tag>
+            
+            <tag> minio </tag>
             
             <tag> picgo </tag>
             
