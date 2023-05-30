@@ -5,11 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="mybaties-plus的快速入门, 技术博客分享">
-    <meta name="description" content="创建数据库并初始化表创建数据库mybatis_plus
-
-创建User表DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`  (
-  `id` bigint NOT NULL COMMENT &#39;">
+    <meta name="description" content="前言MyBatis-Plus（简称为 MyBatis+ 或 MP）是一个基于 MyBatis 的开源持久层框架，旨在简化和增强与数据库交互的开发工作。它提供了一系列的增强功能和工具，使得使用 MyBatis 进行数据库操作更加便捷高效。
+M">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -56,8 +53,8 @@ CREATE TABLE `user`  (
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="技术博客分享" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -463,14 +460,14 @@ CREATE TABLE `user`  (
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -490,7 +487,18 @@ CREATE TABLE `user`  (
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="创建数据库并初始化表"><a href="#创建数据库并初始化表" class="headerlink" title="创建数据库并初始化表"></a>创建数据库并初始化表</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><pre class=" language-bash"><code class="language-bash">mybatis_plus
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>MyBatis-Plus（简称为 MyBatis+ 或 MP）是一个基于 MyBatis 的开源持久层框架，旨在简化和增强与数据库交互的开发工作。它提供了一系列的增强功能和工具，使得使用 MyBatis 进行数据库操作更加便捷高效。</p>
+<p>MyBatis-Plus 提供了以下主要功能和特性：</p>
+<ol>
+<li>通用 CRUD 操作：MyBatis-Plus 提供了一组通用的 CRUD 方法，可以通过简单的配置和接口编写，实现常见的数据库操作，如插入、查询、更新和删除等。</li>
+<li>条件构造器：MyBatis-Plus 提供了强大的条件构造器，可以通过链式调用的方式，灵活地构建查询条件，包括等于、大于、小于、模糊匹配等多种条件。</li>
+<li>分页查询：MyBatis-Plus 提供了对分页查询的支持，可以方便地进行分页查询操作，包括设置页数、每页记录数等。</li>
+<li>自动生成代码：MyBatis-Plus 可以根据数据库表结构自动生成实体类、Mapper 接口以及 XML 映射文件，减少手动编写重复的代码工作。</li>
+<li>多租户支持：MyBatis-Plus 提供了多租户的支持，可以实现基于数据库表中的租户字段进行数据隔离和查询。</li>
+<li>性能优化：MyBatis-Plus 通过内置的性能分析插件和优化策略，提供了一些性能优化的功能和建议，帮助开发者提升数据库操作的效率。</li>
+</ol>
+<p>MyBatis-Plus 是对 MyBatis 的增强和扩展，它保留了 MyBatis 的灵活性和可定制性，同时提供了更多便捷的功能和工具，简化了数据库操作的开发工作。因此，许多开发者选择使用 MyBatis-Plus 来提高开发效率和简化代码编写。</p>
+<h1 id="创建数据库并初始化表"><a href="#创建数据库并初始化表" class="headerlink" title="创建数据库并初始化表"></a>创建数据库并初始化表</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><pre class=" language-bash"><code class="language-bash">mybatis_plus
 </code></pre>
 <h2 id="创建User表"><a href="#创建User表" class="headerlink" title="创建User表"></a>创建User表</h2><pre class=" language-ba"><code class="language-ba">DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
@@ -615,15 +623,11 @@ CREATE TABLE `user`  (
 <img src="https://www.ypsky.xyz/myblog/images/2023/05/202305301741418.png" />
 
 <h5 id="主键策略"><a href="#主键策略" class="headerlink" title="主键策略"></a>主键策略</h5><p><strong>（1）ID_WORKER</strong><br>MyBatis-Plus默认的主键策略是：ID_WORKER 全局唯一ID<br><strong>（2）自增策略</strong></p>
-<ul>
-<li>要想主键自增需要配置如下主键策略<pre><code>     需要在创建数据表的时候设置主键自增
-     实体字段中配置 @TableId(type = IdType.AUTO)
-</code></pre>
+<p>要想主键自增需要配置如下主键策略</p>
+<p>需要在创建数据表的时候设置主键自增<br>        实体字段中配置 @TableId(type = IdType.AUTO)</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@TableId</span><span class="token punctuation">(</span>type <span class="token operator">=</span> IdType<span class="token punctuation">.</span>AUTO<span class="token punctuation">)</span>
 <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
 </code></pre>
-</li>
-</ul>
 <p><strong>要想影响所有实体的配置，可以设置全局主键配</strong></p>
 <pre class=" language-properties"><code class="language-properties">全局设置主键生成策略
 <span class="token comment" spellcheck="true">#mybatis-plus.global-config.db-config.id-type=auto</span>
@@ -1559,7 +1563,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.4k</span>
+                        class="white-color">21.9k</span>
             
             
             
