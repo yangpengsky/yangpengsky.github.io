@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-05-29T08:31:46.881Z</updated>
+  <updated>2023-05-30T09:52:16.948Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mybaties-plus的快速入门</title>
+    <link href="http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/"/>
+    <id>http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/</id>
+    <published>2023-05-30T09:39:17.000Z</published>
+    <updated>2023-05-30T09:52:16.948Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建数据库并初始化表&quot;&gt;&lt;a href=&quot;#创建数据库并初始化表&quot; class=&quot;headerlink&quot; title=&quot;创建数据库并初始化表&quot;&gt;&lt;/a&gt;创建数据库并初始化表&lt;/h1&gt;&lt;h2 id=&quot;创建数据库&quot;&gt;&lt;a href=&quot;#创建数据库&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    
+    <category term="Mybaties-Plus" scheme="http://ypbhbc.gitee.io/tags/Mybaties-Plus/"/>
+    
+  </entry>
   
   <entry>
     <title>腾讯云服务器+nginx+ssl证书</title>
@@ -179,9 +210,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
@@ -329,7 +360,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/20/pi-liang-xia-zai-wang-ye-tu-pian/"/>
     <id>http://ypbhbc.gitee.io/2023/05/20/pi-liang-xia-zai-wang-ye-tu-pian/</id>
     <published>2023-05-20T14:23:32.000Z</published>
-    <updated>2023-05-23T10:00:50.572Z</updated>
+    <updated>2023-05-30T02:45:43.116Z</updated>
     
     
       

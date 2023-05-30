@@ -454,21 +454,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-23
+                    2023-05-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -595,10 +595,49 @@ directory <span class="token operator">=</span> <span class="token string">"C:\\
     file_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>directory<span class="token punctuation">,</span><span class="token string">'{}.jpg'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>alt<span class="token punctuation">)</span><span class="token punctuation">)</span>
     write_to_file<span class="token punctuation">(</span>file_path<span class="token punctuation">,</span>image_content<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="效果图如下："><a href="#效果图如下：" class="headerlink" title="效果图如下："></a>效果图如下：</h3><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230520224459763.png"/>
+<h4 id="效果图如下："><a href="#效果图如下：" class="headerlink" title="效果图如下："></a>效果图如下：</h4><img src="https://www.ypsky.xyz/myblog/images/2023/05/image-20230520224459763.png"/>
 
 
 
+<h3 id="下载虎扑球员信息实例"><a href="#下载虎扑球员信息实例" class="headerlink" title="下载虎扑球员信息实例"></a>下载虎扑球员信息实例</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+
+<span class="token comment" spellcheck="true"># 定义了目标网页的URL和请求头信息</span>
+index_url <span class="token operator">=</span> <span class="token string">"https://nba.hupu.com/stats/players"</span>
+headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '</span>
+                  <span class="token string">'(KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'</span>
+<span class="token punctuation">}</span>
+
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>index_url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+selectors <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+tags <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[@class="color_font1 bg_a"]/td'</span><span class="token punctuation">)</span>
+
+ids <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[1]'</span><span class="token punctuation">)</span>
+names <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[2]/a'</span><span class="token punctuation">)</span>
+teams <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[3]/a'</span><span class="token punctuation">)</span>
+scores <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[4]'</span><span class="token punctuation">)</span>
+hit_shoots <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[5]'</span><span class="token punctuation">)</span>
+hit_rates <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[6]'</span><span class="token punctuation">)</span>
+hit_three_points <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[7]'</span><span class="token punctuation">)</span>
+three_point_hit_rates <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[8]'</span><span class="token punctuation">)</span>
+hits_free_throws <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[9]'</span><span class="token punctuation">)</span>
+free_throw_percentages <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[10]'</span><span class="token punctuation">)</span>
+sessions <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[11]'</span><span class="token punctuation">)</span>
+minutes <span class="token operator">=</span> selectors<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//table/tbody/tr[position() >= 2]/td[12]'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> tag <span class="token keyword">in</span> tags<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span>text<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> team<span class="token punctuation">,</span> score<span class="token punctuation">,</span> hit_shoot<span class="token punctuation">,</span> hit_rate<span class="token punctuation">,</span> hit_three_point<span class="token punctuation">,</span> three_point_hit_rate<span class="token punctuation">,</span> hits_free_throw<span class="token punctuation">,</span> free_throw_percentage<span class="token punctuation">,</span> session<span class="token punctuation">,</span> minute <span class="token keyword">in</span> \
+        zip<span class="token punctuation">(</span>ids<span class="token punctuation">,</span> names<span class="token punctuation">,</span> teams<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> hit_shoots<span class="token punctuation">,</span> hit_rates<span class="token punctuation">,</span> hit_three_points<span class="token punctuation">,</span> three_point_hit_rates<span class="token punctuation">,</span> hits_free_throws<span class="token punctuation">,</span>
+            free_throw_percentages<span class="token punctuation">,</span> sessions<span class="token punctuation">,</span> minutes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>id<span class="token punctuation">.</span>text<span class="token punctuation">,</span> name<span class="token punctuation">.</span>text<span class="token punctuation">,</span> team<span class="token punctuation">.</span>text<span class="token punctuation">,</span> score<span class="token punctuation">.</span>text<span class="token punctuation">,</span> hit_shoot<span class="token punctuation">.</span>text<span class="token punctuation">,</span> hit_rate<span class="token punctuation">.</span>text<span class="token punctuation">,</span> hit_three_point<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+          three_point_hit_rate<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+          hits_free_throw<span class="token punctuation">.</span>text<span class="token punctuation">,</span> free_throw_percentage<span class="token punctuation">.</span>text<span class="token punctuation">,</span> session<span class="token punctuation">.</span>text<span class="token punctuation">,</span> minute<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+</code></pre>
+<h4 id="效果图如下：-1"><a href="#效果图如下：-1" class="headerlink" title="效果图如下："></a>效果图如下：</h4><img src="https://www.ypsky.xyz/myblog/images/2023/05/202305301044826.png"/>
 
                 
             </div>
@@ -1309,7 +1348,7 @@ directory <span class="token operator">=</span> <span class="token string">"C:\\
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">19.3k</span>
+                        class="white-color">21.4k</span>
             
             
             
