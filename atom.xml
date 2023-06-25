@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-06-09T09:48:42.532Z</updated>
+  <updated>2023-06-25T06:48:53.737Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot集成jwt实现登录续签</title>
+    <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/"/>
+    <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/</id>
+    <published>2023-06-25T06:18:03.000Z</published>
+    <updated>2023-06-25T06:48:53.737Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;JWT（JSON Web Token）是一种开放标准（RFC</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    
+    <category term="Jwt" scheme="http://ypbhbc.gitee.io/tags/Jwt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springboot集成redis</title>
+    <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/"/>
+    <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/</id>
+    <published>2023-06-25T06:02:00.000Z</published>
+    <updated>2023-06-25T06:47:34.641Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;引入依赖&quot;&gt;&lt;a href=&quot;#引入依赖&quot; class=&quot;headerlink&quot; title=&quot;引入依赖&quot;&gt;&lt;/a&gt;引入依赖&lt;/h3&gt;&lt;pre class=&quot; language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;     &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    
+    <category term="Redis" scheme="http://ypbhbc.gitee.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>Java实现线程安全</title>
@@ -516,58 +578,6 @@
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
     <category term="gitee" scheme="http://ypbhbc.gitee.io/tags/gitee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>typora-vue-theme主题介绍</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/</id>
-    <published>2023-05-18T09:00:28.000Z</published>
-    <updated>2023-05-19T06:16:13.434Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Front-matter-选项详解&quot;&gt;&lt;a href=&quot;#Front-matter-选项详解&quot; class=&quot;headerlink&quot; title=&quot;Front-matter 选项详解&quot;&gt;&lt;/a&gt;Front-matter</summary>
-        
-      
-    
-    
-    
-    <category term="Markdown" scheme="http://ypbhbc.gitee.io/categories/Markdown/"/>
-    
-    
-    <category term="Typora" scheme="http://ypbhbc.gitee.io/tags/Typora/"/>
-    
-    <category term="Markdown" scheme="http://ypbhbc.gitee.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx的安装</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/18/nginx-de-an-zhuang/</id>
-    <published>2023-05-18T08:59:46.000Z</published>
-    <updated>2023-05-23T02:10:42.215Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Nginx（发音为”engine X”）是一个高性能的开源Web服务器和反向代理服务器。它最初由俄罗斯的工程师Igor</summary>
-        
-      
-    
-    
-    
-    <category term="nginx" scheme="http://ypbhbc.gitee.io/categories/nginx/"/>
-    
-    
-    <category term="nginx" scheme="http://ypbhbc.gitee.io/tags/nginx/"/>
     
   </entry>
   
