@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-06-25T06:48:53.737Z</updated>
+  <updated>2023-06-28T08:40:22.086Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue集成axios进行二次封装</title>
+    <link href="http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/"/>
+    <id>http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/</id>
+    <published>2023-06-28T08:17:04.000Z</published>
+    <updated>2023-06-28T08:40:22.086Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue2" scheme="http://ypbhbc.gitee.io/tags/Vue2/"/>
+    
+    <category term="Axios" scheme="http://ypbhbc.gitee.io/tags/Axios/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot集成jwt实现登录续签</title>
@@ -557,27 +584,6 @@
     <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="工厂模式" scheme="http://ypbhbc.gitee.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>picgo-gitee搭建个人图床</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/</id>
-    <published>2023-05-18T09:01:03.000Z</published>
-    <updated>2023-05-24T02:22:57.089Z</updated>
-    
-    
-    <summary type="html">图床（Image Hosting Service）是一种在线服务，用于存储和托管图片。它允许用户将自己的图片上传到互联网上，并获取图片的链接，以便在网页、博客或论坛等地方分享或嵌入图片。图床的解决方案也非常多，网上比较多的解决方案除了免费图床（不稳定）以外就是采用对象存储（OSS）在或者搭建自己的云服务器图床</summary>
-    
-    
-    
-    <category term="git" scheme="http://ypbhbc.gitee.io/categories/git/"/>
-    
-    
-    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
-    
-    <category term="gitee" scheme="http://ypbhbc.gitee.io/tags/gitee/"/>
     
   </entry>
   

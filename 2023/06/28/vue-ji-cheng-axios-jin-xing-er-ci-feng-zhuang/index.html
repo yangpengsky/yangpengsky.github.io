@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="redis使用, 技术博客分享">
-    <meta name="description" content="前言Redis（Remote Dictionary Server）是一个开源的内存数据存储系统，也被称为数据结构服务器。它提供了一个高性能的键值存储解决方案，并支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。
-特点和功能
-内存存">
+    <meta name="keywords" content="vue集成axios进行二次封装, 技术博客分享">
+    <meta name="description" content="前言Axios是一个基于Promise的HTTP客户端，用于浏览器和Node.js中发送HTTP请求。它是一个流行的第三方库，提供了一种简洁而强大的方式来进行网络请求。
+Axios具有以下特点和功能：
+
+支持浏览器和Node.js：Axio">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>redis使用 | 技术博客分享</title>
+    <title>vue集成axios进行二次封装 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
     
 
@@ -381,12 +382,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">redis使用</h1>
+                    <h1 class="description center-align post-title">vue集成axios进行二次封装</h1>
                 </div>
             </div>
         </div>
@@ -410,12 +411,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
+                            <a href="/tags/Vue2/">
+                                <span class="chip bg-color">Vue2</span>
                             </a>
                         
-                            <a href="/tags/redis/">
-                                <span class="chip bg-color">redis</span>
+                            <a href="/tags/Axios/">
+                                <span class="chip bg-color">Axios</span>
                             </a>
                         
                     </div>
@@ -426,8 +427,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/docker/" class="post-category">
-                                docker
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -439,28 +440,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-06-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-22
+                    2023-06-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    876
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    3 分
                 </div>
                 
 
@@ -480,80 +481,180 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Redis（Remote Dictionary Server）是一个开源的内存数据存储系统，也被称为数据结构服务器。它提供了一个高性能的键值存储解决方案，并支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。</p>
-<h2 id="特点和功能"><a href="#特点和功能" class="headerlink" title="特点和功能"></a>特点和功能</h2><ol>
-<li>内存存储：Redis的主要特点是将数据存储在内存中，这使得它能够实现快速读写操作。它也支持将数据持久化到磁盘，以防止数据丢失。</li>
-<li>高性能：由于数据存储在内存中，并使用了高效的数据结构和算法，Redis提供了快速的读写性能。它还支持并发操作，并具有高吞吐量。</li>
-<li>数据结构丰富：Redis支持多种数据结构，如字符串、哈希表、列表、集合、有序集合等。这使得开发人员能够使用适当的数据结构来解决不同类型的问题。</li>
-<li>发布/订阅：Redis支持发布/订阅模式，允许多个客户端订阅指定的频道并接收消息。这使得它非常适合构建实时消息系统和事件驱动的应用程序。</li>
-<li>数据持久化：Redis提供了两种持久化方式：RDB（Redis Database）和AOF（Append-Only File）。RDB使用快照方式将数据保存到磁盘，AOF则记录每个写操作的日志。</li>
-<li>分布式缓存：由于其高性能和可扩展性，Redis广泛用作分布式缓存系统。它可以通过设置过期时间和淘汰策略来管理缓存数据。</li>
-<li>原子操作：Redis支持原子操作，即对数据的读写操作是原子性的。这使得它适用于需要保证数据一致性和并发控制的应用场景。</li>
-<li>多语言支持：Redis支持多种编程语言，如Java、Python、Node.js等，提供了丰富的客户端库和API，便于开发人员使用。</li>
-</ol>
-<p>Redis在许多场景中被广泛应用，如缓存系统、会话存储、实时排行榜、消息队列、分布式锁等。它的简单性、高性能和丰富的功能使得它成为了一个流行的数据存储解决方案。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>以下是一些常用的Redis命令：</p>
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Axios是一个基于Promise的HTTP客户端，用于浏览器和Node.js中发送HTTP请求。它是一个流行的第三方库，提供了一种简洁而强大的方式来进行网络请求。</p>
+<p>Axios具有以下特点和功能：</p>
 <ol>
-<li>数据操作：</li>
+<li>支持浏览器和Node.js：Axios可以在浏览器和Node.js环境中使用，使得在前端和后端开发中都能方便地发送HTTP请求。</li>
+<li>Promise支持：Axios基于Promise实现，可以使用Promise的特性进行异步处理，包括使用async/await进行异步编程。</li>
+<li>提供简洁的API：Axios提供了一组简洁而易用的API，可以轻松地发送各种类型的HTTP请求，包括GET、POST、PUT、DELETE等。</li>
+<li>支持请求和响应拦截器：可以通过拦截器对请求和响应进行全局的处理，如在请求发送前添加请求头、在响应返回后对数据进行处理等。</li>
+<li>支持取消请求：Axios提供了取消请求的功能，可以取消尚未完成的请求，避免不必要的网络请求和资源浪费。</li>
+<li>提供请求和响应的转换：Axios支持自定义请求和响应的数据转换器，可以在发送请求和接收响应时对数据进行转换，如JSON、FormData等。</li>
 </ol>
-<ul>
-<li><code>SET key value</code>：设置指定键的值。</li>
-<li><code>GET key</code>：获取指定键的值。</li>
-<li><code>DEL key</code>：删除指定的键。</li>
-<li><code>EXISTS key</code>：检查键是否存在。</li>
-<li><code>KEYS pattern</code>：查找符合指定模式的键。</li>
-<li><code>TTL key</code>：获取键的生存时间。</li>
-</ul>
-<ol>
-<li>列表操作：</li>
-</ol>
-<ul>
-<li><code>LPUSH key value1 value2</code>：将一个或多个值插入到列表的左侧。</li>
-<li><code>RPUSH key value1 value2</code>：将一个或多个值插入到列表的右侧。</li>
-<li><code>LPOP key</code>：移除并返回列表左侧的元素。</li>
-<li><code>RPOP key</code>：移除并返回列表右侧的元素。</li>
-<li><code>LLEN key</code>：获取列表的长度。</li>
-</ul>
-<ol>
-<li>哈希操作：</li>
-</ol>
-<ul>
-<li><code>HSET key field value</code>：设置哈希中指定字段的值。</li>
-<li><code>HGET key field</code>：获取哈希中指定字段的值。</li>
-<li><code>HDEL key field1 field2</code>：删除哈希中的一个或多个字段。</li>
-<li><code>HGETALL key</code>：获取哈希中所有字段和值的列表。</li>
-</ul>
-<ol>
-<li>集合操作：</li>
-</ol>
-<ul>
-<li><code>SADD key member1 member2</code>：向集合添加一个或多个成员。</li>
-<li><code>SMEMBERS key</code>：获取集合中的所有成员。</li>
-<li><code>SREM key member1 member2</code>：从集合中移除一个或多个成员。</li>
-</ul>
-<ol>
-<li>有序集合操作：</li>
-</ol>
-<ul>
-<li><code>ZADD key score1 member1 score2 member2</code>：向有序集合添加一个或多个成员。</li>
-<li><code>ZRANGE key start stop</code>：按照索引范围获取有序集合的成员。</li>
-</ul>
-<p>这些只是Redis的一些常见命令示例。Redis还有很多其他强大的功能和命令，如事务、发布/订阅、过期时间设置等。</p>
-<h2 id="redis-conf配置文件解读"><a href="#redis-conf配置文件解读" class="headerlink" title="redis.conf配置文件解读"></a>redis.conf配置文件解读</h2><p>Redis的配置文件 <code>redis.conf</code> 包含了许多配置选项，用于控制Redis服务器的行为。下面是一些常见配置选项的解读：</p>
-<ol>
-<li><code>bind</code>：指定Redis服务器绑定的IP地址。默认为127.0.0.1，表示只允许本地访问。如果要允许远程访问，可以将其设置为0.0.0.0。</li>
-<li><code>port</code>：指定Redis服务器监听的端口号。默认为6379。</li>
-<li><code>requirepass</code>：设置Redis服务器的密码。如果启用了密码验证，客户端连接到服务器时需要提供密码才能进行操作。</li>
-<li><code>maxclients</code>：指定允许同时连接到Redis服务器的最大客户端数量。</li>
-<li><code>timeout</code>：指定客户端连接的超时时间，单位为秒。如果客户端在指定时间内没有发送任何请求，服务器将关闭连接。</li>
-<li><code>logfile</code>：指定日志文件的路径。可以将Redis的日志记录到指定的文件中，方便进行故障排查和日志分析。</li>
-<li><code>databases</code>：指定Redis服务器支持的数据库数量。默认为16个数据库，可以通过选择不同的数据库索引进行数据存储。</li>
-<li><code>snapshotting</code>：配置RDB持久化和AOF持久化选项，包括<code>save</code>、<code>stop-writes-on-bgsave-error</code>、<code>rdbcompression</code>、<code>appendonly</code>等。</li>
-<li><code>maxmemory</code>：设置Redis服务器使用的最大内存限制。可以根据需要进行配置，达到限制时可以使用淘汰策略来回收内存。</li>
-<li><code>replication</code>：配置Redis服务器的主从复制，包括<code>slaveof</code>、<code>masterauth</code>、<code>replica-serve-stale-data</code>等选项。</li>
-<li><code>security</code>：配置与安全相关的选项，如<code>protected-mode</code>、<code>rename-command</code>、<code>rename-config</code>等。</li>
-</ol>
-<p>这些只是Redis配置文件中的一部分选项，还有许多其他选项用于调整Redis服务器的行为和性能。你可以查阅Redis官方文档以获取更详细的配置选项和说明。</p>
+<p>总之，Axios是一个功能强大且易于使用的HTTP客户端，它简化了在前端和后端进行网络请求的过程，并提供了丰富的功能和灵活的配置选项。它成为了许多开发者首选的HTTP请求库之一。</p>
+<h3 id="axios一次封装"><a href="#axios一次封装" class="headerlink" title="axios一次封装"></a>axios一次封装</h3><p>1.在utils包新建文件request.js添加如下</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/* 封装axios用于发送请求 */</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Element <span class="token keyword">from</span> <span class="token string">"element-ui"</span>
+
+<span class="token comment" spellcheck="true">/*
+(1)request 相当于 Axios 的实例对象
+(2)为什么要有request,而不是直接用axios
+  * 项目开发中，有可能会有两个基地址
+  * 不同的接口配置不同（有的要token,有的不要token）
+*/</span>
+
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">"http://localhost:8088"</span> <span class="token comment" spellcheck="true">//后端服务器地址</span>
+
+<span class="token keyword">const</span> request <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    timeout<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 请求超时：当5s没有响应就会结束请求</span>
+    headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">"application/json; charset=utf-8"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 添加请求拦截器，一下内容是axios的拦截器，可以不用写</span>
+request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 在发送请求之前做些什么</span>
+        config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'token'</span><span class="token punctuation">]</span> <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> config
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 对请求错误做些什么</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 添加响应拦截器</span>
+request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 对响应数据做点什么</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span> <span class="token operator">||</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">201</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> response
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            Element<span class="token punctuation">.</span>Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token punctuation">:</span> <span class="token number">3000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 对响应错误做点什么</span>
+        Element<span class="token punctuation">.</span>Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token punctuation">:</span> <span class="token number">3000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> request
+</code></pre>
+<h3 id="axios的二次封装"><a href="#axios的二次封装" class="headerlink" title="axios的二次封装"></a>axios的二次封装</h3><p>例如：对用户的操作，在api文件下创建userApi.js文件，添加如下内容</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">"@/utils/request"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">userLogin</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        url<span class="token punctuation">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+        method<span class="token punctuation">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> user
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getUserList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        url<span class="token punctuation">:</span> <span class="token string">'/file/upload'</span><span class="token punctuation">,</span>
+        method<span class="token punctuation">:</span> <span class="token string">'post'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    userLogin<span class="token punctuation">,</span>
+    getUserList
+<span class="token punctuation">}</span> 
+</code></pre>
+<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> LoginView <span class="token keyword">from</span> <span class="token string">'@/views/LoginView'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+    component<span class="token punctuation">:</span> LoginView
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// route level code-splitting</span>
+    <span class="token comment" spellcheck="true">// this generates a separate chunk (about.[hash].js) for this route</span>
+    <span class="token comment" spellcheck="true">// which is lazy-loaded when the route is visited.</span>
+    component<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* webpackChunkName: "about" */</span> <span class="token string">'../views/AboutView.vue'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> token <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>token<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre>
+<h3 id="登录使用"><a href="#登录使用" class="headerlink" title="登录使用"></a>登录使用</h3><pre class=" language-vue"><code class="language-vue"><template>
+    <div>
+        <el-form label-width="80px" :model="user" style="width: fit-content;">
+            <el-form-item label="账号">
+                <el-input v-model="user.username"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input v-model="user.password"></el-input>
+            </el-form-item>
+            <el-button type="primary" @click="submitForm()">提交</el-button>
+        </el-form>
+    </div>
+</template>
+<script>
+import userApi from '@/api/userApi'
+export default {
+    data() {
+        return {
+            labelPosition: "center",
+            user: {
+                username: "",
+                password: "",
+            },
+
+        }
+    },
+    mounted() {
+
+    },
+    computed: {
+
+    },
+    methods: {
+        submitForm() {
+            userApi.userLogin(this.user).then((response) => {
+                console.log(response.data);
+                localStorage.setItem("token", response.data.data);
+                this.$router.push("/about")
+            }).catch((error) => {
+                console.log(error)
+            })
+        },
+    },
+}
+</script>
+<style scoped></style>
+</code></pre>
 
                 
             </div>
@@ -580,7 +681,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/22/redis-shi-yong/">http://ypbhbc.gitee.io/2023/05/22/redis-shi-yong/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/">http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,12 +719,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
+                                <a href="/tags/Vue2/">
+                                    <span class="chip bg-color">Vue2</span>
                                 </a>
                             
-                                <a href="/tags/redis/">
-                                    <span class="chip bg-color">redis</span>
+                                <a href="/tags/Axios/">
+                                    <span class="chip bg-color">Axios</span>
                                 </a>
                             
                         </div>
@@ -969,17 +1070,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/">
+                <a href="/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java统一结果返回和异常处理">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue集成axios进行二次封装">
                         
-                        <span class="card-title">Java统一结果返回和异常处理</span>
+                        <span class="card-title">vue集成axios进行二次封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -989,9 +1091,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue2/">
+                        <span class="chip bg-color">Vue2</span>
+                    </a>
+                    
+                    <a href="/tags/Axios/">
+                        <span class="chip bg-color">Axios</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="springboot集成jwt实现登录续签">
+                        
+                        <span class="card-title">springboot集成jwt实现登录续签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1019,53 +1175,8 @@
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/22/docker-de-shi-yong/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="docker的使用">
-                        
-                        <span class="card-title">docker的使用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/docker/" class="post-category">
-                                    docker
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/Jwt/">
+                        <span class="chip bg-color">Jwt</span>
                     </a>
                     
                 </div>
