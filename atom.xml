@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-07-07T03:41:25.603Z</updated>
+  <updated>2023-07-26T09:53:23.865Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot整合aop</title>
+    <link href="http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/"/>
+    <id>http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/</id>
+    <published>2023-07-26T09:36:37.000Z</published>
+    <updated>2023-07-26T09:53:23.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在Spring中，AOP（面向切面编程）是一种编程范式，用于将横切关注点（Cross-cutting</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    
+    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    
+    <category term="Aop" scheme="http://ypbhbc.gitee.io/tags/Aop/"/>
+    
+  </entry>
   
   <entry>
     <title>vue集成axios进行二次封装</title>
@@ -48,7 +79,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/"/>
     <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/</id>
     <published>2023-06-25T06:18:03.000Z</published>
-    <updated>2023-07-07T03:52:14.577Z</updated>
+    <updated>2023-07-07T10:03:44.886Z</updated>
     
     
       
@@ -384,9 +415,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
@@ -557,33 +588,6 @@
     <category term="Python" scheme="http://ypbhbc.gitee.io/tags/Python/"/>
     
     <category term="批量图片下载" scheme="http://ypbhbc.gitee.io/tags/%E6%89%B9%E9%87%8F%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工厂模式的使用</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/19/gong-han-mo-shi-de-shi-yong/</id>
-    <published>2023-05-19T06:49:57.000Z</published>
-    <updated>2023-05-28T01:36:24.651Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;工厂模式的定义&quot;&gt;&lt;a href=&quot;#工厂模式的定义&quot; class=&quot;headerlink&quot; title=&quot;工厂模式的定义&quot;&gt;&lt;/a&gt;工厂模式的定义&lt;/h2&gt;&lt;p&gt;​        工厂模式（Factory Pattern）是 Java 中最常用的&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="设计模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="工厂模式" scheme="http://ypbhbc.gitee.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
