@@ -18,7 +18,7 @@
 
 
     <title>工厂模式的使用 | 技术博客分享</title>
-    <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
+    <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
 
@@ -61,7 +61,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://www.ypsky.xyz/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
+                    <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">技术博客分享</span>
                 </a>
@@ -217,7 +217,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://www.ypsky.xyz/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
+        <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">技术博客分享</div>
         <div class="logo-desc">
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-11
+                    2023-08-29
                 </div>
                 
 
@@ -479,9 +479,9 @@
                 <h2 id="工厂模式的定义"><a href="#工厂模式的定义" class="headerlink" title="工厂模式的定义"></a>工厂模式的定义</h2><p>​        工厂模式（Factory Pattern）是 Java 中最常用的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&spm=1001.2101.3001.7020">设计模式</a>之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。<br>在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
 <p>​        工厂顾名思义就是创建产品，根据产品是具体产品还是具体工厂可分为简单工厂模式和工厂方法模式，根据工厂的抽象程度可分为<strong>工厂方法模式</strong>和<strong>抽象工厂模式</strong>。该模式用于封装和管理对象的创建，是一种创建型模式。本文从一个具体的例子逐步深入分析，来体会三种工厂模式的应用场景和利弊。</p>
 <p>​        通过工厂模式，将创建产品实例的权利移交工厂，我们不再通过new来创建我们所需的对象，而是通过工厂来获取我们需要的产品。降低了产品使用者与使用者之间的耦合关系</p>
-<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><img src="http://106.14.113.4:9090/myblog/images/2023/05/202305251103205.png" />
+<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305251103205.png" />
 
-<img src="http://106.14.113.4:9090/myblog/images/2023/05/202305191447001.png"/>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305191447001.png"/>
 
 <h3 id="编码实现"><a href="#编码实现" class="headerlink" title="编码实现"></a>编码实现</h3><p>Phone类：手机标准规范类(AbstractProduct)</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Phone</span> <span class="token punctuation">{</span>
@@ -540,7 +540,7 @@
 <p>缺点：</p>
 <p>每当具体产品类的抽象产品类增多时，会需要在简单工厂类中新增关于新增产品类对象生成的方法。当抽象产品类很多时，抽象工厂会很臃肿。并且在这种情形下，SimpleFactory类也不符合开闭原则。</p>
 <h2 id="工厂方法模式-Factory-Method"><a href="#工厂方法模式-Factory-Method" class="headerlink" title="工厂方法模式(Factory Method)"></a>工厂方法模式(Factory Method)</h2><p>和简单工厂模式中工厂负责生产所有产品相比，工厂方法模式将生成具体产品的任务分发给具体的产品工厂，其UML<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%B1%BB%E5%9B%BE&spm=1001.2101.3001.7020">类图</a>如下</p>
-<img src="http://106.14.113.4:9090/myblog/images/2023/05/202305191448577.png"/>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305191448577.png"/>
 
 <h3 id="编码实现-1"><a href="#编码实现-1" class="headerlink" title="编码实现"></a>编码实现</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象工厂
@@ -620,7 +620,7 @@
 <p>它的缺点在于：</p>
 <p>（1）类的个数容易过多，增加复杂度</p>
 <p>（2）实现抽象工厂接口的具体工厂只能生产出一种产品（可以用抽象工厂模式解决）</p>
-<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p><img src="http://106.14.113.4:9090/myblog/images/2023/05/202305251141998.png" alt="image-20230525114128720"></p>
+<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305251141998.png" alt="image-20230525114128720"></p>
 <h3 id="编码实现-2"><a href="#编码实现-2" class="headerlink" title="编码实现"></a>编码实现</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 抽象工厂
  */</span>
@@ -1235,12 +1235,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/gitee/">
-                        <span class="chip bg-color">gitee</span>
-                    </a>
-                    
                     <a href="/tags/picgo/">
                         <span class="chip bg-color">picgo</span>
+                    </a>
+                    
+                    <a href="/tags/gitee/">
+                        <span class="chip bg-color">gitee</span>
                     </a>
                     
                 </div>
@@ -1435,7 +1435,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.9k</span>
+                        class="white-color">44.1k</span>
             
             
             

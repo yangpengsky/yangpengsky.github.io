@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-08-11T07:56:29.780Z</updated>
+  <updated>2023-08-17T09:48:47.118Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://ypbhbc.gitee.io/2023/08/17/readme/"/>
+    <id>http://ypbhbc.gitee.io/2023/08/17/readme/</id>
+    <published>2023-08-17T09:48:47.118Z</published>
+    <updated>2023-08-17T09:48:47.118Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mayun-blog&quot;&gt;&lt;a href=&quot;#mayun-blog&quot; class=&quot;headerlink&quot; title=&quot;mayun_blog&quot;&gt;&lt;/a&gt;mayun_blog&lt;/h1&gt;&lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>springboot整合aop</title>
     <link href="http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/"/>
     <id>http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/</id>
     <published>2023-07-26T09:36:37.000Z</published>
-    <updated>2023-08-11T07:56:29.780Z</updated>
+    <updated>2023-08-29T06:19:13.555Z</updated>
     
     
       
@@ -195,7 +216,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/"/>
     <id>http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/</id>
     <published>2023-06-01T08:36:53.000Z</published>
-    <updated>2023-08-11T07:54:02.809Z</updated>
+    <updated>2023-08-29T06:18:14.035Z</updated>
     
     
       
@@ -224,7 +245,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/"/>
     <id>http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/</id>
     <published>2023-05-31T09:40:43.000Z</published>
-    <updated>2023-08-11T07:51:29.324Z</updated>
+    <updated>2023-08-29T06:17:12.552Z</updated>
     
     
       
@@ -251,7 +272,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/"/>
     <id>http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/</id>
     <published>2023-05-30T09:39:17.000Z</published>
-    <updated>2023-08-11T07:55:08.865Z</updated>
+    <updated>2023-08-29T06:18:42.204Z</updated>
     
     
       
@@ -282,7 +303,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/"/>
     <id>http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</id>
     <published>2023-05-29T06:12:25.000Z</published>
-    <updated>2023-08-11T07:52:26.821Z</updated>
+    <updated>2023-08-29T06:17:30.072Z</updated>
     
     
       
@@ -311,7 +332,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/"/>
     <id>http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/</id>
     <published>2023-05-27T15:00:28.000Z</published>
-    <updated>2023-08-11T07:56:54.356Z</updated>
+    <updated>2023-08-29T06:19:38.438Z</updated>
     
     
       
@@ -338,7 +359,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/"/>
     <id>http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/</id>
     <published>2023-05-26T12:19:38.000Z</published>
-    <updated>2023-08-11T07:52:53.929Z</updated>
+    <updated>2023-08-29T06:17:39.318Z</updated>
     
     
       
@@ -392,7 +413,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/</id>
     <published>2023-05-24T06:03:21.000Z</published>
-    <updated>2023-08-11T07:54:49.121Z</updated>
+    <updated>2023-08-29T06:18:36.988Z</updated>
     
     
       
@@ -424,7 +445,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
     <published>2023-05-24T01:52:46.000Z</published>
-    <updated>2023-08-11T07:53:10.427Z</updated>
+    <updated>2023-08-29T06:15:43.941Z</updated>
     
     
       
@@ -442,9 +463,9 @@
     
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
-    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
-    
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
   </entry>
   
@@ -453,7 +474,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/"/>
     <id>http://ypbhbc.gitee.io/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/</id>
     <published>2023-05-23T07:11:18.000Z</published>
-    <updated>2023-08-11T07:54:28.639Z</updated>
+    <updated>2023-08-29T06:18:30.774Z</updated>
     
     
       
@@ -538,7 +559,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2023/05/22/docker-de-shi-yong/</id>
     <published>2023-05-22T02:24:08.000Z</published>
-    <updated>2023-08-11T07:53:37.401Z</updated>
+    <updated>2023-08-29T06:17:55.177Z</updated>
     
     
       
@@ -555,33 +576,6 @@
     
     
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker部署chatGPT</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/21/docker-bu-shu-chatgpt/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/21/docker-bu-shu-chatgpt/</id>
-    <published>2023-05-21T13:48:25.000Z</published>
-    <updated>2023-08-11T07:53:23.755Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于国内chatGPT是禁止国内访问，但是毕竟chatGPT的出现正在颠覆许多行业，所以网上就有大佬实现了网页版 ChatGPT</summary>
-        
-      
-    
-    
-    
-    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
-    
-    
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
-    <category term="chatGPT" scheme="http://ypbhbc.gitee.io/tags/chatGPT/"/>
     
   </entry>
   

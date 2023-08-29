@@ -21,7 +21,7 @@
 
 
     <title>Java多线程 | 技术博客分享</title>
-    <link rel="icon" type="image/png" href="https://www.ypsky.xyz/myblog/images/2023/05/panda.png">
+    <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
 
@@ -64,7 +64,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://www.ypsky.xyz/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
+                    <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">技术博客分享</span>
                 </a>
@@ -220,7 +220,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://www.ypsky.xyz/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
+        <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">技术博客分享</div>
         <div class="logo-desc">
@@ -449,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-11
+                    2023-08-29
                 </div>
                 
 
@@ -573,7 +573,7 @@
 <li>面向对象设计：使用Runnable接口可以更好地符合面向对象的设计原则，将任务的定义与线程的控制分离。这样可以使得代码更加清晰、可维护性更高。而使用Thread类，任务的定义与线程的控制被耦合在一起，不够灵活。</li>
 </ol>
 <p>综上所述，使用Runnable接口实现多线程任务更加灵活和可扩展，推荐在开发多线程应用时使用这种方式。然而，如果你只需要简单地创建一个线程并执行任务，Thread类也是一个可选的方案。</p>
-<h3 id="线程池的转换"><a href="#线程池的转换" class="headerlink" title="线程池的转换"></a>线程池的转换</h3><p><img src="http://106.14.113.4:9090/myblog/images/2023/06/202306091440761.png" alt="image-20230609144005664"></p>
+<h3 id="线程池的转换"><a href="#线程池的转换" class="headerlink" title="线程池的转换"></a>线程池的转换</h3><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/06/202306091440761.png" alt="image-20230609144005664"></p>
 <p>1、新建状态（New）：新创建了一个线程对象。<br>2、就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。<br>3、运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。<br>4、阻塞状态（Blocked）：阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br>（一）、等待阻塞：运行的线程执行wait()方法，JVM会把该线程放入等待池中。(wait会释放持有的锁)<br>（二）、同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池中。<br>（三）、其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。（注意,sleep是不会释放持有的锁）<br>5、死亡状态（Dead）：线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</p>
 <h3 id="线程状态转换"><a href="#线程状态转换" class="headerlink" title="线程状态转换"></a>线程状态转换</h3><h4 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h4><p>在Java中，Thread类提供了一个名为join()的方法，它允许一个线程等待另一个线程执行完毕。</p>
 <p>当调用线程A的join()方法时，它将会阻塞并等待线程A执行完毕，然后再继续执行调用join()方法的线程A之后的代码。换句话说，join()方法会使得当前线程等待被调用线程执行完毕。</p>
@@ -1503,7 +1503,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.9k</span>
+                        class="white-color">44.1k</span>
             
             
             
