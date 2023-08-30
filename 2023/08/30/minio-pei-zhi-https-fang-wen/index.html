@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue集成axios进行二次封装, 技术博客分享">
-    <meta name="description" content="前言Axios是一个基于Promise的HTTP客户端，用于浏览器和Node.js中发送HTTP请求。它是一个流行的第三方库，提供了一种简洁而强大的方式来进行网络请求。
-Axios具有以下特点和功能：
-
-支持浏览器和Node.js：Axio">
+    <meta name="keywords" content="minio配置https访问, 技术博客分享">
+    <meta name="description" content="前言MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon S3（Simple Storage Service）API，可以用于存储和检索大规模的非结构化数据，例如图像">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@ Axios具有以下特点和功能：
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue集成axios进行二次封装 | 技术博客分享</title>
+    <title>minio配置https访问 | 技术博客分享</title>
     <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
@@ -380,12 +377,12 @@ Axios具有以下特点和功能：
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue集成axios进行二次封装</h1>
+                    <h1 class="description center-align post-title">minio配置https访问</h1>
                 </div>
             </div>
         </div>
@@ -409,12 +406,12 @@ Axios具有以下特点和功能：
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue2/">
-                                <span class="chip bg-color">Vue2</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/Axios/">
-                                <span class="chip bg-color">Axios</span>
+                            <a href="/tags/minio/">
+                                <span class="chip bg-color">minio</span>
                             </a>
                         
                     </div>
@@ -425,8 +422,8 @@ Axios具有以下特点和功能：
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/docker/" class="post-category">
+                                docker
                             </a>
                         
                     </div>
@@ -438,28 +435,28 @@ Axios具有以下特点和功能：
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-28
+                    2023-08-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-07
+                    2023-08-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    960
+                    615
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -479,179 +476,76 @@ Axios具有以下特点和功能：
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Axios是一个基于Promise的HTTP客户端，用于浏览器和Node.js中发送HTTP请求。它是一个流行的第三方库，提供了一种简洁而强大的方式来进行网络请求。</p>
-<p>Axios具有以下特点和功能：</p>
-<ol>
-<li>支持浏览器和Node.js：Axios可以在浏览器和Node.js环境中使用，使得在前端和后端开发中都能方便地发送HTTP请求。</li>
-<li>Promise支持：Axios基于Promise实现，可以使用Promise的特性进行异步处理，包括使用async/await进行异步编程。</li>
-<li>提供简洁的API：Axios提供了一组简洁而易用的API，可以轻松地发送各种类型的HTTP请求，包括GET、POST、PUT、DELETE等。</li>
-<li>支持请求和响应拦截器：可以通过拦截器对请求和响应进行全局的处理，如在请求发送前添加请求头、在响应返回后对数据进行处理等。</li>
-<li>支持取消请求：Axios提供了取消请求的功能，可以取消尚未完成的请求，避免不必要的网络请求和资源浪费。</li>
-<li>提供请求和响应的转换：Axios支持自定义请求和响应的数据转换器，可以在发送请求和接收响应时对数据进行转换，如JSON、FormData等。</li>
-</ol>
-<p>总之，Axios是一个功能强大且易于使用的HTTP客户端，它简化了在前端和后端进行网络请求的过程，并提供了丰富的功能和灵活的配置选项。它成为了许多开发者首选的HTTP请求库之一。</p>
-<h3 id="axios一次封装"><a href="#axios一次封装" class="headerlink" title="axios一次封装"></a>axios一次封装</h3><p>1.在utils包新建文件request.js添加如下</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/* 封装axios用于发送请求 */</span>
-<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> Element <span class="token keyword">from</span> <span class="token string">"element-ui"</span>
-
-<span class="token comment" spellcheck="true">/*
-(1)request 相当于 Axios 的实例对象
-(2)为什么要有request,而不是直接用axios
-  * 项目开发中，有可能会有两个基地址
-  * 不同的接口配置不同（有的要token,有的不要token）
-*/</span>
-
-axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">"http://localhost:8088"</span> <span class="token comment" spellcheck="true">//后端服务器地址</span>
-
-<span class="token keyword">const</span> request <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    timeout<span class="token punctuation">:</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 请求超时：当5s没有响应就会结束请求</span>
-    headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">"application/json; charset=utf-8"</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// 添加请求拦截器，一下内容是axios的拦截器，可以不用写</span>
-request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
-    <span class="token keyword">function</span> <span class="token punctuation">(</span>config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 在发送请求之前做些什么</span>
-        config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'token'</span><span class="token punctuation">]</span> <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> config
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 对请求错误做些什么</span>
-        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// 添加响应拦截器</span>
-request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
-    <span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 对响应数据做点什么</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span> <span class="token operator">||</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">201</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> response
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            Element<span class="token punctuation">.</span>Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token punctuation">:</span> <span class="token number">3000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 对响应错误做点什么</span>
-        Element<span class="token punctuation">.</span>Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token punctuation">:</span> <span class="token number">3000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> request
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon S3（Simple Storage Service）API，可以用于存储和检索大规模的非结构化数据，例如图像、视频、日志文件、备份等。在我们的线上环境，是不允许通过ip和http访问Minio中的文件的，因此，我们就需要给它配置https。</p>
+<h3 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h3><p>1.阿里云服务一台</p>
+<p>2.域名（已备案）</p>
+<h3 id="申请SSL证书"><a href="#申请SSL证书" class="headerlink" title="申请SSL证书"></a>申请SSL证书</h3><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/08/202308301510327.png" alt="image-20230830151052293"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/08/202308301511050.png" alt="image-20230830151135383"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/08/202308301527458.png" alt="image-20230830152737308"></p>
+<h3 id="centos7安装docker-compose"><a href="#centos7安装docker-compose" class="headerlink" title="centos7安装docker-compose"></a>centos7安装docker-compose</h3><h4 id="步骤-1：更新系统"><a href="#步骤-1：更新系统" class="headerlink" title="步骤 1：更新系统"></a><strong>步骤 1：更新系统</strong></h4><p>在安装 Docker Compose 之前，首先确保你的系统是最新的。打开终端，并以 root 或具有 sudo 权限的用户身份运行以下命令：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum update
 </code></pre>
-<h3 id="axios的二次封装"><a href="#axios的二次封装" class="headerlink" title="axios的二次封装"></a>axios的二次封装</h3><p>例如：对用户的操作，在api文件下创建userApi.js文件，添加如下内容</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">"@/utils/request"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">userLogin</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        url<span class="token punctuation">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
-        method<span class="token punctuation">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
-        data<span class="token punctuation">:</span> user
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">getUserList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        url<span class="token punctuation">:</span> <span class="token string">'/file/upload'</span><span class="token punctuation">,</span>
-        method<span class="token punctuation">:</span> <span class="token string">'post'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-    userLogin<span class="token punctuation">,</span>
-    getUserList
-<span class="token punctuation">}</span> 
+<h4 id="步骤-2：安装-Docker-Compose"><a href="#步骤-2：安装-Docker-Compose" class="headerlink" title="步骤 2：安装 Docker Compose"></a><strong>步骤 2：安装 Docker Compose</strong></h4><p>1.下载 Docker Compose 的可执行文件。你可以从 GitHub 的 Docker Compose 仓库下载最新版本：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> curl -L <span class="token string">"https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>"</span> -o /usr/local/bin/docker-compose
 </code></pre>
-<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
-<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
-<span class="token keyword">import</span> LoginView <span class="token keyword">from</span> <span class="token string">'@/views/LoginView'</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
-
-<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span>
-    path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
-    component<span class="token punctuation">:</span> LoginView
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    path<span class="token punctuation">:</span> <span class="token string">'/about'</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">:</span> <span class="token string">'about'</span><span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true">// route level code-splitting</span>
-    <span class="token comment" spellcheck="true">// this generates a separate chunk (about.[hash].js) for this route</span>
-    <span class="token comment" spellcheck="true">// which is lazy-loaded when the route is visited.</span>
-    component<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* webpackChunkName: "about" */</span> <span class="token string">'../views/AboutView.vue'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-
-
-<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  routes
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-
-router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">let</span> token <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>token<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span>
-  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> router
+<p>2.赋予可执行权限：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
 </code></pre>
-<h3 id="登录使用"><a href="#登录使用" class="headerlink" title="登录使用"></a>登录使用</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form</span> <span class="token attr-name">label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>80px<span class="token punctuation">"</span></span> <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span> fit-content<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>账号<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.username<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>密码<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submitForm()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-<span class="token keyword">import</span> userApi <span class="token keyword">from</span> <span class="token string">'@/api/userApi'</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">{</span>
-            labelPosition<span class="token punctuation">:</span> <span class="token string">"center"</span><span class="token punctuation">,</span>
-            user<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                username<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-                password<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<p>3.创建一个符号链接以便更方便地运行 <code>docker-compose</code> 命令：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre>
+<h4 id="步骤-3：验证安装"><a href="#步骤-3：验证安装" class="headerlink" title="步骤 3：验证安装"></a><strong>步骤 3：验证安装</strong></h4><p>安装完成后，可以运行以下命令来验证 Docker Compose 是否成功安装：</p>
+<pre class=" language-bash"><code class="language-bash">docker-compose --version
+</code></pre>
+<h3 id="部署minio"><a href="#部署minio" class="headerlink" title="部署minio"></a>部署minio</h3><p>1.编辑文件</p>
+<pre class=" language-bash"><code class="language-bash">vim /usr/local/minio/docker-compose.yml
+</code></pre>
+<p>2.插入如下内容</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
 
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token function">submitForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            userApi<span class="token punctuation">.</span><span class="token function">userLogin</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"/about"</span><span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">></span></span><span class="token style language-css"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minio</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> minio/minio
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> myminio
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># api 端口</span>
+      <span class="token punctuation">-</span> <span class="token string">"9000:9000"</span>
+      <span class="token comment" spellcheck="true"># 控制台端口</span>
+      <span class="token punctuation">-</span> <span class="token string">"9090:9090"</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 时区上海</span>
+      <span class="token key atrule">TZ</span><span class="token punctuation">:</span> Asia/Shanghai
+      <span class="token comment" spellcheck="true"># 管理后台用户名</span>
+      <span class="token key atrule">MINIO_ROOT_USER</span><span class="token punctuation">:</span> admin
+      <span class="token comment" spellcheck="true"># 管理后台密码，最小8个字符</span>
+      <span class="token key atrule">MINIO_ROOT_PASSWORD</span><span class="token punctuation">:</span> 2023@admin
+      <span class="token comment" spellcheck="true"># https需要指定域名,不需要https时以下两项空着</span>
+      <span class="token key atrule">MINIO_SERVER_URL</span><span class="token punctuation">:</span> <span class="token string">"https://www.xxx.com:9000"</span>
+      <span class="token key atrule">MINIO_BROWSER_REDIRECT_URL</span><span class="token punctuation">:</span> <span class="token string">"https://www.xxx.com:9090"</span>
+      <span class="token comment" spellcheck="true"># 开启压缩 on 开启 off 关闭</span>
+      <span class="token key atrule">MINIO_COMPRESS</span><span class="token punctuation">:</span> <span class="token string">"off"</span>
+      <span class="token comment" spellcheck="true"># 扩展名 .pdf,.doc 为空 所有类型均压缩</span>
+      <span class="token key atrule">MINIO_COMPRESS_EXTENSIONS</span><span class="token punctuation">:</span> <span class="token string">""</span>
+      <span class="token comment" spellcheck="true"># mime 类型 application/pdf 为空 所有类型均压缩</span>
+      <span class="token key atrule">MINIO_COMPRESS_MIME_TYPES</span><span class="token punctuation">:</span> <span class="token string">""</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token comment" spellcheck="true"># 映射当前目录下的data目录至容器内/data目录</span>
+      <span class="token punctuation">-</span> /docker/minio/data<span class="token punctuation">:</span>/data
+      <span class="token comment" spellcheck="true"># 映射配置目录</span>
+      <span class="token punctuation">-</span> /docker/minio/config<span class="token punctuation">:</span>/root/.minio/
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> server <span class="token punctuation">-</span><span class="token punctuation">-</span>address '<span class="token punctuation">:</span>9000' <span class="token punctuation">-</span><span class="token punctuation">-</span>console<span class="token punctuation">-</span>address '<span class="token punctuation">:</span>9090' /data  <span class="token comment" spellcheck="true"># 指定容器中的目录 /data</span>
+    <span class="token key atrule">privileged</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+</code></pre>
+<p>2.创建文件</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /docker/minio/data
+<span class="token function">mkdir</span> -p /docker/minio/config
+</code></pre>
+<p>3.将密钥上传至/docker/minio/config/certs 目录下，并将（私钥）.pem文件重命名为public.crt，将（公钥）.key文件重命名为private.key</p>
+<p>4.启动容器</p>
+<pre class=" language-bash"><code class="language-bash">docker-compose up -d
+</code></pre>
+<h3 id="访问minio后台"><a href="#访问minio后台" class="headerlink" title="访问minio后台"></a>访问minio后台</h3><pre class=" language-bash"><code class="language-bash">https://www.xxx.com:9000
 </code></pre>
 
                 
@@ -679,7 +573,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/">http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/</a>
+                    <a href="http://ypbhbc.gitee.io/2023/08/30/minio-pei-zhi-https-fang-wen/">http://ypbhbc.gitee.io/2023/08/30/minio-pei-zhi-https-fang-wen/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -717,12 +611,12 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vue2/">
-                                    <span class="chip bg-color">Vue2</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/Axios/">
-                                    <span class="chip bg-color">Axios</span>
+                                <a href="/tags/minio/">
+                                    <span class="chip bg-color">minio</span>
                                 </a>
                             
                         </div>
@@ -1035,17 +929,18 @@ router<span class="token punctuation">.</span><span class="token function">befor
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/26/springboot-zheng-he-aop/">
+                <a href="/2023/08/30/minio-pei-zhi-https-fang-wen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="springboot整合aop">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="minio配置https访问">
                         
-                        <span class="card-title">springboot整合aop</span>
+                        <span class="card-title">minio配置https访问</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1055,25 +950,22 @@ router<span class="token punctuation">.</span><span class="token function">befor
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/docker/" class="post-category">
+                                    docker
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1081,12 +973,8 @@ router<span class="token punctuation">.</span><span class="token function">befor
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                    <a href="/tags/Aop/">
-                        <span class="chip bg-color">Aop</span>
+                    <a href="/tags/minio/">
+                        <span class="chip bg-color">minio</span>
                     </a>
                     
                 </div>
@@ -1100,13 +988,13 @@ router<span class="token punctuation">.</span><span class="token function">befor
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/">
+                <a href="/2023/08/17/readme/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="springboot集成jwt实现登录续签">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">springboot集成jwt实现登录续签</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1117,39 +1005,15 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            yangpeng
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                    <a href="/tags/Jwt/">
-                        <span class="chip bg-color">Jwt</span>
-                    </a>
-                    
                 </div>
                 
             </div>
