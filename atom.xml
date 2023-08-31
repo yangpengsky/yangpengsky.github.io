@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-08-30T09:02:47.888Z</updated>
+  <updated>2023-08-31T02:05:16.484Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://ypbhbc.gitee.io/2023/08/31/readme/"/>
+    <id>http://ypbhbc.gitee.io/2023/08/31/readme/</id>
+    <published>2023-08-31T02:05:16.483Z</published>
+    <updated>2023-08-31T02:05:16.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;mayun-blog&quot;&gt;&lt;a href=&quot;#mayun-blog&quot; class=&quot;headerlink&quot; title=&quot;mayun_blog&quot;&gt;&lt;/a&gt;mayun_blog&lt;/h1&gt;&lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>minio配置https访问</title>
@@ -40,27 +61,6 @@
     <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://ypbhbc.gitee.io/2023/08/17/readme/"/>
-    <id>http://ypbhbc.gitee.io/2023/08/17/readme/</id>
-    <published>2023-08-17T09:48:47.118Z</published>
-    <updated>2023-08-17T09:48:47.118Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;mayun-blog&quot;&gt;&lt;a href=&quot;#mayun-blog&quot; class=&quot;headerlink&quot; title=&quot;mayun_blog&quot;&gt;&lt;/a&gt;mayun_blog&lt;/h1&gt;&lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
@@ -330,7 +330,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/"/>
     <id>http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</id>
     <published>2023-05-29T06:12:25.000Z</published>
-    <updated>2023-08-29T06:17:30.072Z</updated>
+    <updated>2023-08-31T02:07:25.772Z</updated>
     
     
       
@@ -472,7 +472,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
     <published>2023-05-24T01:52:46.000Z</published>
-    <updated>2023-08-29T06:15:43.941Z</updated>
+    <updated>2023-08-31T02:19:33.126Z</updated>
     
     
       
@@ -488,9 +488,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
