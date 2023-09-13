@@ -496,9 +496,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
     <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
+    
+    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
