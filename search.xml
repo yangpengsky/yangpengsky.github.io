@@ -8,7 +8,7 @@
       <link href="/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/"/>
       <url>/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/</url>
       
-        <content type="html"><![CDATA[<h2 id="桥接模式网络配置"><a href="#桥接模式网络配置" class="headerlink" title="桥接模式网络配置"></a>桥接模式网络配置</h2><p>1、桥接网络选择则当前连接的网络（在网络中心查看）</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757221.png" alt="image-20220728080808258"></p><p>2、给虚拟机添加一张网卡，选择桥接模式</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757324.png" alt="image-20220728081015104"></p><p>3、进入到网卡所在配置文件目录</p><pre><code> cd /etc/sysconfig/network-scripts/</code></pre><p>4、复制ens33网卡信息作为模板</p><pre><code>cp ifcfg-ens33 ifcfg-ens37</code></pre><p>3、添加如下信息</p><pre><code>TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=staticDEFROUTE=yesIPV4_FAILURE_FATAL=noIPV6INIT=yesIPV6_AUTOCONF=yesIPV6_DEFROUTE=yesIPV6_FAILURE_FATAL=noIPV6_ADDR_GEN_MODE=stable-privacyNAME=ens37DEVICE=ens37ONBOOT=noIPADDR=IP地址NETMASK=255.255.255.0GATAWAY=网关（与本地网络一致）</code></pre><p>4、重启网络配置</p><pre><code>systemctl  restart NetworkManager</code></pre><p>5、查看网络状态</p><pre><code>nmcli device status</code></pre><h2 id="NAT模式网络配置"><a href="#NAT模式网络配置" class="headerlink" title="NAT模式网络配置"></a>NAT模式网络配置</h2><ol><li><p>设置net模式</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757160.png" alt="image-20220729221723044"></p></li></ol><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758437.png" alt="image-20220729221751285"></p><p>注意： VMware Network Adapter VMnet8保证是启用状态</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758729.png" alt="image-20220729221813783"></p><p>2.设置静态ip</p><blockquote><p>注意</p><p>在普通用户下不能修改网卡的配置信息；所以我们要切换到root用户进行ip配置</p></blockquote><p>3.修改网卡配置文件</p><p>vi /etc/sysconfig/network-scripts/ifcfg-ens33</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758903.png" alt="image-20220729222021159"></p><p>BOOTPROTO设置为静态static </p><p>IPADDR设置ip地址 </p><p>NETMASK设置子网掩码 </p><p>GATEWAY设置网关</p><p> ONBOOT设置为true在系统启动时是否激活网卡 </p><p>执行保存</p><p>4.代码如下</p><pre><code>TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=staticIPADDR=192.168.23.129NETMASK=255.255.255.0GATEWAY=192.168.23.2DEFROUTE=yesIPV4_FAILURE_FATAL=noIPV6INIT=yesIPV6_AUTOCONF=yesIPV6_DEFROUTE=yesIPV6_FAILURE_FATAL=noIPV6_ADDR_GEN_MODE=stable-privacyNAME=ens33UUID=2c2371f1-ef29-4514-a568-c4904bd11c82DEVICE=ens33ONBOOT=true</code></pre><p>5.重启网络</p><pre><code>systemctl restart network</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="桥接模式网络配置"><a href="#桥接模式网络配置" class="headerlink" title="桥接模式网络配置"></a>桥接模式网络配置</h2><p>1、桥接网络选择则当前连接的网络（在网络中心查看）</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757221.png" alt="image-20220728080808258"></p><p>2、给虚拟机添加一张网卡，选择桥接模式</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757324.png" alt="image-20220728081015104"></p><p>3、进入到网卡所在配置文件目录</p><pre class=" language-shell"><code class="language-shell"> cd /etc/sysconfig/network-scripts/</code></pre><p>4、复制ens33网卡信息作为模板</p><pre class=" language-sh"><code class="language-sh">cp ifcfg-ens33 ifcfg-ens37</code></pre><p>3、添加如下信息</p><pre class=" language-sh"><code class="language-sh">TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=staticDEFROUTE=yesIPV4_FAILURE_FATAL=noIPV6INIT=yesIPV6_AUTOCONF=yesIPV6_DEFROUTE=yesIPV6_FAILURE_FATAL=noIPV6_ADDR_GEN_MODE=stable-privacyNAME=ens37DEVICE=ens37ONBOOT=noIPADDR=IP地址NETMASK=255.255.255.0GATAWAY=网关（与本地网络一致）</code></pre><p>4、重启网络配置</p><pre class=" language-sh"><code class="language-sh">systemctl  restart NetworkManager</code></pre><p>5、查看网络状态</p><pre class=" language-sh"><code class="language-sh">nmcli device status</code></pre><h2 id="NAT模式网络配置"><a href="#NAT模式网络配置" class="headerlink" title="NAT模式网络配置"></a>NAT模式网络配置</h2><ol><li><p>设置net模式</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757160.png" alt="image-20220729221723044"></p></li></ol><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758437.png" alt="image-20220729221751285"></p><p>注意： VMware Network Adapter VMnet8保证是启用状态</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758729.png" alt="image-20220729221813783"></p><p>2.设置静态ip</p><blockquote><p>注意</p><p>在普通用户下不能修改网卡的配置信息；所以我们要切换到root用户进行ip配置</p></blockquote><p>3.修改网卡配置文件</p><p>vi /etc/sysconfig/network-scripts/ifcfg-ens33</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758903.png" alt="image-20220729222021159"></p><p>BOOTPROTO设置为静态static </p><p>IPADDR设置ip地址 </p><p>NETMASK设置子网掩码 </p><p>GATEWAY设置网关</p><p> ONBOOT设置为true在系统启动时是否激活网卡 </p><p>执行保存</p><p>4.代码如下</p><pre class=" language-shell"><code class="language-shell">TYPE=EthernetPROXY_METHOD=noneBROWSER_ONLY=noBOOTPROTO=staticIPADDR=192.168.23.129NETMASK=255.255.255.0GATEWAY=192.168.23.2DEFROUTE=yesIPV4_FAILURE_FATAL=noIPV6INIT=yesIPV6_AUTOCONF=yesIPV6_DEFROUTE=yesIPV6_FAILURE_FATAL=noIPV6_ADDR_GEN_MODE=stable-privacyNAME=ens33UUID=2c2371f1-ef29-4514-a568-c4904bd11c82DEVICE=ens33ONBOOT=true</code></pre><p>5.重启网络</p><pre class=" language-shell"><code class="language-shell">systemctl restart network</code></pre>]]></content>
       
       
       
@@ -491,9 +491,9 @@
       
         <tags>
             
-            <tag> minio </tag>
-            
             <tag> docker </tag>
+            
+            <tag> minio </tag>
             
             <tag> picgo </tag>
             
@@ -630,9 +630,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> chatGPT </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
