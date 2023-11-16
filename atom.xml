@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-10-26T09:24:29.584Z</updated>
+  <updated>2023-11-16T10:03:05.041Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker部署vue+springboot项目到云服务器</title>
+    <link href="http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/"/>
+    <id>http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/</id>
+    <published>2023-11-09T07:23:19.000Z</published>
+    <updated>2023-11-16T10:03:05.041Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;提前准备&quot;&gt;&lt;a href=&quot;#提前准备&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    
+    
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+  </entry>
   
   <entry>
     <title>虚拟机网络配置</title>
@@ -518,9 +545,9 @@
     <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
+    
+    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
@@ -532,35 +559,6 @@
     <id>http://ypbhbc.gitee.io/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/</id>
     <published>2023-05-23T07:11:18.000Z</published>
     <updated>2023-08-29T06:18:30.774Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java统一结果返回和异常处理</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/23/java-tong-yi-jie-guo-fan-hui-he-yi-chang-chu-li/</id>
-    <published>2023-05-23T02:23:11.000Z</published>
-    <updated>2023-05-23T07:08:10.173Z</updated>
     
     
       

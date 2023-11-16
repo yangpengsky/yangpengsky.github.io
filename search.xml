@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>docker部署vue+springboot项目到云服务器</title>
+      <link href="/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/"/>
+      <url>/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h3><ul><li>一台云服务</li><li>已备案域名</li><li>已安装docker环境</li></ul><h3 id="springboot-镜像"><a href="#springboot-镜像" class="headerlink" title="springboot 镜像"></a>springboot 镜像</h3><p>1.本地打包项目</p><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311091533456.png" alt="image-20231109153311989"></h2><p>2.上传项目到服务器</p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311091534734.png" alt="image-20231109153450026"></p><p>3.写dockerfile</p><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定基础镜像</span>FROM openjdk:11<span class="token comment" spellcheck="true"># 维护者信息</span>MAINTAINER yangpeng<span class="token comment" spellcheck="true"># 定义匿名卷</span>VOLUME /tmp<span class="token comment" spellcheck="true">#复制文件或修改名称</span>ADD faceBoot-0.0.1-SNAPSHOT.jar faceBoot.jar<span class="token comment" spellcheck="true"># 允许指定的端口</span>EXPOSE 8089ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"java"</span>,<span class="token string">"-Djava.security.egd=file:/dev/./urandom"</span>,<span class="token string">"-jar"</span>,<span class="token string">"/faceBoot.jar"</span><span class="token punctuation">]</span></code></pre><p>4.执行</p><pre class=" language-bash"><code class="language-bash">docker build -t faceboot <span class="token keyword">.</span></code></pre><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161710193.png" alt="image-20231116171023265"></p><h3 id="vue项目上传"><a href="#vue项目上传" class="headerlink" title="vue项目上传"></a>vue项目上传</h3><pre><code>npm run build #生成部署文件</code></pre><p>在服务</p><pre><code> mkdir /mydata/nginx/html -p mkdir /mydata/nginx/log -p mkdir /mydata/nginx/cert -p</code></pre><p>将前端打包后的项目上传值/mydata/nginx/html </p><p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161735851.png" alt="image-20231116173529084"></p><h3 id="编写docker-compose-yml文件"><a href="#编写docker-compose-yml文件" class="headerlink" title="编写docker-compose.yml文件"></a>编写docker-compose.yml文件</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"3"</span><span class="token key atrule">services</span><span class="token punctuation">:</span>  <span class="token key atrule">faceboot</span><span class="token punctuation">:</span>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> faceboot    <span class="token key atrule">image</span><span class="token punctuation">:</span> faceboot<span class="token punctuation">:</span>latest    <span class="token key atrule">ports</span><span class="token punctuation">:</span>      <span class="token punctuation">-</span> 8089<span class="token punctuation">:</span><span class="token number">8089</span>  <span class="token key atrule">faceui</span><span class="token punctuation">:</span>    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> faceui    <span class="token key atrule">image</span><span class="token punctuation">:</span>  nginx<span class="token punctuation">:</span>latest    <span class="token key atrule">ports</span><span class="token punctuation">:</span>      <span class="token punctuation">-</span> <span class="token datetime number">80:80</span>      <span class="token punctuation">-</span> 443<span class="token punctuation">:</span><span class="token number">443</span>    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>       <span class="token punctuation">-</span> /mydata/nginx/html<span class="token punctuation">:</span>/usr/share/nginx/html       <span class="token punctuation">-</span> /mydata/nginx/logs<span class="token punctuation">:</span>/var/log/nginx       <span class="token punctuation">-</span> /mydata/nginx/conf<span class="token punctuation">:</span>/etc/nginx       <span class="token punctuation">-</span> /mydata/nginx/cert<span class="token punctuation">:</span>/etc/nginx/cert</code></pre><p>执行命命令</p><pre class=" language-bash"><code class="language-bash">docker-compose up faceboot -ddocker-compose up faceui -d</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>虚拟机网络配置</title>
       <link href="/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/"/>
       <url>/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/</url>
@@ -491,9 +518,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> minio </tag>
+            
+            <tag> docker </tag>
             
             <tag> picgo </tag>
             
@@ -630,9 +657,9 @@
       
         <tags>
             
-            <tag> chatGPT </tag>
-            
             <tag> docker </tag>
+            
+            <tag> chatGPT </tag>
             
         </tags>
       
