@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2023-11-16T10:03:05.041Z</updated>
+  <updated>2024-01-03T01:22:54.894Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pringboot整个redis（一主三从）+单哨兵</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/02/pringboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/02/pringboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</id>
+    <published>2024-01-02T08:58:04.000Z</published>
+    <updated>2024-01-03T01:22:54.894Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境准备：&quot;&gt;&lt;a href=&quot;#环境准备：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/"/>
+    
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+    <category term="redis" scheme="http://ypbhbc.gitee.io/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker部署vue+springboot项目到云服务器</title>
     <link href="http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/"/>
     <id>http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/</id>
     <published>2023-11-09T07:23:19.000Z</published>
-    <updated>2023-11-16T10:03:05.041Z</updated>
+    <updated>2024-01-02T09:33:07.255Z</updated>
     
     
       
@@ -34,12 +63,16 @@
     
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
     
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/"/>
     
-    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/%E5%89%8D%E7%AB%AF/"/>
+    
     
     <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
     
   </entry>
   
@@ -48,7 +81,7 @@
     <link href="http://ypbhbc.gitee.io/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/"/>
     <id>http://ypbhbc.gitee.io/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/</id>
     <published>2023-10-17T09:54:40.000Z</published>
-    <updated>2023-10-26T09:24:29.584Z</updated>
+    <updated>2024-01-02T09:04:29.590Z</updated>
     
     
       
@@ -62,6 +95,10 @@
     
     
     
+    <category term="Liunx" scheme="http://ypbhbc.gitee.io/categories/Liunx/"/>
+    
+    
+    <category term="网络" scheme="http://ypbhbc.gitee.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -70,7 +107,7 @@
     <link href="http://ypbhbc.gitee.io/2023/08/31/springboot-pei-zhi-duo-shu-ju-yuan/"/>
     <id>http://ypbhbc.gitee.io/2023/08/31/springboot-pei-zhi-duo-shu-ju-yuan/</id>
     <published>2023-08-31T07:42:34.000Z</published>
-    <updated>2023-09-14T01:21:33.507Z</updated>
+    <updated>2024-01-02T09:34:41.285Z</updated>
     
     
       
@@ -83,14 +120,10 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
   </entry>
   
@@ -99,7 +132,7 @@
     <link href="http://ypbhbc.gitee.io/2023/08/30/minio-pei-zhi-https-fang-wen/"/>
     <id>http://ypbhbc.gitee.io/2023/08/30/minio-pei-zhi-https-fang-wen/</id>
     <published>2023-08-30T06:55:27.000Z</published>
-    <updated>2023-08-30T09:02:47.888Z</updated>
+    <updated>2024-01-02T09:32:00.753Z</updated>
     
     
       
@@ -112,10 +145,8 @@
     
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
     
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
@@ -126,7 +157,7 @@
     <link href="http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/"/>
     <id>http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/</id>
     <published>2023-07-26T09:36:37.000Z</published>
-    <updated>2023-08-29T06:19:13.555Z</updated>
+    <updated>2024-01-02T09:34:58.216Z</updated>
     
     
       
@@ -144,11 +175,9 @@
     <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
-    
-    <category term="Aop" scheme="http://ypbhbc.gitee.io/tags/Aop/"/>
+    <category term="aop" scheme="http://ypbhbc.gitee.io/tags/aop/"/>
     
   </entry>
   
@@ -157,7 +186,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/"/>
     <id>http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/</id>
     <published>2023-06-28T08:17:04.000Z</published>
-    <updated>2023-07-07T03:41:25.603Z</updated>
+    <updated>2024-01-02T09:35:32.600Z</updated>
     
     
       
@@ -173,9 +202,9 @@
     <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Vue2" scheme="http://ypbhbc.gitee.io/tags/Vue2/"/>
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
     
-    <category term="Axios" scheme="http://ypbhbc.gitee.io/tags/Axios/"/>
+    <category term="axios" scheme="http://ypbhbc.gitee.io/tags/axios/"/>
     
   </entry>
   
@@ -184,7 +213,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/"/>
     <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/</id>
     <published>2023-06-25T06:18:03.000Z</published>
-    <updated>2023-07-07T10:03:44.886Z</updated>
+    <updated>2024-01-02T09:34:01.855Z</updated>
     
     
       
@@ -197,14 +226,10 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
     <category term="Jwt" scheme="http://ypbhbc.gitee.io/tags/Jwt/"/>
     
@@ -215,7 +240,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/"/>
     <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/</id>
     <published>2023-06-25T06:02:00.000Z</published>
-    <updated>2023-06-25T06:47:34.641Z</updated>
+    <updated>2024-01-02T09:34:22.319Z</updated>
     
     
       
@@ -228,16 +253,12 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
-    
-    <category term="Redis" scheme="http://ypbhbc.gitee.io/tags/Redis/"/>
+    <category term="redis" scheme="http://ypbhbc.gitee.io/tags/redis/"/>
     
   </entry>
   
@@ -246,7 +267,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/18/git-chang-yong-ming-ling/"/>
     <id>http://ypbhbc.gitee.io/2023/06/18/git-chang-yong-ming-ling/</id>
     <published>2023-06-18T08:59:19.000Z</published>
-    <updated>2023-07-27T03:01:45.379Z</updated>
+    <updated>2024-01-02T09:31:14.453Z</updated>
     
     
       
@@ -262,8 +283,6 @@
     <category term="git" scheme="http://ypbhbc.gitee.io/categories/git/"/>
     
     
-    <category term="git" scheme="http://ypbhbc.gitee.io/tags/git/"/>
-    
   </entry>
   
   <entry>
@@ -271,7 +290,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/09/java-shi-xian-xian-cheng-an-quan/"/>
     <id>http://ypbhbc.gitee.io/2023/06/09/java-shi-xian-xian-cheng-an-quan/</id>
     <published>2023-06-09T08:04:35.000Z</published>
-    <updated>2023-06-09T09:48:42.532Z</updated>
+    <updated>2024-01-02T09:31:25.947Z</updated>
     
     
       
@@ -284,12 +303,8 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="多线程" scheme="http://ypbhbc.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
@@ -300,7 +315,7 @@
     <link href="http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/"/>
     <id>http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/</id>
     <published>2023-06-01T08:36:53.000Z</published>
-    <updated>2023-08-29T06:18:14.035Z</updated>
+    <updated>2024-01-02T09:05:45.895Z</updated>
     
     
       
@@ -313,12 +328,8 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="多线程" scheme="http://ypbhbc.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
@@ -329,7 +340,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/"/>
     <id>http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/</id>
     <published>2023-05-31T09:40:43.000Z</published>
-    <updated>2023-08-29T06:17:12.552Z</updated>
+    <updated>2024-01-02T09:03:37.535Z</updated>
     
     
       
@@ -342,9 +353,7 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
     <category term="Java8新特性" scheme="http://ypbhbc.gitee.io/tags/Java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
@@ -356,7 +365,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/"/>
     <id>http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/</id>
     <published>2023-05-30T09:39:17.000Z</published>
-    <updated>2023-08-29T06:18:42.204Z</updated>
+    <updated>2024-01-02T09:32:22.986Z</updated>
     
     
       
@@ -369,16 +378,12 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
-    
-    <category term="Mybaties-Plus" scheme="http://ypbhbc.gitee.io/tags/Mybaties-Plus/"/>
+    <category term="mybatis-plus" scheme="http://ypbhbc.gitee.io/tags/mybatis-plus/"/>
     
   </entry>
   
@@ -416,7 +421,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/"/>
     <id>http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/</id>
     <published>2023-05-27T15:00:28.000Z</published>
-    <updated>2023-08-29T06:19:38.438Z</updated>
+    <updated>2024-01-02T09:35:50.908Z</updated>
     
     
       
@@ -429,10 +434,8 @@
     
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
     
-    
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
     
     <category term="window" scheme="http://ypbhbc.gitee.io/tags/window/"/>
     
@@ -470,7 +473,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/</id>
     <published>2023-05-25T03:50:07.000Z</published>
-    <updated>2023-05-25T05:51:33.989Z</updated>
+    <updated>2024-01-02T09:03:18.522Z</updated>
     
     
       
@@ -485,8 +488,8 @@
     
     <category term="设计模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Java/"/>
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
     
     <category term="单例模式" scheme="http://ypbhbc.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
     
@@ -497,7 +500,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/</id>
     <published>2023-05-24T06:03:21.000Z</published>
-    <updated>2023-08-30T09:07:27.467Z</updated>
+    <updated>2024-01-02T09:28:52.880Z</updated>
     
     
       
@@ -511,14 +514,10 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
@@ -529,7 +528,7 @@
     <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
     <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
     <published>2023-05-24T01:52:46.000Z</published>
-    <updated>2023-08-31T02:19:33.126Z</updated>
+    <updated>2024-01-02T09:30:00.040Z</updated>
     
     
       
@@ -542,43 +541,12 @@
     
     
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/categories/docker/"/>
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
     
     
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
-    <category term="docker" scheme="http://ypbhbc.gitee.io/tags/docker/"/>
-    
     <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java图片上传和预览</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/23/java-tu-pian-shang-chuan-he-yu-lan/</id>
-    <published>2023-05-23T07:11:18.000Z</published>
-    <updated>2023-08-29T06:18:30.774Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/tags/Java/"/>
-    
-    <category term="SpringBoot" scheme="http://ypbhbc.gitee.io/tags/SpringBoot/"/>
     
   </entry>
   
