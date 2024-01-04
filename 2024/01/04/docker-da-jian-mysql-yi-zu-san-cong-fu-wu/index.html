@@ -4,9 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="centos安装python3, CodeCrafters">
-    <meta name="description" content="前言Python是一种高级编程语言，它具有简洁、易读的语法，被广泛用于软件开发、数据分析、人工智能和科学计算等领域。Python由荷兰程序员Guido van Rossum于1991年创建，它的设计目标是提供一种简单直观的编程方式。
-特点
+    <meta name="keywords" content="docker搭建MySQL一组三从服务, CodeCrafters">
+    <meta name="description" content="环境准备：
+liunx服务器一台
+docker已安装
+docker-compose已安装
+
+准备配置文件docker-compose-mysql.yml 文件version: &#39;3.0&#39;
+services:
+  mysql_master:
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>centos安装python3 | CodeCrafters</title>
+    <title>docker搭建MySQL一组三从服务 | CodeCrafters</title>
     <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
@@ -379,12 +385,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos安装python3</h1>
+                    <h1 class="description center-align post-title">docker搭建MySQL一组三从服务</h1>
                 </div>
             </div>
         </div>
@@ -408,8 +414,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/centos/">
-                                <span class="chip bg-color">centos</span>
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
                             </a>
                         
                     </div>
@@ -420,12 +426,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
-                            </a>
-                        
-                            <a href="/categories/Python/Liunx/" class="post-category">
-                                Liunx
+                            <a href="/categories/Docker/" class="post-category">
+                                Docker
                             </a>
                         
                     </div>
@@ -437,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-26
+                    2024-01-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-29
+                    2024-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    609
+                    761
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -478,50 +480,183 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Python是一种高级编程语言，它具有简洁、易读的语法，被广泛用于软件开发、数据分析、人工智能和科学计算等领域。Python由荷兰程序员Guido van Rossum于1991年创建，它的设计目标是提供一种简单直观的编程方式。</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
-<li>简洁易读：Python使用简洁的语法和缩进风格，使得代码易于理解和阅读，从而提高开发效率。</li>
-<li>可移植性：Python可以在多个平台上运行，包括Windows、Mac和各种Linux发行版，这使得开发的应用程序具有较高的可移植性。</li>
-<li>强大的标准库：Python拥有丰富的标准库，提供了大量的内置模块和函数，可以实现各种任务，如文件操作、网络编程、图形界面开发等。</li>
-<li>第三方库生态系统：Python拥有庞大的第三方库生态系统，例如NumPy、Pandas、Matplotlib和TensorFlow等，这些库为数据分析、科学计算和机器学习等领域提供了强大的功能支持。</li>
-<li>面向对象：Python支持面向对象编程，可以使用类和对象来组织和管理代码，提高代码的复用性和可维护性。</li>
-<li>动态类型：Python是一种动态类型语言，变量的类型在运行时确定，这使得编写和调试代码更加灵活和快速。</li>
-</ol>
-<p>Python的优点之一是它的学习曲线相对较低，适合初学者入门。同时，它也是一种功能强大的编程语言，被许多专业开发人员广泛应用于各种领域。</p>
-<h2 id="liunx安装过程"><a href="#liunx安装过程" class="headerlink" title="liunx安装过程"></a>liunx安装过程</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>官方地址：<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262029981.png" alt="image-20230526202957438"></p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262031334.png" alt="image-20230526203124495"></p>
-<p>用ftp工具上传至服务器</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262237070.png" alt="image-20230526223718420"></p>
-<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><p>前提：不要使用root用户安装，否则后面pip安装会出问题。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
-<span class="token function">tar</span> -zxvf Python-3.9.16.tgz -C /opt/module/
+                <h2 id="环境准备："><a href="#环境准备：" class="headerlink" title="环境准备："></a>环境准备：</h2><ul>
+<li>liunx服务器一台</li>
+<li>docker已安装</li>
+<li>docker-compose已安装</li>
+</ul>
+<h2 id="准备配置文件"><a href="#准备配置文件" class="headerlink" title="准备配置文件"></a>准备配置文件</h2><h3 id="docker-compose-mysql-yml-文件"><a href="#docker-compose-mysql-yml-文件" class="headerlink" title="docker-compose-mysql.yml 文件"></a>docker-compose-mysql.yml 文件</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.0'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql_master</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql_master
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> MYSQL_DATABASE=root
+     <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=123456
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 3307<span class="token punctuation">:</span><span class="token number">3306</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> /root/mysql/data/master<span class="token punctuation">:</span>/var/lib/mysql
+     <span class="token punctuation">-</span> /root/mysql/conf/master/my.cnf<span class="token punctuation">:</span>/etc/mysql/my.cnf
 
-<span class="token comment" spellcheck="true"># 配置python3需要先安装gcc</span>
-yum <span class="token function">install</span> -y gcc
 
-<span class="token comment" spellcheck="true">#安装所需的包 否则编译会出错</span>
-yum -y <span class="token function">install</span> ncurses-devel libuuid-devel zlib zlib-devel sqlite-devel readline-devel tkinter tcl-devel tk-devel lzma gdbm-devel xz-devel libffi-devel
+  <span class="token key atrule">mysql_slave01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql_slave01
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> MYSQL_DATABASE=root
+     <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=123456
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 3308<span class="token punctuation">:</span><span class="token number">3306</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> /root/mysql/data/slave01<span class="token punctuation">:</span>/var/lib/mysql
+     <span class="token punctuation">-</span> /root/mysql/conf/slave01/my.cnf<span class="token punctuation">:</span>/etc/mysql/my.cnf
 
-<span class="token comment" spellcheck="true"># 进入Python-3.9.16安装目录</span>
-<span class="token function">cd</span> /opt/module/Python-3.9.16
 
-<span class="token comment" spellcheck="true"># 配置安装环境</span>
-./configure --prefix<span class="token operator">=</span>/opt/module/python3.9
+  <span class="token key atrule">mysql_slave02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql_slave02
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> MYSQL_DATABASE=root
+     <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=123456
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 3309<span class="token punctuation">:</span><span class="token number">3306</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> /root/mysql/data/slave02<span class="token punctuation">:</span>/var/lib/mysql
+     <span class="token punctuation">-</span> /root/mysql/conf/slave02/my.cnf<span class="token punctuation">:</span>/etc/mysql/my.cnf
 
-<span class="token comment" spellcheck="true">#编译</span>
-<span class="token function">make</span>
-<span class="token comment" spellcheck="true">#安装</span>
-<span class="token function">make</span> <span class="token function">install</span>
+
+  <span class="token key atrule">mysql_slave03</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql_slave03
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> MYSQL_DATABASE=root
+     <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=123456
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 3310<span class="token punctuation">:</span><span class="token number">3306</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> /root/mysql/data/slave03<span class="token punctuation">:</span>/var/lib/mysql
+     <span class="token punctuation">-</span> /root/mysql/conf/slave03/my.cnf<span class="token punctuation">:</span>/etc/mysql/my.cnf
+
 </code></pre>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262250645.png" alt="image-20230526225017399"></p>
-<p>查看原来的软连接</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262159891.png" alt="image-20230526215946316"></p>
-<p>默认的python路径为/usr/bin/python，python3的路径为/usr/local/python3.9/bin/python3</p>
-<p>跟换python软连接</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262253149.png" alt="image-20230526225356206"></p>
-<p>创建pip软连接</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305262256198.png" alt="image-20230526225629792"></p>
+<h3 id="创建映射卷"><a href="#创建映射卷" class="headerlink" title="创建映射卷"></a>创建映射卷</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /root/mysql/data/<span class="token punctuation">{</span>master,slave01,slave02,slave03<span class="token punctuation">}</span>
+<span class="token function">mkdir</span> -p /root/mysql/conf/<span class="token punctuation">{</span>master,slave01,slave02,slave03<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="master主库配置文件"><a href="#master主库配置文件" class="headerlink" title="master主库配置文件"></a>master主库配置文件</h3><pre><code>vim /root/mysql/conf/master/my.cnf
+</code></pre>
+<pre class=" language-bash"><code class="language-bash">
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
+datadir         <span class="token operator">=</span> /var/lib/mysql
+secure-file-priv<span class="token operator">=</span> NULL
+server-id<span class="token operator">=</span>1
+<span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span>0
+
+<span class="token comment" spellcheck="true"># Custom config should go here</span>
+<span class="token operator">!</span>includedir /etc/mysql/conf.d/
+</code></pre>
+<h3 id="slave01从库配置文件"><a href="#slave01从库配置文件" class="headerlink" title="slave01从库配置文件"></a>slave01从库配置文件</h3><pre><code>vim /root/mysql/conf/slave01/my.cnf
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
+datadir         <span class="token operator">=</span> /var/lib/mysql
+secure-file-priv<span class="token operator">=</span> NULL
+server-id<span class="token operator">=</span>2
+<span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span>0
+
+<span class="token comment" spellcheck="true"># Custom config should go here</span>
+<span class="token operator">!</span>includedir /etc/mysql/conf.d/
+</code></pre>
+<h3 id="slave02从库配置文件"><a href="#slave02从库配置文件" class="headerlink" title="slave02从库配置文件"></a>slave02从库配置文件</h3><pre><code>vim /root/mysql/conf/slave02/my.cnf
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
+datadir         <span class="token operator">=</span> /var/lib/mysql
+secure-file-priv<span class="token operator">=</span> NULL
+server-id<span class="token operator">=</span>3
+<span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span>0
+
+<span class="token comment" spellcheck="true"># Custom config should go here</span>
+<span class="token operator">!</span>includedir /etc/mysql/conf.d/
+</code></pre>
+<h3 id="slave03从库配置文件"><a href="#slave03从库配置文件" class="headerlink" title="slave03从库配置文件"></a>slave03从库配置文件</h3><pre><code>vim /root/mysql/conf/slave03/my.cnf
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
+datadir         <span class="token operator">=</span> /var/lib/mysql
+secure-file-priv<span class="token operator">=</span> NULL
+server-id<span class="token operator">=</span>4
+<span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
+symbolic-links<span class="token operator">=</span>0
+
+<span class="token comment" spellcheck="true"># Custom config should go here</span>
+<span class="token operator">!</span>includedir /etc/mysql/conf.d/
+</code></pre>
+<h2 id="docker-compose命令"><a href="#docker-compose命令" class="headerlink" title="docker-compose命令"></a>docker-compose命令</h2><h3 id="容器创建"><a href="#容器创建" class="headerlink" title="容器创建"></a>容器创建</h3><pre class=" language-bash"><code class="language-bash">docker-compose -f docker-compose-mysql.yml up -d
+</code></pre>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041702693.png"/>
+
+<h3 id="容器停止"><a href="#容器停止" class="headerlink" title="容器停止"></a>容器停止</h3><pre class=" language-bash"><code class="language-bash">docker-compose -f docker-compose-mysql.yml down
+</code></pre>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041701569.png"/>
+
+<h2 id="在主库中创建同步用户"><a href="#在主库中创建同步用户" class="headerlink" title="在主库中创建同步用户"></a>在主库中创建同步用户</h2><p>进入mysql_master容器</p>
+<pre class=" language-bash"><code class="language-bash">docker <span class="token function">exec</span> -it mysql_master <span class="token function">bash</span>
+</code></pre>
+<p>连接mysql数据库 （密码123456）</p>
+<pre class=" language-bash"><code class="language-bash">mysql -u root -p
+</code></pre>
+<p>创建允许主从复制的用户 test，密码为 test1234</p>
+<pre class=" language-bash"><code class="language-bash">CREATE USER <span class="token string">'test'</span>@<span class="token string">'%'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'test1234'</span><span class="token punctuation">;</span>
+GRANT REPLICATION SLAVE ON *.* TO <span class="token string">'test'</span>@<span class="token string">'%'</span><span class="token punctuation">;</span>
+</code></pre>
+<p>此时的用户没有创建库或表的权限，以<strong>root</strong>用户登录主库并执行以下命令赋予<strong>test</strong>用户权限</p>
+<pre class=" language-bash"><code class="language-bash">GRANT ALL PRIVILEGES ON  *.* TO ‘test’@‘%’ IDENTIFIED BY 'test1234’<span class="token punctuation">;</span>
+</code></pre>
+<p>查询主库状态</p>
+<pre class=" language-bash"><code class="language-bash">show master status<span class="token punctuation">;</span>
+</code></pre>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041715038.png"/>
+
+<h2 id="在从库中配置主库信息"><a href="#在从库中配置主库信息" class="headerlink" title="在从库中配置主库信息"></a>在从库中配置主库信息</h2><p>切换到slave01数据库，执行一下命令</p>
+<pre class=" language-bash"><code class="language-bash">change master to
+master_port<span class="token operator">=</span>3307,
+master_user<span class="token operator">=</span><span class="token string">'test'</span>,
+master_password<span class="token operator">=</span><span class="token string">'test1234'</span>,
+master_host<span class="token operator">=</span><span class="token string">'192.168.109.100'</span>,
+master_log_file<span class="token operator">=</span><span class="token string">'binlog.000003'</span>,
+master_log_pos<span class="token operator">=</span>879,
+get_master_public_key<span class="token operator">=</span>1<span class="token punctuation">;</span>
+</code></pre>
+<p>然后执行一下命令，开启同步</p>
+<pre class=" language-bash"><code class="language-bash">start slave<span class="token punctuation">;</span>
+</code></pre>
+<p>执行以下命令查看从库状态</p>
+<pre><code>show slave status\G;
+</code></pre>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041726852.png"/>
+
+<p>出现两个yes就成功了，然后分别在剩下两台重复执行以上命令</p>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041734689.png"/>
+
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041736440.png"/>
+
+<h2 id="⚠️注意"><a href="#⚠️注意" class="headerlink" title="⚠️注意"></a>⚠️注意</h2><p>MySQL数据同步是通过binlog 和 Pos与与主库相同，在手动将主库和从库的同步点对齐之前，或从库数据不一致时候，先停止同步stop slave;从新执行（在从库中配置主库信息）步骤即可</p>
 
                 
             </div>
@@ -548,7 +683,7 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/">http://ypbhbc.gitee.io/2023/05/26/centos-an-zhuang-python3/</a>
+                    <a href="http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/">http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,8 +721,8 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/centos/">
-                                    <span class="chip bg-color">centos</span>
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
                                 </a>
                             
                         </div>
@@ -900,17 +1035,18 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/27/window-an-zhuang-docker-desktop/">
+                <a href="/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="window安装docker desktop">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="docker搭建MySQL一组三从服务">
                         
-                        <span class="card-title">window安装docker desktop</span>
+                        <span class="card-title">docker搭建MySQL一组三从服务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -920,9 +1056,9 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -935,11 +1071,12 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/window/">
-                        <span class="chip bg-color">window</span>
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
                 </div>
@@ -953,13 +1090,13 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/25/dan-li-mo-shi-de-shi-yong/">
+                <a href="/2024/01/03/springboot-zheng-he-knife4j/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="单例模式的使用">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="springboot整合knife4j">
                         
-                        <span class="card-title">单例模式的使用</span>
+                        <span class="card-title">springboot整合knife4j</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -970,17 +1107,13 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
-                                </a>
-                            
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Java/" class="post-category">
+                            <a href="/categories/Java/" class="post-category">
                                     Java
                                 </a>
                             
@@ -991,8 +1124,12 @@ yum -y <span class="token function">install</span> ncurses-devel libuuid-devel z
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">单例模式</span>
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
+                    </a>
+                    
+                    <a href="/tags/knife4j/">
+                        <span class="chip bg-color">knife4j</span>
                     </a>
                     
                 </div>

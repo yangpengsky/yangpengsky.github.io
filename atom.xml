@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-01-04T05:43:20.910Z</updated>
+  <updated>2024-01-04T09:49:45.734Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker搭建MySQL一组三从服务</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/</id>
+    <published>2024-01-04T08:43:39.000Z</published>
+    <updated>2024-01-04T09:49:45.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境准备：&quot;&gt;&lt;a href=&quot;#环境准备：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
+    
+    
+    <category term="mysql" scheme="http://ypbhbc.gitee.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>springboot整合knife4j</title>
     <link href="http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/"/>
     <id>http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/</id>
     <published>2024-01-03T07:29:58.000Z</published>
-    <updated>2024-01-04T05:43:20.910Z</updated>
+    <updated>2024-01-04T06:26:03.062Z</updated>
     
     
       
@@ -517,34 +542,6 @@
     
     
     <category term="单例模式" scheme="http://ypbhbc.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>minio+springboot图片的上传下载</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/</id>
-    <published>2023-05-24T06:03:21.000Z</published>
-    <updated>2024-01-02T09:28:52.880Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前面已经在虚拟机中搭建了minio文件存储服务器。现在我们就通过springboot向文件服务器中上传和下载图片&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
     
   </entry>
   
