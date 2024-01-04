@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-01-03T01:22:54.894Z</updated>
+  <updated>2024-01-03T07:44:45.920Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>springboot整合knife4j</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/</id>
+    <published>2024-01-03T07:29:58.000Z</published>
+    <updated>2024-01-03T07:44:45.920Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Knife4j 是一款基于 Spring Boot 与 Swagger 的增强型 API 文档生成工具。它在 Swagger</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+    <category term="aop" scheme="http://ypbhbc.gitee.io/tags/aop/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pringboot整个redis（一主三从）+单哨兵</title>
     <link href="http://ypbhbc.gitee.io/2024/01/02/pringboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/"/>
     <id>http://ypbhbc.gitee.io/2024/01/02/pringboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</id>
     <published>2024-01-02T08:58:04.000Z</published>
-    <updated>2024-01-03T01:22:54.894Z</updated>
+    <updated>2024-01-03T07:32:16.778Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境准备：&quot;&gt;&lt;a href=&quot;#环境准备：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/"/>
+    
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+    <category term="redis" scheme="http://ypbhbc.gitee.io/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pringboot整个redis（一主三从）+单哨兵</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</id>
+    <published>2024-01-02T08:58:04.000Z</published>
+    <updated>2024-01-04T01:49:01.273Z</updated>
     
     
       
@@ -157,7 +213,7 @@
     <link href="http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/"/>
     <id>http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/</id>
     <published>2023-07-26T09:36:37.000Z</published>
-    <updated>2024-01-02T09:34:58.216Z</updated>
+    <updated>2024-01-03T07:31:21.934Z</updated>
     
     
       
@@ -170,9 +226,7 @@
     
     
     
-    <category term="后端" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
     
     
     <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
@@ -492,61 +546,6 @@
     
     
     <category term="单例模式" scheme="http://ypbhbc.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>minio+springboot图片的上传下载</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/24/minio-springboot-tu-pian-de-shang-chuan-xia-zai/</id>
-    <published>2023-05-24T06:03:21.000Z</published>
-    <updated>2024-01-02T09:28:52.880Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前面已经在虚拟机中搭建了minio文件存储服务器。现在我们就通过springboot向文件服务器中上传和下载图片&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker+minio+picgo搭建图床</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/24/docker-minio-picgo-da-jian-tu-chuang/</id>
-    <published>2023-05-24T01:52:46.000Z</published>
-    <updated>2024-01-02T09:30:00.040Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MinIO是一个开源的对象存储服务器，它允许您构建私有的云存储服务。它是一个轻量级的、高性能的分布式存储系统，兼容Amazon</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
-    
-    
-    <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
-    <category term="picgo" scheme="http://ypbhbc.gitee.io/tags/picgo/"/>
     
   </entry>
   

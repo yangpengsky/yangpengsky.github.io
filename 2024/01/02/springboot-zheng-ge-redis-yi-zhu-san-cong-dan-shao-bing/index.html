@@ -4,10 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="springboot集成redis, CodeCrafters">
-    <meta name="description" content="引入依赖     &amp;lt;dependency&gt;
-            &amp;lt;groupId&gt;org.springframework.boot&amp;lt;/groupId&gt;
-            &amp;lt;artifactId&gt;spring">
+    <meta name="keywords" content="pringboot整个redis（一主三从）+单哨兵, CodeCrafters">
+    <meta name="description" content="环境准备：
+liunx服务器一台
+docker已安装
+docker-compose已安装
+
+编写redis（一组三从）+单哨兵编写docker-compose-redis文件
+version: &#39;3.0&#39;
+services:
+  maste">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>springboot集成redis | CodeCrafters</title>
+    <title>pringboot整个redis（一主三从）+单哨兵 | CodeCrafters</title>
     <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
@@ -379,12 +385,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">springboot集成redis</h1>
+                    <h1 class="description center-align post-title">pringboot整个redis（一主三从）+单哨兵</h1>
                 </div>
             </div>
         </div>
@@ -424,7 +430,11 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
+                            <a href="/categories/Docker/" class="post-category">
+                                Docker
+                            </a>
+                        
+                            <a href="/categories/Docker/Java/" class="post-category">
                                 Java
                             </a>
                         
@@ -437,28 +447,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-25
+                    2024-01-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-02
+                    2024-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -478,34 +488,117 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h3><pre class=" language-xml"><code class="language-xml">     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <h2 id="环境准备："><a href="#环境准备：" class="headerlink" title="环境准备："></a>环境准备：</h2><ul>
+<li>liunx服务器一台</li>
+<li>docker已安装</li>
+<li>docker-compose已安装</li>
+</ul>
+<h2 id="编写redis（一组三从）-单哨兵"><a href="#编写redis（一组三从）-单哨兵" class="headerlink" title="编写redis（一组三从）+单哨兵"></a>编写redis（一组三从）+单哨兵</h2><p>编写docker-compose-redis文件</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.0'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">master</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis_master
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6379<span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>ip 192.168.109.100 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>port 6379 <span class="token punctuation">-</span><span class="token punctuation">-</span>requirepass test1234 
+    <span class="token comment" spellcheck="true"># Redis 主实例，监听端口 6379</span>
+
+  <span class="token key atrule">slave01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis_slave01
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6380<span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>slaveof 192.168.109.100 6379 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>ip 192.168.109.100 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>port 6380 <span class="token punctuation">-</span><span class="token punctuation">-</span>requirepass test1234 <span class="token punctuation">-</span><span class="token punctuation">-</span>masterauth test1234
+    <span class="token comment" spellcheck="true"># Redis 从实例 01，复制主实例 6379，监听端口 6380</span>
+
+  <span class="token key atrule">slave02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis_slave02
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6381<span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>slaveof 192.168.109.100 6379 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>ip 192.168.109.100 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>port 6381 <span class="token punctuation">-</span><span class="token punctuation">-</span>requirepass test1234 <span class="token punctuation">-</span><span class="token punctuation">-</span>masterauth test1234
+    <span class="token comment" spellcheck="true"># Redis 从实例 02，复制主实例 6379，监听端口 6381</span>
+
+  <span class="token key atrule">slave03</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis_slave03
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 6382<span class="token punctuation">:</span><span class="token number">6379</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server <span class="token punctuation">-</span><span class="token punctuation">-</span>slaveof 192.168.109.100 6379 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>ip 192.168.109.100 <span class="token punctuation">-</span><span class="token punctuation">-</span>replica<span class="token punctuation">-</span>announce<span class="token punctuation">-</span>port 6382 <span class="token punctuation">-</span><span class="token punctuation">-</span>requirepass test1234 <span class="token punctuation">-</span><span class="token punctuation">-</span>masterauth test1234
+    <span class="token comment" spellcheck="true"># Redis 从实例 03，复制主实例 6379，监听端口 6382</span>
+  
+  <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>latest
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> sentinel
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">network_mode</span><span class="token punctuation">:</span> bridge
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 26379<span class="token punctuation">:</span><span class="token number">26379</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /root/redis/sentinel/conf<span class="token punctuation">:</span>/etc/redis/sentinel/conf
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>sentinel /etc/redis/sentinel/conf/sentinel.conf 
+    <span class="token comment" spellcheck="true"># Redis Sentinel 实例，端口 26379，监控 Redis 主实例和从实例</span>
+</code></pre>
+<p>sentinel.conf 配置文件内容</p>
+<pre class=" language-bash"><code class="language-bash">vim /root/redis/sentinel/conf/sentinel.conf
+
+<span class="token comment" spellcheck="true">#添加一下内容</span>
+port 26379
+sentinel announce-ip <span class="token string">"192.168.109.100"</span>
+sentinel monitor redis_master 192.168.109.100 6379 1
+sentinel auth-pass redis_master test1234 
+</code></pre>
+<h2 id="搭建服务"><a href="#搭建服务" class="headerlink" title="搭建服务"></a>搭建服务</h2><pre class=" language-bash"><code class="language-bash">docker-compose -f docker-compose-redis.yml up -d
+</code></pre>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401040947188.png"/>
+
+<p>查看哨兵日志：</p>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401040942245.png"/>
+
+<h2 id="springboot项目环境准备："><a href="#springboot项目环境准备：" class="headerlink" title="springboot项目环境准备："></a>springboot项目环境准备：</h2><p>maven所需要包引入：</p>
+<pre class=" language-xml"><code class="language-xml"> <span class="token comment" spellcheck="true">&lt;!--redis--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!--连接池依赖--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.commons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>commons-pool2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fastjson<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.79<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.0.32<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">server.port</span><span class="token punctuation">=</span><span class="token attr-value">8088</span>
-<span class="token attr-name">spring.redis.host</span><span class="token punctuation">=</span><span class="token attr-value">127.0.0.1</span>
-<span class="token comment" spellcheck="true">#Redis服务器连接端口</span>
-<span class="token attr-name">spring.redis.port</span><span class="token punctuation">=</span><span class="token attr-value">6379</span>
-<span class="token comment" spellcheck="true">#Redis服务器连接密码（默认为空）</span>
-<span class="token attr-name">spring.redis.password</span><span class="token punctuation">=</span><span class="token attr-value">123456</span>
-<span class="token comment" spellcheck="true">#连接池最大连接数（使用负值表示没有限制）</span>
-<span class="token attr-name">spring.redis.pool.max-active</span><span class="token punctuation">=</span><span class="token attr-value">8</span>
-<span class="token comment" spellcheck="true">#连接池最大阻塞等待时间（使用负值表示没有限制）</span>
-<span class="token attr-name">spring.redis.pool.max-wait</span><span class="token punctuation">=</span><span class="token attr-value">-1</span>
-<span class="token comment" spellcheck="true">#连接池中的最大空闲连接</span>
-<span class="token attr-name">spring.redis.pool.max-idle</span><span class="token punctuation">=</span><span class="token attr-value">8</span>
-<span class="token comment" spellcheck="true">#连接池中的最小空闲连接</span>
-<span class="token attr-name">spring.redis.pool.min-idle</span><span class="token punctuation">=</span><span class="token attr-value">0</span>
-<span class="token comment" spellcheck="true">#连接超时时间（毫秒）</span>
-<span class="token attr-name">spring.redis.timeout</span><span class="token punctuation">=</span><span class="token attr-value">30000</span>
+<p>application.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 单哨兵</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+      <span class="token key atrule">master</span><span class="token punctuation">:</span> redis_master
+      <span class="token key atrule">nodes</span><span class="token punctuation">:</span> 192.168.109.100<span class="token punctuation">:</span><span class="token number">26379</span>
+    <span class="token key atrule">lettuce</span><span class="token punctuation">:</span>
+      <span class="token key atrule">pool</span><span class="token punctuation">:</span>
+        <span class="token key atrule">max-idle</span><span class="token punctuation">:</span> <span class="token number">10</span>
+        <span class="token key atrule">max-active</span><span class="token punctuation">:</span> <span class="token number">20</span>
+        <span class="token key atrule">min-idle</span><span class="token punctuation">:</span> <span class="token number">0</span>
+        <span class="token key atrule">max-wait</span><span class="token punctuation">:</span> 10000ms
+    <span class="token key atrule">database</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> test1234
 </code></pre>
-<h3 id="使用fastjson序列化"><a href="#使用fastjson序列化" class="headerlink" title="使用fastjson序列化"></a>使用fastjson序列化</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_jwt<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<p>redis配置文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_demo<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonAutoDetect<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonTypeInfo<span class="token punctuation">;</span>
@@ -558,7 +651,8 @@
 
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="redis工具类"><a href="#redis工具类" class="headerlink" title="redis工具类"></a>redis工具类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_jwt<span class="token punctuation">.</span>utils<span class="token punctuation">;</span>
+<p>redis工具类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_demo<span class="token punctuation">.</span>utils<span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RedisTemplate<span class="token punctuation">;</span>
@@ -572,12 +666,10 @@
 <span class="token comment" spellcheck="true">/**
  * @author yangpeng
  * @version 1.0.0
- * @date 2023年06月22日 10:58:22
- * @packageName com.yangpeng.springboot_jwt.utils
+ * @date 2024年01月02日 13:52:07
+ * @packageName com.yangpeng.springboot_demo.utils
  * @className RedisUtil
- * @describe TODO
  */</span>
-
 <span class="token annotation punctuation">@Component</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisUtil</span> <span class="token punctuation">{</span>
 
@@ -1091,37 +1183,12 @@
 
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="redis测试"><a href="#redis测试" class="headerlink" title="redis测试"></a>redis测试</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_jwt<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>yangpeng<span class="token punctuation">.</span>springboot_jwt<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>RedisUtil<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span>Test<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>test<span class="token punctuation">.</span>context<span class="token punctuation">.</span>SpringBootTest<span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">/**
- * @author yangpeng
- * @version 1.0.0
- * @date 2023年06月25日 14:13:25
- * @packageName com.yangpeng.springboot_jwt
- * @className RedisTest
- */</span>
-<span class="token annotation punctuation">@SpringBootTest</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisTest</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Autowired</span>
-    <span class="token keyword">private</span> RedisUtil redisUtil<span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        redisUtil<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        Object name <span class="token operator">=</span> redisUtil<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
+<h2 id="编写测试类"><a href="#编写测试类" class="headerlink" title="编写测试类"></a>编写测试类</h2><pre><code>    @Test
+    void contextLoads() &#123;
+//        redisUtil.set(&quot;name&quot;, &quot;zhangsan&quot;);
+        Object name = redisUtil.get(&quot;empList&quot;);
+        System.out.println(name);
+    &#125;
 </code></pre>
 
                 
@@ -1149,7 +1216,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/">http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-redis/</a>
+                    <a href="http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/">http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1509,13 +1576,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/">
+                <a href="/2024/01/02/pringboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="springboot集成jwt实现登录续签">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="pringboot整个redis（一主三从）+单哨兵">
                         
-                        <span class="card-title">springboot集成jwt实现登录续签</span>
+                        <span class="card-title">pringboot整个redis（一主三从）+单哨兵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1526,13 +1593,17 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-01-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
+                                </a>
+                            
+                            <a href="/categories/Docker/Java/" class="post-category">
                                     Java
                                 </a>
                             
@@ -1547,8 +1618,8 @@
                         <span class="chip bg-color">springboot</span>
                     </a>
                     
-                    <a href="/tags/Jwt/">
-                        <span class="chip bg-color">Jwt</span>
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
                 </div>
@@ -1562,13 +1633,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/18/git-chang-yong-ming-ling/">
+                <a href="/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Git常用命令">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="docker部署vue+springboot项目到云服务器">
                         
-                        <span class="card-title">Git常用命令</span>
+                        <span class="card-title">docker部署vue+springboot项目到云服务器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1579,19 +1650,39 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/git/" class="post-category">
-                                    git
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
+                                </a>
+                            
+                            <a href="/categories/Docker/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            <a href="/categories/Docker/Java/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>
