@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-01-04T09:56:35.196Z</updated>
+  <updated>2024-01-05T09:04:18.747Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker搭建MySQL双主双从</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/05/docker-da-jian-mysql-shuang-zhu-shuang-cong/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/05/docker-da-jian-mysql-shuang-zhu-shuang-cong/</id>
+    <published>2024-01-05T08:04:47.000Z</published>
+    <updated>2024-01-05T09:04:18.747Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MySQL双主双从（Dual Master Dual</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
+    
+    
+    <category term="mysql" scheme="http://ypbhbc.gitee.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker搭建MySQL一组三从服务</title>
     <link href="http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/"/>
     <id>http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/</id>
     <published>2024-01-04T08:43:39.000Z</published>
-    <updated>2024-01-04T09:56:35.196Z</updated>
+    <updated>2024-01-05T01:59:54.328Z</updated>
     
     
       
@@ -73,7 +98,7 @@
     <link href="http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/"/>
     <id>http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</id>
     <published>2024-01-02T08:58:04.000Z</published>
-    <updated>2024-01-04T10:00:37.695Z</updated>
+    <updated>2024-01-05T02:00:48.570Z</updated>
     
     
       
@@ -515,33 +540,6 @@
     
     
     <category term="centos" scheme="http://ypbhbc.gitee.io/tags/centos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>单例模式的使用</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/25/dan-li-mo-shi-de-shi-yong/</id>
-    <published>2023-05-25T03:50:07.000Z</published>
-    <updated>2024-01-02T09:03:18.522Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="设计模式" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Java/"/>
-    
-    
-    <category term="单例模式" scheme="http://ypbhbc.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
