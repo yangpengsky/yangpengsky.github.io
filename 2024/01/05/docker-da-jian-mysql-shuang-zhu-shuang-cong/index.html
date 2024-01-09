@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-05
+                    2024-01-09
                 </div>
                 
 
@@ -624,7 +624,6 @@ pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
 socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
 datadir         <span class="token operator">=</span> /var/lib/mysql
 secure-file-priv<span class="token operator">=</span> NULL
-server-id<span class="token operator">=</span>3
 <span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
 symbolic-links<span class="token operator">=</span>0
 
@@ -664,11 +663,10 @@ pid-file        <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
 socket          <span class="token operator">=</span> /var/run/mysqld/mysqld.sock
 datadir         <span class="token operator">=</span> /var/lib/mysql
 secure-file-priv<span class="token operator">=</span> NULL
-server-id<span class="token operator">=</span>3
 <span class="token comment" spellcheck="true"># Disabling symbolic-links is recommended to prevent assorted security risks</span>
 symbolic-links<span class="token operator">=</span>0
 
-server-id<span class="token operator">=</span>2 <span class="token comment" spellcheck="true">#设置server-id，必须唯一</span>
+server-id<span class="token operator">=</span>4 <span class="token comment" spellcheck="true">#设置server-id，必须唯一</span>
 
 <span class="token comment" spellcheck="true"># Custom config should go here</span>
 <span class="token operator">!</span>includedir /etc/mysql/conf.d/
