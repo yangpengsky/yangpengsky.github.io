@@ -13,11 +13,12 @@
 springboot 镜像1.本地打包项目
 2.上传项目到服务器
 
+
 3.写dockerfile
 # 指定基础镜像
 FROM openjdk:11
 # 维护者信息
-MAINTAINE">
+MAINTAIN">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -462,7 +463,7 @@ MAINTAINE">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-02
+                    2024-01-14
                 </div>
                 
 
@@ -503,7 +504,8 @@ MAINTAINE">
 </ul>
 <h3 id="springboot-镜像"><a href="#springboot-镜像" class="headerlink" title="springboot 镜像"></a>springboot 镜像</h3><p>1.本地打包项目</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311091533456.png" alt="image-20231109153311989"></h2><p>2.上传项目到服务器</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311091534734.png" alt="image-20231109153450026"></p>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311091534734.png">
+
 <p>3.写dockerfile</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定基础镜像</span>
 FROM openjdk:11
@@ -520,7 +522,8 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"j
 <p>4.执行</p>
 <pre class=" language-bash"><code class="language-bash">docker build -t faceboot <span class="token keyword">.</span>
 </code></pre>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161710193.png" alt="image-20231116171023265"></p>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161710193.png">
+
 <h3 id="vue项目上传"><a href="#vue项目上传" class="headerlink" title="vue项目上传"></a>vue项目上传</h3><pre><code>npm run build #生成部署文件
 </code></pre>
 <p>在服务</p>
@@ -529,7 +532,8 @@ ENTRYPOINT <span class="token punctuation">[</span><span class="token string">"j
  mkdir /mydata/nginx/cert -p
 </code></pre>
 <p>将前端打包后的项目上传值/mydata/nginx/html </p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161735851.png" alt="image-20231116173529084"></p>
+<img src="https://www.yangpengsky.top:9000/myblog/images/2023/11/202311161735851.png">
+
 <h3 id="编写docker-compose-yml文件"><a href="#编写docker-compose-yml文件" class="headerlink" title="编写docker-compose.yml文件"></a>编写docker-compose.yml文件</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"3"</span>
 <span class="token key atrule">services</span><span class="token punctuation">:</span>
 
