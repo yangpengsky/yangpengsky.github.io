@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-01-14T09:51:54.455Z</updated>
+  <updated>2024-01-22T09:49:33.440Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,132 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Netty04-优化与源码</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/22/netty04-you-hua-yu-yuan-ma/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/22/netty04-you-hua-yu-yuan-ma/</id>
+    <published>2024-01-22T09:34:45.000Z</published>
+    <updated>2024-01-22T09:49:33.440Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;四-优化与源码&quot;&gt;&lt;a href=&quot;#四-优化与源码&quot; class=&quot;headerlink&quot; title=&quot;四. 优化与源码&quot;&gt;&lt;/a&gt;四. 优化与源码&lt;/h1&gt;&lt;h2 id=&quot;1-优化&quot;&gt;&lt;a href=&quot;#1-优化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="Netty" scheme="http://ypbhbc.gitee.io/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty03-进阶</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/22/netty03-jin-jie/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/22/netty03-jin-jie/</id>
+    <published>2024-01-22T09:33:28.000Z</published>
+    <updated>2024-01-22T09:47:49.722Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;三-Netty-进阶&quot;&gt;&lt;a href=&quot;#三-Netty-进阶&quot; class=&quot;headerlink&quot; title=&quot;三. Netty 进阶&quot;&gt;&lt;/a&gt;三. Netty 进阶&lt;/h1&gt;&lt;h2 id=&quot;1-粘包与半包&quot;&gt;&lt;a href=&quot;#1-粘包与半包&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="Netty" scheme="http://ypbhbc.gitee.io/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty02-入门</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/22/netty02-ru-men/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/22/netty02-ru-men/</id>
+    <published>2024-01-22T09:29:56.000Z</published>
+    <updated>2024-01-22T09:47:01.631Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;二-Netty-入门&quot;&gt;&lt;a href=&quot;#二-Netty-入门&quot; class=&quot;headerlink&quot; title=&quot;二. Netty 入门&quot;&gt;&lt;/a&gt;二. Netty 入门&lt;/h1&gt;&lt;h2 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="Netty" scheme="http://ypbhbc.gitee.io/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty01-nio</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/22/netty01-nio/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/22/netty01-nio/</id>
+    <published>2024-01-22T09:22:44.000Z</published>
+    <updated>2024-01-22T09:46:18.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一-NIO-基础&quot;&gt;&lt;a href=&quot;#一-NIO-基础&quot; class=&quot;headerlink&quot; title=&quot;一. NIO 基础&quot;&gt;&lt;/a&gt;一. NIO 基础&lt;/h1&gt;&lt;p&gt;non-blocking io 非阻塞 IO&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="Netty" scheme="http://ypbhbc.gitee.io/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java多线程高并发（基础）</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/18/java-duo-xian-cheng-gao-bing-fa-ji-chu/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/18/java-duo-xian-cheng-gao-bing-fa-ji-chu/</id>
+    <published>2024-01-18T09:59:07.000Z</published>
+    <updated>2024-01-22T09:50:54.843Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-高并发相关概念&quot;&gt;&lt;a href=&quot;#1-高并发相关概念&quot; class=&quot;headerlink&quot; title=&quot;1.高并发相关概念&quot;&gt;&lt;/a&gt;1.高并发相关概念&lt;/h2&gt;&lt;h3 id=&quot;1-1进程与线程相关概念&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="多线程" scheme="http://ypbhbc.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot事务相关使用</title>
@@ -407,137 +533,6 @@
     
     
     <category term="多线程" scheme="http://ypbhbc.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java多线程</title>
-    <link href="http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/"/>
-    <id>http://ypbhbc.gitee.io/2023/06/01/java-duo-xian-cheng/</id>
-    <published>2023-06-01T08:36:53.000Z</published>
-    <updated>2024-01-14T09:58:34.196Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="多线程" scheme="http://ypbhbc.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>函数式编程-Stream流</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/31/han-shu-shi-bian-cheng-stream-liu/</id>
-    <published>2023-05-31T09:40:43.000Z</published>
-    <updated>2024-01-02T09:03:37.535Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1. 概述&quot;&gt;&lt;/a&gt;1. 概述&lt;/h2&gt;&lt;h3 id=&quot;1-1-为什么学？&quot;&gt;&lt;a href=&quot;#1-1-为什么学？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="Java8新特性" scheme="http://ypbhbc.gitee.io/tags/Java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybaties-plus的快速入门</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/30/mybaties-plus-de-kuai-su-ru-men/</id>
-    <published>2023-05-30T09:39:17.000Z</published>
-    <updated>2024-01-02T09:32:22.986Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;MyBatis-Plus（简称为 MyBatis+ 或 MP）是一个基于 MyBatis</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="mybatis-plus" scheme="http://ypbhbc.gitee.io/tags/mybatis-plus/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯云服务器+nginx+ssl证书</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/29/teng-xun-yun-fu-wu-qi-nginx-ssl-zheng-shu/</id>
-    <published>2023-05-29T06:12:25.000Z</published>
-    <updated>2023-08-31T02:07:25.772Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;SSL代表”Secure Sockets</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="nginx" scheme="http://ypbhbc.gitee.io/tags/nginx/"/>
-    
-    <category term="云服务器" scheme="http://ypbhbc.gitee.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="ssl证书" scheme="http://ypbhbc.gitee.io/tags/ssl%E8%AF%81%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>window安装docker desktop</title>
-    <link href="http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/"/>
-    <id>http://ypbhbc.gitee.io/2023/05/27/window-an-zhuang-docker-desktop/</id>
-    <published>2023-05-27T15:00:28.000Z</published>
-    <updated>2024-01-14T10:03:58.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Docker Desktop 是一个用于在个人计算机上创建和管理 Docker</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
-    
-    
-    <category term="window" scheme="http://ypbhbc.gitee.io/tags/window/"/>
     
   </entry>
   
