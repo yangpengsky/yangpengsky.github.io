@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="typora-vue-theme主题介绍, CodeCrafters">
-    <meta name="description" content="这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要">
+    <meta name="keywords" content="搭建个人vpn, CodeCrafters">
+    <meta name="description" content="前言VPN是Virtual Private Network（虚拟专用网络）的缩写。它是一种通过公共网络（例如互联网）建立加密连接的技术，用于在不安全的网络上创建一个私密、安全的网络连接。VPN允许用户通过公共网络安全地传输数据，并在互联网上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>typora-vue-theme主题介绍 | CodeCrafters</title>
+    <title>搭建个人vpn | CodeCrafters</title>
     <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
@@ -38,7 +38,9 @@
 
 
 
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
     <link rel="stylesheet" href="/css/post.css">
+
 
 
 
@@ -375,12 +377,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.ypsky.xyz/myblog/images/2023/05/202305181514109.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">typora-vue-theme主题介绍</h1>
+                    <h1 class="description center-align post-title">搭建个人vpn</h1>
                 </div>
             </div>
         </div>
@@ -390,10 +392,12 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -402,12 +406,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
-                            </a>
-                        
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/vps/">
+                                <span class="chip bg-color">vps</span>
                             </a>
                         
                     </div>
@@ -418,8 +418,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/liunx/" class="post-category">
+                                liunx
                             </a>
                         
                     </div>
@@ -431,28 +431,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-18
+                    2024-02-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-17
+                    2024-02-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    784
+                    876
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -472,105 +472,83 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
-<table>
-<thead>
-<tr>
-<th align="left">配置选项</th>
-<th align="left">默认值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">title</td>
-<td align="left"><code>Markdown</code> 的文件标题</td>
-<td align="left">文章标题，强烈建议填写此选项</td>
-</tr>
-<tr>
-<td align="left">date</td>
-<td align="left">文件创建时的日期时间</td>
-<td align="left">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
-</tr>
-<tr>
-<td align="left">author</td>
-<td align="left">根 <code>_config.yml</code> 中的 <code>author</code></td>
-<td align="left">文章作者</td>
-</tr>
-<tr>
-<td align="left">img</td>
-<td align="left"><code>featureImages</code> 中的某个值</td>
-<td align="left">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
-</tr>
-<tr>
-<td align="left">top</td>
-<td align="left"><code>true</code></td>
-<td align="left">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
-</tr>
-<tr>
-<td align="left">cover</td>
-<td align="left"><code>false</code></td>
-<td align="left"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
-</tr>
-<tr>
-<td align="left">coverImg</td>
-<td align="left">无</td>
-<td align="left"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
-</tr>
-<tr>
-<td align="left">password</td>
-<td align="left">无</td>
-<td align="left">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
-</tr>
-<tr>
-<td align="left">toc</td>
-<td align="left"><code>true</code></td>
-<td align="left">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
-</tr>
-<tr>
-<td align="left">mathjax</td>
-<td align="left"><code>false</code></td>
-<td align="left">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
-</tr>
-<tr>
-<td align="left">summary</td>
-<td align="left">无</td>
-<td align="left">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
-</tr>
-<tr>
-<td align="left">categories</td>
-<td align="left">无</td>
-<td align="left">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
-</tr>
-<tr>
-<td align="left">tags</td>
-<td align="left">无</td>
-<td align="left">文章标签，一篇文章可以多个标签</td>
-</tr>
-</tbody></table>
-<p><strong>注意</strong>:</p>
-<ol>
-<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
-<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
-<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a target="_blank" rel="noopener" href="http://tool.oschina.net/encrypt?type=2">开源中国在线工具</a>、<a target="_blank" rel="noopener" href="http://encode.chahuo.com/">chahuo</a>、<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/hash.aspx">站长工具</a>。</li>
-</ol>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
-<span class="token key atrule">title</span><span class="token punctuation">:</span> typora<span class="token punctuation">-</span>vue<span class="token punctuation">-</span>theme主题介绍
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-07 09:25:00</span>
-<span class="token key atrule">author</span><span class="token punctuation">:</span> 赵奇
-<span class="token key atrule">img</span><span class="token punctuation">:</span> /source/images/xxx.jpg
-<span class="token key atrule">top</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token key atrule">cover</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token key atrule">coverImg</span><span class="token punctuation">:</span> /images/1.jpg
-<span class="token key atrule">password</span><span class="token punctuation">:</span> 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">summary</span><span class="token punctuation">:</span> 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-<span class="token key atrule">categories</span><span class="token punctuation">:</span> Markdown
-<span class="token key atrule">tags</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> Typora
-  <span class="token punctuation">-</span> Markdown
-<span class="token punctuation">---</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>VPN是Virtual Private Network（虚拟专用网络）的缩写。它是一种通过公共网络（例如互联网）建立加密连接的技术，用于在不安全的网络上创建一个私密、安全的网络连接。VPN允许用户通过公共网络安全地传输数据，并在互联网上隐藏其真实IP地址。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>1.国外域名</p>
+<p>2.一台国外云服务vps</p>
+<h2 id="准备篇"><a href="#准备篇" class="headerlink" title="准备篇"></a>准备篇</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><h4 id="什么是域名"><a href="#什么是域名" class="headerlink" title="什么是域名"></a>什么是域名</h4><p>域名可以说是一个IP地址的代称，目的是为了便于记忆这个IP。例如，xxx.com 是一个域名。人们可以直接访问 xxx.com 来代替 IP 地址，然后域名系统（DNS）就会将它转化成便于机器识别的 IP 地址。这样，人们只需要记忆 xxx.com 这一串带有特殊含义的字符，而不需要记忆没有含义的数字</p>
+<p>推荐在 Namesilo 进行购买，因为他的 WHOIS 隐私 是免费的，可以适当的进行一下隐私保护，而且域名还都挺便宜的</p>
+<p>购买地址：<a target="_blank" rel="noopener" href="https://v2rayssr.com/go?url=https://www.namesilo.com/?rid=6254266mw">点击访问</a> （1.88刀/年 起）</p>
+<p>删除默认域名指向</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222040652.png" alt="image-20240222204021795"></p>
+<h3 id="域名托管-Cloudflare"><a href="#域名托管-Cloudflare" class="headerlink" title="域名托管 Cloudflare"></a>域名托管 Cloudflare</h3><p>登录cloud flare，添加站点</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222043765.png" alt="image-20240222204339874"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222045349.png" alt="image-20240222204538815"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222047813.png" alt="image-20240222204744073"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222050382.png" alt="image-20240222205017897"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222037255.png" alt="image-20240222203722448"></p>
+<h3 id="购买-VPS"><a href="#购买-VPS" class="headerlink" title="购买 VPS"></a>购买 VPS</h3><h4 id="VPS-是什么"><a href="#VPS-是什么" class="headerlink" title="VPS 是什么"></a>VPS 是什么</h4><p>VPS(Virtual Private Server 虚拟专用服务器)技术，将一部服务器分割成多个虚拟专享服务器的优质服务。每个VPS都可分配独立公网IP地址、独立操作系统、独立超大空间、独立内存、独立CPU资源、独立执行程序和独立系统配置等。设置系统debin10</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222058222.png" alt="image-20240222205756747"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222100093.png" alt="image-20240222205958887"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222102741.png" alt="image-20240222210224571"></p>
+<h2 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h2><h3 id="部署节点"><a href="#部署节点" class="headerlink" title="部署节点"></a>部署节点</h3><p>测试 VPS 的 IP 是否可用，<a target="_blank" rel="noopener" href="https://v2rayssr.com/go?url=https://ping.chinaz.com/">点击进入测试</a></p>
+<p>用 SSH 工具连接 VPS，</p>
+<p>输入相关代码</p>
+<pre class=" language-bash"><code class="language-bash">apt update -y          <span class="token comment" spellcheck="true"># Debian/Ubuntu 命令</span>
+apt <span class="token function">install</span> -y curl socat    <span class="token comment" spellcheck="true">#Debian/Ubuntu 命令</span>
+<span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#X-ui面板安装</span>
 </code></pre>
+<p>完成 X-ui 安装以后，我们可以输入 <code>VPSIP:端口</code>（如1.1.1.1:12345） 登录 X-ui 的管理面板（可以登录代表安装成功）</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222110854.png" alt="image-20240222211043265"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222117684.png" alt="image-20240222211702406"></p>
+<p>在 VPS 输入 <code>x-ui</code> 命令，进入 X-ui 的命令菜单</p>
+<pre class=" language-bash"><code class="language-bash">x-ui 面板管理脚本
+  0. 退出脚本
+————————————————
+  1. 安装 x-ui
+  2. 更新 x-ui
+  3. 卸载 x-ui
+————————————————
+  4. 重置用户名密码
+  5. 重置面板设置
+  6. 设置面板端口
+  7. 查看当前面板设置
+————————————————
+  8. 启动 x-ui
+  9. 停止 x-ui
+  10. 重启 x-ui
+  11. 查看 x-ui 状态
+  12. 查看 x-ui 日志
+————————————————
+  13. 设置 x-ui 开机自启
+  14. 取消 x-ui 开机自启
+————————————————
+  15. 一键安装 bbr <span class="token punctuation">(</span>最新内核<span class="token punctuation">)</span>
+  16. 一键申请SSL证书<span class="token punctuation">(</span>acme申请<span class="token punctuation">)</span>
+</code></pre>
+<p>选择 16，申请 SSL 的证书。</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222122500.png" alt="image-20240222212210152"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222123118.png" alt="image-20240222212258707"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222124238.png" alt="image-20240222212447826"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222135646.png" alt="image-20240222213516558"></p>
+<p>重启面板，访问<a target="_blank" rel="noopener" href="https://test.ypyydsbc.top:54321/">https://test.ypyydsbc.top:54321/</a></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222134833.png" alt="image-20240222213429142"></p>
+<p>优化节点</p>
+<h2 id="套用-CDN-拯救垃圾线路"><a href="#套用-CDN-拯救垃圾线路" class="headerlink" title="套用 CDN 拯救垃圾线路"></a>套用 CDN 拯救垃圾线路</h2><p>当然，收费的 CDN 用来做代理，成本是巨大的，所以，Cloudflare 的免费内容分发系统，是我们偶尔用到的。</p>
+<h3 id="开启方法"><a href="#开启方法" class="headerlink" title="开启方法"></a>开启方法</h3><p>1、打开 DNS 解析页面的的 小云朵。</p>
+<p>2、找到 SSL/TLS 选项，把加密选项改为 <code>完全/完全（严格）</code></p>
+<p>3、在 X-ui 面板建立 <code>VLESS+WS+TLS</code> 的代理节点</p>
+<h3 id="Cloudflare-优选-IP"><a href="#Cloudflare-优选-IP" class="headerlink" title="Cloudflare 优选 IP"></a>Cloudflare 优选 IP</h3><p>Windows 用户下载本地压缩包，解压运行。<a target="_blank" rel="noopener" href="https://v2rayssr.com/go?url=https://github.com/badafans/better-cloudflare-ip/releases/latest/download/batch.zip">点击下载</a></p>
+<p>MacOS 用户直接在终端运行如下命令即可</p>
+<pre class=" language-bash"><code class="language-bash">curl https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x cf.sh <span class="token operator">&amp;&amp;</span> ./cf.sh
+</code></pre>
+<p>以下是套用 CDN 之后的真实测速：测试时间 <code>09:28</code> 8K 视频</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222143077.png" alt="image-20240222214311978"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222144296.png" alt="image-20240222214401720"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222144013.png" alt="image-20240222214456963"></p>
+<p>通过ip访问x-ui</p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222148869.png" alt="image-20240222214845683"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222159015.png" alt="image-20240222215858696"></p>
+<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/02/202402222304495.png" alt="image-20240222230435193"></p>
 
                 
             </div>
@@ -587,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">杨鹏</a>
+                    <a href="/about" rel="external nofollow noreferrer">yangpeng</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -597,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/">http://ypbhbc.gitee.io/2023/05/18/typora-vue-theme-zhu-ti-jie-shao/</a>
+                    <a href="http://ypbhbc.gitee.io/2024/02/22/da-jian-ge-ren-vpn/">http://ypbhbc.gitee.io/2024/02/22/da-jian-ge-ren-vpn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,7 +588,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">杨鹏</a>
+                    <a href="/about" target="_blank">yangpeng</a>
                     !
                 </span>
             </div>
@@ -635,12 +613,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
-                                </a>
-                            
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/vps/">
+                                    <span class="chip bg-color">vps</span>
                                 </a>
                             
                         </div>
@@ -953,49 +927,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/18/picgo-gitee-da-jian-ge-ren-tu-chuang/">
+                <a href="/2024/02/22/da-jian-ge-ren-vpn/">
                     <div class="card-image">
                         
-                        <img src="https://pica.zhimg.com/80/v2-4dc929a46e9fb56c13911592af0be9dc_1440w.jpg?source=1940ef5c" class="responsive-img" alt="picgo-gitee搭建个人图床">
                         
-                        <span class="card-title">picgo-gitee搭建个人图床</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="搭建个人vpn">
+                        
+                        <span class="card-title">搭建个人vpn</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图床（Image Hosting Service）是一种在线服务，用于存储和托管图片。它允许用户将自己的图片上传到互联网上，并获取图片的链接，以便在网页、博客或论坛等地方分享或嵌入图片。图床的解决方案也非常多，网上比较多的解决方案除了免费图
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/git/" class="post-category">
-                                    git
+                            <a href="/categories/liunx/" class="post-category">
+                                    liunx
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/picgo/">
-                        <span class="chip bg-color">picgo</span>
-                    </a>
-                    
-                    <a href="/tags/gitee/">
-                        <span class="chip bg-color">gitee</span>
+                    <a href="/tags/vps/">
+                        <span class="chip bg-color">vps</span>
                     </a>
                     
                 </div>
@@ -1009,13 +982,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/18/nginx-de-an-zhuang/">
+                <a href="/2024/01/26/ze-ren-lian-mo-shi-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="nginx的安装">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="责任链模式的使用">
                         
-                        <span class="card-title">nginx的安装</span>
+                        <span class="card-title">责任链模式的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1026,14 +999,18 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1043,8 +1020,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">责任链模式</span>
                     </a>
                     
                 </div>
@@ -1079,6 +1056,87 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
