@@ -439,7 +439,7 @@ for rapid development ">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-22
+                    2024-03-29
                 </div>
                 
 
@@ -477,7 +477,7 @@ for rapid development ">
 for rapid development of maintainable high performance protocol servers &amp; clients.
 </code></pre>
 <p>Netty 是一个异步的、基于事件驱动的网络应用框架，用于快速开发可维护、高性能的网络服务器和客户端</p>
-<h3 id="1-2-Netty-的作者"><a href="#1-2-Netty-的作者" class="headerlink" title="1.2 Netty 的作者"></a>1.2 Netty 的作者</h3><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221725828.png">
+<h3 id="1-2-Netty-的作者"><a href="#1-2-Netty-的作者" class="headerlink" title="1.2 Netty 的作者"></a>1.2 Netty 的作者</h3><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221725828.png">
 
 <p>他还是另一个著名网络应用框架 Mina 的重要贡献者</p>
 <h3 id="1-3-Netty-的地位"><a href="#1-3-Netty-的地位" class="headerlink" title="1.3 Netty 的地位"></a>1.3 Netty 的地位</h3><p>Netty 在 Java 网络应用框架中的地位就好比：Spring 框架在 JavaEE 开发中的地位</p>
@@ -546,7 +546,7 @@ for rapid development of maintainable high performance protocol servers &amp; cl
 <li><p>1 处，创建 NioEventLoopGroup，可以简单理解为 <code>线程池 + Selector</code> 后面会详细展开</p>
 </li>
 <li><p>2 处，选择服务 Scoket 实现类，其中 NioServerSocketChannel 表示基于 NIO 的服务器端实现，其它实现还有</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221726953.png"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221726953.png"></p>
 </li>
 <li><p>3 处，为啥方法叫 childHandler，是接下来添加的处理器都是给 SocketChannel 用的，而不是给 ServerSocketChannel。ChannelInitializer 处理器（仅执行一次），它的作用是待客户端 SocketChannel 建立连接后，执行 initChannel 以便添加更多的处理器</p>
 </li>
@@ -576,7 +576,7 @@ for rapid development of maintainable high performance protocol servers &amp; cl
 <li><p>1 处，创建 NioEventLoopGroup，同 Server</p>
 </li>
 <li><p>2 处，选择客户 Socket 实现类，NioSocketChannel 表示基于 NIO 的客户端实现，其它实现还有</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221726476.png"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221726476.png"></p>
 </li>
 <li><p>3 处，添加 SocketChannel 的处理器，ChannelInitializer 处理器（仅执行一次），它的作用是待客户端 SocketChannel 建立连接后，执行 initChannel 以便添加更多的处理器</p>
 </li>
@@ -593,7 +593,7 @@ for rapid development of maintainable high performance protocol servers &amp; cl
 <li><p>数据经过网络传输，到达服务器端，服务器端 5 和 6 处的 handler 先后被触发，走完一个流程</p>
 </li>
 </ul>
-<h3 id="2-4-流程梳理"><a href="#2-4-流程梳理" class="headerlink" title="2.4 流程梳理"></a>2.4 流程梳理</h3><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221726879.png">
+<h3 id="2-4-流程梳理"><a href="#2-4-流程梳理" class="headerlink" title="2.4 流程梳理"></a>2.4 流程梳理</h3><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221726879.png">
 
 <h4 id="💡-提示"><a href="#💡-提示" class="headerlink" title="💡 提示"></a>💡 提示</h4><blockquote>
 <p>一开始需要树立正确的观念</p>
@@ -705,7 +705,7 @@ io.netty.channel.DefaultEventLoop@35f983a6
 22:06:11 [DEBUG] [nioEventLoopGroup-3-1] c.i.o.EventLoopTest - wangwu         
 </code></pre>
 <p>可以看到两个工人轮流处理 channel，但工人与 channel 之间进行了绑定</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221726064.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221726064.png">
 
 
 
@@ -791,7 +791,7 @@ io.netty.channel.DefaultEventLoop@35f983a6
 22:20:40 [DEBUG] [defaultEventLoopGroup-2-1] c.i.o.EventLoopTest - wangwu          
 </code></pre>
 <p>可以看到，nio 工人和 非 nio 工人也分别绑定了 channel（LoggingHandler 由 nio 工人执行，而我们自己的 handler 由非 nio 工人执行）</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221727904.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221727904.png">
 
 
 
@@ -993,7 +993,7 @@ channelFuture<span class="token punctuation">.</span><span class="token function
 </li>
 </ul>
 <p>思考下面的场景，4 个医生给人看病，每个病人花费 20 分钟，而且医生看病的过程中是以病人为单位的，一个病人看完了，才能看下一个病人。假设病人源源不断地来，可以计算一下 4 个医生一天工作 8 小时，处理的病人总数是：<code>4 * 8 * 3 = 96</code></p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221727516.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221727516.png">
 
 
 
@@ -1010,7 +1010,7 @@ channelFuture<span class="token punctuation">.</span><span class="token function
 
 
 <p>经研究发现，看病可以细分为四个步骤，经拆分后每个步骤需要 5 分钟，如下</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221727808.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221727808.png">
 
 
 
@@ -1023,7 +1023,7 @@ channelFuture<span class="token punctuation">.</span><span class="token function
 
 
 <p>因此可以做如下优化，只有一开始，医生 2、3、4 分别要等待 5、10、15 分钟才能执行工作，但只要后续病人源源不断地来，他们就能够满负荷工作，并且处理病人的能力提高到了 <code>4 * 8 * 12</code> 效率几乎是原来的四倍</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221727171.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221727171.png">
 
 <p>要点</p>
 <ul>
@@ -1397,7 +1397,7 @@ io.netty.util.concurrent.BlockingOperationException: DefaultPromise@47499c2a(inc
 4
 </code></pre>
 <p>可以看到，ChannelInboundHandlerAdapter 是按照 addLast 的顺序执行的，而 ChannelOutboundHandlerAdapter 是按照 addLast 的逆序执行的。ChannelPipeline 的实现是一个 ChannelHandlerContext（包装了 ChannelHandler） 组成的双向链表</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221728602.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221728602.png">
 
 <ul>
 <li>入站处理器中，ctx.fireChannelRead(msg) 是 <strong>调用下一个入站处理器</strong><ul>
@@ -1423,7 +1423,7 @@ io.netty.util.concurrent.BlockingOperationException: DefaultPromise@47499c2a(inc
 </li>
 </ul>
 <p>图1 - 服务端 pipeline 触发的原始流程，图中数字代表了处理步骤的先后次序</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221728313.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221728313.png">
 
 
 
@@ -1472,7 +1472,7 @@ io.netty.util.concurrent.BlockingOperationException: DefaultPromise@47499c2a(inc
 <li>4.1 之前，池化功能还不成熟，默认是非池化实现</li>
 </ul>
 <h4 id="4）组成"><a href="#4）组成" class="headerlink" title="4）组成"></a>4）组成</h4><p>ByteBuf 由四部分组成</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221728837.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221728837.png">
 
 <p>最开始读写指针都在 0 位置</p>
 <h4 id="5）写入"><a href="#5）写入" class="headerlink" title="5）写入"></a>5）写入</h4><p>方法列表，省略一些不重要的方法</p>
@@ -1716,7 +1716,7 @@ read index:8 write index:12 capacity:16
 <span class="token punctuation">}</span>
 </code></pre>
 <h4 id="9）slice"><a href="#9）slice" class="headerlink" title="9）slice"></a>9）slice</h4><p>【零拷贝】的体现之一，对原始 ByteBuf 进行切片成多个 ByteBuf，切片后的 ByteBuf 并没有发生内存复制，还是使用原始 ByteBuf 的内存，切片后的 ByteBuf 维护独立的 read，write 指针</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221728292.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221728292.png">
 
 <p>例，原始 ByteBuf 进行一些初始操作</p>
 <pre class=" language-java"><code class="language-java">ByteBuf origin <span class="token operator">=</span> ByteBufAllocator<span class="token punctuation">.</span>DEFAULT<span class="token punctuation">.</span><span class="token function">buffer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1786,7 +1786,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 +--------+-------------------------------------------------+----------------+
 </code></pre>
 <h4 id="10）duplicate"><a href="#10）duplicate" class="headerlink" title="10）duplicate"></a>10）duplicate</h4><p>【零拷贝】的体现之一，就好比截取了原始 ByteBuf 所有内容，并且没有 max capacity 的限制，也是与原始 ByteBuf 使用同一块底层内存，只是读写指针是独立的</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221728305.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221728305.png">
 
 
 

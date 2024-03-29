@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-14
+                    2024-03-29
                 </div>
                 
 
@@ -486,12 +486,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="桥接模式网络配置"><a href="#桥接模式网络配置" class="headerlink" title="桥接模式网络配置"></a>桥接模式网络配置</h2><p>1、桥接网络选择则当前连接的网络（在网络中心查看）</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757221.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171757221.png">
 
 
 
 <p>2、给虚拟机添加一张网卡，选择桥接模式</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757324.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171757324.png">
 
 
 
@@ -527,14 +527,16 @@ GATAWAY=网关（与本地网络一致）
 <pre class=" language-sh"><code class="language-sh">nmcli device status
 </code></pre>
 <h2 id="NAT模式网络配置"><a href="#NAT模式网络配置" class="headerlink" title="NAT模式网络配置"></a>NAT模式网络配置</h2><ol>
-<li><p>设置net模式</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171757160.png" alt="image-20220729221723044"></p>
-</li>
+<li>设置net模式</li>
 </ol>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758437.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171757160.png">
+
+
+
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171758437.png">
 
 <p>注意： VMware Network Adapter VMnet8保证是启用状态</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758729.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171758729.png">
 
 <p>2.设置静态ip</p>
 <blockquote>
@@ -543,7 +545,7 @@ GATAWAY=网关（与本地网络一致）
 </blockquote>
 <p>3.修改网卡配置文件</p>
 <p>vi /etc/sysconfig/network-scripts/ifcfg-ens33</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/10/202310171758903.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/10/202310171758903.png">
 
 
 

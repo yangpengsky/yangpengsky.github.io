@@ -439,7 +439,7 @@ Docker 是一种开源的容器化平台，可以将应用程序">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-14
+                    2024-03-29
                 </div>
                 
 
@@ -478,12 +478,12 @@ Docker 是一种开源的容器化平台，可以将应用程序">
 <p>使用 Docker Desktop，您可以通过简单的图形界面或命令行工具来创建和管理容器。它还提供了一个本地的容器注册表，可以用来存储和共享容器镜像。Docker Desktop 还包含了一些实用的工具，如容器编排工具 Docker Compose，用于管理多个容器的应用程序。</p>
 <p>无论您是开发者还是系统管理员，Docker Desktop 都可以帮助您更轻松地构建、测试和部署容器化的应用程序。它支持在 Windows、macOS 和 Linux 等操作系统上运行，并提供了一致的用户体验和功能。</p>
 <h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><p>检查下面功能是否开启</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305280958676.png" />
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305280958676.png" />
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305281000533.png" />
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305281000533.png" />
 
 <h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>网址：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305280938886.png" />
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305280938886.png" />
 
 <p>因为docker desktop默认安装的路径是在“C:\Program Files\Docker” ，docker desktop在使用过程中会不断增大，所以最好就是安装目录和存储目录软连接到其他数据盘。</p>
 <pre class=" language-bash"><code class="language-bash">创建这两个文件夹
@@ -497,11 +497,11 @@ mklink /j “C:\Users\37656\AppData\Local\Docker” “D:\Program Data\Docker”
 </code></pre>
 <p>然后安装软件即可</p>
 <h2 id="检查安装结果"><a href="#检查安装结果" class="headerlink" title="检查安装结果"></a>检查安装结果</h2><p>安装完毕后C盘中应该如图1、2所示，两个路径下的Docker文件夹成功建立了软连接</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305281004638.png" />
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305281004638.png" />
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305281005156.png" />
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305281005156.png" />
 
-<h2 id="设置镜像下载的源"><a href="#设置镜像下载的源" class="headerlink" title="设置镜像下载的源"></a>设置镜像下载的源</h2><img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/202305281008615.png" />
+<h2 id="设置镜像下载的源"><a href="#设置镜像下载的源" class="headerlink" title="设置镜像下载的源"></a>设置镜像下载的源</h2><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2023/05/202305281008615.png" />
 
 <pre class=" language-json"><code class="language-json"> <span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token string">"https://hub-mirror.c.163.com/"</span>

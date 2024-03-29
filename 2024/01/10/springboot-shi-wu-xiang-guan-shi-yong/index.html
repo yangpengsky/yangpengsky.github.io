@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-14
+                    2024-03-29
                 </div>
                 
 
@@ -557,7 +557,7 @@
         <span class="token keyword">return</span> insert<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111127245.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111127245.png">
 
 <p>注意：这里并没有的回滚，是因为数据库本身设置的主键导致的的报错，所以没有插入成功，不是因为注解。</p>
 <h3 id="2-代码bug导致事务回滚"><a href="#2-代码bug导致事务回滚" class="headerlink" title="2.代码bug导致事务回滚"></a>2.代码bug导致事务回滚</h3><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Transactional</span>
@@ -572,9 +572,9 @@
         <span class="token keyword">return</span> insert<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111137635.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111137635.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111140369.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111140369.png">
 
 <p>注意：可以看到控制台显示插入成功，但是数据并没有插入到表里，发生了事务回滚</p>
 <h3 id="3-手动触发事务"><a href="#3-手动触发事务" class="headerlink" title="3.手动触发事务"></a>3.手动触发事务</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Transactional</span>
@@ -595,9 +595,9 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111154719.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111154719.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111155011.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111155011.png">
 
 <p>注意点：可以看到当我们对异常进行了捕捉后，异常就不会向外抛，所以事务回滚就不生效了。</p>
 <p><strong>怎么处理这个问题</strong></p>
@@ -620,9 +620,9 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111333815.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111333815.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111335263.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111335263.png">
 
 <p>注意：当我们在catch后添加 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); 代码，便可以手动回滚了</p>
 <h3 id="4-使用事务时，调用其他子方法进行数据库操作"><a href="#4-使用事务时，调用其他子方法进行数据库操作" class="headerlink" title="4.使用事务时，调用其他子方法进行数据库操作"></a>4.使用事务时，调用其他子方法进行数据库操作</h3><pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -647,9 +647,9 @@
         <span class="token keyword">return</span> insert<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111352125.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111352125.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111353211.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111353211.png">
 
 <p>注意：因为 <code>@Transactional</code> 注解应用于整个 <code>affairTest4</code> 方法，所以任何在这个方法内（包括其调用的其他方法）发生的满足回滚条件的异常都将触发整个事务的回滚。在您的情况下，<code>deal</code> 方法是作为 <code>affairTest4</code> 方法的一部分被调用的，因此它的操作也包含在同一个事务中。一旦事务中抛出了指定类型的异常，整个事务，包括 <code>deal</code> 方法中的操作，都会被回滚。</p>
 <p>要解决这个问题，您可以：</p>
@@ -667,9 +667,9 @@
         <span class="token keyword">int</span> insert1 <span class="token operator">=</span> empMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>emp<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111406111.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111406111.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111406310.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111406310.png">
 
 <p>注意：如果 <code>affairTest4()</code> 和 <code>deal()</code> 方法在同一个类中，并且 <code>affairTest4()</code> 直接调用 <code>deal()</code>，那么 <code>deal()</code> 方法的事务设置可能不会被正确处理。这是因为Spring的事务管理是基于代理的，当从同一个类内部调用另一个方法时，这个代理可能不会被触发。</p>
 <h3 id="5-指定出发事务回滚的异常类型"><a href="#5-指定出发事务回滚的异常类型" class="headerlink" title="5.指定出发事务回滚的异常类型"></a>5.指定出发事务回滚的异常类型</h3><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Transactional</span><span class="token punctuation">(</span>rollbackFor <span class="token operator">=</span> IOException<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
@@ -689,9 +689,9 @@
         <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IOException</span><span class="token punctuation">(</span><span class="token string">"文件读取错误"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111416238.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111416238.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111416268.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111416268.png">
 
 <p>注意：  添加@Transactional(rollbackFor = IOException.class)后，因为 someMethod()方法抛出IOException，会回滚。</p>
 <h3 id="6-自定义事务"><a href="#6-自定义事务" class="headerlink" title="6.自定义事务"></a>6.自定义事务</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Resource</span>
@@ -724,9 +724,9 @@ TransactionDefinition transactionDefinition<span class="token punctuation">;</sp
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111503750.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111503750.png">
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401111521798.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401111521798.png">
 
                 
             </div>

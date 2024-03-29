@@ -439,7 +439,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-05
+                    2024-03-29
                 </div>
                 
 
@@ -616,11 +616,11 @@ symbolic-links<span class="token operator">=</span>0
 </code></pre>
 <h2 id="docker-compose命令"><a href="#docker-compose命令" class="headerlink" title="docker-compose命令"></a>docker-compose命令</h2><h3 id="容器创建"><a href="#容器创建" class="headerlink" title="容器创建"></a>容器创建</h3><pre class=" language-bash"><code class="language-bash">docker-compose -f docker-compose-mysql.yml up -d
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041702693.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041702693.png"/>
 
 <h3 id="容器停止"><a href="#容器停止" class="headerlink" title="容器停止"></a>容器停止</h3><pre class=" language-bash"><code class="language-bash">docker-compose -f docker-compose-mysql.yml down
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041701569.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041701569.png"/>
 
 <h2 id="在主库中创建同步用户"><a href="#在主库中创建同步用户" class="headerlink" title="在主库中创建同步用户"></a>在主库中创建同步用户</h2><p>进入mysql_master容器</p>
 <pre class=" language-bash"><code class="language-bash">docker <span class="token function">exec</span> -it mysql_master <span class="token function">bash</span>
@@ -638,7 +638,7 @@ GRANT REPLICATION SLAVE ON *.* TO <span class="token string">'test'</span>@<span
 <p>查询主库状态</p>
 <pre class=" language-bash"><code class="language-bash">show master status<span class="token punctuation">;</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041715038.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041715038.png"/>
 
 <h2 id="在从库中配置主库信息"><a href="#在从库中配置主库信息" class="headerlink" title="在从库中配置主库信息"></a>在从库中配置主库信息</h2><p>切换到slave01数据库，执行一下命令</p>
 <pre class=" language-bash"><code class="language-bash">change master to
@@ -656,12 +656,12 @@ get_master_public_key<span class="token operator">=</span>1<span class="token pu
 <p>执行以下命令查看从库状态</p>
 <pre class=" language-bash"><code class="language-bash">show slave status\G<span class="token punctuation">;</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041726852.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041726852.png"/>
 
 <p>出现两个yes就成功了，然后分别在剩下两台重复执行以上命令</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041734689.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041734689.png"/>
 
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401041736440.png"/>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401041736440.png"/>
 
 <h2 id="⚠️注意"><a href="#⚠️注意" class="headerlink" title="⚠️注意"></a>⚠️注意</h2><p>MySQL数据同步是通过binlog 和 Pos与与主库相同，在手动将主库和从库的同步点对齐之前，或从库数据不一致时候，先停止同步stop slave;从新执行（在从库中配置主库信息）步骤即可</p>
 

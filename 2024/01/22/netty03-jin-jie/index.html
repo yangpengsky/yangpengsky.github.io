@@ -440,7 +440,7 @@ public class HelloWorldServer {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-22
+                    2024-03-29
                 </div>
                 
 
@@ -653,12 +653,12 @@ ctx<span class="token punctuation">.</span><span class="token function">writeAnd
 <p>滑动窗口</p>
 <ul>
 <li><p>TCP 以一个段（segment）为单位，每发送一个段就需要进行一次确认应答（ack）处理，但如果这么做，缺点是包的往返时间越长性能就越差</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221731437.png"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221731437.png"></p>
 </li>
 </ul>
 <ul>
 <li><p>为了解决此问题，引入了窗口概念，窗口大小即决定了无需等待应答而可以继续发送的数据最大值</p>
-<p><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221731971.png"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221731971.png"></p>
 </li>
 <li><p>窗口实际就起到一个缓冲区的作用，同时也能起到流量控制的作用</p>
 <ul>
@@ -690,7 +690,7 @@ ctx<span class="token punctuation">.</span><span class="token function">writeAnd
 <li><p>MSS 的值在三次握手时通知对方自己 MSS 的值，然后在两者之间选择一个小值作为 MSS</p>
 </li>
 </ul>
-  <img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221732631.jpg" style="zoom:50%;" />
+  <img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221732631.jpg" style="zoom:50%;" />
 </blockquote>
 <blockquote>
 <p>Nagle 算法</p>
@@ -1397,7 +1397,7 @@ channel<span class="token punctuation">.</span><span class="token function">writ
 channel<span class="token punctuation">.</span><span class="token function">writeInbound</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>解读</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221732289.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401221732289.png">
 
 
 

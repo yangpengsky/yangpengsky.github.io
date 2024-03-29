@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-01-10
+                    2024-03-29
                 </div>
                 
 
@@ -490,7 +490,7 @@
 <li>docker已安装</li>
 <li>docker-compose已安装</li>
 </ul>
-<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051617259.png">
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051617259.png">
 
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><table>
 <thead>
@@ -689,7 +689,7 @@ GRANT REPLICATION SLAVE ON *.* TO <span class="token string">'slave_sync_user'</
 <p>查看master01状态</p>
 <pre class=" language-bash"><code class="language-bash">show master status<span class="token punctuation">;</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051641979.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051641979.png">
 
 <p>在master02 执行以下命令</p>
 <pre class=" language-bash"><code class="language-bash">bachange master to
@@ -702,7 +702,7 @@ master_log_pos<span class="token operator">=</span>1194<span class="token punctu
 start slave<span class="token punctuation">;</span> <span class="token comment" spellcheck="true"># 开启同步</span>
 show slave status \G；
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051645564.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051645564.png">
 
 <p>在slave01执行以下命令</p>
 <pre class=" language-bash"><code class="language-bash">change master to
@@ -715,13 +715,13 @@ master_log_pos<span class="token operator">=</span>1194<span class="token punctu
 start slave<span class="token punctuation">;</span> <span class="token comment" spellcheck="true"># 开启同步</span>
 show slave status \G；
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051646698.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051646698.png">
 
 <p>master02-&gt;master01,master02-&gt;slave02</p>
 <p>查看master02状态</p>
 <pre class=" language-bash"><code class="language-bash">show master status<span class="token punctuation">;</span>
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051649059.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051649059.png">
 
 <p>在master02 执行以下命令</p>
 <pre class=" language-bash"><code class="language-bash">bachange master to
@@ -734,7 +734,7 @@ master_log_pos<span class="token operator">=</span>1194<span class="token punctu
 start slave<span class="token punctuation">;</span> <span class="token comment" spellcheck="true"># 开启同步</span>
 show slave status \G；
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051649291.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051649291.png">
 
 <p>在slave02执行以下命令</p>
 <pre class=" language-bash"><code class="language-bash">change master to
@@ -747,11 +747,11 @@ master_log_pos<span class="token operator">=</span>1194<span class="token punctu
 start slave<span class="token punctuation">;</span> <span class="token comment" spellcheck="true"># 开启同步</span>
 show slave status \G；
 </code></pre>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051653001.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051653001.png">
 
 <h3 id="验证双主双从同步效果"><a href="#验证双主双从同步效果" class="headerlink" title="验证双主双从同步效果"></a>验证双主双从同步效果</h3><p>任意主数据库操作数据，所有结点到得相同数据；</p>
 <p>在master01打入empdb数据库，发现都同步过来了</p>
-<img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401051703632.png">
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/01/202401051703632.png">
 
 
                 
