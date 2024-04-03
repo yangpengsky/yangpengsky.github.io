@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-03-29T07:09:32.156Z</updated>
+  <updated>2024-04-01T06:21:48.366Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,18 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>springboot整合支付宝沙箱支付</title>
+    <link href="http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/"/>
+    <id>http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/</id>
+    <published>2024-04-01T02:25:19.000Z</published>
+    <updated>2024-04-01T06:21:48.366Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.&lt;/p&gt;
+&lt;p&gt;appid 、支付宝网关、系统默认密钥&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011049867.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>数据库文档生成</title>
     <link href="http://ypbhbc.gitee.io/2024/03/12/shu-ju-ku-wen-dang-sheng-cheng/"/>
     <id>http://ypbhbc.gitee.io/2024/03/12/shu-ju-ku-wen-dang-sheng-cheng/</id>
     <published>2024-03-12T03:16:24.000Z</published>
-    <updated>2024-03-29T07:09:32.156Z</updated>
+    <updated>2024-04-03T07:49:42.570Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;maven依赖引入&quot;&gt;&lt;a href=&quot;#maven依赖引入&quot; class=&quot;headerlink&quot; title=&quot;maven依赖引入&quot;&gt;&lt;/a&gt;maven依赖引入&lt;/h3&gt;&lt;pre class=&quot; language-xml&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;日常需要导出数据库表结构，手写非常麻烦，所以使用程序几秒搞定&lt;/p&gt;
+&lt;h3 id=&quot;maven依赖引入&quot;&gt;&lt;a</summary>
         
       
     
@@ -502,33 +526,6 @@
     <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
     
     <category term="axios" scheme="http://ypbhbc.gitee.io/tags/axios/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot集成jwt实现登录续签</title>
-    <link href="http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/"/>
-    <id>http://ypbhbc.gitee.io/2023/06/25/springboot-ji-cheng-jwt-shi-xian-deng-lu-xu-qian/</id>
-    <published>2023-06-25T06:18:03.000Z</published>
-    <updated>2024-03-29T07:09:32.138Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;JWT（JSON Web Token）是一种开放标准（RFC</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="Jwt" scheme="http://ypbhbc.gitee.io/tags/Jwt/"/>
     
   </entry>
   
