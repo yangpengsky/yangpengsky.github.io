@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-04-01T06:21:48.366Z</updated>
+  <updated>2024-04-12T06:50:32.534Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,25 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>springboot整合i18n实现消息国际化</title>
+    <link href="http://ypbhbc.gitee.io/2024/04/12/springboot-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/"/>
+    <id>http://ypbhbc.gitee.io/2024/04/12/springboot-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/</id>
+    <published>2024-04-12T06:15:17.000Z</published>
+    <updated>2024-04-12T06:50:32.534Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在我们开发WEB项目的时候，项目可能涉及到在国外部署或者应用，也有可能会有国外的用户对项目进行访问，那么在这种项目中，</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>springboot整合支付宝沙箱支付</title>
     <link href="http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/"/>
     <id>http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/</id>
     <published>2024-04-01T02:25:19.000Z</published>
-    <updated>2024-04-01T06:21:48.366Z</updated>
+    <updated>2024-04-12T07:20:36.687Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;1.&lt;/p&gt;
-&lt;p&gt;appid 、支付宝网关、系统默认密钥&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011049867.png&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
+    
+    
+    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
   </entry>
   
@@ -499,33 +526,6 @@
     <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
     <category term="aop" scheme="http://ypbhbc.gitee.io/tags/aop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue集成axios进行二次封装</title>
-    <link href="http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/"/>
-    <id>http://ypbhbc.gitee.io/2023/06/28/vue-ji-cheng-axios-jin-xing-er-ci-feng-zhuang/</id>
-    <published>2023-06-28T08:17:04.000Z</published>
-    <updated>2024-03-29T07:09:32.142Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
-    
-    <category term="axios" scheme="http://ypbhbc.gitee.io/tags/axios/"/>
     
   </entry>
   
