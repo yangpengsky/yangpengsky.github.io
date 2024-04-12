@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="springboot整合支付宝沙箱支付, CodeCrafters">
-    <meta name="description" content="前言沙箱环境是支付宝为商户提供的一种测试环境，该环境下的账户资金属于虚拟资金，商户可以在沙箱环境下测试各种支付场景。进行沙箱环境配置和测试后，用户可以在支付宝沙箱环境中使用实名的支付宝账户进行支付操作，而商户则需要承担相关支付手续费。
-沙箱">
+    <meta name="keywords" content="vue2整合i18n实现消息国际化, CodeCrafters">
+    <meta name="description" content="前言在我们开发WEB项目的时候，项目可能涉及到在国外部署或者应用，也有可能会有国外的用户对项目进行访问，那么在这种项目中， 为客户展现的页面或者操作的信息就需要根据客户系统的环境来使用不同的语言，这就是我们所说的项目国际化。
+安装 vue-">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>springboot整合支付宝沙箱支付 | CodeCrafters</title>
+    <title>vue2整合i18n实现消息国际化 | CodeCrafters</title>
     <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
     
 
@@ -378,12 +378,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">springboot整合支付宝沙箱支付</h1>
+                    <h1 class="description center-align post-title">vue2整合i18n实现消息国际化</h1>
                 </div>
             </div>
         </div>
@@ -407,8 +407,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/springboot/">
-                                <span class="chip bg-color">springboot</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -419,8 +419,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -432,7 +432,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-01
+                    2024-04-12
                 </div>
                 
 
@@ -446,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    625
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    2 分
                 </div>
                 
 
@@ -473,189 +473,195 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>沙箱环境是支付宝为商户提供的一种测试环境，该环境下的账户资金属于虚拟资金，商户可以在沙箱环境下测试各种支付场景。进行沙箱环境配置和测试后，用户可以在支付宝沙箱环境中使用实名的支付宝账户进行支付操作，而商户则需要承担相关支付手续费。</p>
-<h2 id="沙箱环境配置："><a href="#沙箱环境配置：" class="headerlink" title="沙箱环境配置："></a>沙箱环境配置：</h2><ol>
-<li>打开支付宝开放平台（<a target="_blank" rel="noopener" href="https://open.alipay.com/%EF%BC%89%EF%BC%8C%E6%B3%A8%E5%86%8C%E5%B9%B6%E7%99%BB%E5%BD%95%E8%B4%A6%E6%88%B7%E3%80%82">https://open.alipay.com/），注册并登录账户。</a></li>
-<li>在平台首页的“沙箱环境配置”模块进行沙箱环境配置。沙箱环境配置完成后，您将获得一个沙箱商户账号和相应的支付宝账号。</li>
-</ol>
-<p>沙箱环境使用：</p>
-<ol>
-<li>在平台首页的“沙箱环境”模块，选择需要测试的沙箱环境。</li>
-<li>在商户平台上登录沙箱环境。</li>
-<li>在商户平台上进行支付测试。在测试之前，请确保您已经配置了沙箱环境并测试了相应的接口。</li>
-</ol>
-<p>注意事项：</p>
-<ol>
-<li>沙箱环境中的资金是虚拟资金，仅用于测试，您不能将其用于的真实场景。</li>
-<li>进行支付操作时，请确保用户同意支付操作。</li>
-<li>沙箱环境配置和测试可能需要一定的时间，请及时查看平台消息和邮件。</li>
-<li>在实际开发和运营中，请使用支付宝提供的官方SDK进行支付功能集成。</li>
-</ol>
-<h2 id="截图步骤如下："><a href="#截图步骤如下：" class="headerlink" title="截图步骤如下："></a>截图步骤如下：</h2><p>appid 、支付宝网关、使用系统默认密钥</p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011049867.png">
-
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121504785.png">
-
-<p>获取账号</p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011044363.png">
-
-<p>获取工具（目前只支持安卓手机下载），安装后，使用下面买家账号和密码登录，用于支付测试</p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121501947.png">
-
-<p>买家账号和密码</p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011046795.png">
-
-<h2 id="项目中配置"><a href="#项目中配置" class="headerlink" title="项目中配置"></a>项目中配置</h2><h3 id="1-依赖引入"><a href="#1-依赖引入" class="headerlink" title="1.依赖引入"></a>1.依赖引入</h3><pre class=" language-xml"><code class="language-xml">        <span class="token comment" spellcheck="true">&lt;!--   支付宝支付的依赖     --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alipay.sdk<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>alipay-sdk-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>4.16.2.ALL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在我们开发WEB项目的时候，项目可能涉及到在国外部署或者应用，也有可能会有国外的用户对项目进行访问，那么在这种项目中， 为客户展现的页面或者操作的信息就需要根据客户系统的环境来使用不同的语言，这就是我们所说的项目国际化。</p>
+<h3 id="安装-vue-i18n-依赖包"><a href="#安装-vue-i18n-依赖包" class="headerlink" title="安装 vue-i18n 依赖包"></a>安装 vue-i18n 依赖包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save vue-i18n
 </code></pre>
-<h3 id="2-创建支付的Controller类"><a href="#2-创建支付的Controller类" class="headerlink" title="2.创建支付的Controller类"></a>2.创建支付的Controller类</h3><ul>
-<li>将从Controller中进入支付宝支付，需完成支付宝提供的接口</li>
-<li>创建PayController类，有如下代码</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PayController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Autowired</span>
-    DonaItemService donaItemService<span class="token punctuation">;</span>
-    <span class="token annotation punctuation">@Autowired</span>
-    DonaService donaService<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//appid</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String APP_ID <span class="token operator">=</span> <span class="token string">"2021000119625133"</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//应用私钥</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String APP_PRIVATE_KEY <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String CHARSET <span class="token operator">=</span> <span class="token string">"UTF-8"</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 支付宝公钥</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String ALIPAY_PUBLIC_KEY <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//这是沙箱接口路径,正式路径为https://openapi.alipay.com/gateway.do</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String GATEWAY_URL <span class="token operator">=</span><span class="token string">"https://openapi.alipaydev.com/gateway.do"</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String FORMAT <span class="token operator">=</span> <span class="token string">"JSON"</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//签名方式</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String SIGN_TYPE <span class="token operator">=</span> <span class="token string">"RSA2"</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//支付宝异步通知路径,付款完毕后会异步调用本项目的方法,必须为公网地址</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String NOTIFY_URL <span class="token operator">=</span> <span class="token string">"http://127.0.0.1/notifyUrl"</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//支付宝同步通知路径,也就是当付款完毕后跳转本项目的页面,可以不是公网地址</span>
-    <span class="token keyword">private</span> <span class="token keyword">final</span> String RETURN_URL <span class="token operator">=</span> <span class="token string">"http://localhost:8080/returnUrl"</span><span class="token punctuation">;</span>
-    
-    <span class="token comment" spellcheck="true">//必须加ResponseBody注解，否则spring会寻找thymeleaf页面</span>
-    <span class="token annotation punctuation">@ResponseBody</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/pay/alipay"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">alipay</span><span class="token punctuation">(</span>HttpSession session<span class="token punctuation">,</span>Model model<span class="token punctuation">,</span>
-                         <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"dona_money"</span><span class="token punctuation">)</span> <span class="token keyword">float</span> dona_money<span class="token punctuation">,</span>
-                        <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"dona_id"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> dona_id<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//把dona_id项目id 放在session中</span>
-        session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"dona_id"</span><span class="token punctuation">,</span>dona_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="使用方式一"><a href="#使用方式一" class="headerlink" title="使用方式一"></a>使用方式一</h3><h4 id="新建如下文件"><a href="#新建如下文件" class="headerlink" title="新建如下文件"></a>新建如下文件</h4><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121743894.png">
 
-        <span class="token comment" spellcheck="true">//生成订单号（支付宝的要求？）</span>
-        String time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyyMMddHHmmss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        String user <span class="token operator">=</span> UUID<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="在main-js中全局挂载-i18n的插件"><a href="#在main-js中全局挂载-i18n的插件" class="headerlink" title="在main.js中全局挂载 i18n的插件"></a>在main.js中全局挂载 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=i18n&spm=1001.2101.3001.7020">i18n</a>的插件</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> VueI18n <span class="token keyword">from</span> <span class="token string">"vue-i18n"</span><span class="token punctuation">;</span>
 
-        String OrderNum <span class="token operator">=</span> time<span class="token operator">+</span>user<span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//调用封装好的方法（给支付宝接口发送请求）</span>
-        <span class="token keyword">return</span> <span class="token function">sendRequestToAlipay</span><span class="token punctuation">(</span>OrderNum<span class="token punctuation">,</span>dona_money<span class="token punctuation">,</span><span class="token string">"ghjk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//多语言实例</span>
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'lang'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'lang'</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">/*
-    参数1：订单号
-    参数2：订单金额
-    参数3：订单名称
-     */</span>
-     <span class="token comment" spellcheck="true">//支付宝官方提供的接口</span>
-    <span class="token keyword">private</span> String <span class="token function">sendRequestToAlipay</span><span class="token punctuation">(</span>String outTradeNo<span class="token punctuation">,</span>Float totalAmount<span class="token punctuation">,</span>String subject<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//获得初始化的AlipayClient</span>
-        AlipayClient alipayClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultAlipayClient</span><span class="token punctuation">(</span>GATEWAY_URL<span class="token punctuation">,</span>APP_ID<span class="token punctuation">,</span>APP_PRIVATE_KEY<span class="token punctuation">,</span>FORMAT<span class="token punctuation">,</span>CHARSET<span class="token punctuation">,</span>ALIPAY_PUBLIC_KEY<span class="token punctuation">,</span>SIGN_TYPE<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//设置请求参数</span>
-        AlipayTradePagePayRequest alipayRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AlipayTradePagePayRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        alipayRequest<span class="token punctuation">.</span><span class="token function">setReturnUrl</span><span class="token punctuation">(</span>RETURN_URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        alipayRequest<span class="token punctuation">.</span><span class="token function">setNotifyUrl</span><span class="token punctuation">(</span>NOTIFY_URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//商品描述（可空）</span>
-        String body<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
-        alipayRequest<span class="token punctuation">.</span><span class="token function">setBizContent</span><span class="token punctuation">(</span><span class="token string">"{\"out_trade_no\":\""</span> <span class="token operator">+</span> outTradeNo <span class="token operator">+</span> <span class="token string">"\","</span>
-                        <span class="token operator">+</span> <span class="token string">"\"total_amount\":\""</span> <span class="token operator">+</span> totalAmount <span class="token operator">+</span> <span class="token string">"\","</span>
-                        <span class="token operator">+</span> <span class="token string">"\"subject\":\""</span> <span class="token operator">+</span> subject <span class="token operator">+</span> <span class="token string">"\","</span>
-                        <span class="token operator">+</span> <span class="token string">"\"body\":\""</span> <span class="token operator">+</span> body <span class="token operator">+</span> <span class="token string">"\","</span>
-                        <span class="token operator">+</span> <span class="token string">"\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//请求</span>
-        String result <span class="token operator">=</span> alipayClient<span class="token punctuation">.</span><span class="token function">pageExecute</span><span class="token punctuation">(</span>alipayRequest<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">'en-US'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  messages<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'en-US'</span><span class="token punctuation">:</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./i18n/en-US.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//英文语言包</span>
+    <span class="token string">'zh-CN'</span><span class="token punctuation">:</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./i18n/zh-CN.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//中文简体包</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>en-US.json</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"langName"</span><span class="token operator">:</span> <span class="token string">"en-US"</span><span class="token punctuation">,</span>
+  <span class="token property">"menuList"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"home"</span><span class="token operator">:</span> <span class="token string">"Home"</span><span class="token punctuation">,</span>
+    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">"User management"</span><span class="token punctuation">,</span>
+    <span class="token property">"roles"</span><span class="token operator">:</span> <span class="token string">"Role management"</span><span class="token punctuation">,</span>
+    <span class="token property">"notice"</span><span class="token operator">:</span> <span class="token string">"Notice Announcement"</span><span class="token punctuation">,</span>
+    <span class="token property">"logs"</span><span class="token operator">:</span> <span class="token string">"log management"</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>sendRequestToAlipay方法<br>除了需要提供之前设置好的私有属性（URL，公钥，私钥，网关等等）外，还需要提供的参数<br>outTradeNo，订单号，必须为String64位，不能为空且不能重复<br>totalAmount，支付金额，不能为空<br>subject，订单名称，不能为空<br>body，商品描述，可以为空<br>上面三个必填参数很重要且必须遵守支付宝的规定，在扫码支付的时候能看到且有用</p>
-<h3 id="3-支付成功后同步回调"><a href="#3-支付成功后同步回调" class="headerlink" title="3.支付成功后同步回调"></a>3.支付成功后同步回调</h3><p>当我我们支付完毕后会，跳转到<a target="_blank" rel="noopener" href="http://localhost:8080/returnUrl">http://localhost:8080/returnUrl</a></p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121514478.png">
-
-<ul>
-<li>如图所示，<strong>RETURN_URL</strong>的值为<a target="_blank" rel="noopener" href="http://localhost:8080/returnUrl%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E4%BB%AC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%8C%E6%88%90%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E7%9A%84%E4%B9%A6%E5%86%99%EF%BC%8C%E8%AE%A9%E5%85%B6%E8%B0%83%E7%94%A8">http://localhost:8080/returnUrl，所以我们在项目中完成这个方法的书写，让其调用</a></li>
-<li>同样，还是在Controller中完成</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/returnUrl"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">returnUrlMethod</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span>HttpSession session<span class="token punctuation">,</span>Model model<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException<span class="token punctuation">,</span> UnsupportedEncodingException <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=================================同步回调====================================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// 获取支付宝GET过来反馈信息</span>
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> requestParams <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameterMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>Iterator<span class="token operator">&lt;</span>String<span class="token operator">></span> iter <span class="token operator">=</span> requestParams<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            String name <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            String<span class="token punctuation">[</span><span class="token punctuation">]</span> values <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> requestParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            String valueStr <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> values<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                valueStr <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> values<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> valueStr <span class="token operator">+</span> values<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">:</span> valueStr <span class="token operator">+</span> values<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token comment" spellcheck="true">// 乱码解决，这段代码在出现乱码时使用</span>
-            valueStr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>valueStr<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            params<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> valueStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>zh-CN.json</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"langName"</span><span class="token operator">:</span> <span class="token string">"中文"</span><span class="token punctuation">,</span>
+  <span class="token property">"menuList"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"home"</span><span class="token operator">:</span> <span class="token string">"主页"</span><span class="token punctuation">,</span>
+    <span class="token property">"user"</span><span class="token operator">:</span> <span class="token string">"用户管理"</span><span class="token punctuation">,</span>
+    <span class="token property">"roles"</span><span class="token operator">:</span> <span class="token string">"角色管理"</span><span class="token punctuation">,</span>
+    <span class="token property">"notice"</span><span class="token operator">:</span> <span class="token string">"通知公告"</span><span class="token punctuation">,</span>
+    <span class="token property">"logs"</span><span class="token operator">:</span> <span class="token string">"日志管理"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="使用方式二"><a href="#使用方式二" class="headerlink" title="使用方式二"></a>使用方式二</h3><h4 id="新建如下文件-1"><a href="#新建如下文件-1" class="headerlink" title="新建如下文件"></a>新建如下文件</h4><p>en-US.js</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//zh.js</span>
+<span class="token comment" spellcheck="true">// 注意：一定是 exports，不是 export，否则会报错，报错信息是下列的中的内容不是 string</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  langName<span class="token punctuation">:</span> <span class="token string">"en-US"</span><span class="token punctuation">,</span>
+  navList<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Home Page"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Software Products"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/software"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">"Smart Town Management System"</span><span class="token punctuation">,</span>
+          path<span class="token punctuation">:</span> <span class="token string">"/software/smartTown"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">"Big Data Management System"</span><span class="token punctuation">,</span>
+          path<span class="token punctuation">:</span> <span class="token string">"/software/bigData"</span>
         <span class="token punctuation">}</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看参数都有哪些</span>
-        <span class="token comment" spellcheck="true">//验证签名（支付宝公钥）</span>
-        <span class="token keyword">boolean</span> signVerified <span class="token operator">=</span> AlipaySignature<span class="token punctuation">.</span><span class="token function">rsaCheckV1</span><span class="token punctuation">(</span>params<span class="token punctuation">,</span> ALIPAY_PUBLIC_KEY<span class="token punctuation">,</span> CHARSET<span class="token punctuation">,</span> SIGN_TYPE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用SDK验证签名</span>
-        <span class="token comment" spellcheck="true">//验证签名通过</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>signVerified<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 商户订单号</span>
-            String out_trade_no <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"out_trade_no"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// 支付宝交易流水号</span>
-            String trade_no <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"trade_no"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// 付款金额</span>
-            <span class="token keyword">float</span> money <span class="token operator">=</span> Float<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"total_amount"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"商户订单号="</span><span class="token operator">+</span>out_trade_no<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"支付宝交易号="</span><span class="token operator">+</span>trade_no<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"付款金额="</span><span class="token operator">+</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">//在这里编写自己的业务代码（对数据库的操作）</span>
-            <span class="token comment" spellcheck="true">/*
-            ################################
-            */</span>
-            <span class="token comment" spellcheck="true">//跳转到提示页面（成功或者失败的提示页面）</span>
-            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"flag"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"支持"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token string">"common/payTips"</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//跳转到提示页面（成功或者失败的提示页面）</span>
-            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"flag"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"支持"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token string">"common/payTips"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Related Services"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/service"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"News dynamics"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/newsinformation"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Company Introduction"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/companyintroduction"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Job opportunities"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/jobchance"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"Contact Us"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/contactus"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>zh-CN.js</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//zh.js</span>
+<span class="token comment" spellcheck="true">// 注意：一定是 exports，不是 export，否则会报错，报错信息是下列的中的内容不是 string</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  langName<span class="token punctuation">:</span> <span class="token string">"中文"</span><span class="token punctuation">,</span>
+  navList<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"首页"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"软件产品"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/software"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">"智能小镇管理系统"</span><span class="token punctuation">,</span>
+          path<span class="token punctuation">:</span> <span class="token string">"/software/smartTown"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">"大数据管理系统"</span><span class="token punctuation">,</span>
+          path<span class="token punctuation">:</span> <span class="token string">"/software/bigData"</span>
         <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"相关服务"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/service"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"新闻动态"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/newsinformation"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"公司介绍"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/companyintroduction"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"工作机会"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/jobchance"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">"联系我们"</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">:</span> <span class="token string">"/contactus"</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="在main-js中全局挂载-i18n的插件-1"><a href="#在main-js中全局挂载-i18n的插件-1" class="headerlink" title="在main.js中全局挂载 i18n的插件"></a>在main.js中全局挂载 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=i18n&spm=1001.2101.3001.7020">i18n</a>的插件</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> VueI18n from <span class="token string">"vue-i18n"</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//多语言实例</span>
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'lang'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'lang'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">'en-US'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'en-US'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./i18n/en-US'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//英文语言包</span>
+    <span class="token string">'zh-CN'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./i18n/zh-CN'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//中文简体包</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="项目中使用"><a href="#项目中使用" class="headerlink" title="项目中使用"></a>项目中使用</h3><p>(1)在标签中使用</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{$t("licence.title1")}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>(2)在input的placeholder中使用，其实就是vue中的v-bind</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">:placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$t(login.password)<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>24<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>log_password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</code></pre>
+<p>(3)在JS中使用</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'login.clause'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>(4)语言切换方法</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token function">Language</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>locale <span class="token operator">==</span> <span class="token string">'en-US'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'zh-CN'</span><span class="token punctuation">;</span>
+        localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'locale'</span><span class="token punctuation">,</span> <span class="token string">'zh-CN'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'en-US'</span><span class="token punctuation">;</span>
+        localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'locale'</span><span class="token punctuation">,</span> <span class="token string">'en-US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </code></pre>
-<ul>
-<li>对数据库进行操作的代码可以在该方法中进行，也可以在异步回调方法中进行</li>
-<li>最后返回部分我返回的是thymeleaf页面，如果想直接返回String字符串或者其他类型数据，可以在方法前面加上@ResponseBody注解</li>
-</ul>
-<h3 id="4-异步回调方法"><a href="#4-异步回调方法" class="headerlink" title="4.异步回调方法"></a>4.异步回调方法</h3><p>上面为支付宝同步调用处理,但是官方建议应在异步调用方法中处理付款成功后的操作,但因异步调用的路径必须为公网地址,支付宝才可以发送请求给我们,故这里不写异步调用的方法了,需要注意的是,异步调用为post请求,且传递来的参数会多一些,但基本与同步调用的操作一致</p>
-<p>异步回调方法必须为公网IP，因为这个URL地址是支付宝官方来调用我们本机的，是我们完成支付操作后，支付宝需要进行一些金额的处理（与银行对接）所以需要几秒的时间，当支付宝处理完成后异步的调用我们的notify方法（一般在这个方法中进行数据库的操作），这个过程异步进行，所以用户一般感觉不到（用户感觉到的是同步调用的方法）。</p>
-<p>设置公网IP有两种方案，1、内网穿透，2、将项目部署到服务器，这里就不说了</p>
-<p>如图为支付宝官方调用的图解</p>
-<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121520597.png">
 
                 
             </div>
@@ -682,7 +688,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/">http://ypbhbc.gitee.io/2024/04/01/springboot-zheng-he-zhi-fu-bao-sha-xiang-zhi-fu/</a>
+                    <a href="http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/">http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -720,8 +726,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/springboot/">
-                                    <span class="chip bg-color">springboot</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -1034,9 +1040,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="vue2整合i18n实现消息国际化">
+                        
+                        <span class="card-title">vue2整合i18n实现消息国际化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2024/04/12/springboot-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/">
                     <div class="card-image">
@@ -1054,57 +1111,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/springboot/">
-                        <span class="chip bg-color">springboot</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/03/12/shu-ju-ku-wen-dang-sheng-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="数据库文档生成">
-                        
-                        <span class="card-title">数据库文档生成</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-12
                             </span>
                         <span class="publish-author">
                             

@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-04-12T07:28:32.996Z</updated>
+  <updated>2024-04-12T09:56:41.208Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue2整合i18n实现消息国际化</title>
+    <link href="http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/"/>
+    <id>http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/</id>
+    <published>2024-04-12T09:39:26.000Z</published>
+    <updated>2024-04-12T09:56:41.208Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在我们开发WEB项目的时候，项目可能涉及到在国外部署或者应用，也有可能会有国外的用户对项目进行访问，那么在这种项目中，</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot整合i18n实现消息国际化</title>
@@ -499,33 +524,6 @@
     
     
     <category term="minio" scheme="http://ypbhbc.gitee.io/tags/minio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot整合aop</title>
-    <link href="http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/"/>
-    <id>http://ypbhbc.gitee.io/2023/07/26/springboot-zheng-he-aop/</id>
-    <published>2023-07-26T09:36:37.000Z</published>
-    <updated>2024-04-12T07:28:32.992Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;在Spring中，AOP（面向切面编程）是一种编程范式，用于将横切关注点（Cross-cutting</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="aop" scheme="http://ypbhbc.gitee.io/tags/aop/"/>
     
   </entry>
   
