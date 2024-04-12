@@ -446,7 +446,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.8k
                 </div>
                 
 
@@ -492,14 +492,19 @@
 <li>在实际开发和运营中，请使用支付宝提供的官方SDK进行支付功能集成。</li>
 </ol>
 <h2 id="截图步骤如下："><a href="#截图步骤如下：" class="headerlink" title="截图步骤如下："></a>截图步骤如下：</h2><p>appid 、支付宝网关、使用系统默认密钥</p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011049867.png" alt="image-20240401104915787"></p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121504785.png" alt="image-20240412150409572"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011049867.png">
+
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121504785.png">
+
 <p>获取账号</p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011044363.png" alt="image-20240401104450238"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011044363.png">
+
 <p>获取工具（目前只支持安卓手机下载），安装后，使用下面买家账号和密码登录，用于支付测试</p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121501947.png" alt="image-20240412150059450"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121501947.png">
+
 <p>买家账号和密码</p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011046795.png" alt="image-20240401104608168"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404011046795.png">
+
 <h2 id="项目中配置"><a href="#项目中配置" class="headerlink" title="项目中配置"></a>项目中配置</h2><h3 id="1-依赖引入"><a href="#1-依赖引入" class="headerlink" title="1.依赖引入"></a>1.依赖引入</h3><pre class=" language-xml"><code class="language-xml">        <span class="token comment" spellcheck="true">&lt;!--   支付宝支付的依赖     --></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alipay.sdk<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -511,135 +516,136 @@
 <li>将从Controller中进入支付宝支付，需完成支付宝提供的接口</li>
 <li>创建PayController类，有如下代码</li>
 </ul>
-<pre class=" language-jade"><code class="language-jade">@Controller
-<span class="token tag">public</span> <span class="token plain-text">class PayController {</span>
-    @Autowired
-    <span class="token tag">DonaItemService</span> <span class="token plain-text">donaItemService;</span>
-    @Autowired
-    <span class="token tag">DonaService</span> <span class="token plain-text">donaService;</span>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PayController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    DonaItemService donaItemService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    DonaService donaService<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//appid</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String APP_ID = "2021000119625133";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String APP_ID <span class="token operator">=</span> <span class="token string">"2021000119625133"</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//应用私钥</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String APP_PRIVATE_KEY = "";</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String CHARSET = "UTF-8";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String APP_PRIVATE_KEY <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String CHARSET <span class="token operator">=</span> <span class="token string">"UTF-8"</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 支付宝公钥</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String ALIPAY_PUBLIC_KEY = "";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String ALIPAY_PUBLIC_KEY <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//这是沙箱接口路径,正式路径为https://openapi.alipay.com/gateway.do</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String GATEWAY_URL ="https://openapi.alipaydev.com/gateway.do";</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String FORMAT = "JSON";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String GATEWAY_URL <span class="token operator">=</span><span class="token string">"https://openapi.alipaydev.com/gateway.do"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String FORMAT <span class="token operator">=</span> <span class="token string">"JSON"</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//签名方式</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String SIGN_TYPE = "RSA2";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String SIGN_TYPE <span class="token operator">=</span> <span class="token string">"RSA2"</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//支付宝异步通知路径,付款完毕后会异步调用本项目的方法,必须为公网地址</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String NOTIFY_URL = "http://127.0.0.1/notifyUrl";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String NOTIFY_URL <span class="token operator">=</span> <span class="token string">"http://127.0.0.1/notifyUrl"</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//支付宝同步通知路径,也就是当付款完毕后跳转本项目的页面,可以不是公网地址</span>
-    <span class="token tag">private</span> <span class="token plain-text">final String RETURN_URL = "http://localhost:8080/returnUrl";</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> String RETURN_URL <span class="token operator">=</span> <span class="token string">"http://localhost:8080/returnUrl"</span><span class="token punctuation">;</span>
     
     <span class="token comment" spellcheck="true">//必须加ResponseBody注解，否则spring会寻找thymeleaf页面</span>
-    @ResponseBody
-    @RequestMapping("/pay/alipay")
-    <span class="token tag">public</span> <span class="token plain-text">String alipay(HttpSession session,Model model,</span>
-                         @RequestParam("dona_money") float dona_money,
-                        @RequestParam("dona_id") int dona_id) throws AlipayApiException {
+    <span class="token annotation punctuation">@ResponseBody</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/pay/alipay"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">alipay</span><span class="token punctuation">(</span>HttpSession session<span class="token punctuation">,</span>Model model<span class="token punctuation">,</span>
+                         <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"dona_money"</span><span class="token punctuation">)</span> <span class="token keyword">float</span> dona_money<span class="token punctuation">,</span>
+                        <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"dona_id"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> dona_id<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//把dona_id项目id 放在session中</span>
-        <span class="token tag">session.setAttribute<span class="token attributes"><span class="token punctuation">(</span>"dona_id"<span class="token punctuation">,</span><span class="token attr-name">dona_id</span><span class="token punctuation">)</span></span></span>;
+        session<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"dona_id"</span><span class="token punctuation">,</span>dona_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//生成订单号（支付宝的要求？）</span>
-        <span class="token tag">String</span> <span class="token plain-text">time = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());</span>
-        <span class="token tag">String</span> <span class="token plain-text">user = UUID.randomUUID().toString().replace("-","").toUpperCase();</span>
+        String time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyyMMddHHmmss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String user <span class="token operator">=</span> UUID<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token tag">String</span> <span class="token plain-text">OrderNum = time+user;</span>
+        String OrderNum <span class="token operator">=</span> time<span class="token operator">+</span>user<span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//调用封装好的方法（给支付宝接口发送请求）</span>
-        <span class="token tag">return</span> <span class="token plain-text">sendRequestToAlipay(OrderNum,dona_money,"ghjk");</span>
-    }
-        /*
+        <span class="token keyword">return</span> <span class="token function">sendRequestToAlipay</span><span class="token punctuation">(</span>OrderNum<span class="token punctuation">,</span>dona_money<span class="token punctuation">,</span><span class="token string">"ghjk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">/*
     参数1：订单号
     参数2：订单金额
     参数3：订单名称
-     */
+     */</span>
      <span class="token comment" spellcheck="true">//支付宝官方提供的接口</span>
-    <span class="token tag">private</span> <span class="token plain-text">String sendRequestToAlipay(String outTradeNo,Float totalAmount,String subject) throws AlipayApiException {</span>
+    <span class="token keyword">private</span> String <span class="token function">sendRequestToAlipay</span><span class="token punctuation">(</span>String outTradeNo<span class="token punctuation">,</span>Float totalAmount<span class="token punctuation">,</span>String subject<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//获得初始化的AlipayClient</span>
-        <span class="token tag">AlipayClient</span> <span class="token plain-text">alipayClient = new DefaultAlipayClient(GATEWAY_URL,APP_ID,APP_PRIVATE_KEY,FORMAT,CHARSET,ALIPAY_PUBLIC_KEY,SIGN_TYPE);</span>
+        AlipayClient alipayClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultAlipayClient</span><span class="token punctuation">(</span>GATEWAY_URL<span class="token punctuation">,</span>APP_ID<span class="token punctuation">,</span>APP_PRIVATE_KEY<span class="token punctuation">,</span>FORMAT<span class="token punctuation">,</span>CHARSET<span class="token punctuation">,</span>ALIPAY_PUBLIC_KEY<span class="token punctuation">,</span>SIGN_TYPE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//设置请求参数</span>
-        <span class="token tag">AlipayTradePagePayRequest</span> <span class="token plain-text">alipayRequest = new AlipayTradePagePayRequest();</span>
-        <span class="token tag">alipayRequest.setReturnUrl<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">RETURN_URL</span><span class="token punctuation">)</span></span></span>;
-        <span class="token tag">alipayRequest.setNotifyUrl<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">NOTIFY_URL</span><span class="token punctuation">)</span></span></span>;
+        AlipayTradePagePayRequest alipayRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AlipayTradePagePayRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        alipayRequest<span class="token punctuation">.</span><span class="token function">setReturnUrl</span><span class="token punctuation">(</span>RETURN_URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        alipayRequest<span class="token punctuation">.</span><span class="token function">setNotifyUrl</span><span class="token punctuation">(</span>NOTIFY_URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//商品描述（可空）</span>
-        <span class="token tag">String</span> <span class="token plain-text">body="";</span>
-        <span class="token tag">alipayRequest.setBizContent</span>("{\"out_trade_no\":\"" + outTradeNo + "\","
-                        <span class="token mixin"><span class="token operator">+</span> <span class="token string">"\"total_amount\":\""</span> <span class="token operator">+</span> totalAmount <span class="token operator">+</span> <span class="token string">"\","</span></span>
-                        <span class="token mixin"><span class="token operator">+</span> <span class="token string">"\"subject\":\""</span> <span class="token operator">+</span> subject <span class="token operator">+</span> <span class="token string">"\","</span></span>
-                        <span class="token mixin"><span class="token operator">+</span> <span class="token string">"\"body\":\""</span> <span class="token operator">+</span> body <span class="token operator">+</span> <span class="token string">"\","</span></span>
-                        <span class="token mixin"><span class="token operator">+</span> <span class="token string">"\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+        String body<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
+        alipayRequest<span class="token punctuation">.</span><span class="token function">setBizContent</span><span class="token punctuation">(</span><span class="token string">"{\"out_trade_no\":\""</span> <span class="token operator">+</span> outTradeNo <span class="token operator">+</span> <span class="token string">"\","</span>
+                        <span class="token operator">+</span> <span class="token string">"\"total_amount\":\""</span> <span class="token operator">+</span> totalAmount <span class="token operator">+</span> <span class="token string">"\","</span>
+                        <span class="token operator">+</span> <span class="token string">"\"subject\":\""</span> <span class="token operator">+</span> subject <span class="token operator">+</span> <span class="token string">"\","</span>
+                        <span class="token operator">+</span> <span class="token string">"\"body\":\""</span> <span class="token operator">+</span> body <span class="token operator">+</span> <span class="token string">"\","</span>
+                        <span class="token operator">+</span> <span class="token string">"\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">//请求</span>
-        <span class="token tag">String</span> <span class="token plain-text">result = alipayClient.pageExecute(alipayRequest).getBody();</span>
-        <span class="token tag">return</span> <span class="token plain-text">result;</span>
-    }
-}
+        String result <span class="token operator">=</span> alipayClient<span class="token punctuation">.</span><span class="token function">pageExecute</span><span class="token punctuation">(</span>alipayRequest<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>sendRequestToAlipay方法<br>除了需要提供之前设置好的私有属性（URL，公钥，私钥，网关等等）外，还需要提供的参数<br>outTradeNo，订单号，必须为String64位，不能为空且不能重复<br>totalAmount，支付金额，不能为空<br>subject，订单名称，不能为空<br>body，商品描述，可以为空<br>上面三个必填参数很重要且必须遵守支付宝的规定，在扫码支付的时候能看到且有用</p>
 <h3 id="3-支付成功后同步回调"><a href="#3-支付成功后同步回调" class="headerlink" title="3.支付成功后同步回调"></a>3.支付成功后同步回调</h3><p>当我我们支付完毕后会，跳转到<a target="_blank" rel="noopener" href="http://localhost:8080/returnUrl">http://localhost:8080/returnUrl</a></p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121514478.png" alt="image-20240412151406146"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121514478.png">
+
 <ul>
 <li>如图所示，<strong>RETURN_URL</strong>的值为<a target="_blank" rel="noopener" href="http://localhost:8080/returnUrl%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E4%BB%AC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%AE%8C%E6%88%90%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E7%9A%84%E4%B9%A6%E5%86%99%EF%BC%8C%E8%AE%A9%E5%85%B6%E8%B0%83%E7%94%A8">http://localhost:8080/returnUrl，所以我们在项目中完成这个方法的书写，让其调用</a></li>
 <li>同样，还是在Controller中完成</li>
 </ul>
-<pre><code>@RequestMapping(&quot;/returnUrl&quot;)
-    public String returnUrlMethod(HttpServletRequest request,HttpSession session,Model model) throws AlipayApiException, UnsupportedEncodingException &#123;
-        System.out.println(&quot;=================================同步回调=====================================&quot;);
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/returnUrl"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">returnUrlMethod</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span>HttpSession session<span class="token punctuation">,</span>Model model<span class="token punctuation">)</span> <span class="token keyword">throws</span> AlipayApiException<span class="token punctuation">,</span> UnsupportedEncodingException <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=================================同步回调====================================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        // 获取支付宝GET过来反馈信息
-        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
-        Map&lt;String, String[]&gt; requestParams = request.getParameterMap();
-        for (Iterator&lt;String&gt; iter = requestParams.keySet().iterator(); iter.hasNext();) &#123;
-            String name = (String) iter.next();
-            String[] values = (String[]) requestParams.get(name);
-            String valueStr = &quot;&quot;;
-            for (int i = 0; i &lt; values.length; i++) &#123;
-                valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + &quot;,&quot;;
-            &#125;
-            // 乱码解决，这段代码在出现乱码时使用
-            valueStr = new String(valueStr.getBytes(&quot;ISO-8859-1&quot;), &quot;utf-8&quot;);
-            params.put(name, valueStr);
-        &#125;
+        <span class="token comment" spellcheck="true">// 获取支付宝GET过来反馈信息</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> requestParams <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getParameterMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Iterator<span class="token operator">&lt;</span>String<span class="token operator">></span> iter <span class="token operator">=</span> requestParams<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iter<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String name <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> iter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String<span class="token punctuation">[</span><span class="token punctuation">]</span> values <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> requestParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String valueStr <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> values<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                valueStr <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> values<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> valueStr <span class="token operator">+</span> values<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">:</span> valueStr <span class="token operator">+</span> values<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">// 乱码解决，这段代码在出现乱码时使用</span>
+            valueStr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>valueStr<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            params<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> valueStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        System.out.println(params);//查看参数都有哪些
-        //验证签名（支付宝公钥）
-        boolean signVerified = AlipaySignature.rsaCheckV1(params, ALIPAY_PUBLIC_KEY, CHARSET, SIGN_TYPE); // 调用SDK验证签名
-        //验证签名通过
-        if(signVerified)&#123;
-            // 商户订单号
-            String out_trade_no = new String(request.getParameter(&quot;out_trade_no&quot;).getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;);
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看参数都有哪些</span>
+        <span class="token comment" spellcheck="true">//验证签名（支付宝公钥）</span>
+        <span class="token keyword">boolean</span> signVerified <span class="token operator">=</span> AlipaySignature<span class="token punctuation">.</span><span class="token function">rsaCheckV1</span><span class="token punctuation">(</span>params<span class="token punctuation">,</span> ALIPAY_PUBLIC_KEY<span class="token punctuation">,</span> CHARSET<span class="token punctuation">,</span> SIGN_TYPE<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用SDK验证签名</span>
+        <span class="token comment" spellcheck="true">//验证签名通过</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>signVerified<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 商户订单号</span>
+            String out_trade_no <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"out_trade_no"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            // 支付宝交易流水号
-            String trade_no = new String(request.getParameter(&quot;trade_no&quot;).getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;);
+            <span class="token comment" spellcheck="true">// 支付宝交易流水号</span>
+            String trade_no <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"trade_no"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            // 付款金额
-            float money = Float.parseFloat(new String(request.getParameter(&quot;total_amount&quot;).getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;));
+            <span class="token comment" spellcheck="true">// 付款金额</span>
+            <span class="token keyword">float</span> money <span class="token operator">=</span> Float<span class="token punctuation">.</span><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"total_amount"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            System.out.println(&quot;商户订单号=&quot;+out_trade_no);
-            System.out.println(&quot;支付宝交易号=&quot;+trade_no);
-            System.out.println(&quot;付款金额=&quot;+money);
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"商户订单号="</span><span class="token operator">+</span>out_trade_no<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"支付宝交易号="</span><span class="token operator">+</span>trade_no<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"付款金额="</span><span class="token operator">+</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            //在这里编写自己的业务代码（对数据库的操作）
-            /*
+            <span class="token comment" spellcheck="true">//在这里编写自己的业务代码（对数据库的操作）</span>
+            <span class="token comment" spellcheck="true">/*
             ################################
-            */
-            //跳转到提示页面（成功或者失败的提示页面）
-            model.addAttribute(&quot;flag&quot;,1);
-            model.addAttribute(&quot;msg&quot;,&quot;支持&quot;);
-            return &quot;common/payTips&quot;;
-        &#125;else&#123;
-            //跳转到提示页面（成功或者失败的提示页面）
-            model.addAttribute(&quot;flag&quot;,0);
-            model.addAttribute(&quot;msg&quot;,&quot;支持&quot;);
-            return &quot;common/payTips&quot;;
-        &#125;
-    &#125;
+            */</span>
+            <span class="token comment" spellcheck="true">//跳转到提示页面（成功或者失败的提示页面）</span>
+            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"flag"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"支持"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token string">"common/payTips"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//跳转到提示页面（成功或者失败的提示页面）</span>
+            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"flag"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span><span class="token string">"支持"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token string">"common/payTips"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <ul>
 <li>对数据库进行操作的代码可以在该方法中进行，也可以在异步回调方法中进行</li>
@@ -649,7 +655,7 @@
 <p>异步回调方法必须为公网IP，因为这个URL地址是支付宝官方来调用我们本机的，是我们完成支付操作后，支付宝需要进行一些金额的处理（与银行对接）所以需要几秒的时间，当支付宝处理完成后异步的调用我们的notify方法（一般在这个方法中进行数据库的操作），这个过程异步进行，所以用户一般感觉不到（用户感觉到的是同步调用的方法）。</p>
 <p>设置公网IP有两种方案，1、内网穿透，2、将项目部署到服务器，这里就不说了</p>
 <p>如图为支付宝官方调用的图解</p>
-<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121520597.png" alt="image-20240412152014631"></p>
+<img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404121520597.png">
 
                 
             </div>
