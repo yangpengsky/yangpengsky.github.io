@@ -1,0 +1,2437 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="vue2整合Tinymce 富文本编辑器, CodeCrafters">
+    <meta name="description" content="前言Tinymce 是一个轻量级的、易于使用的在线编辑器，适用于各种文档类型，包括文章、博客、聊天、邮件等。以下是一些关于 Tinymce 的详细信息：
+
+官方支持：Tinymce 是由清华KEG实验室和智谱AI公司开发的，拥有强大的技术支">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>vue2整合Tinymce 富文本编辑器 | CodeCrafters</title>
+    <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CodeCrafters" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CodeCrafters</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CodeCrafters</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">vue2整合Tinymce 富文本编辑器</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-04-15
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-04-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    28 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Tinymce 是一个轻量级的、易于使用的在线编辑器，适用于各种文档类型，包括文章、博客、聊天、邮件等。以下是一些关于 Tinymce 的详细信息：</p>
+<ol>
+<li>官方支持：Tinymce 是由清华KEG实验室和智谱AI公司开发的，拥有强大的技术支持。</li>
+<li>功能强大：Tinymce 集成了多种功能，如富文本编辑、图片插入、表格操作、代码高亮、搜索和替换、插入datetime等，满足不同文档类型的编辑需求。</li>
+<li>用户友好：Tinymce 界面简洁明了，操作简单易学，即使是非技术用户也能轻松掌握使用方法。</li>
+<li>扩展性强：Tinymce 可以通过添加自定义插件和样式来满足项目不同的需求， also, you can use tinymce as a plugin in a more sophisticated way</li>
+</ol>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i tinymce@5.1.0 -S
+<span class="token function">npm</span> i @tinymce/tinymce-vue@3.0.1 -
+</code></pre>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>安装完依赖后在<code>node_modules</code>中找到<code>tinymce</code>，将<code>skins</code><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%A4%8D%E5%88%B6%E5%88%B0&spm=1001.2101.3001.7020">复制到</a>src/assets/tinymce下</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202404151745513.png" alt="image-20240415174520405"></p>
+<p>main.js中注册</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> tinymce from <span class="token string">'tinymce'</span><span class="token punctuation">;</span>
+Vue.prototype.<span class="token variable">$tinymce</span> <span class="token operator">=</span> tinymce<span class="token punctuation">;</span>
+</code></pre>
+<h3 id="汉化文件-zh-CN-js"><a href="#汉化文件-zh-CN-js" class="headerlink" title="汉化文件-zh_CN.js"></a>汉化文件-zh_CN.js</h3><pre class=" language-bash"><code class="language-bash">tinymce.addI18n<span class="token punctuation">(</span><span class="token string">"zh_CN"</span>, <span class="token punctuation">{</span>
+  Redo: <span class="token string">"\u91cd\u505a"</span>,
+  Undo: <span class="token string">"\u64a4\u9500"</span>,
+  Cut: <span class="token string">"\u526a\u5207"</span>,
+  Copy: <span class="token string">"\u590d\u5236"</span>,
+  Paste: <span class="token string">"\u7c98\u8d34"</span>,
+  <span class="token string">"Select all"</span><span class="token keyword">:</span> <span class="token string">"\u5168\u9009"</span>,
+  <span class="token string">"New document"</span><span class="token keyword">:</span> <span class="token string">"\u65b0\u6587\u4ef6"</span>,
+  Ok: <span class="token string">"\u786e\u5b9a"</span>,
+  Cancel: <span class="token string">"\u53d6\u6d88"</span>,
+  <span class="token string">"Visual aids"</span><span class="token keyword">:</span> <span class="token string">"\u7f51\u683c\u7ebf"</span>,
+  Bold: <span class="token string">"\u7c97\u4f53"</span>,
+  Italic: <span class="token string">"\u659c\u4f53"</span>,
+  Underline: <span class="token string">"\u4e0b\u5212\u7ebf"</span>,
+  Strikethrough: <span class="token string">"\u5220\u9664\u7ebf"</span>,
+  Superscript: <span class="token string">"\u4e0a\u6807"</span>,
+  Subscript: <span class="token string">"\u4e0b\u6807"</span>,
+  <span class="token string">"Clear formatting"</span><span class="token keyword">:</span> <span class="token string">"\u6e05\u9664\u683c\u5f0f"</span>,
+  <span class="token string">"Align left"</span><span class="token keyword">:</span> <span class="token string">"\u5de6\u8fb9\u5bf9\u9f50"</span>,
+  <span class="token string">"Align center"</span><span class="token keyword">:</span> <span class="token string">"\u4e2d\u95f4\u5bf9\u9f50"</span>,
+  <span class="token string">"Align right"</span><span class="token keyword">:</span> <span class="token string">"\u53f3\u8fb9\u5bf9\u9f50"</span>,
+  Justify: <span class="token string">"\u4e24\u7aef\u5bf9\u9f50"</span>,
+  <span class="token string">"Bullet list"</span><span class="token keyword">:</span> <span class="token string">"\u9879\u76ee\u7b26\u53f7"</span>,
+  <span class="token string">"Numbered list"</span><span class="token keyword">:</span> <span class="token string">"\u7f16\u53f7\u5217\u8868"</span>,
+  <span class="token string">"Decrease indent"</span><span class="token keyword">:</span> <span class="token string">"\u51cf\u5c11\u7f29\u8fdb"</span>,
+  <span class="token string">"Increase indent"</span><span class="token keyword">:</span> <span class="token string">"\u589e\u52a0\u7f29\u8fdb"</span>,
+  Close: <span class="token string">"\u5173\u95ed"</span>,
+  Formats: <span class="token string">"\u683c\u5f0f"</span>,
+  <span class="token string">"Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X/C/V keyboard shortcuts instead."</span><span class="token keyword">:</span>
+    <span class="token string">"\u4f60\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6253\u5f00\u526a\u8d34\u677f\uff0c\u8bf7\u4f7f\u7528Ctrl+X/C/V\u7b49\u5feb\u6377\u952e\u3002"</span>,
+  Headers: <span class="token string">"\u6807\u9898"</span>,
+  <span class="token string">"Header 1"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98981"</span>,
+  <span class="token string">"Header 2"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98982"</span>,
+  <span class="token string">"Header 3"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98983"</span>,
+  <span class="token string">"Header 4"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98984"</span>,
+  <span class="token string">"Header 5"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98985"</span>,
+  <span class="token string">"Header 6"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98986"</span>,
+  Headings: <span class="token string">"\u6807\u9898"</span>,
+  <span class="token string">"Heading 1"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98981"</span>,
+  <span class="token string">"Heading 2"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98982"</span>,
+  <span class="token string">"Heading 3"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98983"</span>,
+  <span class="token string">"Heading 4"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98984"</span>,
+  <span class="token string">"Heading 5"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98985"</span>,
+  <span class="token string">"Heading 6"</span><span class="token keyword">:</span> <span class="token string">"\u6807\u98986"</span>,
+  Preformatted: <span class="token string">"\u9884\u5148\u683c\u5f0f\u5316\u7684"</span>,
+  Div: <span class="token string">"Div"</span>,
+  Pre: <span class="token string">"Pre"</span>,
+  Code: <span class="token string">"\u4ee3\u7801"</span>,
+  Paragraph: <span class="token string">"\u6bb5\u843d"</span>,
+  Blockquote: <span class="token string">"\u5f15\u6587\u533a\u5757"</span>,
+  Inline: <span class="token string">"\u6587\u672c"</span>,
+  Blocks: <span class="token string">"\u57fa\u5757"</span>,
+  <span class="token string">"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off."</span><span class="token keyword">:</span>
+    <span class="token string">"\u5f53\u524d\u4e3a\u7eaf\u6587\u672c\u7c98\u8d34\u6a21\u5f0f\uff0c\u518d\u6b21\u70b9\u51fb\u53ef\u4ee5\u56de\u5230\u666e\u901a\u7c98\u8d34\u6a21\u5f0f\u3002"</span>,
+  Fonts: <span class="token string">"\u5b57\u4f53"</span>,
+  <span class="token string">"Font Sizes"</span><span class="token keyword">:</span> <span class="token string">"\u5b57\u53f7"</span>,
+  Class: <span class="token string">"\u7c7b\u578b"</span>,
+  <span class="token string">"Browse for an image"</span><span class="token keyword">:</span> <span class="token string">"\u6d4f\u89c8\u56fe\u50cf"</span>,
+  OR: <span class="token string">"\u6216"</span>,
+  <span class="token string">"Drop an image here"</span><span class="token keyword">:</span> <span class="token string">"\u62d6\u653e\u4e00\u5f20\u56fe\u50cf\u81f3\u6b64"</span>,
+  Upload: <span class="token string">"\u4e0a\u4f20"</span>,
+  Block: <span class="token string">"\u5757"</span>,
+  Align: <span class="token string">"\u5bf9\u9f50"</span>,
+  Default: <span class="token string">"\u9ed8\u8ba4"</span>,
+  Circle: <span class="token string">"\u7a7a\u5fc3\u5706"</span>,
+  Disc: <span class="token string">"\u5b9e\u5fc3\u5706"</span>,
+  Square: <span class="token string">"\u65b9\u5757"</span>,
+  <span class="token string">"Lower Alpha"</span><span class="token keyword">:</span> <span class="token string">"\u5c0f\u5199\u82f1\u6587\u5b57\u6bcd"</span>,
+  <span class="token string">"Lower Greek"</span><span class="token keyword">:</span> <span class="token string">"\u5c0f\u5199\u5e0c\u814a\u5b57\u6bcd"</span>,
+  <span class="token string">"Lower Roman"</span><span class="token keyword">:</span> <span class="token string">"\u5c0f\u5199\u7f57\u9a6c\u5b57\u6bcd"</span>,
+  <span class="token string">"Upper Alpha"</span><span class="token keyword">:</span> <span class="token string">"\u5927\u5199\u82f1\u6587\u5b57\u6bcd"</span>,
+  <span class="token string">"Upper Roman"</span><span class="token keyword">:</span> <span class="token string">"\u5927\u5199\u7f57\u9a6c\u5b57\u6bcd"</span>,
+  <span class="token string">"Anchor..."</span><span class="token keyword">:</span> <span class="token string">"\u951a\u70b9..."</span>,
+  Name: <span class="token string">"\u540d\u79f0"</span>,
+  Id: <span class="token string">"\u6807\u8bc6\u7b26"</span>,
+  <span class="token string">"Id should start with a letter, followed only by letters, numbers, dashes, dots, colons or underscores."</span><span class="token keyword">:</span>
+    <span class="token string">"\u6807\u8bc6\u7b26\u5e94\u8be5\u4ee5\u5b57\u6bcd\u5f00\u5934\uff0c\u540e\u8ddf\u5b57\u6bcd\u3001\u6570\u5b57\u3001\u7834\u6298\u53f7\u3001\u70b9\u3001\u5192\u53f7\u6216\u4e0b\u5212\u7ebf\u3002"</span>,
+  <span class="token string">"You have unsaved changes are you sure you want to navigate away?"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4f60\u8fd8\u6709\u6587\u6863\u5c1a\u672a\u4fdd\u5b58\uff0c\u786e\u5b9a\u8981\u79bb\u5f00\uff1f"</span>,
+  <span class="token string">"Restore last draft"</span><span class="token keyword">:</span> <span class="token string">"\u6062\u590d\u4e0a\u6b21\u7684\u8349\u7a3f"</span>,
+  <span class="token string">"Special character..."</span><span class="token keyword">:</span> <span class="token string">"\u7279\u6b8a\u5b57\u7b26..."</span>,
+  <span class="token string">"Source code"</span><span class="token keyword">:</span> <span class="token string">"\u6e90\u4ee3\u7801"</span>,
+  <span class="token string">"Insert/Edit code sample"</span><span class="token keyword">:</span>
+    <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u4ee3\u7801\u793a\u4f8b"</span>,
+  Language: <span class="token string">"\u8bed\u8a00"</span>,
+  <span class="token string">"Code sample..."</span><span class="token keyword">:</span> <span class="token string">"\u793a\u4f8b\u4ee3\u7801..."</span>,
+  <span class="token string">"Color Picker"</span><span class="token keyword">:</span> <span class="token string">"\u9009\u8272\u5668"</span>,
+  R: <span class="token string">"R"</span>,
+  G: <span class="token string">"G"</span>,
+  B: <span class="token string">"B"</span>,
+  <span class="token string">"Left to right"</span><span class="token keyword">:</span> <span class="token string">"\u4ece\u5de6\u5230\u53f3"</span>,
+  <span class="token string">"Right to left"</span><span class="token keyword">:</span> <span class="token string">"\u4ece\u53f3\u5230\u5de6"</span>,
+  Emoticons: <span class="token string">"\u8868\u60c5"</span>,
+  <span class="token string">"Emoticons..."</span><span class="token keyword">:</span> <span class="token string">"\u8868\u60c5\u7b26\u53f7..."</span>,
+  <span class="token string">"Metadata and Document Properties"</span><span class="token keyword">:</span>
+    <span class="token string">"\u5143\u6570\u636e\u548c\u6587\u6863\u5c5e\u6027"</span>,
+  Title: <span class="token string">"\u6807\u9898"</span>,
+  Keywords: <span class="token string">"\u5173\u952e\u8bcd"</span>,
+  Description: <span class="token string">"\u63cf\u8ff0"</span>,
+  Robots: <span class="token string">"\u673a\u5668\u4eba"</span>,
+  Author: <span class="token string">"\u4f5c\u8005"</span>,
+  Encoding: <span class="token string">"\u7f16\u7801"</span>,
+  Fullscreen: <span class="token string">"\u5168\u5c4f"</span>,
+  Action: <span class="token string">"\u64cd\u4f5c"</span>,
+  Shortcut: <span class="token string">"\u5feb\u6377\u952e"</span>,
+  Help: <span class="token string">"\u5e2e\u52a9"</span>,
+  Address: <span class="token string">"\u5730\u5740"</span>,
+  <span class="token string">"Focus to menubar"</span><span class="token keyword">:</span> <span class="token string">"\u79fb\u52a8\u7126\u70b9\u5230\u83dc\u5355\u680f"</span>,
+  <span class="token string">"Focus to toolbar"</span><span class="token keyword">:</span> <span class="token string">"\u79fb\u52a8\u7126\u70b9\u5230\u5de5\u5177\u680f"</span>,
+  <span class="token string">"Focus to element path"</span><span class="token keyword">:</span>
+    <span class="token string">"\u79fb\u52a8\u7126\u70b9\u5230\u5143\u7d20\u8def\u5f84"</span>,
+  <span class="token string">"Focus to contextual toolbar"</span><span class="token keyword">:</span>
+    <span class="token string">"\u79fb\u52a8\u7126\u70b9\u5230\u4e0a\u4e0b\u6587\u83dc\u5355"</span>,
+  <span class="token string">"Insert link (if link plugin activated)"</span><span class="token keyword">:</span>
+    <span class="token string">"\u63d2\u5165\u94fe\u63a5 (\u5982\u679c\u94fe\u63a5\u63d2\u4ef6\u5df2\u6fc0\u6d3b)"</span>,
+  <span class="token string">"Save (if save plugin activated)"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4fdd\u5b58(\u5982\u679c\u4fdd\u5b58\u63d2\u4ef6\u5df2\u6fc0\u6d3b)"</span>,
+  <span class="token string">"Find (if searchreplace plugin activated)"</span><span class="token keyword">:</span>
+    <span class="token string">"\u67e5\u627e(\u5982\u679c\u67e5\u627e\u66ff\u6362\u63d2\u4ef6\u5df2\u6fc0\u6d3b)"</span>,
+  <span class="token string">"Plugins installed ({0}):"</span><span class="token keyword">:</span> <span class="token string">"\u5df2\u5b89\u88c5\u63d2\u4ef6 ({0}):"</span>,
+  <span class="token string">"Premium plugins:"</span><span class="token keyword">:</span> <span class="token string">"\u4f18\u79c0\u63d2\u4ef6\uff1a"</span>,
+  <span class="token string">"Learn more..."</span><span class="token keyword">:</span> <span class="token string">"\u4e86\u89e3\u66f4\u591a..."</span>,
+  <span class="token string">"You are using {0}"</span><span class="token keyword">:</span> <span class="token string">"\u4f60\u6b63\u5728\u4f7f\u7528 {0}"</span>,
+  Plugins: <span class="token string">"\u63d2\u4ef6"</span>,
+  <span class="token string">"Handy Shortcuts"</span><span class="token keyword">:</span> <span class="token string">"\u5feb\u6377\u952e"</span>,
+  <span class="token string">"Horizontal line"</span><span class="token keyword">:</span> <span class="token string">"\u6c34\u5e73\u5206\u5272\u7ebf"</span>,
+  <span class="token string">"Insert/edit image"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u56fe\u7247"</span>,
+  <span class="token string">"Alternative description"</span><span class="token keyword">:</span> <span class="token string">"\u66ff\u4ee3\u63cf\u8ff0"</span>,
+  Accessibility: <span class="token string">"\u8f85\u52a9\u529f\u80fd"</span>,
+  <span class="token string">"Image is decorative"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u50cf\u662f\u88c5\u9970\u6027\u7684"</span>,
+  Source: <span class="token string">"\u5730\u5740"</span>,
+  Dimensions: <span class="token string">"\u5927\u5c0f"</span>,
+  <span class="token string">"Constrain proportions"</span><span class="token keyword">:</span> <span class="token string">"\u4fdd\u6301\u7eb5\u6a2a\u6bd4"</span>,
+  General: <span class="token string">"\u666e\u901a"</span>,
+  Advanced: <span class="token string">"\u9ad8\u7ea7"</span>,
+  Style: <span class="token string">"\u6837\u5f0f"</span>,
+  <span class="token string">"Vertical space"</span><span class="token keyword">:</span> <span class="token string">"\u5782\u76f4\u8fb9\u8ddd"</span>,
+  <span class="token string">"Horizontal space"</span><span class="token keyword">:</span> <span class="token string">"\u6c34\u5e73\u8fb9\u8ddd"</span>,
+  Border: <span class="token string">"\u8fb9\u6846"</span>,
+  <span class="token string">"Insert image"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u56fe\u7247"</span>,
+  <span class="token string">"Image..."</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247..."</span>,
+  <span class="token string">"Image list"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247\u5217\u8868"</span>,
+  <span class="token string">"Rotate counterclockwise"</span><span class="token keyword">:</span> <span class="token string">"\u9006\u65f6\u9488\u65cb\u8f6c"</span>,
+  <span class="token string">"Rotate clockwise"</span><span class="token keyword">:</span> <span class="token string">"\u987a\u65f6\u9488\u65cb\u8f6c"</span>,
+  <span class="token string">"Flip vertically"</span><span class="token keyword">:</span> <span class="token string">"\u5782\u76f4\u7ffb\u8f6c"</span>,
+  <span class="token string">"Flip horizontally"</span><span class="token keyword">:</span> <span class="token string">"\u6c34\u5e73\u7ffb\u8f6c"</span>,
+  <span class="token string">"Edit image"</span><span class="token keyword">:</span> <span class="token string">"\u7f16\u8f91\u56fe\u7247"</span>,
+  <span class="token string">"Image options"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247\u9009\u9879"</span>,
+  <span class="token string">"Zoom in"</span><span class="token keyword">:</span> <span class="token string">"\u653e\u5927"</span>,
+  <span class="token string">"Zoom out"</span><span class="token keyword">:</span> <span class="token string">"\u7f29\u5c0f"</span>,
+  Crop: <span class="token string">"\u88c1\u526a"</span>,
+  Resize: <span class="token string">"\u8c03\u6574\u5927\u5c0f"</span>,
+  Orientation: <span class="token string">"\u65b9\u5411"</span>,
+  Brightness: <span class="token string">"\u4eae\u5ea6"</span>,
+  Sharpen: <span class="token string">"\u9510\u5316"</span>,
+  Contrast: <span class="token string">"\u5bf9\u6bd4\u5ea6"</span>,
+  <span class="token string">"Color levels"</span><span class="token keyword">:</span> <span class="token string">"\u989c\u8272\u5c42\u6b21"</span>,
+  Gamma: <span class="token string">"\u4f3d\u9a6c\u503c"</span>,
+  Invert: <span class="token string">"\u53cd\u8f6c"</span>,
+  Apply: <span class="token string">"\u5e94\u7528"</span>,
+  Back: <span class="token string">"\u540e\u9000"</span>,
+  <span class="token string">"Insert date/time"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u65e5\u671f/\u65f6\u95f4"</span>,
+  <span class="token string">"Date/time"</span><span class="token keyword">:</span> <span class="token string">"\u65e5\u671f/\u65f6\u95f4"</span>,
+  <span class="token string">"Insert/edit link"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u94fe\u63a5"</span>,
+  <span class="token string">"Text to display"</span><span class="token keyword">:</span> <span class="token string">"\u663e\u793a\u6587\u5b57"</span>,
+  Url: <span class="token string">"\u5730\u5740"</span>,
+  <span class="token string">"Open link in..."</span><span class="token keyword">:</span> <span class="token string">"\u94fe\u63a5\u6253\u5f00\u4f4d\u7f6e..."</span>,
+  <span class="token string">"Current window"</span><span class="token keyword">:</span> <span class="token string">"\u5f53\u524d\u7a97\u53e3"</span>,
+  None: <span class="token string">"\u65e0"</span>,
+  <span class="token string">"New window"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u65b0\u7a97\u53e3\u6253\u5f00"</span>,
+  <span class="token string">"Open link"</span><span class="token keyword">:</span> <span class="token string">"\u6253\u5f00\u94fe\u63a5"</span>,
+  <span class="token string">"Remove link"</span><span class="token keyword">:</span> <span class="token string">"\u5220\u9664\u94fe\u63a5"</span>,
+  Anchors: <span class="token string">"\u951a\u70b9"</span>,
+  <span class="token string">"Link..."</span><span class="token keyword">:</span> <span class="token string">"\u94fe\u63a5..."</span>,
+  <span class="token string">"Paste or type a link"</span><span class="token keyword">:</span> <span class="token string">"\u7c98\u8d34\u6216\u8f93\u5165\u94fe\u63a5"</span>,
+  <span class="token string">"The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4f60\u6240\u586b\u5199\u7684URL\u5730\u5740\u4e3a\u90ae\u4ef6\u5730\u5740\uff0c\u9700\u8981\u52a0\u4e0amailto:\u524d\u7f00\u5417\uff1f"</span>,
+  <span class="token string">"The URL you entered seems to be an external link. Do you want to add the required http:// prefix?"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4f60\u6240\u586b\u5199\u7684URL\u5730\u5740\u5c5e\u4e8e\u5916\u90e8\u94fe\u63a5\uff0c\u9700\u8981\u52a0\u4e0ahttp://:\u524d\u7f00\u5417\uff1f"</span>,
+  <span class="token string">"The URL you entered seems to be an external link. Do you want to add the required https:// prefix?"</span><span class="token keyword">:</span>
+    <span class="token string">"\u60a8\u8f93\u5165\u7684 URL \u4f3c\u4e4e\u662f\u4e00\u4e2a\u5916\u90e8\u94fe\u63a5\u3002\u60a8\u60f3\u6dfb\u52a0\u6240\u9700\u7684 https:// \u524d\u7f00\u5417\uff1f"</span>,
+  <span class="token string">"Link list"</span><span class="token keyword">:</span> <span class="token string">"\u94fe\u63a5\u5217\u8868"</span>,
+  <span class="token string">"Insert video"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u89c6\u9891"</span>,
+  <span class="token string">"Insert/edit video"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u89c6\u9891"</span>,
+  <span class="token string">"Insert/edit media"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u5a92\u4f53"</span>,
+  <span class="token string">"Alternative source"</span><span class="token keyword">:</span> <span class="token string">"\u955c\u50cf"</span>,
+  <span class="token string">"Alternative source URL"</span><span class="token keyword">:</span> <span class="token string">"\u66ff\u4ee3\u6765\u6e90\u7f51\u5740"</span>,
+  <span class="token string">"Media poster (Image URL)"</span><span class="token keyword">:</span> <span class="token string">"\u5c01\u9762(\u56fe\u7247\u5730\u5740)"</span>,
+  <span class="token string">"Paste your embed code below:"</span><span class="token keyword">:</span>
+    <span class="token string">"\u5c06\u5185\u5d4c\u4ee3\u7801\u7c98\u8d34\u5728\u4e0b\u9762:"</span>,
+  Embed: <span class="token string">"\u5185\u5d4c"</span>,
+  <span class="token string">"Media..."</span><span class="token keyword">:</span> <span class="token string">"\u591a\u5a92\u4f53..."</span>,
+  <span class="token string">"Nonbreaking space"</span><span class="token keyword">:</span> <span class="token string">"\u4e0d\u95f4\u65ad\u7a7a\u683c"</span>,
+  <span class="token string">"Page break"</span><span class="token keyword">:</span> <span class="token string">"\u5206\u9875\u7b26"</span>,
+  <span class="token string">"Paste as text"</span><span class="token keyword">:</span> <span class="token string">"\u7c98\u8d34\u4e3a\u6587\u672c"</span>,
+  Preview: <span class="token string">"\u9884\u89c8"</span>,
+  <span class="token string">"Print..."</span><span class="token keyword">:</span> <span class="token string">"\u6253\u5370..."</span>,
+  Save: <span class="token string">"\u4fdd\u5b58"</span>,
+  Find: <span class="token string">"\u67e5\u627e"</span>,
+  <span class="token string">"Replace with"</span><span class="token keyword">:</span> <span class="token string">"\u66ff\u6362\u4e3a"</span>,
+  Replace: <span class="token string">"\u66ff\u6362"</span>,
+  <span class="token string">"Replace all"</span><span class="token keyword">:</span> <span class="token string">"\u5168\u90e8\u66ff\u6362"</span>,
+  Previous: <span class="token string">"\u4e0a\u4e00\u4e2a"</span>,
+  Next: <span class="token string">"\u4e0b\u4e00\u4e2a"</span>,
+  <span class="token string">"Find and Replace"</span><span class="token keyword">:</span> <span class="token string">"\u67e5\u627e\u548c\u66ff\u6362"</span>,
+  <span class="token string">"Find and replace..."</span><span class="token keyword">:</span> <span class="token string">"\u67e5\u627e\u5e76\u66ff\u6362..."</span>,
+  <span class="token string">"Could not find the specified string."</span><span class="token keyword">:</span>
+    <span class="token string">"\u672a\u627e\u5230\u641c\u7d22\u5185\u5bb9."</span>,
+  <span class="token string">"Match case"</span><span class="token keyword">:</span> <span class="token string">"\u533a\u5206\u5927\u5c0f\u5199"</span>,
+  <span class="token string">"Find whole words only"</span><span class="token keyword">:</span> <span class="token string">"\u5168\u5b57\u5339\u914d"</span>,
+  <span class="token string">"Find in selection"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u9009\u533a\u4e2d\u67e5\u627e"</span>,
+  Spellcheck: <span class="token string">"\u62fc\u5199\u68c0\u67e5"</span>,
+  <span class="token string">"Spellcheck Language"</span><span class="token keyword">:</span> <span class="token string">"\u62fc\u5199\u68c0\u67e5\u8bed\u8a00"</span>,
+  <span class="token string">"No misspellings found."</span><span class="token keyword">:</span> <span class="token string">"\u6ca1\u6709\u53d1\u73b0\u62fc\u5199\u9519\u8bef"</span>,
+  Ignore: <span class="token string">"\u5ffd\u7565"</span>,
+  <span class="token string">"Ignore all"</span><span class="token keyword">:</span> <span class="token string">"\u5168\u90e8\u5ffd\u7565"</span>,
+  Finish: <span class="token string">"\u5b8c\u6210"</span>,
+  <span class="token string">"Add to Dictionary"</span><span class="token keyword">:</span> <span class="token string">"\u6dfb\u52a0\u5230\u5b57\u5178"</span>,
+  <span class="token string">"Insert table"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u8868\u683c"</span>,
+  <span class="token string">"Table properties"</span><span class="token keyword">:</span> <span class="token string">"\u8868\u683c\u5c5e\u6027"</span>,
+  <span class="token string">"Delete table"</span><span class="token keyword">:</span> <span class="token string">"\u5220\u9664\u8868\u683c"</span>,
+  Cell: <span class="token string">"\u5355\u5143\u683c"</span>,
+  Row: <span class="token string">"\u884c"</span>,
+  Column: <span class="token string">"\u5217"</span>,
+  <span class="token string">"Cell properties"</span><span class="token keyword">:</span> <span class="token string">"\u5355\u5143\u683c\u5c5e\u6027"</span>,
+  <span class="token string">"Merge cells"</span><span class="token keyword">:</span> <span class="token string">"\u5408\u5e76\u5355\u5143\u683c"</span>,
+  <span class="token string">"Split cell"</span><span class="token keyword">:</span> <span class="token string">"\u62c6\u5206\u5355\u5143\u683c"</span>,
+  <span class="token string">"Insert row before"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u4e0a\u65b9\u63d2\u5165"</span>,
+  <span class="token string">"Insert row after"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u4e0b\u65b9\u63d2\u5165"</span>,
+  <span class="token string">"Delete row"</span><span class="token keyword">:</span> <span class="token string">"\u5220\u9664\u884c"</span>,
+  <span class="token string">"Row properties"</span><span class="token keyword">:</span> <span class="token string">"\u884c\u5c5e\u6027"</span>,
+  <span class="token string">"Cut row"</span><span class="token keyword">:</span> <span class="token string">"\u526a\u5207\u884c"</span>,
+  <span class="token string">"Copy row"</span><span class="token keyword">:</span> <span class="token string">"\u590d\u5236\u884c"</span>,
+  <span class="token string">"Paste row before"</span><span class="token keyword">:</span> <span class="token string">"\u7c98\u8d34\u5230\u4e0a\u65b9"</span>,
+  <span class="token string">"Paste row after"</span><span class="token keyword">:</span> <span class="token string">"\u7c98\u8d34\u5230\u4e0b\u65b9"</span>,
+  <span class="token string">"Insert column before"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u5de6\u4fa7\u63d2\u5165"</span>,
+  <span class="token string">"Insert column after"</span><span class="token keyword">:</span> <span class="token string">"\u5728\u53f3\u4fa7\u63d2\u5165"</span>,
+  <span class="token string">"Delete column"</span><span class="token keyword">:</span> <span class="token string">"\u5220\u9664\u5217"</span>,
+  Cols: <span class="token string">"\u5217"</span>,
+  Rows: <span class="token string">"\u884c"</span>,
+  Width: <span class="token string">"\u5bbd"</span>,
+  Height: <span class="token string">"\u9ad8"</span>,
+  <span class="token string">"Cell spacing"</span><span class="token keyword">:</span> <span class="token string">"\u5355\u5143\u683c\u5916\u95f4\u8ddd"</span>,
+  <span class="token string">"Cell padding"</span><span class="token keyword">:</span> <span class="token string">"\u5355\u5143\u683c\u5185\u8fb9\u8ddd"</span>,
+  Caption: <span class="token string">"\u6807\u9898"</span>,
+  <span class="token string">"Show caption"</span><span class="token keyword">:</span> <span class="token string">"\u663e\u793a\u6807\u9898"</span>,
+  Left: <span class="token string">"\u5de6\u5bf9\u9f50"</span>,
+  Center: <span class="token string">"\u5c45\u4e2d"</span>,
+  Right: <span class="token string">"\u53f3\u5bf9\u9f50"</span>,
+  <span class="token string">"Cell type"</span><span class="token keyword">:</span> <span class="token string">"\u5355\u5143\u683c\u7c7b\u578b"</span>,
+  Scope: <span class="token string">"\u8303\u56f4"</span>,
+  Alignment: <span class="token string">"\u5bf9\u9f50\u65b9\u5f0f"</span>,
+  <span class="token string">"H Align"</span><span class="token keyword">:</span> <span class="token string">"\u6c34\u5e73\u5bf9\u9f50"</span>,
+  <span class="token string">"V Align"</span><span class="token keyword">:</span> <span class="token string">"\u5782\u76f4\u5bf9\u9f50"</span>,
+  Top: <span class="token string">"\u9876\u90e8\u5bf9\u9f50"</span>,
+  Middle: <span class="token string">"\u5782\u76f4\u5c45\u4e2d"</span>,
+  Bottom: <span class="token string">"\u5e95\u90e8\u5bf9\u9f50"</span>,
+  <span class="token string">"Header cell"</span><span class="token keyword">:</span> <span class="token string">"\u8868\u5934\u5355\u5143\u683c"</span>,
+  <span class="token string">"Row group"</span><span class="token keyword">:</span> <span class="token string">"\u884c\u7ec4"</span>,
+  <span class="token string">"Column group"</span><span class="token keyword">:</span> <span class="token string">"\u5217\u7ec4"</span>,
+  <span class="token string">"Row type"</span><span class="token keyword">:</span> <span class="token string">"\u884c\u7c7b\u578b"</span>,
+  Header: <span class="token string">"\u8868\u5934"</span>,
+  Body: <span class="token string">"\u8868\u4f53"</span>,
+  Footer: <span class="token string">"\u8868\u5c3e"</span>,
+  <span class="token string">"Border color"</span><span class="token keyword">:</span> <span class="token string">"\u8fb9\u6846\u989c\u8272"</span>,
+  <span class="token string">"Insert template..."</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u6a21\u677f..."</span>,
+  Templates: <span class="token string">"\u6a21\u677f"</span>,
+  Template: <span class="token string">"\u6a21\u677f"</span>,
+  <span class="token string">"Text color"</span><span class="token keyword">:</span> <span class="token string">"\u6587\u5b57\u989c\u8272"</span>,
+  <span class="token string">"Background color"</span><span class="token keyword">:</span> <span class="token string">"\u80cc\u666f\u8272"</span>,
+  <span class="token string">"Custom..."</span><span class="token keyword">:</span> <span class="token string">"\u81ea\u5b9a\u4e49..."</span>,
+  <span class="token string">"Custom color"</span><span class="token keyword">:</span> <span class="token string">"\u81ea\u5b9a\u4e49\u989c\u8272"</span>,
+  <span class="token string">"No color"</span><span class="token keyword">:</span> <span class="token string">"\u65e0"</span>,
+  <span class="token string">"Remove color"</span><span class="token keyword">:</span> <span class="token string">"\u79fb\u9664\u989c\u8272"</span>,
+  <span class="token string">"Table of Contents"</span><span class="token keyword">:</span> <span class="token string">"\u5185\u5bb9\u5217\u8868"</span>,
+  <span class="token string">"Show blocks"</span><span class="token keyword">:</span> <span class="token string">"\u663e\u793a\u533a\u5757\u8fb9\u6846"</span>,
+  <span class="token string">"Show invisible characters"</span><span class="token keyword">:</span> <span class="token string">"\u663e\u793a\u4e0d\u53ef\u89c1\u5b57\u7b26"</span>,
+  <span class="token string">"Word count"</span><span class="token keyword">:</span> <span class="token string">"\u5b57\u6570"</span>,
+  Count: <span class="token string">"\u8ba1\u6570"</span>,
+  Document: <span class="token string">"\u6587\u6863"</span>,
+  Selection: <span class="token string">"\u9009\u62e9"</span>,
+  Words: <span class="token string">"\u5355\u8bcd"</span>,
+  <span class="token string">"Words: {0}"</span><span class="token keyword">:</span> <span class="token string">"\u5b57\u6570\uff1a{0}"</span>,
+  <span class="token string">"{0} words"</span><span class="token keyword">:</span> <span class="token string">"{0} \u5b57"</span>,
+  File: <span class="token string">"\u6587\u4ef6"</span>,
+  Edit: <span class="token string">"\u7f16\u8f91"</span>,
+  Insert: <span class="token string">"\u63d2\u5165"</span>,
+  View: <span class="token string">"\u89c6\u56fe"</span>,
+  Format: <span class="token string">"\u683c\u5f0f"</span>,
+  Table: <span class="token string">"\u8868\u683c"</span>,
+  Tools: <span class="token string">"\u5de5\u5177"</span>,
+  <span class="token string">"Powered by {0}"</span><span class="token keyword">:</span> <span class="token string">"\u7531{0}\u9a71\u52a8"</span>,
+  <span class="token string">"Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"</span><span class="token keyword">:</span>
+    <span class="token string">"\u5728\u7f16\u8f91\u533a\u6309ALT-F9\u6253\u5f00\u83dc\u5355\uff0c\u6309ALT-F10\u6253\u5f00\u5de5\u5177\u680f\uff0c\u6309ALT-0\u67e5\u770b\u5e2e\u52a9"</span>,
+  <span class="token string">"Image title"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247\u6807\u9898"</span>,
+  <span class="token string">"Border width"</span><span class="token keyword">:</span> <span class="token string">"\u8fb9\u6846\u5bbd\u5ea6"</span>,
+  <span class="token string">"Border style"</span><span class="token keyword">:</span> <span class="token string">"\u8fb9\u6846\u6837\u5f0f"</span>,
+  Error: <span class="token string">"\u9519\u8bef"</span>,
+  Warn: <span class="token string">"\u8b66\u544a"</span>,
+  Valid: <span class="token string">"\u6709\u6548"</span>,
+  <span class="token string">"To open the popup, press Shift+Enter"</span><span class="token keyword">:</span>
+    <span class="token string">"\u6309Shitf+Enter\u952e\u6253\u5f00\u5bf9\u8bdd\u6846"</span>,
+  <span class="token string">"Rich Text Area. Press ALT-0 for help."</span><span class="token keyword">:</span>
+    <span class="token string">"\u7f16\u8f91\u533a\u3002\u6309Alt+0\u952e\u6253\u5f00\u5e2e\u52a9\u3002"</span>,
+  <span class="token string">"System Font"</span><span class="token keyword">:</span> <span class="token string">"\u7cfb\u7edf\u5b57\u4f53"</span>,
+  <span class="token string">"Failed to upload image: {0}"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247\u4e0a\u4f20\u5931\u8d25: {0}"</span>,
+  <span class="token string">"Failed to load plugin: {0} from url {1}"</span><span class="token keyword">:</span>
+    <span class="token string">"\u63d2\u4ef6\u52a0\u8f7d\u5931\u8d25: {0} \u6765\u81ea\u94fe\u63a5 {1}"</span>,
+  <span class="token string">"Failed to load plugin url: {0}"</span><span class="token keyword">:</span>
+    <span class="token string">"\u63d2\u4ef6\u52a0\u8f7d\u5931\u8d25 \u94fe\u63a5: {0}"</span>,
+  <span class="token string">"Failed to initialize plugin: {0}"</span><span class="token keyword">:</span>
+    <span class="token string">"\u63d2\u4ef6\u521d\u59cb\u5316\u5931\u8d25: {0}"</span>,
+  example: <span class="token string">"\u793a\u4f8b"</span>,
+  Search: <span class="token string">"\u641c\u7d22"</span>,
+  All: <span class="token string">"\u5168\u90e8"</span>,
+  Currency: <span class="token string">"\u8d27\u5e01"</span>,
+  Text: <span class="token string">"\u6587\u5b57"</span>,
+  Quotations: <span class="token string">"\u5f15\u7528"</span>,
+  Mathematical: <span class="token string">"\u6570\u5b66"</span>,
+  <span class="token string">"Extended Latin"</span><span class="token keyword">:</span> <span class="token string">"\u62c9\u4e01\u8bed\u6269\u5145"</span>,
+  Symbols: <span class="token string">"\u7b26\u53f7"</span>,
+  Arrows: <span class="token string">"\u7bad\u5934"</span>,
+  <span class="token string">"User Defined"</span><span class="token keyword">:</span> <span class="token string">"\u81ea\u5b9a\u4e49"</span>,
+  <span class="token string">"dollar sign"</span><span class="token keyword">:</span> <span class="token string">"\u7f8e\u5143\u7b26\u53f7"</span>,
+  <span class="token string">"currency sign"</span><span class="token keyword">:</span> <span class="token string">"\u8d27\u5e01\u7b26\u53f7"</span>,
+  <span class="token string">"euro-currency sign"</span><span class="token keyword">:</span> <span class="token string">"\u6b27\u5143\u7b26\u53f7"</span>,
+  <span class="token string">"colon sign"</span><span class="token keyword">:</span> <span class="token string">"\u5192\u53f7"</span>,
+  <span class="token string">"cruzeiro sign"</span><span class="token keyword">:</span> <span class="token string">"\u514b\u9c81\u8d5b\u7f57\u5e01\u7b26\u53f7"</span>,
+  <span class="token string">"french franc sign"</span><span class="token keyword">:</span> <span class="token string">"\u6cd5\u90ce\u7b26\u53f7"</span>,
+  <span class="token string">"lira sign"</span><span class="token keyword">:</span> <span class="token string">"\u91cc\u62c9\u7b26\u53f7"</span>,
+  <span class="token string">"mill sign"</span><span class="token keyword">:</span> <span class="token string">"\u5bc6\u5c14\u7b26\u53f7"</span>,
+  <span class="token string">"naira sign"</span><span class="token keyword">:</span> <span class="token string">"\u5948\u62c9\u7b26\u53f7"</span>,
+  <span class="token string">"peseta sign"</span><span class="token keyword">:</span> <span class="token string">"\u6bd4\u585e\u5854\u7b26\u53f7"</span>,
+  <span class="token string">"rupee sign"</span><span class="token keyword">:</span> <span class="token string">"\u5362\u6bd4\u7b26\u53f7"</span>,
+  <span class="token string">"won sign"</span><span class="token keyword">:</span> <span class="token string">"\u97e9\u5143\u7b26\u53f7"</span>,
+  <span class="token string">"new sheqel sign"</span><span class="token keyword">:</span> <span class="token string">"\u65b0\u8c22\u514b\u5c14\u7b26\u53f7"</span>,
+  <span class="token string">"dong sign"</span><span class="token keyword">:</span> <span class="token string">"\u8d8a\u5357\u76fe\u7b26\u53f7"</span>,
+  <span class="token string">"kip sign"</span><span class="token keyword">:</span> <span class="token string">"\u8001\u631d\u57fa\u666e\u7b26\u53f7"</span>,
+  <span class="token string">"tugrik sign"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u683c\u91cc\u514b\u7b26\u53f7"</span>,
+  <span class="token string">"drachma sign"</span><span class="token keyword">:</span> <span class="token string">"\u5fb7\u62c9\u514b\u9a6c\u7b26\u53f7"</span>,
+  <span class="token string">"german penny symbol"</span><span class="token keyword">:</span> <span class="token string">"\u5fb7\u56fd\u4fbf\u58eb\u7b26\u53f7"</span>,
+  <span class="token string">"peso sign"</span><span class="token keyword">:</span> <span class="token string">"\u6bd4\u7d22\u7b26\u53f7"</span>,
+  <span class="token string">"guarani sign"</span><span class="token keyword">:</span> <span class="token string">"\u74dc\u62c9\u5c3c\u7b26\u53f7"</span>,
+  <span class="token string">"austral sign"</span><span class="token keyword">:</span> <span class="token string">"\u6fb3\u5143\u7b26\u53f7"</span>,
+  <span class="token string">"hryvnia sign"</span><span class="token keyword">:</span> <span class="token string">"\u683c\u91cc\u592b\u5c3c\u4e9a\u7b26\u53f7"</span>,
+  <span class="token string">"cedi sign"</span><span class="token keyword">:</span> <span class="token string">"\u585e\u5730\u7b26\u53f7"</span>,
+  <span class="token string">"livre tournois sign"</span><span class="token keyword">:</span> <span class="token string">"\u91cc\u5f17\u5f17\u5c14\u7b26\u53f7"</span>,
+  <span class="token string">"spesmilo sign"</span><span class="token keyword">:</span> <span class="token string">"spesmilo\u7b26\u53f7"</span>,
+  <span class="token string">"tenge sign"</span><span class="token keyword">:</span> <span class="token string">"\u575a\u6208\u7b26\u53f7"</span>,
+  <span class="token string">"indian rupee sign"</span><span class="token keyword">:</span> <span class="token string">"\u5370\u5ea6\u5362\u6bd4"</span>,
+  <span class="token string">"turkish lira sign"</span><span class="token keyword">:</span> <span class="token string">"\u571f\u8033\u5176\u91cc\u62c9"</span>,
+  <span class="token string">"nordic mark sign"</span><span class="token keyword">:</span> <span class="token string">"\u5317\u6b27\u9a6c\u514b"</span>,
+  <span class="token string">"manat sign"</span><span class="token keyword">:</span> <span class="token string">"\u9a6c\u7eb3\u7279\u7b26\u53f7"</span>,
+  <span class="token string">"ruble sign"</span><span class="token keyword">:</span> <span class="token string">"\u5362\u5e03\u7b26\u53f7"</span>,
+  <span class="token string">"yen character"</span><span class="token keyword">:</span> <span class="token string">"\u65e5\u5143\u5b57\u6837"</span>,
+  <span class="token string">"yuan character"</span><span class="token keyword">:</span> <span class="token string">"\u4eba\u6c11\u5e01\u5143\u5b57\u6837"</span>,
+  <span class="token string">"yuan character, in hong kong and taiwan"</span><span class="token keyword">:</span>
+    <span class="token string">"\u5143\u5b57\u6837\uff08\u6e2f\u53f0\u5730\u533a\uff09"</span>,
+  <span class="token string">"yen/yuan character variant one"</span><span class="token keyword">:</span>
+    <span class="token string">"\u5143\u5b57\u6837\uff08\u5927\u5199\uff09"</span>,
+  <span class="token string">"Loading emoticons..."</span><span class="token keyword">:</span> <span class="token string">"\u52a0\u8f7d\u8868\u60c5\u7b26\u53f7..."</span>,
+  <span class="token string">"Could not load emoticons"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4e0d\u80fd\u52a0\u8f7d\u8868\u60c5\u7b26\u53f7"</span>,
+  People: <span class="token string">"\u4eba\u7c7b"</span>,
+  <span class="token string">"Animals and Nature"</span><span class="token keyword">:</span> <span class="token string">"\u52a8\u7269\u548c\u81ea\u7136"</span>,
+  <span class="token string">"Food and Drink"</span><span class="token keyword">:</span> <span class="token string">"\u98df\u7269\u548c\u996e\u54c1"</span>,
+  Activity: <span class="token string">"\u6d3b\u52a8"</span>,
+  <span class="token string">"Travel and Places"</span><span class="token keyword">:</span> <span class="token string">"\u65c5\u6e38\u548c\u5730\u70b9"</span>,
+  Objects: <span class="token string">"\u7269\u4ef6"</span>,
+  Flags: <span class="token string">"\u65d7\u5e1c"</span>,
+  Characters: <span class="token string">"\u5b57\u7b26"</span>,
+  <span class="token string">"Characters (no spaces)"</span><span class="token keyword">:</span> <span class="token string">"\u5b57\u7b26(\u65e0\u7a7a\u683c)"</span>,
+  <span class="token string">"{0} characters"</span><span class="token keyword">:</span> <span class="token string">"{0} \u4e2a\u5b57\u7b26"</span>,
+  <span class="token string">"Error: Form submit field collision."</span><span class="token keyword">:</span>
+    <span class="token string">"\u9519\u8bef: \u8868\u5355\u63d0\u4ea4\u5b57\u6bb5\u51b2\u7a81\u3002"</span>,
+  <span class="token string">"Error: No form element found."</span><span class="token keyword">:</span>
+    <span class="token string">"\u9519\u8bef: \u6ca1\u6709\u8868\u5355\u63a7\u4ef6\u3002"</span>,
+  Update: <span class="token string">"\u66f4\u65b0"</span>,
+  <span class="token string">"Color swatch"</span><span class="token keyword">:</span> <span class="token string">"\u989c\u8272\u6837\u672c"</span>,
+  Turquoise: <span class="token string">"\u9752\u7eff\u8272"</span>,
+  Green: <span class="token string">"\u7eff\u8272"</span>,
+  Blue: <span class="token string">"\u84dd\u8272"</span>,
+  Purple: <span class="token string">"\u7d2b\u8272"</span>,
+  <span class="token string">"Navy Blue"</span><span class="token keyword">:</span> <span class="token string">"\u6d77\u519b\u84dd"</span>,
+  <span class="token string">"Dark Turquoise"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u84dd\u7eff\u8272"</span>,
+  <span class="token string">"Dark Green"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u7eff\u8272"</span>,
+  <span class="token string">"Medium Blue"</span><span class="token keyword">:</span> <span class="token string">"\u4e2d\u84dd\u8272"</span>,
+  <span class="token string">"Medium Purple"</span><span class="token keyword">:</span> <span class="token string">"\u4e2d\u7d2b\u8272"</span>,
+  <span class="token string">"Midnight Blue"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u84dd\u8272"</span>,
+  Yellow: <span class="token string">"\u9ec4\u8272"</span>,
+  Orange: <span class="token string">"\u6a59\u8272"</span>,
+  Red: <span class="token string">"\u7ea2\u8272"</span>,
+  <span class="token string">"Light Gray"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u7070\u8272"</span>,
+  Gray: <span class="token string">"\u7070\u8272"</span>,
+  <span class="token string">"Dark Yellow"</span><span class="token keyword">:</span> <span class="token string">"\u6697\u9ec4\u8272"</span>,
+  <span class="token string">"Dark Orange"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u6a59\u8272"</span>,
+  <span class="token string">"Dark Red"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u7ea2\u8272"</span>,
+  <span class="token string">"Medium Gray"</span><span class="token keyword">:</span> <span class="token string">"\u4e2d\u7070\u8272"</span>,
+  <span class="token string">"Dark Gray"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u7070\u8272"</span>,
+  <span class="token string">"Light Green"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u7eff\u8272"</span>,
+  <span class="token string">"Light Yellow"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u9ec4\u8272"</span>,
+  <span class="token string">"Light Red"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u7ea2\u8272"</span>,
+  <span class="token string">"Light Purple"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u7d2b\u8272"</span>,
+  <span class="token string">"Light Blue"</span><span class="token keyword">:</span> <span class="token string">"\u6d45\u84dd\u8272"</span>,
+  <span class="token string">"Dark Purple"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u7d2b\u8272"</span>,
+  <span class="token string">"Dark Blue"</span><span class="token keyword">:</span> <span class="token string">"\u6df1\u84dd\u8272"</span>,
+  Black: <span class="token string">"\u9ed1\u8272"</span>,
+  White: <span class="token string">"\u767d\u8272"</span>,
+  <span class="token string">"Switch to or from fullscreen mode"</span><span class="token keyword">:</span> <span class="token string">"\u5207\u6362\u5168\u5c4f\u6a21\u5f0f"</span>,
+  <span class="token string">"Open help dialog"</span><span class="token keyword">:</span> <span class="token string">"\u6253\u5f00\u5e2e\u52a9\u5bf9\u8bdd\u6846"</span>,
+  history: <span class="token string">"\u5386\u53f2"</span>,
+  styles: <span class="token string">"\u6837\u5f0f"</span>,
+  formatting: <span class="token string">"\u683c\u5f0f\u5316"</span>,
+  alignment: <span class="token string">"\u5bf9\u9f50"</span>,
+  indentation: <span class="token string">"\u7f29\u8fdb"</span>,
+  Font: <span class="token string">"\u5b57\u4f53"</span>,
+  Size: <span class="token string">"\u5b57\u53f7"</span>,
+  <span class="token string">"More..."</span><span class="token keyword">:</span> <span class="token string">"\u66f4\u591a..."</span>,
+  <span class="token string">"Select..."</span><span class="token keyword">:</span> <span class="token string">"\u9009\u62e9..."</span>,
+  Preferences: <span class="token string">"\u9996\u9009\u9879"</span>,
+  Yes: <span class="token string">"\u662f"</span>,
+  No: <span class="token string">"\u5426"</span>,
+  <span class="token string">"Keyboard Navigation"</span><span class="token keyword">:</span> <span class="token string">"\u952e\u76d8\u6307\u5f15"</span>,
+  Version: <span class="token string">"\u7248\u672c"</span>,
+  <span class="token string">"Code view"</span><span class="token keyword">:</span> <span class="token string">"\u4ee3\u7801\u89c6\u56fe"</span>,
+  <span class="token string">"Open popup menu for split buttons"</span><span class="token keyword">:</span>
+    <span class="token string">"\u6253\u5f00\u5f39\u51fa\u5f0f\u83dc\u5355\uff0c\u7528\u4e8e\u62c6\u5206\u6309\u94ae"</span>,
+  <span class="token string">"List Properties"</span><span class="token keyword">:</span> <span class="token string">"\u5217\u8868\u5c5e\u6027"</span>,
+  <span class="token string">"List properties..."</span><span class="token keyword">:</span> <span class="token string">"\u6807\u9898\u5b57\u4f53\u5c5e\u6027"</span>,
+  <span class="token string">"Start list at number"</span><span class="token keyword">:</span> <span class="token string">"\u4ee5\u6570\u5b57\u5f00\u59cb\u5217\u8868"</span>,
+  <span class="token string">"Line height"</span><span class="token keyword">:</span> <span class="token string">"\u884c\u9ad8"</span>,
+  comments: <span class="token string">"\u5907\u6ce8"</span>,
+  <span class="token string">"Format Painter"</span><span class="token keyword">:</span> <span class="token string">"\u683c\u5f0f\u5237"</span>,
+  <span class="token string">"Insert/edit iframe"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165/\u7f16\u8f91\u6846\u67b6"</span>,
+  Capitalization: <span class="token string">"\u5927\u5199"</span>,
+  lowercase: <span class="token string">"\u5c0f\u5199"</span>,
+  UPPERCASE: <span class="token string">"\u5927\u5199"</span>,
+  <span class="token string">"Title Case"</span><span class="token keyword">:</span> <span class="token string">"\u9996\u5b57\u6bcd\u5927\u5199"</span>,
+  <span class="token string">"permanent pen"</span><span class="token keyword">:</span> <span class="token string">"\u8bb0\u53f7\u7b14"</span>,
+  <span class="token string">"Permanent Pen Properties"</span><span class="token keyword">:</span> <span class="token string">"\u6c38\u4e45\u7b14\u5c5e\u6027"</span>,
+  <span class="token string">"Permanent pen properties..."</span><span class="token keyword">:</span> <span class="token string">"\u6c38\u4e45\u7b14\u5c5e\u6027..."</span>,
+  <span class="token string">"case change"</span><span class="token keyword">:</span> <span class="token string">"\u6848\u4f8b\u66f4\u6539"</span>,
+  <span class="token string">"page embed"</span><span class="token keyword">:</span> <span class="token string">"\u9875\u9762\u5d4c\u5165"</span>,
+  <span class="token string">"Advanced sort..."</span><span class="token keyword">:</span> <span class="token string">"\u9ad8\u7ea7\u6392\u5e8f..."</span>,
+  <span class="token string">"Advanced Sort"</span><span class="token keyword">:</span> <span class="token string">"\u9ad8\u7ea7\u6392\u5e8f"</span>,
+  <span class="token string">"Sort table by column ascending"</span><span class="token keyword">:</span> <span class="token string">"\u6309\u5217\u5347\u5e8f\u8868"</span>,
+  <span class="token string">"Sort table by column descending"</span><span class="token keyword">:</span> <span class="token string">"\u6309\u5217\u964d\u5e8f\u8868"</span>,
+  Sort: <span class="token string">"\u6392\u5e8f"</span>,
+  Order: <span class="token string">"\u6392\u5e8f"</span>,
+  <span class="token string">"Sort by"</span><span class="token keyword">:</span> <span class="token string">"\u6392\u5e8f\u65b9\u5f0f"</span>,
+  Ascending: <span class="token string">"\u5347\u5e8f"</span>,
+  Descending: <span class="token string">"\u964d\u5e8f"</span>,
+  <span class="token string">"Column {0}"</span><span class="token keyword">:</span> <span class="token string">"\u5217{0}"</span>,
+  <span class="token string">"Row {0}"</span><span class="token keyword">:</span> <span class="token string">"\u884c{0}"</span>,
+  <span class="token string">"Spellcheck..."</span><span class="token keyword">:</span> <span class="token string">"\u62fc\u5199\u68c0\u67e5..."</span>,
+  <span class="token string">"Misspelled word"</span><span class="token keyword">:</span> <span class="token string">"\u62fc\u5199\u9519\u8bef\u7684\u5355\u8bcd"</span>,
+  Suggestions: <span class="token string">"\u5efa\u8bae"</span>,
+  Change: <span class="token string">"\u66f4\u6539"</span>,
+  <span class="token string">"Finding word suggestions"</span><span class="token keyword">:</span> <span class="token string">"\u67e5\u627e\u5355\u8bcd\u5efa\u8bae"</span>,
+  Success: <span class="token string">"\u6210\u529f"</span>,
+  Repair: <span class="token string">"\u4fee\u590d"</span>,
+  <span class="token string">"Issue {0} of {1}"</span><span class="token keyword">:</span> <span class="token string">"\u5171\u8ba1{1}\u95ee\u9898{0}"</span>,
+  <span class="token string">"Images must be marked as decorative or have an alternative text description"</span><span class="token keyword">:</span>
+    <span class="token string">"\u56fe\u50cf\u5fc5\u987b\u6807\u8bb0\u4e3a\u88c5\u9970\u6027\u6216\u5177\u6709\u66ff\u4ee3\u6587\u672c\u63cf\u8ff0"</span>,
+  <span class="token string">"Images must have an alternative text description. Decorative images are not allowed."</span><span class="token keyword">:</span>
+    <span class="token string">"\u56fe\u50cf\u5fc5\u987b\u5177\u6709\u66ff\u4ee3\u6587\u672c\u63cf\u8ff0\u3002\u4e0d\u5141\u8bb8\u4f7f\u7528\u88c5\u9970\u56fe\u50cf\u3002"</span>,
+  <span class="token string">"Or provide alternative text:"</span><span class="token keyword">:</span>
+    <span class="token string">"\u6216\u63d0\u4f9b\u5907\u9009\u6587\u672c\uff1a"</span>,
+  <span class="token string">"Make image decorative:"</span><span class="token keyword">:</span> <span class="token string">"\u4f7f\u56fe\u50cf\u88c5\u9970\uff1a"</span>,
+  <span class="token string">"ID attribute must be unique"</span><span class="token keyword">:</span>
+    <span class="token string">"ID \u5c5e\u6027\u5fc5\u987b\u662f\u552f\u4e00\u7684"</span>,
+  <span class="token string">"Make ID unique"</span><span class="token keyword">:</span> <span class="token string">"\u4f7f ID \u72ec\u4e00\u65e0\u4e8c"</span>,
+  <span class="token string">"Keep this ID and remove all others"</span><span class="token keyword">:</span>
+    <span class="token string">"\u4fdd\u7559\u6b64 ID \u5e76\u5220\u9664\u6240\u6709\u5176\u4ed6"</span>,
+  <span class="token string">"Remove this ID"</span><span class="token keyword">:</span> <span class="token string">"\u5220\u9664\u6b64 ID"</span>,
+  <span class="token string">"Remove all IDs"</span><span class="token keyword">:</span> <span class="token string">"\u6e05\u9664\u5168\u90e8IDs"</span>,
+  Checklist: <span class="token string">"\u6e05\u5355"</span>,
+  Anchor: <span class="token string">"\u951a\u70b9"</span>,
+  <span class="token string">"Special character"</span><span class="token keyword">:</span> <span class="token string">"\u7279\u6b8a\u7b26\u53f7"</span>,
+  <span class="token string">"Code sample"</span><span class="token keyword">:</span> <span class="token string">"\u4ee3\u7801\u793a\u4f8b"</span>,
+  Color: <span class="token string">"\u989c\u8272"</span>,
+  <span class="token string">"Document properties"</span><span class="token keyword">:</span> <span class="token string">"\u6587\u6863\u5c5e\u6027"</span>,
+  <span class="token string">"Image description"</span><span class="token keyword">:</span> <span class="token string">"\u56fe\u7247\u63cf\u8ff0"</span>,
+  Image: <span class="token string">"\u56fe\u7247"</span>,
+  <span class="token string">"Insert link"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u94fe\u63a5"</span>,
+  Target: <span class="token string">"\u6253\u5f00\u65b9\u5f0f"</span>,
+  Link: <span class="token string">"\u94fe\u63a5"</span>,
+  Poster: <span class="token string">"\u5c01\u9762"</span>,
+  Media: <span class="token string">"\u5a92\u4f53"</span>,
+  Print: <span class="token string">"\u6253\u5370"</span>,
+  Prev: <span class="token string">"\u4e0a\u4e00\u4e2a"</span>,
+  <span class="token string">"Find and replace"</span><span class="token keyword">:</span> <span class="token string">"\u67e5\u627e\u548c\u66ff\u6362"</span>,
+  <span class="token string">"Whole words"</span><span class="token keyword">:</span> <span class="token string">"\u5168\u5b57\u5339\u914d"</span>,
+  <span class="token string">"Insert template"</span><span class="token keyword">:</span> <span class="token string">"\u63d2\u5165\u6a21\u677f"</span>,
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h3><pre class=" language-vue"><code class="language-vue"><!-- tinymc富文本 -->
+<template>
+  <div>
+    <editor
+      v-model="myValue"
+      :init="init"
+      :disabled="disabled"
+      @onClick="onClick"
+    />
+  </div>
+</template>
+
+<script>
+import tinymce from 'tinymce/tinymce'
+import Editor from '@tinymce/tinymce-vue'
+import 'tinymce/skins/ui/oxide/skin.css'
+import '@/assets/tinymce/zh_CN.js' // 本地汉化
+import 'tinymce/themes/silver/theme'
+import 'tinymce/plugins/image'
+import 'tinymce/plugins/media'
+import 'tinymce/plugins/table'
+import 'tinymce/plugins/lists'
+import 'tinymce/plugins/contextmenu'
+import 'tinymce/plugins/wordcount'
+import 'tinymce/plugins/colorpicker'
+import 'tinymce/plugins/textcolor'
+import 'tinymce/icons/default'
+import { upload } from '@/api/file' // 图标 -解决测试环境找不icon问题
+export default {
+  name: 'Tinymce',
+  components: {
+    Editor
+  },
+  props: {
+    // 传入一个value，使组件支持v-model绑定
+    value: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    plugins: {
+      type: [String, Array],
+      default:
+      // ' anchor autolink autosave code codesample colorpicker colorpicker contextmenu directionality emoticons fullscreen hr image imagetools insertdatetime link lists   noneditable pagebreak paste preview print save searchreplace spellchecker tabfocus table template textcolor textpattern visualblocks visualchars wordcount'
+        'lists image media table  wordcount '
+    },
+    toolbar: {
+      type: [String, Array],
+      default:
+      // 'undo redo | searchreplace | bold  italic | underline | strikethrough | alignleft  aligncenter alignright | outdent indent  blockquote  removeformat subscript superscript code codesample hr bullist numlist link image charmap preview anchor pagebreak insertdatetime  table  forecolor backcolor'
+        'undo redo |  formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | lists image media table | removeformat hr'
+    }
+  },
+  data() {
+    return {
+      // 初始化配置
+      init: {
+        language_url: '@/asset/tinymce/langs/zh_CN.js', // 这里需要单独处理
+        language: 'zh_CN',
+        height: 500,
+        width: 1200,
+        plugins: this.plugins,
+        toolbar: this.toolbar,
+        branding: true,
+        menubar: true,
+        // 此处为图片上传处理函数，这个直接用了base64的图片形式上传图片，
+        // 如需ajax上传可参考https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_handler
+        images_upload_handler: (blobInfo, success, failure) => {
+          // const img = 'data:image/jpeg;base64,' + blobInfo.base64()
+          // success(img)
+          upload(blobInfo.blob()).then((res) => {
+            console.log(res)
+            success(res.data)
+          })
+        },
+        resize: true
+      },
+      myValue: this.value
+    }
+  },
+  watch: {
+    value(newValue) {
+      this.myValue = newValue
+    },
+    myValue(newValue) {
+      this.$emit('input', newValue)
+    }
+  },
+  mounted() {
+    tinymce.init({})
+  },
+  methods: {
+    // 添加相关的事件，可用的事件参照文档=> https://github.com/tinymce/tinymce-vue => All available events
+    // 需要什么事件可以自己增加
+    onClick(e) {
+      this.$emit('onClick', e, tinymce)
+    },
+    clear() {
+      this.myValue = ''
+    }
+  }
+}
+</script>
+<style scoped></style>
+</code></pre>
+<p>file.js文件</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'@/utils/request'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">upload</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 创建 FormData 对象</span>
+  <span class="token keyword">const</span> formData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// 添加文件到 FormData 对象</span>
+  formData<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'file'</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true">// 设置请求头</span>
+  <span class="token keyword">const</span> headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'multipart/form-data; boundary='</span> <span class="token operator">+</span> formData<span class="token punctuation">.</span>_boundary
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token string">'/file/upload'</span><span class="token punctuation">,</span>
+    method<span class="token punctuation">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> formData<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 使用 FormData 对象作为请求体</span>
+    headers<span class="token punctuation">:</span> headers <span class="token comment" spellcheck="true">// 应用自定义请求头</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h3><p>FileController</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>controller<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>PassToken<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>common<span class="token punctuation">.</span>Result<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>service<span class="token punctuation">.</span>FileService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>service<span class="token punctuation">.</span>GeneratorService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>v3<span class="token punctuation">.</span>oas<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>Operation<span class="token punctuation">;</span>
+<span class="token keyword">import</span> io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>v3<span class="token punctuation">.</span>oas<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>Parameter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>v3<span class="token punctuation">.</span>oas<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>enums<span class="token punctuation">.</span>ParameterIn<span class="token punctuation">;</span>
+<span class="token keyword">import</span> io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>v3<span class="token punctuation">.</span>oas<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>tags<span class="token punctuation">.</span>Tag<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Resource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>http<span class="token punctuation">.</span>ResponseEntity<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>multipart<span class="token punctuation">.</span>MultipartFile<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/file"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@CrossOrigin</span>    <span class="token comment" spellcheck="true">//解决跨域</span>
+<span class="token annotation punctuation">@Tag</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"文件管理"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> GeneratorService generatorService<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> FileService fileService<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@PassToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Operation</span><span class="token punctuation">(</span>summary <span class="token operator">=</span> <span class="token string">"文件上传"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Parameter</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"file"</span><span class="token punctuation">,</span> description <span class="token operator">=</span> <span class="token string">"文件"</span><span class="token punctuation">,</span> in <span class="token operator">=</span> ParameterIn<span class="token punctuation">.</span>QUERY<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> fileService<span class="token punctuation">.</span><span class="token function">upload</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@PassToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Operation</span><span class="token punctuation">(</span>summary <span class="token operator">=</span> <span class="token string">"视频图片预览"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Parameter</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"fileName"</span><span class="token punctuation">,</span> description <span class="token operator">=</span> <span class="token string">"文件名"</span><span class="token punctuation">,</span> in <span class="token operator">=</span> ParameterIn<span class="token punctuation">.</span>QUERY<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/display/{fileName}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> ResponseEntity<span class="token operator">&lt;</span>Resource<span class="token operator">></span> <span class="token function">previewImage</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> String fileName<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> fileService<span class="token punctuation">.</span><span class="token function">previewImage</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>FileService</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>common<span class="token punctuation">.</span>Result<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Resource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>http<span class="token punctuation">.</span>ResponseEntity<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>multipart<span class="token punctuation">.</span>MultipartFile<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">FileService</span> <span class="token punctuation">{</span>
+
+    Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">;</span>
+
+
+    ResponseEntity<span class="token operator">&lt;</span>Resource<span class="token operator">></span> <span class="token function">previewImage</span><span class="token punctuation">(</span>String imageName<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>FileServiceImpl</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>service<span class="token punctuation">.</span>impl<span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>common<span class="token punctuation">.</span>Result<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>enums<span class="token punctuation">.</span>AppExceptionCodeMsg<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>AppException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>vueadmin<span class="token punctuation">.</span>service<span class="token punctuation">.</span>FileService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Slf4j<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Value<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileSystemResource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Resource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>http<span class="token punctuation">.</span>MediaType<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>http<span class="token punctuation">.</span>ResponseEntity<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>multipart<span class="token punctuation">.</span>MultipartFile<span class="token punctuation">;</span>
+<span class="token keyword">import</span> ws<span class="token punctuation">.</span>schild<span class="token punctuation">.</span>jave<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>File<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span>Files<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span>Path<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span>StandardCopyOption<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>LocalDateTime<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>time<span class="token punctuation">.</span>format<span class="token punctuation">.</span>DateTimeFormatter<span class="token punctuation">;</span>
+
+
+<span class="token annotation punctuation">@Service</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FileServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">FileService</span> <span class="token punctuation">{</span>
+
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${file.path}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String originPath<span class="token punctuation">;</span>
+
+
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Result<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">upload</span><span class="token punctuation">(</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        String extName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 扩展名格式：</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            extName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>FILE_FORMAT_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>extName<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">".mp4"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">uploadVideo</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>extName<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">".jpg"</span><span class="token punctuation">)</span> <span class="token operator">||</span> extName<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">".png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">uploadImage</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>FILE_FORMAT_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> ResponseEntity<span class="token operator">&lt;</span>Resource<span class="token operator">></span> <span class="token function">previewImage</span><span class="token punctuation">(</span>String imageName<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 获取图片文件路径</span>
+        String imagePath <span class="token operator">=</span> originPath <span class="token operator">+</span> <span class="token string">"\\"</span> <span class="token operator">+</span> imageName<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 创建文件对象</span>
+        File imageFile <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>imagePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>imageFile<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 使用FileSystemResource创建资源对象</span>
+            Resource resource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span>imageFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 设置响应的Content-Type为图片类型</span>
+            String contentType <span class="token operator">=</span> Files<span class="token punctuation">.</span><span class="token function">probeContentType</span><span class="token punctuation">(</span>imageFile<span class="token punctuation">.</span><span class="token function">toPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 返回响应实体</span>
+            <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">contentType</span><span class="token punctuation">(</span>MediaType<span class="token punctuation">.</span><span class="token function">parseMediaType</span><span class="token punctuation">(</span>contentType<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span>resource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>FILE_NOT_FOUND_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">/**
+     * 创建文件
+     * @param extName
+     * @return
+     * @throws IOException
+     */</span>
+    <span class="token keyword">private</span> File <span class="token function">mkdirsmy</span><span class="token punctuation">(</span>String extName<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"originPath:{}"</span><span class="token punctuation">,</span> originPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取当前日期时间</span>
+        LocalDateTime currentDateTime <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 创建日期时间格式化器</span>
+        DateTimeFormatter formatter <span class="token operator">=</span> DateTimeFormatter<span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"yyyyMMddHHmmssSSS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 格式化输出当前日期时间</span>
+        String formattedDateTime <span class="token operator">=</span> currentDateTime<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>formatter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前日期时间："</span> <span class="token operator">+</span> formattedDateTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>originPath<span class="token punctuation">,</span> formattedDateTime <span class="token operator">+</span> extName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//完整文件路径</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">getParentFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            file<span class="token punctuation">.</span><span class="token function">getParentFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mkdirs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> file<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">/**
+     * 上传图片
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */</span>
+    <span class="token keyword">public</span> Result <span class="token function">uploadVideo</span><span class="token punctuation">(</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        String extName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 扩展名格式：</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            extName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>FILE_FORMAT_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            File source <span class="token operator">=</span> <span class="token function">mkdirsmy</span><span class="token punctuation">(</span>extName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取目标文件路径</span>
+            File target <span class="token operator">=</span> <span class="token function">mkdirsmy</span><span class="token punctuation">(</span>extName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            InputStream inputStream <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取源文件输入流</span>
+            Path path <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">toPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将输入流写入目标文件</span>
+            Files<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">,</span> path<span class="token punctuation">,</span> StandardCopyOption<span class="token punctuation">.</span>REPLACE_EXISTING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//视频格式转换</span>
+            <span class="token function">videoConvert</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String targetName <span class="token operator">=</span> target<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 文件访问路径</span>
+            String url <span class="token operator">=</span> <span class="token string">"http://localhost:8888/file/display/"</span> <span class="token operator">+</span> targetName<span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//删除源文件</span>
+            source<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"上传成功"</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">AppException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> e<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 上传图片
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */</span>
+    <span class="token keyword">public</span> Result <span class="token function">uploadImage</span><span class="token punctuation">(</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+
+        String extName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 扩展名格式：</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            extName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span>AppExceptionCodeMsg<span class="token punctuation">.</span>FILE_FORMAT_ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            File destinationFile <span class="token operator">=</span> <span class="token function">mkdirsmy</span><span class="token punctuation">(</span>extName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取目标文件路径</span>
+            InputStream inputStream <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取源文件输入流</span>
+            Path path <span class="token operator">=</span> destinationFile<span class="token punctuation">.</span><span class="token function">toPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 将输入流写入目标文件</span>
+            Files<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">,</span> path<span class="token punctuation">,</span> StandardCopyOption<span class="token punctuation">.</span>REPLACE_EXISTING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Path fileName <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">getFileName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 文件访问路径</span>
+            String url <span class="token operator">=</span> <span class="token string">"http://localhost:8888/file/display/"</span> <span class="token operator">+</span> fileName<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> Result<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"上传成功"</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">AppException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> e<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">videoConvert</span><span class="token punctuation">(</span>File source<span class="token punctuation">,</span> File target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        AudioAttributes audio <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AudioAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        audio<span class="token punctuation">.</span><span class="token function">setCodec</span><span class="token punctuation">(</span><span class="token string">"libmp3lame"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//音频编码格式</span>
+        <span class="token comment" spellcheck="true">//audio.setBitRate(new Integer(56000));//设置比特率，比特率越大，转出来的音频越大（默认是128000，最好默认就行，有特殊要求再设置）</span>
+        audio<span class="token punctuation">.</span><span class="token function">setChannels</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        audio<span class="token punctuation">.</span><span class="token function">setSamplingRate</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">22050</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        VideoAttributes video <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VideoAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        video<span class="token punctuation">.</span><span class="token function">setCodec</span><span class="token punctuation">(</span><span class="token string">"libx264"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//视屏编码格式</span>
+        <span class="token comment" spellcheck="true">//video.setBitRate(new Integer(56000));//设置比特率，比特率越大，转出来的视频越大（默认是128000,最好默认就行，有特殊要求再设置）</span>
+        video<span class="token punctuation">.</span><span class="token function">setFrameRate</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//数值设置小了，视屏会卡顿</span>
+        EncodingAttributes attrs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EncodingAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        attrs<span class="token punctuation">.</span><span class="token function">setFormat</span><span class="token punctuation">(</span><span class="token string">"mp4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        attrs<span class="token punctuation">.</span><span class="token function">setAudioAttributes</span><span class="token punctuation">(</span>audio<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        attrs<span class="token punctuation">.</span><span class="token function">setVideoAttributes</span><span class="token punctuation">(</span>video<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Encoder encoder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Encoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        MultimediaObject multimediaObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MultimediaObject</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            encoder<span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span>multimediaObject<span class="token punctuation">,</span> target<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IllegalArgumentException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InputFormatException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">EncoderException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>application.yml</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">file</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> <span class="token string">"D:\\school\\communityservice_boot\\images"</span>
+</code></pre>
+<h3 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h3><pre class=" language-vue"><code class="language-vue"><template>
+  <div class="dashboard-container">
+    <div class="dashboard-text">name: {{ name }}</div>
+    <Tinymce v-model="tiny.value" :height="200" />
+    <el-button type="primary" @click="add()">修改</el-button>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import Tinymce from '@/components/Tinymce.vue'
+
+export default {
+  name: 'Dashboard',
+  components: { Tinymce },
+  data() {
+    return {
+      tiny: {
+        value: ''
+      }
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'name'
+    ])
+  },
+  methods: {
+    // 保存富文本内容-保存字符串
+    add() {
+      const params = `this.tiny?.value`
+      // eslint-disable-next-line no-eval
+      console.log(eval(params))
+    },
+    edit() {
+      // 接口回显保存html
+      // this.tiny.value = res.data|| ''
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.dashboard {
+  &-container {
+    margin: 30px;
+  }
+  &-text {
+    font-size: 30px;
+    line-height: 46px;
+  }
+}
+</style>
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">yangpeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ypbhbc.gitee.io/2024/04/15/vue2-zheng-he-tinymce-fu-wen-ben-bian-ji-qi/">http://ypbhbc.gitee.io/2024/04/15/vue2-zheng-he-tinymce-fu-wen-ben-bian-ji-qi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">yangpeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '6L2VMqPdeHPNdmXyx1WgxN2w-gzGzoHsz',
+        appKey: 'PI2B4eISbnPrj3jdUuCTruaj',
+        serverURLs: 'https://6l2vmqpd.lc-cn-n1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/04/15/vue2-zheng-he-tinymce-fu-wen-ben-bian-ji-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="vue2整合Tinymce 富文本编辑器">
+                        
+                        <span class="card-title">vue2整合Tinymce 富文本编辑器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="vue2整合i18n实现消息国际化">
+                        
+                        <span class="card-title">vue2整合i18n实现消息国际化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="952625199"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <i class="fa fa-heart" style="color: #ff71a8"></i>
+            <a href="/about" target="_blank">yangpeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+
+            
+                <span style="margin-left: -20px; display: inline">
+                &nbsp;  <i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span  class="white-color">114k</span>
+                <span/>
+            
+
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color">114k</span>
+                </span>
+            
+            
+                <span id="busuanzi_container_site_uv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color">114k</span>
+                </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "5";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate,
+                                          startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate,
+                                          todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff / hours) - diffYears * 365
+                                                   * 24 - diffDays * 24);
+                        var diffMinutes = Math.floor((diff / minutes) - diffYears *                                365 * 24 * 60 - diffDays * 24 * 60 - diffHours * 60);
+                        var diffSeconds = Math.floor((diff / seconds) - diffYears *                                     365 * 24 * 60 * 60 - diffDays * 24 * 60 * 60  - diffHours
+                                                     * 60 * 60 - diffMinutes * 60);
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + 
+                                diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear +
+                               " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' 
+                            + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' +
+                                   diffDays + ' 天 ' + diffHours + ' 小时 ' + 
+                                   diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + 
+                                   diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = 
+                               yearsAndDaysTip;
+                        }
+                    }
+                    var timer = setInterval(calcSiteTime);
+                    // calcSiteTime();
+                </script>
+            
+                    &nbsp;|&nbsp;
+            
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+            
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:376562891@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=376562891" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 376562891" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/funnyTitle.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
