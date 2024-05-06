@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-04-16T01:27:56.766Z</updated>
+  <updated>2024-05-06T02:44:02.629Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vscode开发 vue3+ts 的 uni-app项目</title>
+    <link href="http://ypbhbc.gitee.io/2024/05/01/vscode-kai-fa-vue3-ts-de-uni-app-xiang-mu/"/>
+    <id>http://ypbhbc.gitee.io/2024/05/01/vscode-kai-fa-vue3-ts-de-uni-app-xiang-mu/</id>
+    <published>2024-05-01T02:23:43.000Z</published>
+    <updated>2024-05-06T02:44:02.629Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Uni-app 是一个使用 Vue.js 开发跨平台应用的解决方案，它可以将 Vue</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    
+    <category term="uniapp" scheme="http://ypbhbc.gitee.io/tags/uniapp/"/>
+    
+  </entry>
   
   <entry>
     <title>vue2整合Tinymce 富文本编辑器</title>
@@ -499,31 +526,6 @@
     
     
     <category term="网络" scheme="http://ypbhbc.gitee.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot配置多数据源</title>
-    <link href="http://ypbhbc.gitee.io/2023/08/31/springboot-pei-zhi-duo-shu-ju-yuan/"/>
-    <id>http://ypbhbc.gitee.io/2023/08/31/springboot-pei-zhi-duo-shu-ju-yuan/</id>
-    <published>2023-08-31T07:42:34.000Z</published>
-    <updated>2024-04-12T07:28:33.006Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
   </entry>
   
