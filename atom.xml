@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-05-06T02:44:02.629Z</updated>
+  <updated>2024-05-06T09:04:29.827Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue3中的pinia使用</title>
+    <link href="http://ypbhbc.gitee.io/2024/05/06/vue3-zhong-de-pinia-shi-yong/"/>
+    <id>http://ypbhbc.gitee.io/2024/05/06/vue3-zhong-de-pinia-shi-yong/</id>
+    <published>2024-05-06T08:13:18.000Z</published>
+    <updated>2024-05-06T09:04:29.827Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Pinia &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="vue3" scheme="http://ypbhbc.gitee.io/tags/vue3/"/>
+    
+    <category term="pinia" scheme="http://ypbhbc.gitee.io/tags/pinia/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vscode开发 vue3+ts 的 uni-app项目</title>
     <link href="http://ypbhbc.gitee.io/2024/05/01/vscode-kai-fa-vue3-ts-de-uni-app-xiang-mu/"/>
     <id>http://ypbhbc.gitee.io/2024/05/01/vscode-kai-fa-vue3-ts-de-uni-app-xiang-mu/</id>
     <published>2024-05-01T02:23:43.000Z</published>
-    <updated>2024-05-06T02:44:02.629Z</updated>
+    <updated>2024-05-06T08:16:40.906Z</updated>
     
     
       
@@ -73,7 +100,7 @@
     <link href="http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/"/>
     <id>http://ypbhbc.gitee.io/2024/04/12/vue2-zheng-he-i18n-shi-xian-xiao-xi-guo-ji-hua/</id>
     <published>2024-04-12T09:39:26.000Z</published>
-    <updated>2024-04-12T09:56:41.208Z</updated>
+    <updated>2024-05-06T08:17:22.940Z</updated>
     
     
       
@@ -89,7 +116,7 @@
     <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    <category term="vue2" scheme="http://ypbhbc.gitee.io/tags/vue2/"/>
     
   </entry>
   
@@ -500,32 +527,6 @@
     <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
     
     <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟机网络配置</title>
-    <link href="http://ypbhbc.gitee.io/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/"/>
-    <id>http://ypbhbc.gitee.io/2023/10/17/xu-ni-ji-wang-luo-pei-zhi/</id>
-    <published>2023-10-17T09:54:40.000Z</published>
-    <updated>2024-04-12T07:28:33.031Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;桥接模式网络配置&quot;&gt;&lt;a href=&quot;#桥接模式网络配置&quot; class=&quot;headerlink&quot; title=&quot;桥接模式网络配置&quot;&gt;&lt;/a&gt;桥接模式网络配置&lt;/h2&gt;&lt;p&gt;1、桥接网络选择则当前连接的网络（在网络中心查看）&lt;/p&gt;
-&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Liunx" scheme="http://ypbhbc.gitee.io/categories/Liunx/"/>
-    
-    
-    <category term="网络" scheme="http://ypbhbc.gitee.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
