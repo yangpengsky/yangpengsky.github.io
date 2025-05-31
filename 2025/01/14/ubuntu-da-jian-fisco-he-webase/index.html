@@ -1,0 +1,1767 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu 搭建fisco和webase, CodeCrafters">
+    <meta name="description" content="ubuntu 新用户无法远程登录问题（ssh）1.卸载自带的ssh服务
+sudo apt-get remove openssh-server openssh-client --purge -y
+
+2.openssh安装
+apt-get in">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu 搭建fisco和webase | CodeCrafters</title>
+    <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CodeCrafters" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CodeCrafters</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CodeCrafters</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu 搭建fisco和webase</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/fisco/">
+                                <span class="chip bg-color">fisco</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Liunx/" class="post-category">
+                                Liunx
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-01-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-01-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="ubuntu-新用户无法远程登录问题（ssh）"><a href="#ubuntu-新用户无法远程登录问题（ssh）" class="headerlink" title="ubuntu 新用户无法远程登录问题（ssh）"></a>ubuntu 新用户无法远程登录问题（ssh）</h2><p>1.卸载自带的ssh服务</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove openssh-server openssh-client --purge -y
+</code></pre>
+<p>2.openssh安装</p>
+<pre><code>apt-get install openssh-server openssh-client -y
+</code></pre>
+<p>3.重启openssh服务</p>
+<pre class=" language-bash"><code class="language-bash">systemctl restart <span class="token function">ssh</span>
+</code></pre>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><p>1.卸载老版本docker</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove docker docker-engine docker-ce docker.io containerd runc
+
+<span class="token comment" spellcheck="true"># 如果需要删除所有镜像，容器和卷（第一次安装请忽略）</span>
+<span class="token function">sudo</span> <span class="token function">rm</span> -rf /var/lib/docker
+</code></pre>
+<p>备注：apt-get remove会保留软件的配置文件如果想删除请执行以下操作</p>
+<p>查看相关软件包是否有残余：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看相关软件包是否有残余</span>
+dpkg -l <span class="token operator">|</span> <span class="token function">grep</span> docker
+<span class="token comment" spellcheck="true"># 使用purage清除配置文件</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> purge docker-ce
+</code></pre>
+<p>2.更新索引包</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token comment" spellcheck="true"># 安装添加使用 HTTPS 传输的软件包</span>
+</code></pre>
+<p>3.安装docker依赖</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> -y <span class="token function">install</span> apt-transport-https ca-certificates curl software-properties-common
+</code></pre>
+<p>4.添加Docker官方GPG密钥（选择其中一个）</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 阿里云</span>
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key add -
+
+<span class="token comment" spellcheck="true"># 中科大</span>
+curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key add -
+
+<span class="token comment" spellcheck="true"># 官方源</span>
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key add -
+</code></pre>
+<p>设置稳定仓库</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> add-apt-repository \
+   "deb <span class="token punctuation">[</span>arch<span class="token operator">=</span>amd64<span class="token punctuation">]</span> https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/ \
+  <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> \
+</code></pre>
+<p>5.执行安装命令</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 再次更新索引包</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token comment" spellcheck="true"># 若想直接安装最新版本执行以下命令即可</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce
+</code></pre>
+<p>安装指定版本</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看docker版本</span>
+apt-cache madison docker-ce
+
+<span class="token comment" spellcheck="true"># 例如</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce<span class="token operator">=</span>18.06.3~ce~3-0~ubuntu
+</code></pre>
+<p>6.查看docker信息</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动后台服务</span>
+<span class="token function">sudo</span> <span class="token function">service</span> docker start
+<span class="token comment" spellcheck="true"># 查看Docker版本信息</span>
+docker version
+</code></pre>
+<p>7.添加国内镜像源</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/docker/daemon.json
+
+
+<span class="token punctuation">{</span>
+    <span class="token string">"registry-mirrors"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"https://dockerhub.ypsky.buzz"</span>,
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart docker
+</code></pre>
+<h2 id="快速部署常用容器"><a href="#快速部署常用容器" class="headerlink" title="快速部署常用容器"></a>快速部署常用容器</h2><p>1.要使用Docker部署一个带密码的Redis容器，可以使用以下命令</p>
+<pre class=" language-bash"><code class="language-bash">docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> redis
+</code></pre>
+<p>2.部署MySQL</p>
+<pre class=" language-bash"><code class="language-bash">docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token operator">&lt;</span>your_password<span class="token operator">></span> -d mysql
+</code></pre>
+<h2 id="添加当前用户到docker组（可选）"><a href="#添加当前用户到docker组（可选）" class="headerlink" title="添加当前用户到docker组（可选）"></a>添加当前用户到docker组（可选）</h2><p>创建docker组：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">groupadd</span> docker
+</code></pre>
+<p>当前用户加入docker组：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">usermod</span> -aG docker <span class="token variable">$USER</span>
+</code></pre>
+<p>检查创建是否有效：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> /etc/group
+</code></pre>
+<p>重启docker：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart docker
+</code></pre>
+<h2 id="fisco安装"><a href="#fisco安装" class="headerlink" title="fisco安装"></a>fisco安装</h2><p>1.jdk8安装</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 移动 JDK 包到 /usr/local 目录</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> ./jdk-8u431-linux-x64.tar.gz /usr/local/
+
+<span class="token comment" spellcheck="true"># 解压jdk</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> -zxvf jdk-8u431-linux-x64.tar.gz 
+
+<span class="token comment" spellcheck="true"># 配置Java环境，编辑/etc/profile文件</span>
+<span class="token function">sudo</span> vim /etc/profile
+
+<span class="token comment" spellcheck="true"># 打开以后将下面三句输入到文件里面并保存退出</span>
+<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/jdk1.8.0_431  <span class="token comment" spellcheck="true">#这是一个文件目录，非文件</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
+<span class="token function">export</span> CLASSPATH<span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar
+
+<span class="token comment" spellcheck="true"># 生效profile</span>
+<span class="token comment" spellcheck="true"># 注意，下面这条命令前，不用加 sudo</span>
+<span class="token function">source</span> /etc/profile
+
+<span class="token comment" spellcheck="true"># 查询Java版本，出现的版本是自己下载的版本，则安装成功。</span>
+java -version
+javac -version
+</code></pre>
+<h3 id="搭建单群组4节点联盟链"><a href="#搭建单群组4节点联盟链" class="headerlink" title="搭建单群组4节点联盟链"></a>搭建单群组4节点联盟链</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建操作目录</span>
+<span class="token function">cd</span> ~ <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> -p fisco <span class="token operator">&amp;&amp;</span> <span class="token function">cd</span> fisco  
+
+curl -<span class="token comment" spellcheck="true">#LO https://github.com/FISCO-BCOS/FISCO-BCOS/releases/download/v2.8.0/build_chain.sh &amp;&amp; chmod u+x build_chain.sh</span>
+
+<span class="token comment" spellcheck="true"># 如果因为网络问题导致长时间无法下载 build_chain.sh 脚本，请尝试</span>
+curl -<span class="token comment" spellcheck="true">#LO https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/FISCO-BCOS/FISCO-BCOS/releases/v2.8.0/build_chain.sh &amp;&amp; chmod u+x build_chain.sh </span>
+
+<span class="token comment" spellcheck="true"># 执行脚本</span>
+<span class="token function">bash</span> ~/fisco/build_chain.sh -l 127.0.0.1:4 -p 30300,20200,8545
+
+<span class="token comment" spellcheck="true">## 启动所有节点</span>
+<span class="token function">bash</span> ~/fisco/nodes/127.0.0.1/start_all.sh
+
+<span class="token comment" spellcheck="true">## *关闭所有节点</span>
+<span class="token function">bash</span> ~/fisco/nodes/127.0.0.1/stop_all.sh
+
+<span class="token comment" spellcheck="true">#检查进程是否启动</span>
+<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">grep</span> fisco-bcos
+
+<span class="token comment" spellcheck="true">#检查日志输出</span>
+<span class="token function">tail</span> -f ~/fisco/nodes/127.0.0.1/node0/log/log*  <span class="token operator">|</span> <span class="token function">grep</span> connected
+
+<span class="token comment" spellcheck="true">#检查是否在共识</span>
+<span class="token function">tail</span> -f ~/fisco/nodes/127.0.0.1/node0/log/log*  <span class="token operator">|</span> <span class="token function">grep</span> +++
+</code></pre>
+<h2 id="配置控制台"><a href="#配置控制台" class="headerlink" title="配置控制台"></a>配置控制台</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 获取控制台并回到fisco目录</span>
+<span class="token function">cd</span> ~/fisco <span class="token operator">&amp;&amp;</span> curl -<span class="token comment" spellcheck="true">#LO https://gitee.com/FISCO-BCOS/console/raw/master-2.0/tools/download_console.sh &amp;&amp; bash download_console.sh &amp;&amp; bash download_console.sh</span>
+
+<span class="token comment" spellcheck="true"># 拷贝配置文件与证书</span>
+<span class="token function">cp</span> -n ~/fisco/console/conf/config-example.toml ~/fisco/console/conf/config.toml
+<span class="token function">cp</span> -r ~/fisco/nodes/127.0.0.1/sdk/* ~/fisco/console/conf/、
+
+<span class="token comment" spellcheck="true"># 注意：此处必须启动区块链后，才能启动控制台，否则会报错</span>
+<span class="token function">bash</span> ~/fisco/console/start.sh
+</code></pre>
+<h2 id="配置-WeBase"><a href="#配置-WeBase" class="headerlink" title="配置 WeBase"></a>配置 WeBase</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~/fisco/ <span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeBASE/releases/download/v1.5.3/webase-deploy.zip
+
+<span class="token comment" spellcheck="true"># 解压等操作，应使用普通账户，不能 sudo</span>
+unzip webase-deploy.zip
+</code></pre>
+<p>修改 common.properties</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> ~/webase-deploy/common.properties
+
+<span class="token comment" spellcheck="true"># ----------common.properties内容如下：</span>
+
+<span class="token comment" spellcheck="true"># WeBASE子系统的最新版本(v1.1.0或以上版本)</span>
+webase.web.version<span class="token operator">=</span>v1.5.3
+webase.mgr.version<span class="token operator">=</span>v1.5.3
+webase.sign.version<span class="token operator">=</span>v1.5.3
+webase.front.version<span class="token operator">=</span>v1.5.3
+
+<span class="token comment" spellcheck="true">#####################################################################</span>
+<span class="token comment" spellcheck="true">## 使用Docker启用Mysql服务，则需要配置以下值</span>
+
+<span class="token comment" spellcheck="true"># 1: enable mysql in docker</span>
+<span class="token comment" spellcheck="true"># 0: mysql run in host, required fill in the configuration of webase-node-mgr and webase-sign</span>
+docker.mysql<span class="token operator">=</span>1
+
+<span class="token comment" spellcheck="true"># if [docker.mysql=1], mysql run in host (only works in [installDockerAll])</span>
+<span class="token comment" spellcheck="true"># run mysql 5.6 by docker</span>
+docker.mysql.port<span class="token operator">=</span>23306
+<span class="token comment" spellcheck="true"># default user [root]</span>
+docker.mysql.password<span class="token operator">=</span>123456
+
+<span class="token comment" spellcheck="true">#####################################################################</span>
+<span class="token comment" spellcheck="true">## 不使用Docker启动Mysql，则需要配置以下值</span>
+
+<span class="token comment" spellcheck="true"># 节点管理子系统mysql数据库配置</span>
+mysql.ip<span class="token operator">=</span>127.0.0.1
+mysql.port<span class="token operator">=</span>3306
+mysql.user<span class="token operator">=</span>dbUsername                  <span class="token operator">&lt;</span>-------这里要改
+mysql.password<span class="token operator">=</span>dbPassword              <span class="token operator">&lt;</span>-------这里要改
+mysql.database<span class="token operator">=</span>webasenodemanager
+
+<span class="token comment" spellcheck="true"># 签名服务子系统mysql数据库配置</span>
+sign.mysql.ip<span class="token operator">=</span>localhost
+sign.mysql.port<span class="token operator">=</span>3306
+sign.mysql.user<span class="token operator">=</span>dbUsername                  <span class="token operator">&lt;</span>-------这里要改
+sign.mysql.password<span class="token operator">=</span>dbPassword              <span class="token operator">&lt;</span>-------这里要改
+sign.mysql.database<span class="token operator">=</span>webasesign
+
+
+
+<span class="token comment" spellcheck="true"># 节点前置子系统h2数据库名和所属机构</span>
+front.h2.name<span class="token operator">=</span>webasefront
+front.org<span class="token operator">=</span>fisco
+
+<span class="token comment" spellcheck="true"># WeBASE管理平台服务端口</span>
+web.port<span class="token operator">=</span>5000
+<span class="token comment" spellcheck="true"># 启用移动端管理平台 (0: disable, 1: enable)</span>
+web.h5.enable<span class="token operator">=</span>1
+
+<span class="token comment" spellcheck="true"># 节点管理子系统服务端口</span>
+mgr.port<span class="token operator">=</span>5001
+<span class="token comment" spellcheck="true"># 节点前置子系统端口</span>
+front.port<span class="token operator">=</span>5002
+<span class="token comment" spellcheck="true"># 签名服务子系统端口</span>
+sign.port<span class="token operator">=</span>5004
+
+
+<span class="token comment" spellcheck="true"># 节点监听Ip</span>
+node.listenIp<span class="token operator">=</span>127.0.0.1
+<span class="token comment" spellcheck="true"># 节点p2p端口</span>
+node.p2pPort<span class="token operator">=</span>30300
+<span class="token comment" spellcheck="true"># 节点链上链下端口</span>
+node.channelPort<span class="token operator">=</span>20200
+<span class="token comment" spellcheck="true"># 节点rpc端口</span>
+node.rpcPort<span class="token operator">=</span>8545
+
+<span class="token comment" spellcheck="true"># 加密类型 (0: ECDSA算法, 1: 国密算法)</span>
+encrypt.type<span class="token operator">=</span>0
+<span class="token comment" spellcheck="true"># SSL连接加密类型 (0: ECDSA SSL, 1: 国密SSL)</span>
+<span class="token comment" spellcheck="true"># 只有国密链才能使用国密SSL</span>
+encrypt.sslType<span class="token operator">=</span>0
+
+<span class="token comment" spellcheck="true"># 是否使用已有的链（yes/no）</span>
+if.exist.fisco<span class="token operator">=</span>no              <span class="token operator">&lt;</span>-------这里要改
+
+<span class="token comment" spellcheck="true"># 使用已有链时需配置</span>
+<span class="token comment" spellcheck="true"># 已有链的路径，start_all.sh脚本所在路径</span>
+<span class="token comment" spellcheck="true"># 路径下要存在sdk目录（sdk目录中包含了SSL所需的证书，即ca.crt、sdk.crt、sdk.key和gm目录（包含国密SSL证书，gmca.crt、gmsdk.crt、gmsdk.key、gmensdk.crt和gmensdk.key）</span>
+fisco.dir<span class="token operator">=</span>/data/app/nodes/127.0.0.1              <span class="token operator">&lt;</span>-------这里要改
+<span class="token comment" spellcheck="true"># 前置所连接节点，在127.0.0.1目录中的节点中的一个</span>
+<span class="token comment" spellcheck="true"># 节点路径下要存在conf文件夹，conf里存放节点证书（ca.crt、node.crt和node.key）</span>
+node.dir<span class="token operator">=</span>node0
+
+<span class="token comment" spellcheck="true"># 搭建新链时需配置</span>
+<span class="token comment" spellcheck="true"># FISCO-BCOS版本</span>
+fisco.version<span class="token operator">=</span>2.7.2
+<span class="token comment" spellcheck="true"># 搭建节点个数（默认两个）</span>
+node.counts<span class="token operator">=</span>nodeCounts
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 一键部署</span>
+部署并启动所有服务        python3 deploy.py installAll
+停止一键部署的所有服务    python3 deploy.py stopAll
+启动一键部署的所有服务    python3 deploy.py startAll
+<span class="token comment" spellcheck="true"># 各子服务启停</span>
+启动FISCO-BCOS节点:      python3 deploy.py startNode
+停止FISCO-BCOS节点:      python3 deploy.py stopNode
+启动WeBASE-Web:          python3 deploy.py startWeb
+停止WeBASE-Web:          python3 deploy.py stopWeb
+启动WeBASE-Node-Manager: python3 deploy.py startManager
+停止WeBASE-Node-Manager: python3 deploy.py stopManager
+启动WeBASE-Sign:        python3 deploy.py startSign
+停止WeBASE-Sign:        python3 deploy.py stopSign
+启动WeBASE-Front:        python3 deploy.py startFront
+停止WeBASE-Front:        python3 deploy.py stopFront
+<span class="token comment" spellcheck="true"># 可视化部署</span>
+部署并启动可视化部署的所有服务  python3 deploy.py installWeBASE
+停止可视化部署的所有服务  python3 deploy.py stopWeBASE
+启动可视化部署的所有服务  python3 deploy.py startWeBASE
+</code></pre>
+<pre class=" language-bash"><code class="language-bash">http://<span class="token punctuation">{</span>deployIP<span class="token punctuation">}</span>:<span class="token punctuation">{</span>webPort<span class="token punctuation">}</span>
+示例：http://localhost:5000
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">yangpeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ypbhbc.gitee.io/2025/01/14/ubuntu-da-jian-fisco-he-webase/">http://ypbhbc.gitee.io/2025/01/14/ubuntu-da-jian-fisco-he-webase/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">yangpeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/fisco/">
+                                    <span class="chip bg-color">fisco</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '6L2VMqPdeHPNdmXyx1WgxN2w-gzGzoHsz',
+        appKey: 'PI2B4eISbnPrj3jdUuCTruaj',
+        serverURLs: 'https://6l2vmqpd.lc-cn-n1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/01/14/ubuntu-da-jian-fisco-he-webase/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="ubuntu 搭建fisco和webase">
+                        
+                        <span class="card-title">ubuntu 搭建fisco和webase</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Liunx/" class="post-category">
+                                    Liunx
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/fisco/">
+                        <span class="chip bg-color">fisco</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/10/29/centos7-an-zhuang-jenkins/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="centos7安装Jenkins">
+                        
+                        <span class="card-title">centos7安装Jenkins</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Jenkins/" class="post-category">
+                                    Jenkins
+                                </a>
+                            
+                            <a href="/categories/Jenkins/Liunx/" class="post-category">
+                                    Liunx
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="952625199"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2025</span>
+            
+            <i class="fa fa-heart" style="color: #ff71a8"></i>
+            <a href="/about" target="_blank">yangpeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+
+            
+                <span style="margin-left: -20px; display: inline">
+                &nbsp;  <i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span  class="white-color">147.1k</span>
+                <span/>
+            
+
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color">147.1k</span>
+                </span>
+            
+            
+                <span id="busuanzi_container_site_uv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color">147.1k</span>
+                </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "5";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate,
+                                          startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate,
+                                          todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff / hours) - diffYears * 365
+                                                   * 24 - diffDays * 24);
+                        var diffMinutes = Math.floor((diff / minutes) - diffYears *                                365 * 24 * 60 - diffDays * 24 * 60 - diffHours * 60);
+                        var diffSeconds = Math.floor((diff / seconds) - diffYears *                                     365 * 24 * 60 * 60 - diffDays * 24 * 60 * 60  - diffHours
+                                                     * 60 * 60 - diffMinutes * 60);
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + 
+                                diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear +
+                               " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' 
+                            + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' +
+                                   diffDays + ' 天 ' + diffHours + ' 小时 ' + 
+                                   diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + 
+                                   diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = 
+                               yearsAndDaysTip;
+                        }
+                    }
+                    var timer = setInterval(calcSiteTime);
+                    // calcSiteTime();
+                </script>
+            
+                    &nbsp;|&nbsp;
+            
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+            
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:376562891@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=376562891" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 376562891" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/funnyTitle.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

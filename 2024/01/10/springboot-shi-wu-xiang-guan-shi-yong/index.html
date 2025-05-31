@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-12
+                    2025-05-25
                 </div>
                 
 
@@ -495,9 +495,9 @@
 </ol>
 <h2 id="事务的事务传播行为"><a href="#事务的事务传播行为" class="headerlink" title="事务的事务传播行为"></a>事务的事务传播行为</h2><p>事务传播行为（Transaction Propagation Behavior）定义了当一个方法被另一个已经存在事务的方法调用时，事务应该如何传播。Spring 框架提供了几种事务传播行为，这些行为决定了新方法执行时是否应该加入当前事务，还是创建一个新的事务，或者完全忽略事务。以下是 Spring 提供的几种事务传播行为：</p>
 <ol>
-<li><strong>REQUIRED</strong>：这是默认的传播行为。如果当前已经存在事务，则新方法将加入该事务；如果当前没有事务，则新方法将创建一个新的事务。</li>
-<li><strong>SUPPORTS</strong>：如果当前存在事务，则新方法将加入该事务；如果当前没有事务，则新方法将以非事务的方式执行。</li>
-<li><strong>MANDATORY</strong>：新方法必须在一个事务中执行。如果当前没有事务，Spring 将抛出 <code>TransactionRequiredException</code> 异常。</li>
+<li><strong>REQUIRED</strong>：这是默认的传播行为。如果当前已经存在事务，则新方法将加入该事务；如果当前没有事务，则新方法将创建一个新的事务。（supports）</li>
+<li><strong>SUPPORTS</strong>：如果当前存在事务，则新方法将加入该事务；如果当前没有事务，则新方法将以非事务的方式执行。（supports）</li>
+<li><strong>MANDATORY</strong>：新方法必须在一个事务中执行。如果当前没有事务，Spring 将抛出 <code>TransactionRequiredException</code> 异常。（mandatory）</li>
 <li><strong>REQUIRES_NEW</strong>：新方法将创建一个新的事务，并且挂起当前的事务。这意味着即使当前存在事务，新方法也会在一个新的事务中执行。</li>
 <li><strong>NOT_SUPPORTED</strong>：新方法将以非事务的方式执行，并且挂起当前的事务。如果当前存在事务，它将被挂起，直到新方法执行完成。</li>
 <li><strong>NEVER</strong>：新方法必须以非事务的方式执行。如果当前存在事务，Spring 将抛出 <code>TransactionRequiredException</code> 异常。</li>
@@ -1378,7 +1378,7 @@ TransactionDefinition transactionDefinition<span class="token punctuation">;</sp
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2023-2024</span>
+                <span id="year">2023-2025</span>
             
             <i class="fa fa-heart" style="color: #ff71a8"></i>
             <a href="/about" target="_blank">yangpeng</a>
@@ -1388,7 +1388,7 @@ TransactionDefinition transactionDefinition<span class="token punctuation">;</sp
 
             
                 <span style="margin-left: -20px; display: inline">
-                &nbsp;  <i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span  class="white-color">116.1k</span>
+                &nbsp;  <i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span  class="white-color">147.1k</span>
                 <span/>
             
 
@@ -1398,12 +1398,12 @@ TransactionDefinition transactionDefinition<span class="token punctuation">;</sp
             
             
                 <span id="busuanzi_container_site_pv3" style="display: inline">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color">116.1k</span>
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color">147.1k</span>
                 </span>
             
             
                 <span id="busuanzi_container_site_uv3" style="display: inline">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color">116.1k</span>
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color">147.1k</span>
                 </span>
             
             <br>

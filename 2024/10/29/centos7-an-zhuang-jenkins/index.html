@@ -1,0 +1,2613 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="centos7安装Jenkins, CodeCrafters">
+    <meta name="description" content="一、介绍Jenkins是一个开源的持续集成（CI）和持续部署（CD）工具，用于自动化软件开发过程中的构建、测试和部署。以下是关于Jenkins的一些介绍：
+
+Jenkins允许开发团队自动化构建、测试和部署软件项目，从而加快软件交付速度，并">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>centos7安装Jenkins | CodeCrafters</title>
+    <link rel="icon" type="image/png" href="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="CodeCrafters" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CodeCrafters</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://www.yangpengsky.top:9000/myblog/images/2023/05/panda.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CodeCrafters</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">centos7安装Jenkins</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/centos/">
+                                <span class="chip bg-color">centos</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Jenkins/" class="post-category">
+                                Jenkins
+                            </a>
+                        
+                            <a href="/categories/Jenkins/Liunx/" class="post-category">
+                                Liunx
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-10-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-11-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>Jenkins是一个开源的持续集成（CI）和持续部署（CD）工具，用于自动化软件开发过程中的构建、测试和部署。以下是关于Jenkins的一些介绍：</p>
+<ul>
+<li>Jenkins允许开发团队自动化构建、测试和部署软件项目，从而加快软件交付速度，并确保代码质量和稳定性。</li>
+<li>Jenkins提供了一个易于使用的Web界面，可以通过Web浏览器访问和管理构建任务、查看构建历史和报告等信息。</li>
+<li>Jenkins支持插件扩展机制，可以通过安装插件来扩展其功能，满足不同团队和项目的需求。</li>
+<li>Jenkins可以与各种版本控制系统（如Git、SVN等）、构建工具（如Maven、Gradle等）和测试工具集成，实现自动化构建和测试流程。</li>
+<li>Jenkins支持构建触发器（如定时触发、代码提交触发等），可以根据设定的条件自动触发构建任务。</li>
+<li>Jenkins提供了丰富的报告和监控功能，可以帮助团队追踪构建状态、查看构建日志、生成测试报告等。</li>
+<li>Jenkins被广泛应用于各种软件开发项目中，是持续集成和持续部署领域中最流行的工具之一。</li>
+</ul>
+<p>总的来说，Jenkins是一个强大的工具，可以帮助团队实现自动化软件交付流程，提高开发效率和质量。</p>
+<h2 id="二、前置环境安装"><a href="#二、前置环境安装" class="headerlink" title="二、前置环境安装"></a>二、前置环境安装</h2><h3 id="1、jdk安装"><a href="#1、jdk安装" class="headerlink" title="1、jdk安装"></a>1、jdk安装</h3><p>1.上传并解压jdk</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf jdk-8u431-linux-x64.tar.gz
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301730262.png" alt="image-20241030173023809"></p>
+<pre class=" language-bash"><code class="language-bash">vim /etc/profile
+</code></pre>
+<p>2.添加如下内容</p>
+<pre class=" language-bash"><code class="language-bash">JAVA_HOME<span class="token operator">=</span>/opt/jdk/jdk1.8.0_431
+CLASSPATH<span class="token operator">=</span>$:CLASSPATH:<span class="token variable">$JAVA_HOME</span>/lib/
+PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$JAVA_HOME</span>/bin
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301734635.png" alt="image-20241030173428800"></p>
+<p>3.使修改文件生效</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">source</span>  /etc/profile
+</code></pre>
+<p>4.查看版本</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301749817.png" alt="image-20241030174910561"></p>
+<h3 id="2、maven安装"><a href="#2、maven安装" class="headerlink" title="2、maven安装"></a>2、maven安装</h3><p>1.上传并解压maven</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301737233.png" alt="image-20241030173728172"></p>
+<p>2.在<code>apache-maven-3.9.6/conf</code>中找到<code>settings.xml</code>文件，将镜像源换成国内的，这是为了保证我们拉取依赖的速度</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/SETTINGS/1.0.0<span class="token punctuation">"</span></span>
+          <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+          <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment" spellcheck="true">&lt;!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  &lt;localRepository>/path/to/local/repo&lt;/localRepository>
+  --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>${user.home}/.m2/repository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span>
+  <span class="token comment" spellcheck="true">&lt;!-- interactiveMode
+   | This will determine whether maven prompts you when it needs input. If set to false,
+   | maven will use a sensible default value, perhaps based on some other setting, for
+   | the parameter in question.
+   |
+   | Default: true
+  &lt;interactiveMode>true&lt;/interactiveMode>
+  --></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- offline
+   | Determines whether maven should attempt to connect to the network when executing a build.
+   | This will have an effect on artifact downloads, artifact deployment, and others.
+   |
+   | Default: false
+  &lt;offline>false&lt;/offline>
+  --></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- pluginGroups
+   | This is a list of additional group identifiers that will be searched when resolving plugins by their prefix, i.e.
+   | when invoking a command line like "mvn prefix:goal". Maven will automatically add the group identifiers
+   | "org.apache.maven.plugins" and "org.codehaus.mojo" if these are not already contained in the list.
+   |--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginGroups</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- pluginGroup
+     | Specifies a further group identifier to use for plugin lookup.
+    &lt;pluginGroup>com.your.plugins&lt;/pluginGroup>
+    --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginGroup</span><span class="token punctuation">></span></span>org.mortbay.jetty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginGroup</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginGroups</span><span class="token punctuation">></span></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- proxies
+   | This is a list of proxies which can be used on this machine to connect to the network.
+   | Unless otherwise specified (by system property or command-line switch), the first proxy
+   | specification in this list marked as active will be used.
+   |--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>proxies</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- proxy
+     | Specification for one proxy, to be used in connecting to the network.
+     |
+    &lt;proxy>
+      &lt;id>optional&lt;/id>
+      &lt;active>true&lt;/active>
+      &lt;protocol>http&lt;/protocol>
+      &lt;username>proxyuser&lt;/username>
+      &lt;password>proxypass&lt;/password>
+      &lt;host>proxy.host.net&lt;/host>
+      &lt;port>80&lt;/port>
+      &lt;nonProxyHosts>local.net|some.host.com&lt;/nonProxyHosts>
+    &lt;/proxy>
+    --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>proxies</span><span class="token punctuation">></span></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- servers
+   | This is a list of authentication profiles, keyed by the server-id used within the system.
+   | Authentication profiles can be used whenever maven must make a connection to a remote server.
+   |--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servers</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- server
+     | Specifies the authentication information to use when connecting to a particular server, identified by
+     | a unique name within the system (referred to by the 'id' attribute below).
+     | 
+     | NOTE: You should either specify username/password OR privateKey/passphrase, since these pairings are 
+     |       used together.
+     |
+    &lt;server>
+      &lt;id>deploymentRepo&lt;/id>
+      &lt;username>repouser&lt;/username>
+      &lt;password>repopwd&lt;/password>
+    &lt;/server>
+    --></span>
+    
+    <span class="token comment" spellcheck="true">&lt;!-- Another sample, using keys to authenticate.
+    &lt;server>
+      &lt;id>siteServer&lt;/id>
+      &lt;privateKey>/path/to/private/key&lt;/privateKey>
+      &lt;passphrase>optional; leave empty if not used.&lt;/passphrase>
+    &lt;/server>
+    --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>server</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>releases<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>username</span><span class="token punctuation">></span></span>ali<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>username</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>password</span><span class="token punctuation">></span></span>ali<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>password</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>server</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>server</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>Snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>username</span><span class="token punctuation">></span></span>ali<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>username</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>password</span><span class="token punctuation">></span></span>ali<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>password</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>server</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servers</span><span class="token punctuation">></span></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- mirrors
+   | This is a list of mirrors to be used in downloading artifacts from remote repositories.
+   |
+   | It works like this: a POM may declare a repository to use in resolving certain artifacts.
+   | However, this repository may have problems with heavy traffic at times, so people have mirrored
+   | it to several places.
+   |
+   | That repository definition will have a unique id, so we can create a mirror reference for that
+   | repository, to be used as an alternate download site. The mirror site will be the preferred
+   | server for that repository.
+   |--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror>
+      &lt;id>mirrorId&lt;/id>
+      &lt;mirrorOf>repositoryId&lt;/mirrorOf>
+      &lt;name>Human Readable Name for this Mirror.&lt;/name>
+      &lt;url>http://my.repository.com/repo/path&lt;/url>
+    &lt;/mirror>
+     --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--This sends everything else to /public --></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>nexus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--This is used to direct the public snapshots repo in the 
+          profile below over to a different nexus group --></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>nexus-public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/repositories/snapshots/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--This is used to direct the public snapshots repo in the 
+          profile below over to a different nexus group --></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>nexus-public-snapshots1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>public-snapshots1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span> 
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>https://artifacts.alfresco.com/nexus/content/repositories/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">></span></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- profiles
+   | This is a list of profiles which can be activated in a variety of ways, and which can modify
+   | the build process. Profiles provided in the settings.xml are intended to provide local machine-
+   | specific paths and repository locations which allow the build to work in the local environment.
+   |
+   | For example, if you have an integration testing plugin - like cactus - that needs to know where
+   | your Tomcat instance is installed, you can provide a variable here such that the variable is
+   | dereferenced during the build process to configure the cactus plugin.
+   |
+   | As noted above, profiles can be activated in a variety of ways. One way - the activeProfiles
+   | section of this document (settings.xml) - will be discussed later. Another way essentially
+   | relies on the detection of a system property, either matching a particular value for the property,
+   | or merely testing its existence. Profiles can also be activated by JDK version prefix, where a
+   | value of '1.4' might activate a profile when the build is executed on a JDK version of '1.4.2_07'.
+   | Finally, the list of active profiles can be specified directly from the command line.
+   |
+   | NOTE: For profiles defined in the settings.xml, you are restricted to specifying only artifact
+   |       repositories, plugin repositories, and free-form properties to be used as configuration
+   |       variables for plugins in the POM.
+   |
+   |--></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>profiles</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>profile</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>development<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repositories</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepository</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepository</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepositories</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>profile</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>profile</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--this profile will allow snapshots to be searched when activated--></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>repository</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repository</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>repositories</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepositories</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pluginRepository</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>releases</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>releases</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>snapshots</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>updatePolicy</span><span class="token punctuation">></span></span>always<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>updatePolicy</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>snapshots</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepository</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pluginRepositories</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>profile</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>profiles</span><span class="token punctuation">></span></span>
+ 
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activeProfiles</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activeProfile</span><span class="token punctuation">></span></span>development<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activeProfile</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activeProfile</span><span class="token punctuation">></span></span>public-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activeProfile</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>activeProfiles</span><span class="token punctuation">></span></span>
+
+  <span class="token comment" spellcheck="true">&lt;!-- activeProfiles
+   | List of profiles that are active for all builds.
+   |
+  &lt;activeProfiles>
+    &lt;activeProfile>alwaysActiveProfile&lt;/activeProfile>
+    &lt;activeProfile>anotherAlwaysActiveProfile&lt;/activeProfile>
+  &lt;/activeProfiles>
+  --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>settings</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>2.添加如下内容</p>
+<pre class=" language-bash"><code class="language-bash">vim /etc/profile
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301738857.png" alt="image-20241030173837597"></p>
+<p>3.使修改文件生效</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">source</span>  /etc/profile
+</code></pre>
+<p>4.查看版本</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410301749027.png" alt="image-20241030174951772"></p>
+<h3 id="3、git安装"><a href="#3、git安装" class="headerlink" title="3、git安装"></a>3、git安装</h3><h4 id="1-使用yum安装git（不推荐）"><a href="#1-使用yum安装git（不推荐）" class="headerlink" title="1.使用yum安装git（不推荐）"></a>1.使用yum安装git（不推荐）</h4><pre class=" language-bash"><code class="language-bash">yum intall <span class="token function">git</span> -y
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># git --version</span>
+<span class="token function">git</span> version 1.8.3.1
+</code></pre>
+<p>移除git</p>
+<pre><code>yum remove git
+</code></pre>
+<h4 id="2-源码包安装git"><a href="#2-源码包安装git" class="headerlink" title="2.源码包安装git"></a>2.源码包安装git</h4><h5 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1.安装依赖"></a>1.安装依赖</h5><pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel         
+yum <span class="token function">install</span> gcc-c++ perl-ExtUtils-MakeMaker
+</code></pre>
+<h5 id="2-拉去安装包"><a href="#2-拉去安装包" class="headerlink" title="2.拉去安装包"></a>2.拉去安装包</h5><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> http://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.0.tar.gz
+</code></pre>
+<p>3.解压</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf git-2.39.0.tar.gz
+</code></pre>
+<h5 id="4-编译、安装"><a href="#4-编译、安装" class="headerlink" title="4.编译、安装"></a>4.编译、安装</h5><pre><code>cd git-2.39.0.
+/configure --prefix=/usr/local
+make &amp;&amp; make install
+</code></pre>
+<p>5.查看git版本（关闭当前终端，重新打开终端才生效）</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># git version</span>
+<span class="token function">git</span> version 2.39.0
+</code></pre>
+<h3 id="4、nvm安装"><a href="#4、nvm安装" class="headerlink" title="4、nvm安装"></a>4、nvm安装</h3><h4 id="1-脚本下载"><a href="#1-脚本下载" class="headerlink" title="1.脚本下载"></a>1.脚本下载</h4><p>方式一：</p>
+<pre class=" language-bash"><code class="language-bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+</code></pre>
+<p>方式二：</p>
+<pre class=" language-bash"><code class="language-bash">vim install.sh
+</code></pre>
+<p>这里为了防止无法访问到github，这里特地将安装脚本复制过来了</p>
+<blockquote>
+<p>对应网站：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh">raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh</a></p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#!/usr/bin/env bash</span>
+
+<span class="token punctuation">{</span> <span class="token comment" spellcheck="true"># this ensures the entire script is downloaded #</span>
+
+nvm_has<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">type</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">></span> /dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
+<span class="token punctuation">}</span>
+
+nvm_echo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">command</span> <span class="token function">printf</span> %s\\n <span class="token string">"<span class="token variable">$*</span>"</span> 2<span class="token operator">></span>/dev/null
+<span class="token punctuation">}</span>
+
+nvm_grep<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  GREP_OPTIONS<span class="token operator">=</span><span class="token string">''</span> <span class="token function">command</span> <span class="token function">grep</span> <span class="token string">"<span class="token variable">$@</span>"</span>
+<span class="token punctuation">}</span>
+
+nvm_default_install_dir<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">printf</span> %s <span class="token string">"<span class="token variable">${HOME}</span>/.nvm"</span> <span class="token operator">||</span> <span class="token function">printf</span> %s <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME}</span>/nvm"</span>
+<span class="token punctuation">}</span>
+
+nvm_install_dir<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$NVM_DIR</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">printf</span> %s <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span>
+  <span class="token keyword">else</span>
+    nvm_default_install_dir
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+nvm_latest_version<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  nvm_echo <span class="token string">"v0.38.0"</span>
+<span class="token punctuation">}</span>
+
+nvm_profile_is_bash_or_zsh<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local TEST_PROFILE
+  TEST_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable">${1-}</span>"</span>
+  <span class="token keyword">case</span> <span class="token string">"<span class="token variable">${TEST_PROFILE-}</span>"</span> <span class="token keyword">in</span>
+    *<span class="token string">"/.bashrc"</span> <span class="token operator">|</span> *<span class="token string">"/.bash_profile"</span> <span class="token operator">|</span> *<span class="token string">"/.zshrc"</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> 1
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+  esac
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Outputs the location to NVM depending on:</span>
+<span class="token comment" spellcheck="true"># * The availability of $NVM_SOURCE</span>
+<span class="token comment" spellcheck="true"># * The method used ("script" or "git" in the script, defaults to "git")</span>
+<span class="token comment" spellcheck="true"># NVM_SOURCE always takes precedence unless the method is "script-nvm-exec"</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_source<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local NVM_GITHUB_REPO
+  NVM_GITHUB_REPO<span class="token operator">=</span><span class="token string">"<span class="token variable">${NVM_INSTALL_GITHUB_REPO:-nvm-sh/nvm}</span>"</span>
+  local NVM_VERSION
+  NVM_VERSION<span class="token operator">=</span><span class="token string">"${NVM_INSTALL_VERSION:-<span class="token variable"><span class="token variable">$(</span>nvm_latest_version<span class="token variable">)</span></span>}"</span>
+  local NVM_METHOD
+  NVM_METHOD<span class="token operator">=</span><span class="token string">"<span class="token variable">$1</span>"</span>
+  local NVM_SOURCE_URL
+  NVM_SOURCE_URL<span class="token operator">=</span><span class="token string">"<span class="token variable">$NVM_SOURCE</span>"</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"_<span class="token variable">$NVM_METHOD</span>"</span> <span class="token operator">=</span> <span class="token string">"_script-nvm-exec"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    NVM_SOURCE_URL<span class="token operator">=</span><span class="token string">"https://raw.githubusercontent.com/<span class="token variable">${NVM_GITHUB_REPO}</span>/<span class="token variable">${NVM_VERSION}</span>/nvm-exec"</span>
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"_<span class="token variable">$NVM_METHOD</span>"</span> <span class="token operator">=</span> <span class="token string">"_script-nvm-bash-completion"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    NVM_SOURCE_URL<span class="token operator">=</span><span class="token string">"https://raw.githubusercontent.com/<span class="token variable">${NVM_GITHUB_REPO}</span>/<span class="token variable">${NVM_VERSION}</span>/bash_completion"</span>
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$NVM_SOURCE_URL</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"_<span class="token variable">$NVM_METHOD</span>"</span> <span class="token operator">=</span> <span class="token string">"_script"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      NVM_SOURCE_URL<span class="token operator">=</span><span class="token string">"https://raw.githubusercontent.com/<span class="token variable">${NVM_GITHUB_REPO}</span>/<span class="token variable">${NVM_VERSION}</span>/nvm.sh"</span>
+    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"_<span class="token variable">$NVM_METHOD</span>"</span> <span class="token operator">=</span> <span class="token string">"_git"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$NVM_METHOD</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      NVM_SOURCE_URL<span class="token operator">=</span><span class="token string">"https://github.com/<span class="token variable">${NVM_GITHUB_REPO}</span>.git"</span>
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Unexpected value \"<span class="token variable">$NVM_METHOD</span>\" for \<span class="token variable">$NVM_METHOD</span>"</span>
+      <span class="token keyword">return</span> 1
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+  nvm_echo <span class="token string">"<span class="token variable">$NVM_SOURCE_URL</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Node.js version to install</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_node_version<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  nvm_echo <span class="token string">"<span class="token variable">$NODE_VERSION</span>"</span>
+<span class="token punctuation">}</span>
+
+nvm_download<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> nvm_has <span class="token string">"curl"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    curl --fail --compressed -q <span class="token string">"<span class="token variable">$@</span>"</span>
+  <span class="token keyword">elif</span> nvm_has <span class="token string">"wget"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># Emulate curl with wget</span>
+    ARGS<span class="token operator">=</span><span class="token punctuation">$(</span>nvm_echo <span class="token string">"<span class="token variable">$@</span>"</span> <span class="token operator">|</span> <span class="token function">command</span> <span class="token function">sed</span> -e <span class="token string">'s/--progress-bar /--progress=bar /'</span> \
+                            -e <span class="token string">'s/--compressed //'</span> \
+                            -e <span class="token string">'s/--fail //'</span> \
+                            -e <span class="token string">'s/-L //'</span> \
+                            -e <span class="token string">'s/-I /--server-response /'</span> \
+                            -e <span class="token string">'s/-s /-q /'</span> \
+                            -e <span class="token string">'s/-sS /-nv /'</span> \
+                            -e <span class="token string">'s/-o /-O /'</span> \
+                            -e <span class="token string">'s/-C - /-c /'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2086</span>
+    <span class="token function">eval</span> <span class="token function">wget</span> <span class="token variable">$ARGS</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+install_nvm_from_git<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local INSTALL_DIR
+  INSTALL_DIR<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_install_dir<span class="token variable">)</span></span>"</span>
+  local NVM_VERSION
+  NVM_VERSION<span class="token operator">=</span><span class="token string">"${NVM_INSTALL_VERSION:-<span class="token variable"><span class="token variable">$(</span>nvm_latest_version<span class="token variable">)</span></span>}"</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${NVM_INSTALL_VERSION:-}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># Check if version is an existing ref</span>
+    <span class="token keyword">if</span> <span class="token function">command</span> <span class="token function">git</span> ls-remote <span class="token string">"$(nvm_source "</span><span class="token function">git</span><span class="token string">")"</span> <span class="token string">"<span class="token variable">$NVM_VERSION</span>"</span> <span class="token operator">|</span> nvm_grep -q <span class="token string">"<span class="token variable">$NVM_VERSION</span>"</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token keyword">:</span>
+    <span class="token comment" spellcheck="true"># Check if version is an existing changeset</span>
+    <span class="token keyword">elif</span> <span class="token operator">!</span> nvm_download -o /dev/null <span class="token string">"$(nvm_source "</span>script-nvm-exec<span class="token string">")"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to find '<span class="token variable">$NVM_VERSION</span>' version."</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+
+  local fetch_error
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/.git"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># Updating repo</span>
+    nvm_echo <span class="token string">"=> nvm is already installed in <span class="token variable">$INSTALL_DIR</span>, trying to update using git"</span>
+    <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">'\r=> '</span>
+    fetch_error<span class="token operator">=</span><span class="token string">"Failed to update nvm with <span class="token variable">$NVM_VERSION</span>, run 'git fetch' in <span class="token variable">$INSTALL_DIR</span> yourself."</span>
+  <span class="token keyword">else</span>
+    fetch_error<span class="token operator">=</span><span class="token string">"Failed to fetch origin with <span class="token variable">$NVM_VERSION</span>. Please report this!"</span>
+    nvm_echo <span class="token string">"=> Downloading nvm from git to '<span class="token variable">$INSTALL_DIR</span>'"</span>
+    <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">'\r=> '</span>
+    <span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">${INSTALL_DIR}</span>"</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"$(ls -A "</span><span class="token variable">${INSTALL_DIR}</span><span class="token string">")"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token comment" spellcheck="true"># Initializing repo</span>
+      <span class="token function">command</span> <span class="token function">git</span> init <span class="token string">"<span class="token variable">${INSTALL_DIR}</span>"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+        nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">'Failed to initialize nvm repo. Please report this!'</span>
+        <span class="token keyword">exit</span> 2
+      <span class="token punctuation">}</span>
+      <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">${INSTALL_DIR}</span>/.git"</span> remote add origin <span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source<span class="token variable">)</span></span>"</span> 2<span class="token operator">></span> /dev/null \
+        <span class="token operator">||</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">${INSTALL_DIR}</span>/.git"</span> remote set-url origin <span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source<span class="token variable">)</span></span>"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+        nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">'Failed to add remote "origin" (or set the URL). Please report this!'</span>
+        <span class="token keyword">exit</span> 2
+      <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+      <span class="token comment" spellcheck="true"># Cloning repo</span>
+      <span class="token function">command</span> <span class="token function">git</span> clone <span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source<span class="token variable">)</span></span>"</span> --depth<span class="token operator">=</span>1 <span class="token string">"<span class="token variable">${INSTALL_DIR}</span>"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+        nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">'Failed to clone nvm repo. Please report this!'</span>
+        <span class="token keyword">exit</span> 2
+      <span class="token punctuation">}</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+  <span class="token comment" spellcheck="true"># Try to fetch tag</span>
+  <span class="token keyword">if</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> fetch origin tag <span class="token string">"<span class="token variable">$NVM_VERSION</span>"</span> --depth<span class="token operator">=</span>1 2<span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">:</span>
+  <span class="token comment" spellcheck="true"># Fetch given version</span>
+  <span class="token keyword">elif</span> <span class="token operator">!</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> fetch origin <span class="token string">"<span class="token variable">$NVM_VERSION</span>"</span> --depth<span class="token operator">=</span>1<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"<span class="token variable">$fetch_error</span>"</span>
+    <span class="token keyword">exit</span> 1
+  <span class="token keyword">fi</span>
+  <span class="token function">command</span> <span class="token function">git</span> -c advice.detachedHead<span class="token operator">=</span>false --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> checkout -f --quiet FETCH_HEAD <span class="token operator">||</span> <span class="token punctuation">{</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to checkout the given version <span class="token variable">$NVM_VERSION</span>. Please report this!"</span>
+    <span class="token keyword">exit</span> 2
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"$(command git --git-dir="</span><span class="token variable">$INSTALL_DIR</span><span class="token string">"/.git --work-tree="</span><span class="token variable">$INSTALL_DIR</span><span class="token string">" show-ref refs/heads/master)"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> branch --quiet 2<span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> branch --quiet -D master <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Your version of git is out of date. Please update it!"</span>
+      <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> branch -D master <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+
+  nvm_echo <span class="token string">"=> Compressing and cleaning up git repository"</span>
+  <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> reflog expire --expire<span class="token operator">=</span>now --all<span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Your version of git is out of date. Please update it!"</span>
+  <span class="token keyword">fi</span>
+  <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">command</span> <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>/.git --work-tree<span class="token operator">=</span><span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span> gc --auto --aggressive --prune<span class="token operator">=</span>now <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Your version of git is out of date. Please update it!"</span>
+  <span class="token keyword">fi</span>
+  <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Automatically install Node.js</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_install_node<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local NODE_VERSION_LOCAL
+  NODE_VERSION_LOCAL<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_node_version<span class="token variable">)</span></span>"</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$NODE_VERSION_LOCAL</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">return</span> 0
+  <span class="token keyword">fi</span>
+
+  nvm_echo <span class="token string">"=> Installing Node.js version <span class="token variable">$NODE_VERSION_LOCAL</span>"</span>
+  nvm <span class="token function">install</span> <span class="token string">"<span class="token variable">$NODE_VERSION_LOCAL</span>"</span>
+  local CURRENT_NVM_NODE
+
+  CURRENT_NVM_NODE<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_version current<span class="token variable">)</span></span>"</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"$(nvm_version "</span><span class="token variable">$NODE_VERSION_LOCAL</span><span class="token string">")"</span> <span class="token operator">==</span> <span class="token string">"<span class="token variable">$CURRENT_NVM_NODE</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token string">"=> Node.js version <span class="token variable">$NODE_VERSION_LOCAL</span> has been successfully installed"</span>
+  <span class="token keyword">else</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to install Node.js <span class="token variable">$NODE_VERSION_LOCAL</span>"</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+install_nvm_as_script<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local INSTALL_DIR
+  INSTALL_DIR<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_install_dir<span class="token variable">)</span></span>"</span>
+  local NVM_SOURCE_LOCAL
+  NVM_SOURCE_LOCAL<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source script<span class="token variable">)</span></span>"</span>
+  local NVM_EXEC_SOURCE
+  NVM_EXEC_SOURCE<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source script-nvm-exec<span class="token variable">)</span></span>"</span>
+  local NVM_BASH_COMPLETION_SOURCE
+  NVM_BASH_COMPLETION_SOURCE<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_source script-nvm-bash-completion<span class="token variable">)</span></span>"</span>
+
+  <span class="token comment" spellcheck="true"># Downloading to $INSTALL_DIR</span>
+  <span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">$INSTALL_DIR</span>"</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token string">"=> nvm is already installed in <span class="token variable">$INSTALL_DIR</span>, trying to update the script"</span>
+  <span class="token keyword">else</span>
+    nvm_echo <span class="token string">"=> Downloading nvm as script to '<span class="token variable">$INSTALL_DIR</span>'"</span>
+  <span class="token keyword">fi</span>
+  nvm_download -s <span class="token string">"<span class="token variable">$NVM_SOURCE_LOCAL</span>"</span> -o <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/nvm.sh"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to download '<span class="token variable">$NVM_SOURCE_LOCAL</span>'"</span>
+    <span class="token keyword">return</span> 1
+  <span class="token punctuation">}</span> <span class="token operator">&amp;</span>
+  nvm_download -s <span class="token string">"<span class="token variable">$NVM_EXEC_SOURCE</span>"</span> -o <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/nvm-exec"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to download '<span class="token variable">$NVM_EXEC_SOURCE</span>'"</span>
+    <span class="token keyword">return</span> 2
+  <span class="token punctuation">}</span> <span class="token operator">&amp;</span>
+  nvm_download -s <span class="token string">"<span class="token variable">$NVM_BASH_COMPLETION_SOURCE</span>"</span> -o <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/bash_completion"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to download '<span class="token variable">$NVM_BASH_COMPLETION_SOURCE</span>'"</span>
+    <span class="token keyword">return</span> 2
+  <span class="token punctuation">}</span> <span class="token operator">&amp;</span>
+  <span class="token keyword">for</span> job <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">jobs</span> -p <span class="token operator">|</span> <span class="token function">command</span> <span class="token function">sort</span><span class="token variable">)</span></span>
+  <span class="token keyword">do</span>
+    <span class="token function">wait</span> <span class="token string">"<span class="token variable">$job</span>"</span> <span class="token operator">||</span> <span class="token keyword">return</span> <span class="token variable">$?</span>
+  <span class="token keyword">done</span>
+  <span class="token function">chmod</span> a+x <span class="token string">"<span class="token variable">$INSTALL_DIR</span>/nvm-exec"</span> <span class="token operator">||</span> <span class="token punctuation">{</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"Failed to mark '<span class="token variable">$INSTALL_DIR</span>/nvm-exec' as executable"</span>
+    <span class="token keyword">return</span> 3
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+nvm_try_profile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${1-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f <span class="token string">"<span class="token variable">${1}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">return</span> 1
+  <span class="token keyword">fi</span>
+  nvm_echo <span class="token string">"<span class="token variable">${1}</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Detect profile file if not specified as environment variable</span>
+<span class="token comment" spellcheck="true"># (eg: PROFILE=~/.myprofile)</span>
+<span class="token comment" spellcheck="true"># The echo'ed path is guaranteed to be an existing file</span>
+<span class="token comment" spellcheck="true"># Otherwise, an empty string is returned</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_detect_profile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${PROFILE-}</span>"</span> <span class="token operator">=</span> <span class="token string">'/dev/null'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># the user has specifically requested NOT to have nvm touch their profile</span>
+    <span class="token keyword">return</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${PROFILE}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">${PROFILE}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token string">"<span class="token variable">${PROFILE}</span>"</span>
+    <span class="token keyword">return</span>
+  <span class="token keyword">fi</span>
+
+  local DETECTED_PROFILE
+  DETECTED_PROFILE<span class="token operator">=</span><span class="token string">''</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${BASH_VERSION-}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$HOME</span>/.bashrc"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      DETECTED_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable">$HOME</span>/.bashrc"</span>
+    <span class="token keyword">elif</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$HOME</span>/.bash_profile"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      DETECTED_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable">$HOME</span>/.bash_profile"</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${ZSH_VERSION-}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    DETECTED_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable">$HOME</span>/.zshrc"</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$DETECTED_PROFILE</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">for</span> EACH_PROFILE <span class="token keyword">in</span> <span class="token string">".profile"</span> <span class="token string">".bashrc"</span> <span class="token string">".bash_profile"</span> <span class="token string">".zshrc"</span>
+    <span class="token keyword">do</span>
+      <span class="token keyword">if</span> DETECTED_PROFILE<span class="token operator">=</span><span class="token string">"$(nvm_try_profile "</span><span class="token variable">${HOME}</span>/<span class="token variable">${EACH_PROFILE}</span><span class="token string">")"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token keyword">break</span>
+      <span class="token keyword">fi</span>
+    <span class="token keyword">done</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$DETECTED_PROFILE</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token string">"<span class="token variable">$DETECTED_PROFILE</span>"</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Check whether the user has any globally-installed npm modules in their system</span>
+<span class="token comment" spellcheck="true"># Node, and warn them if so.</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_check_global_modules<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  local NPM_COMMAND
+  NPM_COMMAND<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">command</span> -v <span class="token function">npm</span> 2<span class="token operator">></span>/dev/null<span class="token variable">)</span></span>"</span> <span class="token operator">||</span> <span class="token keyword">return</span> 0
+  <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${NPM_COMMAND%%$NVM_DIR/*}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">return</span> 0
+
+  local NPM_VERSION
+  NPM_VERSION<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">npm</span> --version<span class="token variable">)</span></span>"</span>
+  NPM_VERSION<span class="token operator">=</span><span class="token string">"<span class="token variable">${NPM_VERSION:--1}</span>"</span>
+  <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${NPM_VERSION%%[!-0-9]*}</span>"</span> -gt 0 <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token keyword">return</span> 0
+
+  local NPM_GLOBAL_MODULES
+  NPM_GLOBAL_MODULES<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>
+    <span class="token function">npm</span> list -g --depth<span class="token operator">=</span>0 <span class="token operator">|</span>
+    <span class="token function">command</span> <span class="token function">sed</span> -e '/ npm@/d' -e '/ <span class="token punctuation">(</span>empty<span class="token variable">)</span></span>$/d'
+  )"</span>
+
+  local MODULE_COUNT
+  MODULE_COUNT<span class="token operator">=</span><span class="token string">"$(
+    command printf %s\\n "</span><span class="token variable">$NPM_GLOBAL_MODULES</span>" <span class="token operator">|</span>
+    <span class="token function">command</span> <span class="token function">sed</span> -ne <span class="token string">'1!p'</span> <span class="token operator">|</span>                     <span class="token comment" spellcheck="true"># Remove the first line</span>
+    <span class="token function">wc</span> -l <span class="token operator">|</span> <span class="token function">command</span> <span class="token function">tr</span> -d <span class="token string">' '</span>                   <span class="token comment" spellcheck="true"># Count entries</span>
+  <span class="token punctuation">)</span><span class="token string">"
+
+  if [ "</span><span class="token variable">${MODULE_COUNT}</span>" <span class="token operator">!=</span> <span class="token string">'0'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    nvm_echo <span class="token string">'=> You currently have modules installed globally with <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span><span class="token variable">`</span></span>. These will no'</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    nvm_echo <span class="token string">'=> longer be linked to the active version of Node when you install a new node'</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    nvm_echo <span class="token string">'=> with <span class="token variable"><span class="token variable">`</span>nvm<span class="token variable">`</span></span>; and they may (depending on how you construct your <span class="token variable"><span class="token variable">`</span>$PATH<span class="token variable">`</span></span>)'</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    nvm_echo <span class="token string">'=> override the binaries of modules installed with <span class="token variable"><span class="token variable">`</span>nvm<span class="token variable">`</span></span>:'</span>
+    nvm_echo
+
+    <span class="token function">command</span> <span class="token function">printf</span> %s\\n <span class="token string">"<span class="token variable">$NPM_GLOBAL_MODULES</span>"</span>
+    nvm_echo <span class="token string">'=> If you wish to uninstall them at a later point (or re-install them under your'</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    nvm_echo <span class="token string">'=> <span class="token variable"><span class="token variable">`</span>nvm<span class="token variable">`</span></span> Nodes), you can remove them from the system Node as follows:'</span>
+    nvm_echo
+    nvm_echo <span class="token string">'     $ nvm use system'</span>
+    nvm_echo <span class="token string">'     $ npm uninstall -g a_module'</span>
+    nvm_echo
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+nvm_do_install<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${NVM_DIR-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span> <span class="token punctuation">[</span> -d <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -e <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"File \"<span class="token variable">${NVM_DIR}</span>\" has the same name as installation directory."</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span> <span class="token operator">=</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_default_install_dir<span class="token variable">)</span></span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token function">mkdir</span> <span class="token string">"<span class="token variable">${NVM_DIR}</span>"</span>
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"You have \<span class="token variable">$NVM_DIR</span> set to \"<span class="token variable">${NVM_DIR}</span>\", but that directory does not exist. Check your profile files and environment."</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${METHOD}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment" spellcheck="true"># Autodetect install method</span>
+    <span class="token keyword">if</span> nvm_has <span class="token function">git</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      install_nvm_from_git
+    <span class="token keyword">elif</span> nvm_has nvm_download<span class="token punctuation">;</span> <span class="token keyword">then</span>
+      install_nvm_as_script
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">'You need git, curl, or wget to install nvm'</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${METHOD}</span>"</span> <span class="token operator">=</span> <span class="token string">'git'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token operator">!</span> nvm_has <span class="token function">git</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"You need git to install nvm"</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+    install_nvm_from_git
+  <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${METHOD}</span>"</span> <span class="token operator">=</span> <span class="token string">'script'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token operator">!</span> nvm_has nvm_download<span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"You need curl or wget to install nvm"</span>
+      <span class="token keyword">exit</span> 1
+    <span class="token keyword">fi</span>
+    install_nvm_as_script
+  <span class="token keyword">else</span>
+    nvm_echo <span class="token operator">></span><span class="token operator">&amp;</span>2 <span class="token string">"The environment variable \<span class="token variable">$METHOD</span> is set to \"<span class="token variable">${METHOD}</span>\", which is not recognized as a valid installation method."</span>
+    <span class="token keyword">exit</span> 1
+  <span class="token keyword">fi</span>
+
+  nvm_echo
+
+  local NVM_PROFILE
+  NVM_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_detect_profile<span class="token variable">)</span></span>"</span>
+  local PROFILE_INSTALL_DIR
+  PROFILE_INSTALL_DIR<span class="token operator">=</span><span class="token string">"$(nvm_install_dir | command sed "</span>s:^<span class="token variable">$HOME</span>:\<span class="token variable">$HOME</span><span class="token keyword">:</span><span class="token string">")"</span>
+
+  SOURCE_STR<span class="token operator">=</span><span class="token string">"\\nexport NVM_DIR=\"<span class="token variable">${PROFILE_INSTALL_DIR}</span>\"\\n[ -s \"\<span class="token variable">$NVM_DIR</span>/nvm.sh\" ] &amp;&amp; \\. \"\<span class="token variable">$NVM_DIR</span>/nvm.sh\"  # This loads nvm\\n"</span>
+
+  <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+  COMPLETION_STR<span class="token operator">=</span><span class="token string">'[ -s "<span class="token variable">$NVM_DIR</span>/bash_completion" ] &amp;&amp; \. "<span class="token variable">$NVM_DIR</span>/bash_completion"  # This loads nvm bash_completion\n'</span>
+  BASH_OR_ZSH<span class="token operator">=</span>false
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${NVM_PROFILE-}</span>"</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    local TRIED_PROFILE
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">${PROFILE}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      TRIED_PROFILE<span class="token operator">=</span><span class="token string">"<span class="token variable">${NVM_PROFILE}</span> (as defined in \<span class="token variable">$PROFILE</span>), "</span>
+    <span class="token keyword">fi</span>
+    nvm_echo <span class="token string">"=> Profile not found. Tried <span class="token variable">${TRIED_PROFILE-}</span>~/.bashrc, ~/.bash_profile, ~/.zshrc, and ~/.profile."</span>
+    nvm_echo <span class="token string">"=> Create one of them and run this script again"</span>
+    nvm_echo <span class="token string">"   OR"</span>
+    nvm_echo <span class="token string">"=> Append the following lines to the correct file yourself:"</span>
+    <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">${SOURCE_STR}</span>"</span>
+    nvm_echo
+  <span class="token keyword">else</span>
+    <span class="token keyword">if</span> nvm_profile_is_bash_or_zsh <span class="token string">"<span class="token variable">${NVM_PROFILE-}</span>"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      BASH_OR_ZSH<span class="token operator">=</span>true
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">command</span> <span class="token function">grep</span> -qc <span class="token string">'/nvm.sh'</span> <span class="token string">"<span class="token variable">$NVM_PROFILE</span>"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token string">"=> Appending nvm source string to <span class="token variable">$NVM_PROFILE</span>"</span>
+      <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">${SOURCE_STR}</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$NVM_PROFILE</span>"</span>
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token string">"=> nvm source string already in <span class="token variable">${NVM_PROFILE}</span>"</span>
+    <span class="token keyword">fi</span>
+    <span class="token comment" spellcheck="true"># shellcheck disable=SC2016</span>
+    <span class="token keyword">if</span> <span class="token variable">${BASH_OR_ZSH}</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span> <span class="token function">command</span> <span class="token function">grep</span> -qc <span class="token string">'<span class="token variable">$NVM_DIR</span>/bash_completion'</span> <span class="token string">"<span class="token variable">$NVM_PROFILE</span>"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      nvm_echo <span class="token string">"=> Appending bash_completion source string to <span class="token variable">$NVM_PROFILE</span>"</span>
+      <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">$COMPLETION_STR</span>"</span> <span class="token operator">>></span> <span class="token string">"<span class="token variable">$NVM_PROFILE</span>"</span>
+    <span class="token keyword">else</span>
+      nvm_echo <span class="token string">"=> bash_completion source string already in <span class="token variable">${NVM_PROFILE}</span>"</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+  <span class="token keyword">if</span> <span class="token variable">${BASH_OR_ZSH}</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${NVM_PROFILE-}</span>"</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    nvm_echo <span class="token string">"=> Please also append the following lines to the if you are using bash/zsh shell:"</span>
+    <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">${COMPLETION_STR}</span>"</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token comment" spellcheck="true"># Source nvm</span>
+  <span class="token comment" spellcheck="true"># shellcheck source=/dev/null</span>
+  \. <span class="token string">"<span class="token variable"><span class="token variable">$(</span>nvm_install_dir<span class="token variable">)</span></span>/nvm.sh"</span>
+
+  nvm_check_global_modules
+
+  nvm_install_node
+
+  nvm_reset
+
+  nvm_echo <span class="token string">"=> Close and reopen your terminal to start using nvm or run the following to use it now:"</span>
+  <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">${SOURCE_STR}</span>"</span>
+  <span class="token keyword">if</span> <span class="token variable">${BASH_OR_ZSH}</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">command</span> <span class="token function">printf</span> <span class="token string">"<span class="token variable">${COMPLETION_STR}</span>"</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Unsets the various functions defined</span>
+<span class="token comment" spellcheck="true"># during the execution of the install script</span>
+<span class="token comment" spellcheck="true">#</span>
+nvm_reset<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  unset -f nvm_has nvm_install_dir nvm_latest_version nvm_profile_is_bash_or_zsh \
+    nvm_source nvm_node_version nvm_download install_nvm_from_git nvm_install_node \
+    install_nvm_as_script nvm_try_profile nvm_detect_profile nvm_check_global_modules \
+    nvm_do_install nvm_reset nvm_default_install_dir nvm_grep
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span> <span class="token string">"_<span class="token variable">$NVM_ENV</span>"</span> <span class="token operator">=</span> <span class="token string">"_testing"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> nvm_do_install
+
+<span class="token punctuation">}</span> <span class="token comment" spellcheck="true"># this ensures the entire script is downloaded #</span>
+</code></pre>
+<h4 id="2-添加执行权限和执行脚本"><a href="#2-添加执行权限和执行脚本" class="headerlink" title="2.添加执行权限和执行脚本"></a>2.添加执行权限和执行脚本</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">chmod</span> +x install.sh
+./install.sh
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311415478.png" alt="image-20241031141512634"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311416795.png" alt="image-20241031141602095"></p>
+<h4 id="3-配置nvm"><a href="#3-配置nvm" class="headerlink" title="3.配置nvm"></a>3.配置nvm</h4><p>安装完成后，你需要将 NVM 添加到你的 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=shell&spm=1001.2101.3001.7020">shell</a> 配置文件中。对 Bash 用户来说，通常是 <code>~/.bashrc</code> 文件。打开 <code>.bashrc</code> 文件：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> ~/.bashrc
+</code></pre>
+<p>在文件末尾添加以下几行：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> NVM_DIR<span class="token operator">=</span><span class="token string">"$([ -z "</span><span class="token variable">${XDG_CONFIG_HOME-}</span><span class="token string">" ] &amp;&amp; printf %s "</span><span class="token variable">${HOME}</span>/.nvm<span class="token string">" || printf %s "</span><span class="token variable">${XDG_CONFIG_HOME}</span>/nvm<span class="token string">")"</span>
+<span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> \. <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token comment" spellcheck="true"># This loads nvm</span>
+</code></pre>
+<p>保存并关闭文件，然后通过以下命令使更改生效：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> ~/.bashrc
+</code></pre>
+<h4 id="4-验证nvm"><a href="#4-验证nvm" class="headerlink" title="4.验证nvm"></a>4.验证nvm</h4><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311421801.png" alt="image-20241031142131947"></p>
+<h4 id="5-查询当前可用的node版本"><a href="#5-查询当前可用的node版本" class="headerlink" title="5.查询当前可用的node版本"></a>5.查询当前可用的node版本</h4><pre class=" language-bash"><code class="language-bash">nvm ls-remote
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311423944.png" alt="image-20241031142313043"></p>
+<h2 id="三、docker-compose安装-gitlab、jenkins、nginx"><a href="#三、docker-compose安装-gitlab、jenkins、nginx" class="headerlink" title="三、docker-compose安装(gitlab、jenkins、nginx)"></a>三、docker-compose安装(gitlab、jenkins、nginx)</h2><h3 id="1-创建docker-compose文件，添加如下内容"><a href="#1-创建docker-compose文件，添加如下内容" class="headerlink" title="1.创建docker-compose文件，添加如下内容"></a>1.创建docker-compose文件，添加如下内容</h3><pre class=" language-bash"><code class="language-bash">version: <span class="token string">'3.8'</span>
+
+services:
+  jenkins:
+    image: jenkins/jenkins:2.426.2-lts
+    container_name: jenkins
+    user: <span class="token string">"0"</span>
+    restart: on-failure
+    ports:
+      - <span class="token string">"8082:8080"</span>
+      - <span class="token string">"50000:50000"</span>
+    volumes:
+      - /data/jenkens/usr/docker/jenkins_data:/var/jenkins_home
+      - /data/jenkens/usr/bin/docker:/usr/bin/docker
+      - /data/jenkens/var/run/docker.sock:/var/run/docker.sock
+
+  gitlab:
+    image: dockerhub.ypsky.buzz/gitlab/gitlab-ce
+    container_name: gitlab
+    privileged: <span class="token boolean">true</span>
+    restart: on-failure
+    ports:
+      - <span class="token string">"8090:80"</span>
+      - <span class="token string">"8022:22"</span>
+    volumes:
+      - /data/gitlab/data/etc:/etc/gitlab
+      - /data/gitlab/log:/var/log/gitlab
+      - /data/gitlab/data/opt:/var/opt/gitlab
+  
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - <span class="token string">"80:80"</span>
+    volumes:
+      - /data/nginx/html:/usr/share/nginx/html
+      - /data/nginx/logs:/var/log/nginx
+      - /data/nginx/conf:/etc/nginx
+      - /data/nginx/cert:/etc/nginx/cert
+</code></pre>
+<p><strong>说明：</strong></p>
+<ol>
+<li><strong>version: ‘3.8’</strong><ul>
+<li>指定Docker Compose文件使用的版本。</li>
+</ul>
+</li>
+<li><strong>services:</strong><ul>
+<li>定义构成应用程序的服务（容器）。</li>
+</ul>
+</li>
+<li><strong>jenkins:</strong><ul>
+<li><strong>image:</strong> 指定用于Jenkins服务的Docker镜像。在这种情况下，是<code>jenkins/jenkins:2.426.2-lts</code>。</li>
+<li><strong>container_name:</strong> 将容器命名为<code>jenkins</code>。</li>
+<li><strong>user:</strong> 以<code>root</code>用户身份运行容器。</li>
+<li><strong>restart:</strong> 指定重启策略。<code>on-failure</code>将在容器由于错误退出时重新启动容器。</li>
+<li>ports:<ul>
+<li>将主机的端口<code>8082</code>映射到容器的端口<code>8080</code>，用于Jenkins的Web界面。</li>
+<li>将主机的端口<code>50000</code>映射到容器的端口<code>50000</code>，用于Jenkins代理连接。</li>
+</ul>
+</li>
+<li>volumes:<ul>
+<li>将主机的目录<code>/data/jenkens/usr/docker/jenkins_data</code>挂载到容器的<code>/var/jenkins_home</code>，这是Jenkins存储配置和数据的地方。</li>
+<li>将主机的目录<code>/data/jenkens/usr/bin/docker</code>挂载到容器的<code>/usr/bin/docker</code>，允许Jenkins使用Docker CLI。</li>
+<li>将主机的目录<code>/data/jenkens/var/run/docker.sock</code>挂载到容器的<code>/var/run/docker.sock</code>，使Jenkins能够与Docker守护进程交互。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>gitlab:</strong><ul>
+<li><strong>image:</strong> 指定用于GitLab服务的Docker镜像。在这种情况下，是<code>dockerhub.ypsky.buzz/gitlab/gitlab-ce</code>。</li>
+<li><strong>container_name:</strong> 将容器命名为<code>gitlab</code>。</li>
+<li><strong>privileged:</strong> 授予容器扩展的权限，使其能够访问更多系统资源。</li>
+<li><strong>restart:</strong> 指定重启策略。<code>on-failure</code>将在容器由于错误退出时重新启动容器。</li>
+<li>ports:<ul>
+<li>将主机的端口<code>8090</code>映射到容器的端口<code>80</code>，用于GitLab的Web界面。</li>
+<li>将主机的端口<code>8022</code>映射到容器的端口<code>22</code>，用于通过SSH访问GitLab。</li>
+</ul>
+</li>
+<li>volumes:<ul>
+<li>将主机的目录<code>/data/gitlab/data/etc</code>挂载到容器的<code>/etc/gitlab</code>，这是GitLab存储配置文件的地方。</li>
+<li>将主机的目录<code>/data/gitlab/log</code>挂载到容器的<code>/var/log/gitlab</code>，这是GitLab日志存储的地方。</li>
+<li>将主机的目录<code>/data/gitlab/data/opt</code>挂载到容器的<code>/var/opt/gitlab</code>，这是GitLab存储操作数据的地方。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>此配置设置了一个Jenkins服务器和一个GitLab服务器，并映射了必要的端口和卷，以确保它们可以正确通信和运行。</p>
+<h3 id="2-Jenkins添加jdk和mvn"><a href="#2-Jenkins添加jdk和mvn" class="headerlink" title="2.Jenkins添加jdk和mvn"></a>2.Jenkins添加jdk和mvn</h3><p>将<code>jdk、maven</code>放到了<code>jenkins_home</code>下，这里我们需要将其放到我们的数据卷中，也就是刚才创建的<code>/usr/docker/jenkins_data</code>目录下</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -r /opt/jdk/jdk1.8.0_431 /usr/docker/jenkins_data
+<span class="token function">cp</span> -r /opt/apache-maven-3.9.9 /usr/docker/jenkins_data
+</code></pre>
+<h3 id="3-执行命令"><a href="#3-执行命令" class="headerlink" title="3.执行命令"></a>3.执行命令</h3><pre class=" language-bash"><code class="language-bash">docker-compose up -d  <span class="token comment" spellcheck="true"># 启动全部容器</span>
+docker-compose down  <span class="token comment" spellcheck="true"># 启动全部容器</span>
+docker-compose up -d jenkins  <span class="token comment" spellcheck="true"># 启动jenkins容器</span>
+docker-compose down jenkins  <span class="token comment" spellcheck="true"># 停止jenkins容器</span>
+</code></pre>
+<h3 id="4-查看Jenkins和gitlab容器是否启动成功"><a href="#4-查看Jenkins和gitlab容器是否启动成功" class="headerlink" title="4.查看Jenkins和gitlab容器是否启动成功"></a>4.查看Jenkins和gitlab容器是否启动成功</h3><pre><code>docker ps -a
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310904669.png" alt="image-20241031090457131"></p>
+<h3 id="Jenkins配置"><a href="#Jenkins配置" class="headerlink" title="Jenkins配置"></a>Jenkins<strong>配置</strong></h3><h4 id="1-获取登录密码"><a href="#1-获取登录密码" class="headerlink" title="1.获取登录密码"></a>1.获取登录密码</h4><pre class=" language-bash"><code class="language-bash">docker logs myjenkins
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310906756.png" alt="image-20241031090639408"></p>
+<h4 id="2-Jenkins使用和配置"><a href="#2-Jenkins使用和配置" class="headerlink" title="2.Jenkins使用和配置"></a>2.Jenkins使用和配置</h4><p>红框中的内容为初始登录的密码，此时可以在浏览器输入：虚拟机ip:8888 进行访问</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202411010855492.png" alt="image-20241031090839658">输入控制台密码，点击继续按钮软件需要加载一些必须的配置，请耐心等待一会，加载完成后即可进入到插件安装界面，鉴于对软件不熟悉，建议选择【安装推荐的插件】</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310909728.png" alt="image-20241031090909189"></p>
+<p>点击进入到推荐插件安装界面，耐心等待安装完成</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310911133.png" alt="image-20241031091103972"></p>
+<p>安装完成插件后自动进入到添加管理员账号界面，建议添加管理员账号，不要使用admin账户</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310912490.png" alt="image-20241031091227809"></p>
+<p>点击【保存并完成】按钮，进入到实例配置界面，直接保存并完成即可</p>
+<p><img src="D:\Java开发笔记\typora-user-images\image-20241031091315554.png" alt="image-20241031091315554"></p>
+<p>点击开始使用jenkins进入到首页</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310915361.png" alt="image-20241031091520091"></p>
+<h4 id="3-汉化（建议配置）"><a href="#3-汉化（建议配置）" class="headerlink" title="3.汉化（建议配置）"></a>3.汉化（建议配置）</h4><p>manage jenkins -&gt;Plugins-&gt;installed plugins 搜索框中输入 local发现汉化插件已经安装，重启jenkins即可</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310917856.png" alt="image-20241031091711148"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310918460.png" alt="image-20241031091815091"></p>
+<p>重启完成，再次访问，发现菜单都成中文了，汉化完成</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310918479.png" alt="image-20241031091834941"></p>
+<h4 id="4-系统工具配置"><a href="#4-系统工具配置" class="headerlink" title="4.系统工具配置"></a>4.系统工具配置</h4><p>系统管理&gt;凭据&gt;系统&gt;全局凭证</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310929074.png" alt="image-20241031092950435"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310931293.png" alt="image-20241031093105947"></p>
+<p>系统配置&gt;系统配置（系统全局设置和路径）</p>
+<p>配置ssh</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310933648.png" alt="image-20241031093328610"></p>
+<p>系统管理&gt;全局工具配置</p>
+<p>配置jdk和mvn</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310951009.png" alt="image-20241031095142877"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410310952732.png" alt="image-20241031095222680"></p>
+<h4 id="5-插件配置-ssh和maven"><a href="#5-插件配置-ssh和maven" class="headerlink" title="5.插件配置(ssh和maven)"></a>5.插件配置(ssh和maven)</h4><p>系统管理&gt;插件管理&gt;Avaliable plugins </p>
+<p>我这里已经安装了，所以只能在installed plugins中查询</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311051454.png" alt="image-20241031105137162"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311047526.png" alt="image-20241031104752779"></p>
+<h3 id="gitlab配置"><a href="#gitlab配置" class="headerlink" title="gitlab配置"></a>gitlab<strong>配置</strong></h3><p>创建项目后发现链接里面包含7b646d0fde80，这是因为容器的url根据容器id变化，我们需要配置她让其变成ip地址。</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311002877.png" alt="image-20241031100258460"></p>
+<h4 id="1-进入容器"><a href="#1-进入容器" class="headerlink" title="1.进入容器"></a>1.进入容器</h4><pre class=" language-bash"><code class="language-bash">docker <span class="token function">exec</span> -it gitlab <span class="token function">bash</span>
+</code></pre>
+<h4 id="2-修改-etc-gitlab-gitlab-rb文件"><a href="#2-修改-etc-gitlab-gitlab-rb文件" class="headerlink" title="2.修改/etc/gitlab/gitlab.rb文件"></a>2.修改/etc/gitlab/gitlab.rb文件</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /etc/gitlab 
+vim gitlab.rb
+</code></pre>
+<p><strong>学习vim操作</strong><br>首先根据选项描述，按e进入编辑模式。<br>ctrl+f：向后翻页<br>ctrl+b：向前翻页<br>Ctrl+d: 向下翻半屏<br>Ctrl+u: 向上翻半屏<br>找到位置后，按”i”,“o”,“a”,”r”任意字母进入编辑模式，左下角出现“INSERT或 REPLACE”字样</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311007270.png" alt="image-20241031100755897"></p>
+<p>查找到external_url设置的地方进行修改</p>
+<p>如下图，我将服务器电脑的ip填了进去（ip查找方法是在控制台输入ipconfig，其中的ipv4），进行：wq保存退出</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311008679.png" alt="image-20241031100850230"></p>
+<p>重启gitlab后，发现连接已经变成了ip</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311009141.png" alt="image-20241031100934574"></p>
+<p>我们项目其实更多的需要ssh，所以完整版如下<br>其实文件里面都是注释，意思是找到对应地方去掉”#”，我们为了方便可以全删了或者直接将配置添加到开头）</p>
+<p>退出编辑模式，输入如下字符将文件清空</p>
+<pre class=" language-bash"><code class="language-bash">:%d
+</code></pre>
+<pre><code>external_url &#39;http://192.168.124.2&#39;
+gitlab_rails[&#39;gitlab_ssh_host&#39;] = &#39;192.168.124.2&#39;
+gitlab_rails[&#39;gitlab_shell_ssh_port&#39;] = 8022
+#备份相关，路径、权限、保留时间
+gitlab_rails[&#39;manage_backup_path&#39;] = true             
+gitlab_rails[&#39;backup_path&#39;] = &quot;/var/opt/gitlab/backups&quot;       
+gitlab_rails[&#39;backup_archive_permissions&#39;] = 0644      
+gitlab_rails[&#39;backup_keep_time&#39;] = 5184000           
+</code></pre>
+<h4 id="3-配置生效"><a href="#3-配置生效" class="headerlink" title="3.配置生效"></a>3.配置生效</h4><p>在容器中使用代码</p>
+<pre class=" language-bash"><code class="language-bash">gitlab-ctl reconfigure
+</code></pre>
+<p>控制台输入”exit”退出容器并重启</p>
+<pre><code>docker restart gitlab
+</code></pre>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311012189.png" alt="image-20241031101248051"></p>
+<p>上传若依项目到gitlab仓库</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311042445.png" alt="image-20241031104205924"></p>
+<p>项目地址（手动添加端口号）</p>
+<pre class=" language-bash"><code class="language-bash">http://192.168.109.129:8090/yangpeng/ruoyi.git
+</code></pre>
+<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx<strong>配置</strong></h3><h4 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h4><p>创建如下文件</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311551377.png" alt="image-20241031155141994"></p>
+<p>nginx.conf 配置文件如下</p>
+<pre class=" language-bash"><code class="language-bash">
+worker_processes 1<span class="token punctuation">;</span>
+events <span class="token punctuation">{</span>
+    worker_connections 1024<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+http <span class="token punctuation">{</span>
+    include mime.types<span class="token punctuation">;</span>
+    default_type application/octet-stream<span class="token punctuation">;</span>
+    sendfile on<span class="token punctuation">;</span>
+    keepalive_timeout 65<span class="token punctuation">;</span>
+    server <span class="token punctuation">{</span>
+    listen 80<span class="token punctuation">;</span>
+    server_name localhost<span class="token punctuation">;</span>
+    location / <span class="token punctuation">{</span>
+        root /usr/share/nginx/html<span class="token punctuation">;</span>
+        index index.html<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>-e <span class="token variable">$request_filename</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                rewrite ^<span class="token punctuation">(</span>.*<span class="token punctuation">)</span>$ /index.html?s<span class="token operator">=</span><span class="token variable">$1</span> last<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html<span class="token variable">$args</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    location  /stage-api/ <span class="token punctuation">{</span>
+         <span class="token comment" spellcheck="true">#后台接口地址(我们部署去掉了/jeecg-boot项目名，如果你有请加上）</span>
+         proxy_pass         http://192.168.109.129:8080/<span class="token punctuation">;</span>
+         proxy_redirect off<span class="token punctuation">;</span>
+         <span class="token comment" spellcheck="true">#真实IP获取</span>
+         proxy_set_header  Host             <span class="token variable">$host</span><span class="token punctuation">;</span>
+         proxy_set_header  X-Real-IP        <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+         <span class="token keyword">set</span> <span class="token variable">$my_proxy_add_x_forwarded_for</span> <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$proxy_add_x_forwarded_for</span> ~* <span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             <span class="token keyword">set</span> <span class="token variable">$my_proxy_add_x_forwarded_for</span> <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+          proxy_set_header   X-Forwarded-For <span class="token variable">$my_proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    error_page 500 502 503 504 /50x.html<span class="token punctuation">;</span>
+    location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+        root /usr/share/nginx/html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>mime.types配置文件如下</p>
+<pre class=" language-bash"><code class="language-bash">
+types <span class="token punctuation">{</span>
+    text/html                                        html htm shtml<span class="token punctuation">;</span>
+    text/css                                         css<span class="token punctuation">;</span>
+    text/xml                                         xml<span class="token punctuation">;</span>
+    image/gif                                        gif<span class="token punctuation">;</span>
+    image/jpeg                                       jpeg jpg<span class="token punctuation">;</span>
+    application/javascript                           js<span class="token punctuation">;</span>
+    application/atom+xml                             atom<span class="token punctuation">;</span>
+    application/rss+xml                              rss<span class="token punctuation">;</span>
+
+    text/mathml                                      mml<span class="token punctuation">;</span>
+    text/plain                                       txt<span class="token punctuation">;</span>
+    text/vnd.sun.j2me.app-descriptor                 jad<span class="token punctuation">;</span>
+    text/vnd.wap.wml                                 wml<span class="token punctuation">;</span>
+    text/x-component                                 htc<span class="token punctuation">;</span>
+
+    image/avif                                       avif<span class="token punctuation">;</span>
+    image/png                                        png<span class="token punctuation">;</span>
+    image/svg+xml                                    svg svgz<span class="token punctuation">;</span>
+    image/tiff                                       tif tiff<span class="token punctuation">;</span>
+    image/vnd.wap.wbmp                               wbmp<span class="token punctuation">;</span>
+    image/webp                                       webp<span class="token punctuation">;</span>
+    image/x-icon                                     ico<span class="token punctuation">;</span>
+    image/x-jng                                      jng<span class="token punctuation">;</span>
+    image/x-ms-bmp                                   bmp<span class="token punctuation">;</span>
+
+    font/woff                                        woff<span class="token punctuation">;</span>
+    font/woff2                                       woff2<span class="token punctuation">;</span>
+
+    application/java-archive                         jar war ear<span class="token punctuation">;</span>
+    application/json                                 json<span class="token punctuation">;</span>
+    application/mac-binhex40                         hqx<span class="token punctuation">;</span>
+    application/msword                               doc<span class="token punctuation">;</span>
+    application/pdf                                  pdf<span class="token punctuation">;</span>
+    application/postscript                           <span class="token function">ps</span> eps ai<span class="token punctuation">;</span>
+    application/rtf                                  rtf<span class="token punctuation">;</span>
+    application/vnd.apple.mpegurl                    m3u8<span class="token punctuation">;</span>
+    application/vnd.google-earth.kml+xml             kml<span class="token punctuation">;</span>
+    application/vnd.google-earth.kmz                 kmz<span class="token punctuation">;</span>
+    application/vnd.ms-excel                         xls<span class="token punctuation">;</span>
+    application/vnd.ms-fontobject                    eot<span class="token punctuation">;</span>
+    application/vnd.ms-powerpoint                    ppt<span class="token punctuation">;</span>
+    application/vnd.oasis.opendocument.graphics      odg<span class="token punctuation">;</span>
+    application/vnd.oasis.opendocument.presentation  odp<span class="token punctuation">;</span>
+    application/vnd.oasis.opendocument.spreadsheet   ods<span class="token punctuation">;</span>
+    application/vnd.oasis.opendocument.text          odt<span class="token punctuation">;</span>
+    application/vnd.openxmlformats-officedocument.presentationml.presentation
+                                                     pptx<span class="token punctuation">;</span>
+    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+                                                     xlsx<span class="token punctuation">;</span>
+    application/vnd.openxmlformats-officedocument.wordprocessingml.document
+                                                     docx<span class="token punctuation">;</span>
+    application/vnd.wap.wmlc                         wmlc<span class="token punctuation">;</span>
+    application/wasm                                 wasm<span class="token punctuation">;</span>
+    application/x-7z-compressed                      7z<span class="token punctuation">;</span>
+    application/x-cocoa                              cco<span class="token punctuation">;</span>
+    application/x-java-archive-diff                  jardiff<span class="token punctuation">;</span>
+    application/x-java-jnlp-file                     jnlp<span class="token punctuation">;</span>
+    application/x-makeself                           run<span class="token punctuation">;</span>
+    application/x-perl                               pl pm<span class="token punctuation">;</span>
+    application/x-pilot                              prc pdb<span class="token punctuation">;</span>
+    application/x-rar-compressed                     <span class="token function">rar</span><span class="token punctuation">;</span>
+    application/x-redhat-package-manager             rpm<span class="token punctuation">;</span>
+    application/x-sea                                sea<span class="token punctuation">;</span>
+    application/x-shockwave-flash                    swf<span class="token punctuation">;</span>
+    application/x-stuffit                            sit<span class="token punctuation">;</span>
+    application/x-tcl                                tcl tk<span class="token punctuation">;</span>
+    application/x-x509-ca-cert                       der pem crt<span class="token punctuation">;</span>
+    application/x-xpinstall                          xpi<span class="token punctuation">;</span>
+    application/xhtml+xml                            xhtml<span class="token punctuation">;</span>
+    application/xspf+xml                             xspf<span class="token punctuation">;</span>
+    application/zip                                  <span class="token function">zip</span><span class="token punctuation">;</span>
+
+    application/octet-stream                         bin exe dll<span class="token punctuation">;</span>
+    application/octet-stream                         deb<span class="token punctuation">;</span>
+    application/octet-stream                         dmg<span class="token punctuation">;</span>
+    application/octet-stream                         iso img<span class="token punctuation">;</span>
+    application/octet-stream                         msi msp msm<span class="token punctuation">;</span>
+
+    audio/midi                                       mid midi kar<span class="token punctuation">;</span>
+    audio/mpeg                                       mp3<span class="token punctuation">;</span>
+    audio/ogg                                        ogg<span class="token punctuation">;</span>
+    audio/x-m4a                                      m4a<span class="token punctuation">;</span>
+    audio/x-realaudio                                ra<span class="token punctuation">;</span>
+
+    video/3gpp                                       3gpp 3gp<span class="token punctuation">;</span>
+    video/mp2t                                       ts<span class="token punctuation">;</span>
+    video/mp4                                        mp4<span class="token punctuation">;</span>
+    video/mpeg                                       mpeg mpg<span class="token punctuation">;</span>
+    video/quicktime                                  mov<span class="token punctuation">;</span>
+    video/webm                                       webm<span class="token punctuation">;</span>
+    video/x-flv                                      flv<span class="token punctuation">;</span>
+    video/x-m4v                                      m4v<span class="token punctuation">;</span>
+    video/x-mng                                      mng<span class="token punctuation">;</span>
+    video/x-ms-asf                                   asx asf<span class="token punctuation">;</span>
+    video/x-ms-wmv                                   wmv<span class="token punctuation">;</span>
+    video/x-msvideo                                  avi<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="2-部署若依前端"><a href="#2-部署若依前端" class="headerlink" title="2.部署若依前端"></a>2.部署若依前端</h4><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311557805.png" alt="image-20241031155731988"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311558188.png" alt="image-20241031155852680"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311600477.png" alt="image-20241031160050973"></p>
+<pre class=" language-bash"><code class="language-bash"> docker-compose up -d nginx <span class="token comment" spellcheck="true"># 启动nginx</span>
+  docker-compose down nginx  <span class="token comment" spellcheck="true">#关闭nginx</span>
+</code></pre>
+<h4 id="3-访问若依"><a href="#3-访问若依" class="headerlink" title="3.访问若依"></a>3.访问若依</h4><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311603400.png" alt="image-20241031160319147"></p>
+<h2 id="四、自动构建和部署若依后端"><a href="#四、自动构建和部署若依后端" class="headerlink" title="四、自动构建和部署若依后端"></a>四、自动构建和部署若依后端</h2><h3 id="1-新建任务"><a href="#1-新建任务" class="headerlink" title="1.新建任务"></a>1.新建任务</h3><p>首页&gt;新建任务</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311054632.png" alt="image-20241031105446706"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311056539.png" alt="image-20241031105650210"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311101459.png" alt="image-20241031110137560"></p>
+<p>构建触发器，就是项目在什么情况下会重新构建，这里选择第一个就行了</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311106796.png" alt="image-20241031110616686"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311109808.png" alt="image-20241031110946518"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311113024.png" alt="image-20241031111308487"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311116623.png" alt="image-20241031111618362"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311117921.png" alt="image-20241031111731863"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311121779.png" alt="image-20241031112130710"></p>
+<p>结束后保存，有报红先不用管，构建项目成功后，报红就会消失。</p>
+<h3 id="2-构建和部署"><a href="#2-构建和部署" class="headerlink" title="2.构建和部署"></a>2.构建和部署</h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311126438.png" alt="image-20241031112559319"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311126943.png" alt="image-20241031112635860"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311127608.png" alt="image-20241031112750492"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311128491.png" alt="image-20241031112822972"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311129093.png" alt="image-20241031112956432"></p>
+<p>页面访问</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311131826.png" alt="image-20241031113115758"></p>
+<h3 id="3-测试自动化构建和部署流程"><a href="#3-测试自动化构建和部署流程" class="headerlink" title="3.测试自动化构建和部署流程"></a>3.测试自动化构建和部署流程</h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311133421.png" alt="image-20241031113311303"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311133156.png" alt="image-20241031113331088"></p>
+<p>重新点击立即构建，并打开构建日志控制台</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311135898.png" alt="image-20241031113536773"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311136899.png" alt="image-20241031113601669"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311138128.png" alt="image-20241031113855513"></p>
+<h2 id="五、自动化构建和部署若依前端"><a href="#五、自动化构建和部署若依前端" class="headerlink" title="五、自动化构建和部署若依前端"></a>五、自动化构建和部署若依前端</h2><h3 id="1-新建任务-1"><a href="#1-新建任务-1" class="headerlink" title="1.新建任务"></a>1.新建任务</h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311616580.png" alt="image-20241031161637606"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311619553.png" alt="image-20241031161933479"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311725513.png" alt="image-20241031172542426"></p>
+<h3 id="2-构建和部署-1"><a href="#2-构建和部署-1" class="headerlink" title="2.构建和部署"></a>2.构建和部署</h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311731234.png" alt="image-20241031173125014"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311728717.png" alt="image-20241031172822628"></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311733732.png" alt="image-20241031173300643"></h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311733216.png" alt="image-20241031173356080"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311734674.png" alt="image-20241031173411843"></p>
+<h3 id="3-测试自动化构建若依前端"><a href="#3-测试自动化构建若依前端" class="headerlink" title="3.测试自动化构建若依前端"></a>3.测试自动化构建若依前端</h3><p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311736947.png" alt="image-20241031173650036"></p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311737602.png" alt="image-20241031173712548"></p>
+<p>重新点击立即构建，并打开构建日志控制台</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311738679.png" alt="image-20241031173808447"></p>
+<p>页面访问</p>
+<p><img src="https://gitee.com/ypbhbc/myblog_images/raw/master/images/2024/04/202410311738880.png" alt="image-20241031173857199"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">yangpeng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ypbhbc.gitee.io/2024/10/29/centos7-an-zhuang-jenkins/">http://ypbhbc.gitee.io/2024/10/29/centos7-an-zhuang-jenkins/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">yangpeng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/centos/">
+                                    <span class="chip bg-color">centos</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '6L2VMqPdeHPNdmXyx1WgxN2w-gzGzoHsz',
+        appKey: 'PI2B4eISbnPrj3jdUuCTruaj',
+        serverURLs: 'https://6l2vmqpd.lc-cn-n1-shared.com',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/01/14/ubuntu-da-jian-fisco-he-webase/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="ubuntu 搭建fisco和webase">
+                        
+                        <span class="card-title">ubuntu 搭建fisco和webase</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Liunx/" class="post-category">
+                                    Liunx
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/fisco/">
+                        <span class="chip bg-color">fisco</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/09/10/completablefuture-shi-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://www.yangpengsky.top:9000/myblog/images/2024/01/202401221014163.jpg" class="responsive-img" alt="CompletableFuture实践">
+                        
+                        <span class="card-title">CompletableFuture实践</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            yangpeng
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="952625199"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2025</span>
+            
+            <i class="fa fa-heart" style="color: #ff71a8"></i>
+            <a href="/about" target="_blank">yangpeng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+
+            
+                <span style="margin-left: -20px; display: inline">
+                &nbsp;  <i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span  class="white-color">147.1k</span>
+                <span/>
+            
+
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color">147.1k</span>
+                </span>
+            
+            
+                <span id="busuanzi_container_site_uv3" style="display: inline">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color">147.1k</span>
+                </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "5";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate,
+                                          startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate,
+                                          todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff / hours) - diffYears * 365
+                                                   * 24 - diffDays * 24);
+                        var diffMinutes = Math.floor((diff / minutes) - diffYears *                                365 * 24 * 60 - diffDays * 24 * 60 - diffHours * 60);
+                        var diffSeconds = Math.floor((diff / seconds) - diffYears *                                     365 * 24 * 60 * 60 - diffDays * 24 * 60 * 60  - diffHours
+                                                     * 60 * 60 - diffMinutes * 60);
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + 
+                                diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear +
+                               " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' 
+                            + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' +
+                                   diffDays + ' 天 ' + diffHours + ' 小时 ' + 
+                                   diffMinutes + ' 分钟 ' + diffSeconds + ' 秒';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + 
+                                   diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = 
+                               yearsAndDaysTip;
+                        }
+                    }
+                    var timer = setInterval(calcSiteTime);
+                    // calcSiteTime();
+                </script>
+            
+                    &nbsp;|&nbsp;
+            
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+            
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:376562891@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=376562891" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 376562891" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+        </div>
+    </div>
+</footer>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/funnyTitle.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

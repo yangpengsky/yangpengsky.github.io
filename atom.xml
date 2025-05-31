@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2024-05-06T09:04:29.827Z</updated>
+  <updated>2025-01-24T03:11:59.745Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,106 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu 搭建fisco和webase</title>
+    <link href="http://ypbhbc.gitee.io/2025/01/14/ubuntu-da-jian-fisco-he-webase/"/>
+    <id>http://ypbhbc.gitee.io/2025/01/14/ubuntu-da-jian-fisco-he-webase/</id>
+    <published>2025-01-14T01:12:14.000Z</published>
+    <updated>2025-01-24T03:11:59.745Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ubuntu-新用户无法远程登录问题（ssh）&quot;&gt;&lt;a href=&quot;#ubuntu-新用户无法远程登录问题（ssh）&quot; class=&quot;headerlink&quot; title=&quot;ubuntu 新用户无法远程登录问题（ssh）&quot;&gt;&lt;/a&gt;ubuntu</summary>
+        
+      
+    
+    
+    
+    <category term="Liunx" scheme="http://ypbhbc.gitee.io/categories/Liunx/"/>
+    
+    
+    <category term="ubuntu" scheme="http://ypbhbc.gitee.io/tags/ubuntu/"/>
+    
+    <category term="fisco" scheme="http://ypbhbc.gitee.io/tags/fisco/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7安装Jenkins</title>
+    <link href="http://ypbhbc.gitee.io/2024/10/29/centos7-an-zhuang-jenkins/"/>
+    <id>http://ypbhbc.gitee.io/2024/10/29/centos7-an-zhuang-jenkins/</id>
+    <published>2024-10-29T03:12:57.000Z</published>
+    <updated>2024-11-01T00:58:10.020Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、介绍&quot;&gt;&lt;a href=&quot;#一、介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Jenkins" scheme="http://ypbhbc.gitee.io/categories/Jenkins/"/>
+    
+    <category term="Liunx" scheme="http://ypbhbc.gitee.io/categories/Jenkins/Liunx/"/>
+    
+    
+    <category term="centos" scheme="http://ypbhbc.gitee.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CompletableFuture实践</title>
+    <link href="http://ypbhbc.gitee.io/2024/09/10/completablefuture-shi-jian/"/>
+    <id>http://ypbhbc.gitee.io/2024/09/10/completablefuture-shi-jian/</id>
+    <published>2024-09-10T08:27:33.000Z</published>
+    <updated>2024-10-09T06:14:55.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue3快速入门</title>
+    <link href="http://ypbhbc.gitee.io/2024/07/16/vue3-kuai-su-ru-men/"/>
+    <id>http://ypbhbc.gitee.io/2024/07/16/vue3-kuai-su-ru-men/</id>
+    <published>2024-07-16T03:30:45.000Z</published>
+    <updated>2024-07-16T03:38:47.799Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-Vue3简介&quot;&gt;&lt;a href=&quot;#1-Vue3简介&quot; class=&quot;headerlink&quot; title=&quot;1. Vue3简介&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue3中的pinia使用</title>
@@ -373,7 +473,7 @@
     <link href="http://ypbhbc.gitee.io/2024/01/10/springboot-shi-wu-xiang-guan-shi-yong/"/>
     <id>http://ypbhbc.gitee.io/2024/01/10/springboot-shi-wu-xiang-guan-shi-yong/</id>
     <published>2024-01-10T07:20:10.000Z</published>
-    <updated>2024-04-12T07:28:32.989Z</updated>
+    <updated>2025-05-25T15:01:42.307Z</updated>
     
     
       
@@ -415,118 +515,6 @@
     
     
     <category term="mysql" scheme="http://ypbhbc.gitee.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker搭建MySQL一组三从服务</title>
-    <link href="http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/"/>
-    <id>http://ypbhbc.gitee.io/2024/01/04/docker-da-jian-mysql-yi-zu-san-cong-fu-wu/</id>
-    <published>2024-01-04T08:43:39.000Z</published>
-    <updated>2024-04-12T07:28:32.932Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
-    
-    
-    <category term="mysql" scheme="http://ypbhbc.gitee.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot整合knife4j</title>
-    <link href="http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/"/>
-    <id>http://ypbhbc.gitee.io/2024/01/03/springboot-zheng-he-knife4j/</id>
-    <published>2024-01-03T07:29:58.000Z</published>
-    <updated>2024-04-29T08:52:30.076Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Knife4j 是一款基于 Spring Boot 与 Swagger 的增强型 API 文档生成工具。它在 Swagger</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="knife4j" scheme="http://ypbhbc.gitee.io/tags/knife4j/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot整个redis（一主三从）+单哨兵</title>
-    <link href="http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/"/>
-    <id>http://ypbhbc.gitee.io/2024/01/02/springboot-zheng-ge-redis-yi-zhu-san-cong-dan-shao-bing/</id>
-    <published>2024-01-02T08:58:04.000Z</published>
-    <updated>2024-04-12T07:28:32.990Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="redis" scheme="http://ypbhbc.gitee.io/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker部署vue+springboot项目到云服务器</title>
-    <link href="http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/"/>
-    <id>http://ypbhbc.gitee.io/2023/11/09/docker-bu-shu-vue-springboot-xiang-mu-dao-yun-fu-wu-qi/</id>
-    <published>2023-11-09T07:23:19.000Z</published>
-    <updated>2024-04-12T07:28:32.941Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;提前准备&quot;&gt;&lt;a href=&quot;#提前准备&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
-    
-    <category term="Java" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/"/>
-    
-    <category term="前端" scheme="http://ypbhbc.gitee.io/categories/Docker/Java/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
-    
-    <category term="vue" scheme="http://ypbhbc.gitee.io/tags/vue/"/>
     
   </entry>
   
