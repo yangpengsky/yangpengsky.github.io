@@ -6,7 +6,7 @@
   <link href="http://ypbhbc.gitee.io/atom.xml" rel="self"/>
   
   <link href="http://ypbhbc.gitee.io/"/>
-  <updated>2025-06-02T02:23:48.365Z</updated>
+  <updated>2025-01-24T03:11:59.745Z</updated>
   <id>http://ypbhbc.gitee.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://ypbhbc.gitee.io/2025/06/01/java-mian-shi-ti/"/>
-    <id>http://ypbhbc.gitee.io/2025/06/01/java-mian-shi-ti/</id>
-    <published>2025-06-01T07:25:34.981Z</published>
-    <updated>2025-06-02T02:23:48.365Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1-请说一说软件开发流程&quot;&gt;&lt;a href=&quot;#1-请说一说软件开发流程&quot; class=&quot;headerlink&quot; title=&quot;1.请说一说软件开发流程&quot;&gt;&lt;/a&gt;1.请说一说软件开发流程&lt;/h4&gt;&lt;p&gt;项目启动 -&amp;gt; 需求分析 -&amp;gt; 需求概要</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>ubuntu 搭建fisco和webase</title>
@@ -511,6 +490,31 @@
     
     
     <category term="springboot" scheme="http://ypbhbc.gitee.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker搭建MySQL双主双从</title>
+    <link href="http://ypbhbc.gitee.io/2024/01/05/docker-da-jian-mysql-shuang-zhu-shuang-cong/"/>
+    <id>http://ypbhbc.gitee.io/2024/01/05/docker-da-jian-mysql-shuang-zhu-shuang-cong/</id>
+    <published>2024-01-05T08:04:47.000Z</published>
+    <updated>2024-04-12T07:28:32.936Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MySQL双主双从（Dual Master Dual</summary>
+        
+      
+    
+    
+    
+    <category term="Docker" scheme="http://ypbhbc.gitee.io/categories/Docker/"/>
+    
+    
+    <category term="mysql" scheme="http://ypbhbc.gitee.io/tags/mysql/"/>
     
   </entry>
   
